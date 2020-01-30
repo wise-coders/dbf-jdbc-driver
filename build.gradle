@@ -1,0 +1,88 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        jcenter()
+    }
+    dependencies {
+        classpath "gradle.plugin.install4j.install4j:gradle_plugin:7.0.8"
+    }
+}
+plugins{
+    id 'org.hidetake.ssh' version '2.7.1'
+}
+apply plugin: 'application'
+apply plugin: 'distribution'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile "com.github.albfernandez:javadbf:1.9.4"
+    compile "com.h2database:h2:1.4.199"
+    testCompile 'junit:junit:4.12'
+}
+
+jar {
+    archiveName ="dbschema-dbf-jdbc${version}.jar"
+    manifest {
+        attributes 'Main-Class': 'com.dbschema.xbase.DbfJdbcDriver'
+        attributes 'Specification-Version': "$version"
+        attributes 'Specification-Vendor': "Wise Coders"
+        attributes 'Implementation-Vendor-Id': "dbschema.com"
+        attributes 'Implementation-Vendor': "Wise Coders"
+        attributes 'Implementation-Version': new Date().format( 'yyMMdd' )
+    }
+}
+
+
+task zip(type: Zip, dependsOn:['clean','jar']) {
+    archiveName 'FoxProJdbcDriver.zip'
+    from configurations.runtime.allArtifacts.files
+    from configurations.runtime
+}
+
+task copyInUserHome(type: Copy,dependsOn:['clean','jar']) {
+    from configurations.runtime.allArtifacts.files
+    from configurations.runtime
+    into "${System.getProperty('user.home')}/.DbSchema/drivers/FoxPro/"
+}
+
+/*
+plugins {
+    id 'maven-publish'
+}
+
+// https://dzone.com/articles/publish-your-artifacts-to-maven-central
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'dBase DBF JDBC Driver'
+                description = 'Open Source JDBC Driver for dBase DBF Database Files'
+                url = 'http://www.dbschema.com'
+                licenses {
+                    license {
+                        name = 'Free to use, Distribution Forbidden'
+                        url = 'http://dbschema.com'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dprutean'
+                        name = 'Dragos Pruteanu'
+                        email = 'support@dbschema.com'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/dprutean/dbf-jdbc-driver.git'
+                    developerConnection = 'https://github.com/dprutean/dbf-jdbc-driver.git'
+                    url = 'https://github.com/dprutean/dbf-jdbc-driver.git'
+                }
+            }
+        }
+    }
+}
+*/

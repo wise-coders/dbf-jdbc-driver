@@ -1,6 +1,6 @@
-# DBF / xBase / FoxPro Open Source JDBC Driver
+# DBF-xBase-FoxPro JDBC Driver
 
-The DBF JDBC driver is provided by [DbSchema Database GUI Tool](https://dbschema.com)
+The DBF-xBase-FoxPro JDBC driver is provided by [DbSchema DBF Designer](https://dbschema.com/database-designer/FoxPro.html)
 
 ## Features
 
@@ -46,16 +46,16 @@ BSD License-3. Free to use, distribution forbidden. Improvements of the driver a
 
 ## How to Test the JDBC Driver
 
-The driver can be tested by downloading and installing [DbSchema DBF xBase GUI Tool](https://dbschema.com). 
+The driver can be tested by downloading and installing [DbSchema DBF and FoxPro Designer](https://dbschema.com). 
 DbSchema can be evaluated 15 for free.
 
 There is no need to register or download the driver - DbSchema will do everything for you.
 
-![Connection Dialog](resources/images/dbschema-dbf-connection-dialog.png)
+![DBF xBase Connection Dialog](resources/images/dbschema-dbf-connection-dialog.png)
 
 After connecting DbSchema will reverse engineer the database structure and show it as diagrams.
 
-![DBF Database Diagrams](resources/images/dbschema-dbf-gui-designer.png)
+![DBF Database Diagrams using DbSchema](resources/images/dbschema-dbf-gui-designer.png)
 
 Use the Query Editor to execute queries with JOINS, GROUP BY and ORDER BY.
 

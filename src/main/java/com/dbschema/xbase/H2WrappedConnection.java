@@ -1,7 +1,7 @@
 package com.dbschema.xbase;
 
-import com.dbschema.xbase.io.DbfLoaderInH2;
-import com.dbschema.xbase.io.H2StoreInDbf;
+import com.dbschema.xbase.io.DBFtoH2;
+import com.dbschema.xbase.io.H2toDBF;
 import com.dbschema.xbase.schema.Table;
 import com.linuxense.javadbf.DBFReader;
 import org.h2.jdbc.JdbcConnection;
@@ -43,7 +43,7 @@ public class H2WrappedConnection implements Connection {
 
     void transferFolder(File folder, File rootFolder, Connection h2Connection) throws SQLException {
         final File[] files = folder.listFiles();
-        DbfLoaderInH2 loader = new DbfLoaderInH2();
+        DBFtoH2 loader = new DBFtoH2();
         if ( files != null ) {
             for (File file : files) {
                 if (file.isFile() && file.getName().toLowerCase().endsWith(".dbf")) {
@@ -125,7 +125,7 @@ public class H2WrappedConnection implements Connection {
         }
         File outputFolder = new File ( path );
         outputFolder.mkdirs();
-        new H2StoreInDbf( h2Connection, outputFolder, defaultCharset );
+        new H2toDBF( h2Connection, outputFolder, defaultCharset );
     }
 
 

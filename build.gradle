@@ -20,8 +20,8 @@ repositories {
 
 
 dependencies {
-    compile "com.github.albfernandez:javadbf:1.9.4"
-    compile "com.h2database:h2:1.4.199"
+    compile "com.github.albfernandez:javadbf:1.11.2"
+    compile "com.h2database:h2:1.4.200"
     testCompile 'junit:junit:4.12'
 }
 

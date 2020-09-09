@@ -1,7 +1,6 @@
 package com.dbschema.xbase.schema;
 
-import com.dbschema.xbase.io.DbfLoaderInH2;
-import com.linuxense.javadbf.DBFDataType;
+import com.dbschema.xbase.io.DBFtoH2;
 import com.linuxense.javadbf.DBFField;
 
 import java.sql.Types;
@@ -59,6 +58,7 @@ public class DataTypeUtil {
 
     public static String getH2Type( DBFField field ) {
         switch ( field.getType() ) {
+            case BINARY:
             case DOUBLE:
                 return "double";
             case FLOATING_POINT:
@@ -77,7 +77,6 @@ public class DataTypeUtil {
             case UNKNOWN:
             case BLOB:
             case GENERAL_OLE:
-            case BINARY:
                 return "binary";
             case VARBINARY:
             case NUMERIC:
@@ -107,7 +106,7 @@ public class DataTypeUtil {
         for ( String systemName : H2_SYSTEM_TABLES ){
             if( systemName.equalsIgnoreCase( tableName )) return true;
         }
-        return DbfLoaderInH2.META_TABLE_NAME.equalsIgnoreCase( tableName );
+        return DBFtoH2.META_TABLE_NAME.equalsIgnoreCase( tableName );
     }
 
 }

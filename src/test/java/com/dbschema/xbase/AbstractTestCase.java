@@ -19,7 +19,7 @@ public abstract class AbstractTestCase {
                 { "dbase4" },
                 { "dbase5" },
                 { "clipper5" },
-                { "foxpro26" }
+                    { "foxpro26" }
             };
 
         return Arrays.asList(testParameters);

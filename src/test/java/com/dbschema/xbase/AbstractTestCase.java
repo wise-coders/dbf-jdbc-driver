@@ -13,14 +13,14 @@ public abstract class AbstractTestCase {
     public static Collection<Object[]> data()
     {
         final Object[][] testParameters =
-            new Object[][]
-            {
-                { "dbase3plus" },
-                { "dbase4" },
-                { "dbase5" },
-                { "clipper5" },
-                    { "foxpro26" }
-            };
+                new Object[][]
+                        {
+                                { "dbase3plus" },
+                                { "dbase4" },
+                                { "dbase5" },
+                                { "clipper5" },
+                                { "foxpro26" }
+                        };
 
         return Arrays.asList(testParameters);
     }

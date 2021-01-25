@@ -78,7 +78,7 @@ public class DbfJdbcDriver implements Driver {
         }
     }
 
-    private List<String> h2Databases = new ArrayList<>();
+    private final List<String> h2Databases = new ArrayList<>();
 
 
     private Connection getConnection( String databasePath, String defaultCharset ) throws SQLException {
@@ -121,7 +121,7 @@ public class DbfJdbcDriver implements Driver {
 
 
 
-    class ExtendedDriverPropertyInfo extends DriverPropertyInfo {
+    static class ExtendedDriverPropertyInfo extends DriverPropertyInfo {
         ExtendedDriverPropertyInfo( String name, String value, String[] choices, String description ){
             super( name, value);
             this.description = description;

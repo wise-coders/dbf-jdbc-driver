@@ -10,7 +10,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.ConsoleHandler;
@@ -36,14 +35,11 @@ public class DbfJdbcDriver implements Driver {
     static {
         try {
             DriverManager.registerDriver( new DbfJdbcDriver());
-
-                LOGGER.setLevel(Level.SEVERE);
-                final ConsoleHandler consoleHandler = new ConsoleHandler();
-                consoleHandler.setLevel(Level.FINEST);
-                consoleHandler.setFormatter(new SimpleFormatter());
-
-                LOGGER.setLevel(Level.FINEST);
-                LOGGER.addHandler(consoleHandler);
+            LOGGER.setLevel(Level.FINE);
+            LOGGER.addHandler(
+                    new ConsoleHandler() {
+                        {setOutputStream(System.out);}
+                    });
         } catch ( SQLException ex ){
             ex.printStackTrace();
         }

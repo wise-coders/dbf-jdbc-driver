@@ -2,18 +2,10 @@ package com.dbschema.xbase.schema;
 
 import com.linuxense.javadbf.DBFDataType;
 import com.linuxense.javadbf.DBFField;
-import com.linuxense.javadbf.DBFReader;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-
-import static com.dbschema.xbase.DbfJdbcDriver.LOGGER;
 
 
 /**

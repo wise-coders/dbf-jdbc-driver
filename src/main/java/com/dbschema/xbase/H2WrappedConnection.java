@@ -46,7 +46,7 @@ public class H2WrappedConnection implements Connection {
         DBFtoH2 loader = new DBFtoH2();
         if ( files != null ) {
             for (File file : files) {
-                if (file.isFile() && ( file.getName().toLowerCase().endsWith(".dbf") || file.getName().toLowerCase().endsWith(".cdx"))) {
+                if ( file.isFile() && ( file.getName().toLowerCase().endsWith(".dbf") )) {
                     try ( DBFReader reader = new DBFReader(new FileInputStream(file)) ){
                         final Table table = new Table(rootFolder, file);
                         loader.transfer( table, reader, h2Connection );
@@ -54,6 +54,7 @@ public class H2WrappedConnection implements Connection {
                             defaultCharset = loader.getCharset();
                         }
                     } catch ( Exception ex ){
+                        ex.printStackTrace();
                         throw new SQLException(ex.getLocalizedMessage(), ex );
                     }
                 } else if ( file.isDirectory() ){
@@ -125,7 +126,7 @@ public class H2WrappedConnection implements Connection {
         }
         File outputFolder = new File ( path );
         outputFolder.mkdirs();
-        new H2toDBF( h2Connection, outputFolder, defaultCharset );
+        new H2toDBF(h2Connection, outputFolder, defaultCharset );
     }
 
 

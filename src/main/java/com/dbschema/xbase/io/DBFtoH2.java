@@ -37,7 +37,7 @@ public class DBFtoH2 {
     }
 
     private void transferDefinition(Table table, DBFReader reader, Connection h2Connection ) throws Exception {
-        LOGGER.log(Level.INFO, "Transfer table '" + table.name + "'");
+        LOGGER.log(Level.INFO, "Transfer table '" + table.name + "' definition.");
         final StringBuilder createSb = new StringBuilder("create table ").append(QUOTE_CHAR).append(table.name).append(QUOTE_CHAR).append("(\n");
         final StringBuilder insertSb = new StringBuilder("insert into ").append(QUOTE_CHAR).append(table.name).append(QUOTE_CHAR).append("(");
         final StringBuilder insertValuesSb = new StringBuilder("values(");
@@ -48,7 +48,6 @@ public class DBFtoH2 {
             final DBFField field = reader.getField(i);
             saveFieldInMetaTable(h2Connection, table, field);
             table.addField(field);
-            LOGGER.log(Level.INFO, "Column " + field );
             if (appendComma) {
                 createSb.append(",\n");
                 insertSb.append(",");
@@ -80,23 +79,45 @@ public class DBFtoH2 {
 
     private void transferData(Table table, DBFReader reader, Connection h2Connection  ) throws Exception {
         final PreparedStatement stInsert = h2Connection.prepareStatement(insertSql);
+        LOGGER.info("Transfer '" + table.name + "' data...");
         Object[] record;
+        int pos = 0, pendingInsert = 0, pendingCommit = 0;
         while( ( record = reader.nextRecord()) != null ){
 
-            for ( int i = 0; i < record.length && i < table.fields.size(); i++ ){
-                Object value = record[i];
-                DBFField field = table.fields.get( i );
-                if (value != null) {
-                    stInsert.setObject(i+1, value);
-                } else {
-                    stInsert.setNull(i+1, DataTypeUtil.getJavaType( field));
+            try {
+                for (int i = 0; i < record.length && i < table.fields.size(); i++) {
+                    Object value = record[i];
+                    DBFField field = table.fields.get(i);
+                    if (value == null) {
+                        stInsert.setNull(i + 1, DataTypeUtil.getJavaType(field));
+                    } else {
+                        stInsert.setObject(i + 1, value);
+                    }
+                }
+            } catch ( Exception ex ){
+                LOGGER.log(Level.SEVERE, ex.toString());
+                LOGGER.log(Level.SEVERE, stInsert.toString());
+                throw ex;
+            }
+            stInsert.addBatch();
+            h2Connection.commit();
+            pos++;
+            pendingInsert++;
+            pendingCommit++;
+            if ( pendingInsert > 300 ){
+                stInsert.executeBatch();
+                pendingInsert = 0;
+                if ( pendingCommit > 10000 ){
+                    h2Connection.commit();
+                    pendingCommit = 0;
+                    LOGGER.info("Transfer '" + table.name + "' data " + pos + " records.");
                 }
             }
-            LOGGER.log(Level.INFO, stInsert.toString());
-
-            stInsert.execute();
-            h2Connection.commit();
         }
+        if ( pendingInsert > 0 ) {
+            stInsert.executeBatch();
+        }
+        h2Connection.commit();
     }
 
     private static final String CREATE_META_TABLE =

@@ -1,8 +1,8 @@
 package com.dbschema.xbase.io;
 
 
-import com.dbschema.xbase.schema.Db;
 import com.dbschema.xbase.schema.DataTypeUtil;
+import com.dbschema.xbase.schema.Db;
 import com.dbschema.xbase.schema.Table;
 import com.linuxense.javadbf.DBFWriter;
 

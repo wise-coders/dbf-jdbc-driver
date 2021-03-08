@@ -12,10 +12,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+import java.util.logging.*;
 
 /**
  * Copyright DbSchema@Wise Coders GmbH. All rights reserved.
@@ -35,12 +32,13 @@ public class DbfJdbcDriver implements Driver {
     static {
         try {
             DriverManager.registerDriver( new DbfJdbcDriver());
-            LOGGER.setLevel(Level.FINE);
+            LOGGER.setLevel(Level.ALL);
             LOGGER.addHandler(
                     new ConsoleHandler() {
                         {setOutputStream(System.out);}
                     });
-        } catch ( SQLException ex ){
+            LOGGER.addHandler(new FileHandler( System.getProperty("user.home") +"/.DbSchema/logs/DbfJdbcDriver.log"));
+        } catch ( Exception ex ){
             ex.printStackTrace();
         }
     }

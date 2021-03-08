@@ -80,7 +80,7 @@ public class DataTypeUtil {
                 return "binary";
             case VARBINARY:
             case NUMERIC:
-                return "decimal(" + field.getLength() + "," + field.getDecimalCount() + ")";
+                return "decimal(" + ( field.getLength() + field.getDecimalCount() ) + "," + field.getDecimalCount() + ")";
             case LONG:
                 return "bigint";
             case CURRENCY:

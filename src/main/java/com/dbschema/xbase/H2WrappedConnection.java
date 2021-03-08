@@ -15,6 +15,7 @@ import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
+import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,16 +47,18 @@ public class H2WrappedConnection implements Connection {
         DBFtoH2 loader = new DBFtoH2();
         if ( files != null ) {
             for (File file : files) {
-                if ( file.isFile() && ( file.getName().toLowerCase().endsWith(".dbf") )) {
-                    try ( DBFReader reader = new DBFReader(new FileInputStream(file)) ){
-                        final Table table = new Table(rootFolder, file);
-                        loader.transfer( table, reader, h2Connection );
-                        if ( defaultCharset == null ){
-                            defaultCharset = loader.getCharset();
+                if ( file.isFile() ){
+                    if ( file.getName().toLowerCase().endsWith(".dbf") ) {
+                        try ( DBFReader reader = new DBFReader( new FileInputStream(file))) {
+                            final Table table = new Table(rootFolder, file);
+                            loader.transfer( table, reader, h2Connection );
+                            if (defaultCharset == null) {
+                                defaultCharset = loader.getCharset();
+                            }
+                        } catch (Exception ex) {
+                            LOGGER.log(Level.SEVERE, "Error transferring " + file, ex);
+                            throw new SQLException(ex.getLocalizedMessage(), ex);
                         }
-                    } catch ( Exception ex ){
-                        ex.printStackTrace();
-                        throw new SQLException(ex.getLocalizedMessage(), ex );
                     }
                 } else if ( file.isDirectory() ){
                     transferFolder( file, rootFolder, h2Connection );

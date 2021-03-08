@@ -129,8 +129,10 @@ public class DBFtoH2 {
                     "decimal int not null, " +
                     "primary key (table_name, column_name))";
 
+
     private void createH2MetaTable( Connection h2Connection ) throws SQLException {
         final Statement st = h2Connection.createStatement();
+        LOGGER.log(Level.INFO, CREATE_META_TABLE );
         st.execute( CREATE_META_TABLE );
         st.close();
         h2Connection.commit();
@@ -141,12 +143,18 @@ public class DBFtoH2 {
 
     private void dropH2MetaTable( Connection h2Connection ) throws SQLException {
         final Statement st = h2Connection.createStatement();
+        LOGGER.log( Level.INFO,"Execute: " + DROP_META_TABLE );
         st.execute( DROP_META_TABLE );
         st.close();
         h2Connection.commit();
     }
 
     private void saveFieldInMetaTable( Connection h2Connection, Table table, DBFField field) throws SQLException {
+        LOGGER.log( Level.INFO, "DBF Table:" + table.name +
+                " Field:" + field.getName() +
+                " Type:" + field.getType().name() +
+                " Length: " + field.getLength() +
+                " Decimal: " + field.getDecimalCount() );
         final PreparedStatement st = h2Connection.prepareStatement( INSERT_INTO_META_TABLE);
         st.setString( 1, table.name);
         st.setString( 2, field.getName() );

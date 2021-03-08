@@ -23,7 +23,7 @@ import static com.dbschema.xbase.DbfJdbcDriver.LOGGER;
 public class H2toDBF {
 
 
-    public H2toDBF(Connection h2Connection, File outputFolder, String charset ) throws Exception {
+    public H2toDBF( final Connection h2Connection, final File outputFolder, final String charset ) throws Exception {
 
         Db db = new Db();
 

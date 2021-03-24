@@ -20,6 +20,7 @@ import static com.dbschema.xbase.DbfJdbcDriver.LOGGER;
 public class DBFtoH2 {
 
     private String insertSql;
+    private int batchSize = 400, commitSize = 100000;
     private String charset;
 
     private final static char QUOTE_CHAR = '"';
@@ -41,11 +42,14 @@ public class DBFtoH2 {
         final StringBuilder createSb = new StringBuilder("create table ").append(QUOTE_CHAR).append(table.name).append(QUOTE_CHAR).append("(\n");
         final StringBuilder insertSb = new StringBuilder("insert into ").append(QUOTE_CHAR).append(table.name).append(QUOTE_CHAR).append("(");
         final StringBuilder insertValuesSb = new StringBuilder("values(");
+        final StringBuilder dbfInfo = new StringBuilder();
+        dbfInfo.append("Table ").append( table.name ).append( "\n" );
         boolean appendComma = false;
         int numberOfFields = reader.getFieldCount();
         for (int i = 0; i < numberOfFields; i++) {
 
             final DBFField field = reader.getField(i);
+            dbfInfo.append( "\t").append( getFieldDescription( field )).append(" \n");
             saveFieldInMetaTable(h2Connection, table, field);
             table.addField(field);
             if (appendComma) {
@@ -63,6 +67,8 @@ public class DBFtoH2 {
         insertSb.append(")");
         insertValuesSb.append(")");
 
+        LOGGER.log(Level.INFO, "Transfer "  + dbfInfo );
+
         String dropTableSQL = "drop table if exists " + QUOTE_CHAR + table.name + QUOTE_CHAR;
         LOGGER.log(Level.INFO, dropTableSQL);
         h2Connection.prepareStatement(dropTableSQL).execute();
@@ -74,14 +80,22 @@ public class DBFtoH2 {
         h2Connection.commit();
 
         this.insertSql = insertSb.toString() + insertValuesSb.toString();
+        batchSize = getChunk( 400, numberOfFields );
+        commitSize = getChunk( 4000, numberOfFields );
     }
+
+
+    private int getChunk( int maxChunkSize, int numberOfFields ){
+        return maxChunkSize - 9 * Math.min( numberOfFields, maxChunkSize/10 );
+    }
+
 
 
     private void transferData(Table table, DBFReader reader, Connection h2Connection  ) throws Exception {
         final PreparedStatement stInsert = h2Connection.prepareStatement(insertSql);
         LOGGER.info("Transfer '" + table.name + "' data...");
         Object[] record;
-        int pos = 0, pendingInsert = 0, pendingCommit = 0;
+        int pos = 0, pendingBatch = 0, pendingCommit = 0;
         while( ( record = reader.nextRecord()) != null ){
 
             try {
@@ -102,19 +116,19 @@ public class DBFtoH2 {
             stInsert.addBatch();
             h2Connection.commit();
             pos++;
-            pendingInsert++;
+            pendingBatch++;
             pendingCommit++;
-            if ( pendingInsert > 300 ){
+            if ( pendingBatch > batchSize ){
                 stInsert.executeBatch();
-                pendingInsert = 0;
-                if ( pendingCommit > 10000 ){
+                pendingBatch = 0;
+                if ( pendingCommit > commitSize ){
                     h2Connection.commit();
                     pendingCommit = 0;
                     LOGGER.info("Transfer '" + table.name + "' data " + pos + " records.");
                 }
             }
         }
-        if ( pendingInsert > 0 ) {
+        if ( pendingBatch > 0 ) {
             stInsert.executeBatch();
         }
         h2Connection.commit();
@@ -149,12 +163,14 @@ public class DBFtoH2 {
         h2Connection.commit();
     }
 
+    private String getFieldDescription(DBFField field) {
+        return  field.getName() + " " +
+                field.getType().name() + "(" +
+                field.getLength() + "," +
+                field.getDecimalCount() + ")";
+    }
+
     private void saveFieldInMetaTable( Connection h2Connection, Table table, DBFField field) throws SQLException {
-        LOGGER.log( Level.INFO, "DBF Table:" + table.name +
-                " Field:" + field.getName() +
-                " Type:" + field.getType().name() +
-                " Length: " + field.getLength() +
-                " Decimal: " + field.getDecimalCount() );
         final PreparedStatement st = h2Connection.prepareStatement( INSERT_INTO_META_TABLE);
         st.setString( 1, table.name);
         st.setString( 2, field.getName() );

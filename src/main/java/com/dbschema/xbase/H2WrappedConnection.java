@@ -107,8 +107,10 @@ public class H2WrappedConnection implements Connection {
                 try {
                     saveDbf(matcher.group(5));
                 } catch ( SQLException ex ){
+                    ex.printStackTrace();
                     throw ex;
                 } catch ( Exception ex ){
+                    ex.printStackTrace();
                     throw new SQLException( ex.getLocalizedMessage(), ex );
                 }
                 args= new String[]{""};

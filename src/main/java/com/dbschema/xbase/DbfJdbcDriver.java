@@ -37,7 +37,9 @@ public class DbfJdbcDriver implements Driver {
                     new ConsoleHandler() {
                         {setOutputStream(System.out);}
                     });
-            LOGGER.addHandler(new FileHandler( System.getProperty("user.home") +"/.DbSchema/logs/DbfJdbcDriver.log"));
+            final FileHandler fileHandler = new FileHandler(System.getProperty("user.home") + "/.DbSchema/logs/DbfJdbcDriver.log");
+            fileHandler.setFormatter( new SimpleFormatter());
+            LOGGER.addHandler(fileHandler);
         } catch ( Exception ex ){
             ex.printStackTrace();
         }

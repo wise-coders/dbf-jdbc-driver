@@ -15,7 +15,7 @@ Generated using [DbSchema](https://dbschema.com)
 | *🔑 | <a name='testone.admin_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.admin_usuario'>usuario</a>| varchar&#40;20&#41;  |
 |  | <a name='testone.admin_senha'>senha</a>| varchar&#40;20&#41;  |
-| Indexes |
+| Indexes ||
 | 🔑 | pk&#95;admin || ON id|
 
 

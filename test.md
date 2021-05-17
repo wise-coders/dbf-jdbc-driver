@@ -2755,23 +2755,9 @@ Some comment added today
 |  | fk_film_language | ( language&#95;id ) ref [sakila&#46;language](#language) (language&#95;id) |  |
 |  | fk_film_language_original | ( original&#95;language&#95;id ) ref [sakila&#46;language](#language) (language&#95;id) |  |
 | Triggers |
-|  | del_film | <pre>CREATE TRIGGER sakila&#46;del&#95;film AFTER DELETE ON film FOR EACH ROW BEGIN
-    DELETE FROM film&#95;text WHERE film&#95;id &#61; old&#46;film&#95;id&#59;
-  END&#59;</pre> |
-|  | ins_film | <pre>CREATE TRIGGER sakila&#46;ins&#95;film AFTER INSERT ON film FOR EACH ROW BEGIN
-    INSERT INTO film&#95;text &#40;film&#95;id&#44; title&#44; description&#41;
-        VALUES &#40;new&#46;film&#95;id&#44; new&#46;title&#44; new&#46;description&#41;&#59;
-  END&#59;</pre> |
-|  | upd_film | <pre>CREATE TRIGGER sakila&#46;upd&#95;film AFTER UPDATE ON film FOR EACH ROW BEGIN
-    IF &#40;old&#46;title &#33;&#61; new&#46;title&#41; or &#40;old&#46;description &#33;&#61; new&#46;description&#41;
-    THEN
-        UPDATE film&#95;text
-            SET title&#61;new&#46;title&#44;
-                description&#61;new&#46;description&#44;
-                film&#95;id&#61;new&#46;film&#95;id
-        WHERE film&#95;id&#61;old&#46;film&#95;id&#59;
-    END IF&#59;
-  END&#59;</pre> |
+|  | del_film | <pre>CREATE TRIGGER sakila&#46;del&#95;film AFTER DELETE ON film FOR EACH ROW BEGIN<br>    DELETE FROM film&#95;text WHERE film&#95;id &#61; old&#46;film&#95;id&#59;<br>  END&#59;</pre> |
+|  | ins_film | <pre>CREATE TRIGGER sakila&#46;ins&#95;film AFTER INSERT ON film FOR EACH ROW BEGIN<br>    INSERT INTO film&#95;text &#40;film&#95;id&#44; title&#44; description&#41;<br>        VALUES &#40;new&#46;film&#95;id&#44; new&#46;title&#44; new&#46;description&#41;&#59;<br>  END&#59;</pre> |
+|  | upd_film | <pre>CREATE TRIGGER sakila&#46;upd&#95;film AFTER UPDATE ON film FOR EACH ROW BEGIN<br>    IF &#40;old&#46;title &#33;&#61; new&#46;title&#41; or &#40;old&#46;description &#33;&#61; new&#46;description&#41;<br>    THEN<br>        UPDATE film&#95;text<br>            SET title&#61;new&#46;title&#44;<br>                description&#61;new&#46;description&#44;<br>                film&#95;id&#61;new&#46;film&#95;id<br>        WHERE film&#95;id&#61;old&#46;film&#95;id&#59;<br>    END IF&#59;<br>  END&#59;</pre> |
 
 
 ### Table film_actor 
@@ -3876,10 +3862,10 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 ## Schema sakila
 | Functions | Description|
 |---|---|
-| get&#95;customer&#95;balance |  |
-| hello |  |
-| inventory&#95;held&#95;by&#95;customer |  |
-| inventory&#95;in&#95;stock |  |
+| get&#95;customer&#95;balance | <pre>  </pre> |
+| hello | <pre>  </pre> |
+| inventory&#95;held&#95;by&#95;customer | <pre>  </pre> |
+| inventory&#95;in&#95;stock | <pre>  </pre> |
 | Procedures | Description |
 |---|---|
 | citycount |  |

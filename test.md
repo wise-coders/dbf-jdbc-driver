@@ -6,7 +6,9 @@ Generated using [DbSchema](https://dbschema.com)
 1. [Layout with Tools](#layout1)
 2. [sakila](#layout2)
 3. [testone](#layout3)
+
 ##Tables
+
 [sakila.actor](#sakila.actor)  (  [2](2) )
 [sakila.address](#sakila.address)  (  [2](2) )
 [sakila.alexa](#sakila.alexa)  (  [2](2) )
@@ -268,6 +270,7 @@ Generated using [DbSchema](https://dbschema.com)
 [testone.wth_wind](#testone.wth_wind)  (  [1](1)  [3](3) )
 
 ##Views
+
 [sakila.actor_info](#sakila.actor_info)  (  [2](2) )
 [sakila.customer_list](#sakila.customer_list)  (  [2](2) )
 [sakila.film_list](#sakila.film_list)  (  [2](2) )
@@ -293,7 +296,7 @@ Generated using [DbSchema](https://dbschema.com)
 | *🔑 | <a name='testone.admin_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.admin_usuario'>usuario</a>| varchar&#40;20&#41;  |
 |  | <a name='testone.admin_senha'>senha</a>| varchar&#40;20&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;admin || ON id|
 
 
@@ -306,7 +309,7 @@ Generated using [DbSchema](https://dbschema.com)
 |  | <a name='testone.alunos_ENDERECO_ALUNO'>ENDERECO&#95;ALUNO</a>| varchar&#40;30&#41;  |
 |  | <a name='testone.alunos_CIDADE_ALUNO'>CIDADE&#95;ALUNO</a>| varchar&#40;20&#41;  DEFAULT 'Rio de Janeiro' |
 |  | <a name='testone.alunos_UF'>UF</a>| char&#40;2&#41;  DEFAULT 'RJ' |
-| Indexes 
+| Indexes | | |
 | 🔑 | pk&#95;alunos || ON MATRICULA|
 
 
@@ -317,7 +320,7 @@ Generated using [DbSchema](https://dbschema.com)
 | *| <a name='testone.autor_version'>version</a>| bigint  |
 | *| <a name='testone.autor_nascimento'>nascimento</a>| datetime  |
 | *| <a name='testone.autor_nome'>nome</a>| varchar&#40;255&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;autor || ON id|
 
 
@@ -330,7 +333,7 @@ Generated using [DbSchema](https://dbschema.com)
 | *| <a name='testone.bin185_statistics_age'>age</a>| smallint  |
 | *| <a name='testone.bin185_statistics_last_scared'>last&#95;scared</a>| date  |
 | *| <a name='testone.bin185_statistics_braveness'>braveness</a>| float&#40;12&#44;0&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;bin185&#95;statistics || ON bin185&#95;statistics&#95;id|
 
 
@@ -340,7 +343,7 @@ Generated using [DbSchema](https://dbschema.com)
 | *🔑 | <a name='testone.books_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.books_title'>title</a>| varchar&#40;255&#41;  DEFAULT '' |
 | *| <a name='testone.books_author'>author</a>| varchar&#40;255&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;books || ON id|
 
 
@@ -351,11 +354,11 @@ Generated using [DbSchema](https://dbschema.com)
 | *🔎 ⬈ | <a name='testone.campi_universities_id'>universities&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.campi_geo_cities_br_id'>geo&#95;cities&#95;br&#95;id</a>| bigint  |
 | *| <a name='testone.campi_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;campi || ON campi&#95;id|
 | 🔎  | campi&#95;city&#95;br&#95;fk || ON geo&#95;cities&#95;br&#95;id|
 | 🔎  | campi&#95;university&#95;fk || ON universities&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | campi_city_br_fk | ( geo&#95;cities&#95;br&#95;id ) ref [testone&#46;geo&#95;cities&#95;br](#geo&#95;cities&#95;br) (geo&#95;cities&#95;br&#95;id) |
 |  | campi_university_fk | ( universities&#95;id ) ref [testone&#46;universities](#universities) (universities&#95;id) |
 
@@ -365,7 +368,7 @@ Generated using [DbSchema](https://dbschema.com)
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.categorias_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.categorias_nome'>nome</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;categorias || ON id|
 
 
@@ -375,10 +378,10 @@ Generated using [DbSchema](https://dbschema.com)
 | *🔑 ⬋ | <a name='testone.classrooms_classrooms_id'>classrooms&#95;id</a>| bigint AUTO_INCREMENT |
 | *🔎 ⬈ | <a name='testone.classrooms_campi_id'>campi&#95;id</a>| bigint  |
 | *| <a name='testone.classrooms_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;classrooms || ON classrooms&#95;id|
 | 🔎  | classrooms&#95;campus&#95;fk || ON campi&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | classrooms_campus_fk | ( campi&#95;id ) ref [testone&#46;campi](#campi) (campi&#95;id) |
 
 
@@ -394,11 +397,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.cliente_gender'>gender</a>| varchar&#40;1&#41;  DEFAULT '' |  |
 | 🔎 ⬈ | <a name='testone.cliente_endereco_fk'>endereco&#95;fk</a>| bigint  |  |
 | 🔎 ⬈ | <a name='testone.cliente_login_fk'>login&#95;fk</a>| bigint  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;cliente || ON id |  |
 | 🔎  | cliente&#95;endereco&#95;fk || ON endereco&#95;fk |  |
 | 🔎  | cliente&#95;login&#95;fk || ON login&#95;fk |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | cliente_endereco_fk | ( endereco&#95;fk ) ref [testone&#46;endereco](#endereco) (id) |  |
 |  | fk_cliente | ( login&#95;fk ) ref [testone&#46;login](#login) (id) |  |
 
@@ -409,7 +412,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.contas_grupos_id'>id</a>| int AUTO_INCREMENT |
 | *| <a name='testone.contas_grupos_nome'>nome</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.contas_grupos_obs'>obs</a>| varchar&#40;200&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;grupos || ON id|
 
 
@@ -420,7 +423,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.contas_receita_descricao'>descricao</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.contas_receita_obs'>obs</a>| varchar&#40;200&#41;  |
 | 🔎 | <a name='testone.contas_receita_fk_grupos'>fk&#95;grupos</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;receita || ON id|
 | 🔎  | idx&#95;contas&#95;receita || ON fk&#95;grupos|
 
@@ -431,7 +434,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.contas_tipodoc_id'>id</a>| int AUTO_INCREMENT |
 | *| <a name='testone.contas_tipodoc_sigla'>sigla</a>| varchar&#40;2&#41;  |
 |  | <a name='testone.contas_tipodoc_descricao'>descricao</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;tipodoc || ON id|
 
 
@@ -448,7 +451,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | 🔎 | <a name='testone.contas_usuario_fk_responsavel'>fk&#95;responsavel</a>| int  |  |
 |  | <a name='testone.contas_usuario_obs'>obs</a>| varchar&#40;2000&#41;  |  |
 | *| <a name='testone.contas_usuario_data'>data</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;usuario || ON id |  |
 | 🔎  | idx&#95;contas&#95;usuario || ON fk&#95;responsavel |  |
 
@@ -468,7 +471,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | 🔎 | <a name='testone.contas_vendas_fk_pagante'>fk&#95;pagante</a>| int  |  |
 | 🔎 | <a name='testone.contas_vendas_fk_pagador'>fk&#95;pagador</a>| int  |  |
 | 🔎 | <a name='testone.contas_vendas_fk_contas_receitas'>fk&#95;contas&#95;receitas</a>| int  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;vendas || ON id |  |
 | 🔎  | idx&#95;contas&#95;vendas || ON fk&#95;pagante |  |
 | 🔎  | idx&#95;contas&#95;vendas&#95;0 || ON fk&#95;pagador |  |
@@ -484,7 +487,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.contatcts_telephone'>telephone</a>| varchar&#40;15&#41;  |
 |  | <a name='testone.contatcts_email'>email</a>| varchar&#40;30&#41;  |
 | *| <a name='testone.contatcts_created'>created</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contatcts || ON id|
 
 
@@ -493,7 +496,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.counter_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.counter_count'>count</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;counter || ON id|
 
 
@@ -507,13 +510,13 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.courses_gen_schedules_id'>gen&#95;schedules&#95;id</a>| bigint  |
 | *| <a name='testone.courses_acronym'>acronym</a>| varchar&#40;6&#41;  DEFAULT '' |
 | *| <a name='testone.courses_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;courses || ON courses&#95;id|
 | 🔎  | idx&#95;courses || ON gen&#95;schedules&#95;id|
 | 🔎  | idx&#95;courses&#95;0 || ON classrooms&#95;id|
 | 🔎  | idx&#95;courses&#95;1 || ON departments&#95;id|
 | 🔎  | idx&#95;courses&#95;2 || ON gen&#95;events&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_courses_classrooms | ( classrooms&#95;id ) ref [testone&#46;classrooms](#classrooms) (classrooms&#95;id) |
 |  | fk_courses_departments | ( departments&#95;id ) ref [testone&#46;departments](#departments) (departments&#95;id) |
 |  | fk_courses_events | ( gen&#95;events&#95;id ) ref [testone&#46;gen&#95;events](#gen&#95;events) (gen&#95;events&#95;id) |
@@ -526,11 +529,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬈ | <a name='testone.courses_pupils_pupils_id'>pupils&#95;id</a>| bigint AUTO_INCREMENT |  |
 | *🔑 ⬈ | <a name='testone.courses_pupils_courses_id'>courses&#95;id</a>| bigint  |  |
 | *| <a name='testone.courses_pupils_registration_date'>registration&#95;date</a>| timestamp  DEFAULT CURRENT_TIMESTAMP | pupil&#39;s registration date on a course |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;courses&#95;pupils || ON pupils&#95;id&#44; courses&#95;id |  |
 | 🔎  | courses&#95;pupils&#95;pupil&#95;fk || ON pupils&#95;id |  |
 | 🔎  | idx&#95;courses&#95;pupils || ON courses&#95;id |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_courses_pupils_courses | ( courses&#95;id ) ref [testone&#46;courses](#courses) (courses&#95;id) |  |
 |  | courses_pupils_pupil_fk | ( pupils&#95;id ) ref [testone&#46;pupils](#pupils) (pupils&#95;id) |  |
 
@@ -544,12 +547,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.cursos_PRECO'>PRECO</a>| int  DEFAULT 0 |
 | 🔎 ⬈ | <a name='testone.cursos_PRE_REQUISITO'>PRE&#95;REQUISITO</a>| int  |
 | 🔎 ⬈ | <a name='testone.cursos_NIVEL_FK'>NIVEL&#95;FK</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;cursos || ON COD&#95;CURSO|
 | 🔍  | SYS&#95;C005803 || ON NOME&#95;CURSO|
 | 🔎  | CURSOS&#95;NIVEL&#95;FK || ON NIVEL&#95;FK|
 | 🔎  | CURSOS&#95;PRE&#95;REQUISITO || ON PRE&#95;REQUISITO|
-| Foreign Keys 
+| Foreign Keys |
 |  | CURSOS_PRE_REQUISITO | ( PRE&#95;REQUISITO ) ref [testone&#46;cursos](#cursos) (COD&#95;CURSO) |
 |  | CURSOS_NIVEL_FK | ( NIVEL&#95;FK ) ref [testone&#46;niveis](#niveis) (COD&#95;NIVEL) |
 
@@ -560,10 +563,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.departments_departments_id'>departments&#95;id</a>| bigint AUTO_INCREMENT |
 | 🔎 ⬈ | <a name='testone.departments_campi_id'>campi&#95;id</a>| bigint  |
 | *| <a name='testone.departments_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;departments || ON departments&#95;id|
 | 🔎  | departments&#95;campus&#95;fk || ON campi&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | departments_campus_fk | ( campi&#95;id ) ref [testone&#46;campi](#campi) (campi&#95;id) |
 
 
@@ -576,12 +579,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.developer_DOC'>DOC</a>| varchar&#40;50&#41;  |
 | *🔎 | <a name='testone.developer_PRJROLE'>PRJROLE</a>| int  |
 |  | <a name='testone.developer_starttime'>starttime</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;developer || ON ID|
 | 🔍  | fk&#95;developer&#95;developer || ON manager|
 | 🔍  | NAME || ON NAME|
 | 🔎  | FK&#95;DEVELOPER&#95;PRJROLE || ON PRJROLE|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_developer_developer | ( manager ) ref [testone&#46;developer](#developer) (ID) |
 
 
@@ -594,7 +597,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.end_entrega_cidade'>cidade</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.end_entrega_estado'>estado</a>| varchar&#40;2&#41;  |
 |  | <a name='testone.end_entrega_cep'>cep</a>| varchar&#40;9&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;end&#95;entrega || ON id|
 
 
@@ -608,7 +611,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.endereco_cidade'>cidade</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.endereco_estado'>estado</a>| varchar&#40;2&#41;  DEFAULT '' |
 | *| <a name='testone.endereco_cep'>cep</a>| varchar&#40;9&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;endereco || ON id|
 
 
@@ -620,10 +623,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.eshop_books_author'>author</a>| varchar&#40;70&#41;  |
 |  | <a name='testone.eshop_books_price'>price</a>| decimal&#40;7&#44;2&#41;  |
 | 🔎 ⬈ | <a name='testone.eshop_books_category_id'>category&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;books || ON book&#95;id|
 | 🔎  | eshop&#95;category&#95;fk || ON category&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | eshop_category_fk | ( category&#95;id ) ref [testone&#46;eshop&#95;categories](#eshop&#95;categories) (category&#95;id) |
 
 
@@ -632,7 +635,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.eshop_categories_category_id'>category&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.eshop_categories_category_name'>category&#95;name</a>| varchar&#40;70&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;categories || ON category&#95;id|
 
 
@@ -644,7 +647,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.eshop_client_cc_name'>cc&#95;name</a>| varchar&#40;30&#41;  DEFAULT '' |
 | *| <a name='testone.eshop_client_cc_number'>cc&#95;number</a>| varchar&#40;19&#41;  DEFAULT '' |
 | *| <a name='testone.eshop_client_cc_expiration'>cc&#95;expiration</a>| varchar&#40;22&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;client || ON client&#95;id|
 
 
@@ -658,10 +661,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.eshop_order_details_quantity'>quantity</a>| int  |
 |  | <a name='testone.eshop_order_details_price'>price</a>| decimal&#40;7&#44;2&#41;  |
 | *🔍 ⬈ | <a name='testone.eshop_order_details_order_id'>order&#95;id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;order&#95;details || ON order&#95;detail&#95;id|
 | 🔍  | order&#95;id || ON order&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | eshop_order_details_fk | ( order&#95;id ) ref [testone&#46;eshop&#95;orders](#eshop&#95;orders) (order&#95;id) |
 
 
@@ -672,10 +675,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.eshop_orders_delivery_name'>delivery&#95;name</a>| varchar&#40;70&#41;  |
 |  | <a name='testone.eshop_orders_delivery_address'>delivery&#95;address</a>| varchar&#40;70&#41;  |
 | *🔎 ⬈ | <a name='testone.eshop_orders_client_id'>client&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;orders || ON order&#95;id|
 | 🔎  | idx&#95;eshop&#95;orders || ON client&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_eshop_orders | ( client&#95;id ) ref [testone&#46;eshop&#95;client](#eshop&#95;client) (client&#95;id) |
 
 
@@ -686,7 +689,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.faixas_DESCRICAO'>DESCRICAO</a>| varchar&#40;60&#41;  DEFAULT '' |
 | *| <a name='testone.faixas_MINIMO'>MINIMO</a>| int  |
 | *| <a name='testone.faixas_MAXIMO'>MAXIMO</a>| int  |
-| Indexes 
+| Indexes |
 | 🔍  | COD&#95;FAIXA || ON COD&#95;FAIXA|
 
 
@@ -695,7 +698,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.gen_actions_gen_actions_id'>gen&#95;actions&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_actions_description'>description</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;actions || ON gen&#95;actions&#95;id|
 
 
@@ -707,11 +710,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.gen_addresses_name'>name</a>| varchar&#40;200&#41;  | Name or description&#46;nFor instance&#44; street&#44; avenue&#44; square&#44; etc&#46; |
 | 🔎 ⬈ | <a name='testone.gen_addresses_geo_cities_id'>geo&#95;cities&#95;id</a>| bigint  |  |
 | 🔎 ⬈ | <a name='testone.gen_addresses_geo_cities_br_id'>geo&#95;cities&#95;br&#95;id</a>| bigint  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;addresses || ON gen&#95;addresses&#95;id |  |
 | 🔎  | fk&#95;gen&#95;addresses&#95;0 || ON geo&#95;cities&#95;id |  |
 | 🔎  | idx&#95;gen&#95;addresses || ON geo&#95;cities&#95;br&#95;id |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_gen_addresses_0 | ( geo&#95;cities&#95;id ) ref [testone&#46;geo&#95;cities](#geo&#95;cities) (geo&#95;cities&#95;id) |  |
 |  | fk_gen_addresses | ( geo&#95;cities&#95;br&#95;id ) ref [testone&#46;geo&#95;cities&#95;br](#geo&#95;cities&#95;br) (geo&#95;cities&#95;br&#95;id) |  |
 
@@ -721,7 +724,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.gen_addresses_types_gen_addresses_types_id'>gen&#95;addresses&#95;types&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_addresses_types_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;addresses&#95;types || ON gen&#95;addresses&#95;types&#95;id|
 
 
@@ -732,11 +735,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.gen_companies_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.gen_companies_gen_addresses_id'>gen&#95;addresses&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.gen_companies_gen_companies_types_id'>gen&#95;companies&#95;types&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;companies || ON gen&#95;companies&#95;id|
 | 🔎  | idx&#95;companies&#95;addresses || ON gen&#95;addresses&#95;id|
 | 🔎  | idx&#95;gen&#95;companies || ON gen&#95;companies&#95;types&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_companies_addresses | ( gen&#95;addresses&#95;id ) ref [testone&#46;gen&#95;addresses](#gen&#95;addresses) (gen&#95;addresses&#95;id) |
 |  | fk_gen_companies | ( gen&#95;companies&#95;types&#95;id ) ref [testone&#46;gen&#95;companies&#95;types](#gen&#95;companies&#95;types) (gen&#95;companies&#95;types&#95;id) |
 
@@ -746,7 +749,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.gen_companies_types_gen_companies_types_id'>gen&#95;companies&#95;types&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_companies_types_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;companies&#95;types || ON gen&#95;companies&#95;types&#95;id|
 
 
@@ -756,11 +759,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬈ | <a name='testone.gen_company_owners_gen_company_owners_id'>gen&#95;company&#95;owners&#95;id</a>| bigint AUTO_INCREMENT |
 | 🔎 ⬈ | <a name='testone.gen_company_owners_gen_companies_id'>gen&#95;companies&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.gen_company_owners_ownership_types_id'>ownership&#95;types&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;company&#95;owners || ON gen&#95;company&#95;owners&#95;id|
 | 🔎  | fk&#95;gen&#95;company&#95;owners&#95;0 || ON gen&#95;companies&#95;id|
 | 🔎  | idx&#95;gen&#95;company&#95;owners&#95;1 || ON ownership&#95;types&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_gen_company_owners_0 | ( gen&#95;companies&#95;id ) ref [testone&#46;gen&#95;companies](#gen&#95;companies) (gen&#95;companies&#95;id) |
 |  | fk_gen_company_owners | ( gen&#95;company&#95;owners&#95;id ) ref [testone&#46;gen&#95;entities](#gen&#95;entities) (gen&#95;entities&#95;id) |
 |  | fk_gen_company_owners_1 | ( ownership&#95;types&#95;id ) ref [testone&#46;ownership&#95;types](#ownership&#95;types) (ownership&#95;types&#95;id) |
@@ -773,9 +776,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.gen_docs_type'>type</a>| varchar&#40;30&#41;  |
 |  | <a name='testone.gen_docs_number'>number</a>| varchar&#40;30&#41;  |
 | *| <a name='testone.gen_docs_date_'>date&#95;</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;docs || ON gen&#95;docs&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_gen_docs | ( gen&#95;docs&#95;id ) ref [testone&#46;gen&#95;persons](#gen&#95;persons) (gen&#95;docs&#95;id) |
 
 
@@ -785,11 +788,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 ⬋ | <a name='testone.gen_entities_gen_entities_id'>gen&#95;entities&#95;id</a>| bigint AUTO_INCREMENT |
 | 🔎 ⬈ | <a name='testone.gen_entities_gen_persons_id'>gen&#95;persons&#95;id</a>| bigint  DEFAULT 0 |
 | 🔎 ⬈ | <a name='testone.gen_entities_gen_companies_id'>gen&#95;companies&#95;id</a>| bigint  DEFAULT 0 |
-| Indexes 
+| Indexes |
 | 🔍  | pk&#95;entities || ON gen&#95;entities&#95;id|
 | 🔎  | idx&#95;entities || ON gen&#95;companies&#95;id|
 | 🔎  | idx&#95;entities&#95;0 || ON gen&#95;persons&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_entities_companies | ( gen&#95;companies&#95;id ) ref [testone&#46;gen&#95;companies](#gen&#95;companies) (gen&#95;companies&#95;id) |
 |  | fk_entities_persons | ( gen&#95;persons&#95;id ) ref [testone&#46;gen&#95;persons](#gen&#95;persons) (gen&#95;persons&#95;id) |
 
@@ -803,12 +806,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.gen_events_gen_schedules_id'>gen&#95;schedules&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.gen_events_gen_addresses_id'>gen&#95;addresses&#95;id</a>| bigint  |
 | 🔎 ⬈ | <a name='testone.gen_events_gen_entities_id'>gen&#95;entities&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;events || ON gen&#95;events&#95;id|
 | 🔎  | idx&#95;events || ON gen&#95;schedules&#95;id|
 | 🔎  | idx&#95;events&#95;0 || ON gen&#95;addresses&#95;id|
 | 🔎  | idx&#95;events&#95;1 || ON gen&#95;entities&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_events_addresses | ( gen&#95;addresses&#95;id ) ref [testone&#46;gen&#95;addresses](#gen&#95;addresses) (gen&#95;addresses&#95;id) |
 |  | fk_events_entities | ( gen&#95;entities&#95;id ) ref [testone&#46;gen&#95;entities](#gen&#95;entities) (gen&#95;entities&#95;id) |
 |  | fk_events_schedules | ( gen&#95;schedules&#95;id ) ref [testone&#46;gen&#95;schedules](#gen&#95;schedules) (gen&#95;schedules&#95;id) |
@@ -823,7 +826,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 ⬋ | <a name='testone.gen_persons_gen_docs_id'>gen&#95;docs&#95;id</a>| bigint  |
 | *| <a name='testone.gen_persons_gen_addresses_id'>gen&#95;addresses&#95;id</a>| bigint  |
 |  | <a name='testone.gen_persons_notes'>notes</a>| varchar&#40;60&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;persons || ON gen&#95;persons&#95;id|
 | 🔍  | idx&#95;gen&#95;persons || ON gen&#95;docs&#95;id|
 
@@ -834,10 +837,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.gen_resources_gen_resources_id'>gen&#95;resources&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.gen_resources_name'>name</a>| varchar&#40;30&#41;  |
 | *🔎 ⬈ | <a name='testone.gen_resources_gen_systems_id'>gen&#95;systems&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;resources || ON gen&#95;resources&#95;id|
 | 🔎  | idx&#95;resources || ON gen&#95;systems&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_resources_systems | ( gen&#95;systems&#95;id ) ref [testone&#46;gen&#95;systems](#gen&#95;systems) (gen&#95;systems&#95;id) |
 
 
@@ -846,7 +849,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.gen_roles_gen_roles_id'>gen&#95;roles&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_roles_name'>name</a>| varchar&#40;50&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;roles || ON gen&#95;roles&#95;id|
 
 
@@ -856,7 +859,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.gen_schedules_gen_schedules_id'>gen&#95;schedules&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_schedules_time_hm_end'>time&#95;hm&#95;end</a>| varchar&#40;5&#41;  DEFAULT '' |
 | *| <a name='testone.gen_schedules_time_hm_begin'>time&#95;hm&#95;begin</a>| varchar&#40;5&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;schedules || ON gen&#95;schedules&#95;id|
 
 
@@ -866,10 +869,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.gen_systems_gen_systems_id'>gen&#95;systems&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_systems_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.gen_systems_gen_entities_id'>gen&#95;entities&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;systems || ON gen&#95;systems&#95;id|
 | 🔎  | idx&#95;systems || ON gen&#95;entities&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_systems_entities | ( gen&#95;entities&#95;id ) ref [testone&#46;gen&#95;entities](#gen&#95;entities) (gen&#95;entities&#95;id) |
 
 
@@ -879,7 +882,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.geo_capitals_br_geo_capitals_br_id'>geo&#95;capitals&#95;br&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.geo_capitals_br_state'>state</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_capitals_br_city'>city</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;capitals&#95;br || ON geo&#95;capitals&#95;br&#95;id|
 
 
@@ -892,7 +895,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ac_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ac_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ac_place_type'>place&#95;type</a>| varchar&#40;20&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ac || ON geo&#95;cep&#95;id|
 
 
@@ -905,7 +908,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_al_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_al_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_al_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;al || ON geo&#95;cep&#95;id|
 
 
@@ -918,7 +921,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_am_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_am_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_am_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;am || ON geo&#95;cep&#95;id|
 
 
@@ -931,7 +934,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ap_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ap_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ap_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ap || ON geo&#95;cep&#95;id|
 
 
@@ -944,7 +947,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ba_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ba_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ba_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ba || ON geo&#95;cep&#95;id|
 
 
@@ -957,7 +960,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ce_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ce_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ce_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ce || ON geo&#95;cep&#95;id|
 
 
@@ -970,7 +973,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_df_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_df_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_df_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;df || ON geo&#95;cep&#95;id|
 
 
@@ -983,7 +986,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_es_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_es_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_es_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;es || ON geo&#95;cep&#95;id|
 
 
@@ -996,7 +999,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_go_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_go_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_go_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;go || ON geo&#95;cep&#95;id|
 
 
@@ -1006,7 +1009,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.geo_cep_index_geo_cep_index'>geo&#95;cep&#95;index</a>| int  |
 | *| <a name='testone.geo_cep_index_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_index_state'>state</a>| varchar&#40;2&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;index || ON geo&#95;cep&#95;index|
 
 
@@ -1019,7 +1022,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ma_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ma_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ma_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ma || ON geo&#95;cep&#95;id|
 
 
@@ -1032,7 +1035,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_mg_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mg_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mg_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;mg || ON geo&#95;cep&#95;id|
 
 
@@ -1045,7 +1048,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ms_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ms_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ms_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ms || ON geo&#95;cep&#95;id|
 
 
@@ -1058,7 +1061,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_mt_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mt_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mt_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;mt || ON geo&#95;cep&#95;id|
 
 
@@ -1071,7 +1074,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pa_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pa_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pa_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pa || ON geo&#95;cep&#95;id|
 
 
@@ -1084,7 +1087,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pb_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pb_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pb_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pb || ON geo&#95;cep&#95;id|
 
 
@@ -1097,7 +1100,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pe_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pe_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pe_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pe || ON geo&#95;cep&#95;id|
 
 
@@ -1110,7 +1113,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pi_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pi_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pi_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pi || ON geo&#95;cep&#95;id|
 
 
@@ -1123,7 +1126,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pr_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pr_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pr_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pr || ON geo&#95;cep&#95;id|
 
 
@@ -1136,7 +1139,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rj_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rj_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rj_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rj || ON geo&#95;cep&#95;id|
 
 
@@ -1149,7 +1152,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rn_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rn_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rn_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rn || ON geo&#95;cep&#95;id|
 
 
@@ -1162,7 +1165,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ro_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ro_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ro_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ro || ON geo&#95;cep&#95;id|
 
 
@@ -1175,7 +1178,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rr_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rr_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rr_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rr || ON geo&#95;cep&#95;id|
 
 
@@ -1188,7 +1191,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rs_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rs_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rs_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rs || ON geo&#95;cep&#95;id|
 
 
@@ -1201,7 +1204,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_sc_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sc_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sc_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;sc || ON geo&#95;cep&#95;id|
 
 
@@ -1214,7 +1217,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_se_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_se_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_se_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;se || ON geo&#95;cep&#95;id|
 
 
@@ -1227,7 +1230,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_sp_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sp_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sp_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;sp || ON geo&#95;cep&#95;id|
 
 
@@ -1240,7 +1243,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_to_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_to_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_to_place_type'>place&#95;type</a>| varchar&#40;20&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;to || ON geo&#95;cep&#95;id|
 
 
@@ -1252,7 +1255,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_unique_name_without_accent'>name&#95;without&#95;accent</a>| varchar&#40;70&#41;  DEFAULT '' |
 |  | <a name='testone.geo_cep_unique_code'>code</a>| varchar&#40;9&#41;  |
 | *| <a name='testone.geo_cep_unique_state'>state</a>| varchar&#40;2&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;unique || ON geo&#95;cep&#95;unique&#95;id|
 
 
@@ -1264,10 +1267,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.geo_cities_geo_states_id'>geo&#95;states&#95;id</a>| bigint  |
 |  | <a name='testone.geo_cities_iscapital'>iscapital</a>| varchar&#40;1&#41;  |
 |  | <a name='testone.geo_cities_phone_code'>phone&#95;code</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cities || ON geo&#95;cities&#95;id|
 | 🔎  | idx&#95;geo&#95;cities || ON geo&#95;states&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_geo_cities | ( geo&#95;states&#95;id ) ref [testone&#46;geo&#95;states](#geo&#95;states) (geo&#95;states&#95;id) |
 
 
@@ -1279,10 +1282,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.geo_cities_br_iscapital'>iscapital</a>| varchar&#40;1&#41;  |
 |  | <a name='testone.geo_cities_br_ddd'>ddd</a>| int  |
 | *🔎 ⬈ | <a name='testone.geo_cities_br_geo_states_br_id'>geo&#95;states&#95;br&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cities&#95;br || ON geo&#95;cities&#95;br&#95;id|
 | 🔎  | cities&#95;br&#95;state&#95;br&#95;fk || ON geo&#95;states&#95;br&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | cities_br_state_br_fk | ( geo&#95;states&#95;br&#95;id ) ref [testone&#46;geo&#95;states&#95;br](#geo&#95;states&#95;br) (geo&#95;states&#95;br&#95;id) |
 
 
@@ -1291,7 +1294,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.geo_countries_geo_countries_id'>geo&#95;countries&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.geo_countries_name'>name</a>| varchar&#40;50&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;countries || ON geo&#95;countries&#95;id|
 
 
@@ -1304,10 +1307,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.geo_states_alpha_code'>alpha&#95;code</a>| varchar&#40;6&#41;  |
 |  | <a name='testone.geo_states_numerical_code'>numerical&#95;code</a>| int  |
 |  | <a name='testone.geo_states_abbreviation'>abbreviation</a>| varchar&#40;10&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;states || ON geo&#95;states&#95;id|
 | 🔎  | idx&#95;geo&#95;states || ON geo&#95;countries&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_geo_states_geo_countries | ( geo&#95;countries&#95;id ) ref [testone&#46;geo&#95;countries](#geo&#95;countries) (geo&#95;countries&#95;id) |
 
 
@@ -1320,10 +1323,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.geo_states_br_numerical_code'>numerical&#95;code</a>| int  |
 | *🔎 ⬈ | <a name='testone.geo_states_br_geo_countries_id'>geo&#95;countries&#95;id</a>| bigint  |
 |  | <a name='testone.geo_states_br_capital'>capital</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;states&#95;br || ON geo&#95;states&#95;br&#95;id|
 | 🔎  | idx&#95;geo&#95;states&#95;br || ON geo&#95;countries&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_geo_states_br | ( geo&#95;countries&#95;id ) ref [testone&#46;geo&#95;countries](#geo&#95;countries) (geo&#95;countries&#95;id) |
 
 
@@ -1338,10 +1341,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_address_state'>state</a>| varchar&#40;2&#41;  DEFAULT '' |  |
 | *| <a name='testone.getit_address_zip'>zip</a>| varchar&#40;9&#41;  DEFAULT '' |  |
 | *🔎 ⬈ | <a name='testone.getit_address_country_fk'>country&#95;fk</a>| bigint  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;address || ON id |  |
 | 🔎  | idx&#95;getit&#95;address || ON country&#95;fk |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_address | ( country&#95;fk ) ref [testone&#46;geo&#95;countries](#geo&#95;countries) (geo&#95;countries&#95;id) |  |
 
 
@@ -1355,11 +1358,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_client_gender'>gender</a>| varchar&#40;1&#41;  DEFAULT '' |
 | 🔎 | <a name='testone.getit_client_address_fk'>address&#95;fk</a>| bigint  |
 | 🔎 ⬈ | <a name='testone.getit_client_logon_fk'>logon&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;client || ON id|
 | 🔎  | getit&#95;cliente&#95;endereco&#95;fk&#95;0 || ON address&#95;fk|
 | 🔎  | getit&#95;cliente&#95;login&#95;fk&#95;0 || ON logon&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_client_0 | ( logon&#95;fk ) ref [testone&#46;getit&#95;address](#getit&#95;address) (id) |
 |  | fk_client | ( logon&#95;fk ) ref [testone&#46;getit&#95;logon](#getit&#95;logon) (id) |
 
@@ -1372,7 +1375,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_logon_login'>login</a>| varchar&#40;10&#41;  DEFAULT '' |
 | *| <a name='testone.getit_logon_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.getit_logon_password'>password</a>| varchar&#40;10&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;logon || ON id|
 
 
@@ -1387,7 +1390,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_post_content'>content</a>| text  |
 |  | <a name='testone.getit_post_img'>img</a>| blob  |
 |  | <a name='testone.getit_post_tokens'>tokens</a>| varchar&#40;255&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;post || ON id|
 
 
@@ -1399,11 +1402,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | 🔎 ⬈ | <a name='testone.getit_recipient_logon_fk'>logon&#95;fk</a>| bigint  |  |
 | *🔎 ⬈ | <a name='testone.getit_recipient_post_fk'>post&#95;fk</a>| bigint  |  |
 | *| <a name='testone.getit_recipient_times'>times</a>| int  | number of times that the same post was sent &#40;default &#61;1&#41; |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;recipient || ON id |  |
 | 🔎  | idx&#95;getit&#95;recipient || ON logon&#95;fk |  |
 | 🔎  | idx&#95;getit&#95;recipient&#95;0 || ON post&#95;fk |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_recipient | ( logon&#95;fk ) ref [testone&#46;getit&#95;logon](#getit&#95;logon) (id) |  |
 |  | fk_recipient_0 | ( post&#95;fk ) ref [testone&#46;getit&#95;post](#getit&#95;post) (id) |  |
 
@@ -1415,7 +1418,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.grupo_nome'>nome</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.grupo_obs'>obs</a>| varchar&#40;100&#41;  |
 | *| <a name='testone.grupo_lastupdate'>lastupdate</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;grupo || ON id|
 
 
@@ -1424,7 +1427,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.hilosequences_sequencename'>sequencename</a>| varchar&#40;50&#41;  DEFAULT '' |
 | *| <a name='testone.hilosequences_highvalues'>highvalues</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;hilosequences || ON sequencename|
 
 
@@ -1436,10 +1439,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.instrutores_TEL_INSTRUTOR'>TEL&#95;INSTRUTOR</a>| varchar&#40;10&#41;  |
 |  | <a name='testone.instrutores_ADMISSAO'>ADMISSAO</a>| date  |
 | 🔎 ⬈ | <a name='testone.instrutores_COD_TITULO'>COD&#95;TITULO</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;instrutores || ON COD&#95;INSTRUTOR|
 | 🔎  | INSTRUTORES&#95;TITULO&#95;FK || ON COD&#95;TITULO|
-| Foreign Keys 
+| Foreign Keys |
 |  | INSTRUTORES_TITULO_FK | ( COD&#95;TITULO ) ref [testone&#46;titulos](#titulos) (COD&#95;TITULO) |
 
 
@@ -1450,10 +1453,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.itens_pedido_produto_fk'>produto&#95;fk</a>| bigint  |
 |  | <a name='testone.itens_pedido_qtd'>qtd</a>| bigint  |
 |  | <a name='testone.itens_pedido_preco'>preco</a>| float&#40;12&#44;0&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | idx&#95;itens&#95;pedido&#95;pedido&#95;fk || ON pedido&#95;fk|
 | 🔎  | idx&#95;itens&#95;pedido&#95;produto&#95;fk || ON produto&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | itens_pedido_pedido_fk | ( pedido&#95;fk ) ref [testone&#46;pedidos](#pedidos) (id) |
 |  | itens_pedido_produto_fk | ( produto&#95;fk ) ref [testone&#46;produtos](#produtos) (id) |
 
@@ -1465,7 +1468,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 | <a name='testone.lgn_authorization_login_fk'>login&#95;fk</a>| bigint  |
 | *🔎 | <a name='testone.lgn_authorization_resource_fk'>resource&#95;fk</a>| bigint  |
 | *| <a name='testone.lgn_authorization_status'>status</a>| varchar&#40;1&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔎  | idx&#95;lgn&#95;permission || ON resource&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;login || ON login&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;role || ON role&#95;fk|
@@ -1478,10 +1481,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.lgn_login_profile_fk'>profile&#95;fk</a>| bigint  |
 | *| <a name='testone.lgn_login_password'>password</a>| varchar&#40;20&#41;  DEFAULT '' |
 | *| <a name='testone.lgn_login_email'>email</a>| varchar&#40;40&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;login || ON id|
 | 🔎  | idx&#95;lgn&#95;login || ON profile&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_lgn_login_profile | ( profile&#95;fk ) ref [testone&#46;lgn&#95;profile](#lgn&#95;profile) (id) |
 
 
@@ -1491,11 +1494,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.lgn_permission_role_fk'>role&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.lgn_permission_login_fk'>login&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.lgn_permission_resource_fk'>resource&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔎  | idx&#95;lgn&#95;permission || ON resource&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;login || ON login&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;role || ON role&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_lgn_permission_login | ( login&#95;fk ) ref [testone&#46;lgn&#95;login](#lgn&#95;login) (id) |
 |  | fk_lgn_permission_resource | ( resource&#95;fk ) ref [testone&#46;lgn&#95;resource](#lgn&#95;resource) (id) |
 |  | fk_lgn_permission_role | ( role&#95;fk ) ref [testone&#46;lgn&#95;role](#lgn&#95;role) (id) |
@@ -1507,7 +1510,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.lgn_profile_id'>id</a>| bigint AUTO_INCREMENT |  |
 | *| <a name='testone.lgn_profile_code'>code</a>| int UNSIGNED  | access degree&#46; |
 | *| <a name='testone.lgn_profile_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;profile || ON id |  |
 
 
@@ -1517,7 +1520,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.lgn_resource_id'>id</a>| bigint AUTO_INCREMENT |
 | 🔎 | <a name='testone.lgn_resource_parent_fk'>parent&#95;fk</a>| bigint  |
 | *| <a name='testone.lgn_resource_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;resource || ON id|
 | 🔎  | idx&#95;lgn&#95;resource || ON parent&#95;fk|
 
@@ -1529,10 +1532,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.lgn_role_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.lgn_role_code'>code</a>| int UNSIGNED  |
 | 🔎 ⬈ | <a name='testone.lgn_role_profile_fk'>profile&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;role || ON id|
 | 🔎  | idx&#95;lgn&#95;role || ON profile&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_lgn_role_profile | ( profile&#95;fk ) ref [testone&#46;lgn&#95;profile](#lgn&#95;profile) (id) |
 
 
@@ -1544,10 +1547,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.livro_autor_id'>autor&#95;id</a>| bigint  |
 | *| <a name='testone.livro_titulo'>titulo</a>| varchar&#40;255&#41;  |
 | *| <a name='testone.livro_valor'>valor</a>| float&#40;12&#44;0&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;livro || ON id|
 | 🔎  | FK&#95;jiba630fqnramd9goavw4xor0 || ON autor&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | FK_jiba630fqnramd9goavw4xor0 | ( autor&#95;id ) ref [testone&#46;autor](#autor) (id) |
 
 
@@ -1556,7 +1559,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.loc_categorias_loc_categorias_id'>loc&#95;categorias&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.loc_categorias_descricao'>descricao</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;categorias || ON loc&#95;categorias&#95;id|
 
 
@@ -1569,7 +1572,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_clientes_celular'>celular</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_clientes_email'>email</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_clientes_loc_enderecos_id'>loc&#95;enderecos&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;clientes || ON loc&#95;clientes&#95;id|
 
 
@@ -1584,9 +1587,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_enderecos_estado'>estado</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_enderecos_cep'>cep</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_enderecos_complemento'>complemento</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;enderecos || ON loc&#95;clientes&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_loc_enderecos | ( loc&#95;clientes&#95;id ) ref [testone&#46;loc&#95;clientes](#loc&#95;clientes) (loc&#95;clientes&#95;id) |
 
 
@@ -1597,10 +1600,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_filmes_descricao'>descricao</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_filmes_ano'>ano</a>| int  |
 | *🔎 ⬈ | <a name='testone.loc_filmes_loc_categorias_id'>loc&#95;categorias&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;filmes || ON loc&#95;filmes&#95;id|
 | 🔎  | loc&#95;categorias&#95;fk || ON loc&#95;categorias&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | loc_categorias_fk | ( loc&#95;categorias&#95;id ) ref [testone&#46;loc&#95;categorias](#loc&#95;categorias) (loc&#95;categorias&#95;id) |
 
 
@@ -1614,11 +1617,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_locacoes_observacao'>observacao</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.loc_locacoes_loc_midia_id'>loc&#95;midia&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.loc_locacoes_loc_clientes_id'>loc&#95;clientes&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;locacoes || ON loc&#95;locacoes&#95;id|
 | 🔎  | loc&#95;clientes&#95;fk || ON loc&#95;clientes&#95;id|
 | 🔎  | loc&#95;midia&#95;fk || ON loc&#95;midia&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | loc_clientes_fk | ( loc&#95;clientes&#95;id ) ref [testone&#46;loc&#95;clientes](#loc&#95;clientes) (loc&#95;clientes&#95;id) |
 |  | loc_midia_fk | ( loc&#95;midia&#95;id ) ref [testone&#46;loc&#95;midia](#loc&#95;midia) (loc&#95;midia&#95;id) |
 
@@ -1629,10 +1632,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.loc_midia_loc_midia_id'>loc&#95;midia&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.loc_midia_inutilizada'>inutilizada</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.loc_midia_loc_filmes_id'>loc&#95;filmes&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;midia || ON loc&#95;midia&#95;id|
 | 🔎  | loc&#95;filmes&#95;fk || ON loc&#95;filmes&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | loc_filmes_fk | ( loc&#95;filmes&#95;id ) ref [testone&#46;loc&#95;filmes](#loc&#95;filmes) (loc&#95;filmes&#95;id) |
 
 
@@ -1648,7 +1651,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.loc_users_celular'>celular</a>| varchar&#40;25&#41;  DEFAULT '' |
 | *| <a name='testone.loc_users_idioma'>idioma</a>| varchar&#40;15&#41;  DEFAULT '' |
 | *| <a name='testone.loc_users_ativo'>ativo</a>| smallint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;users || ON loc&#95;users&#95;id|
 | 🔍  | login&#95;unique || ON login|
 
@@ -1661,7 +1664,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.login_login'>login</a>| varchar&#40;10&#41;  DEFAULT '' |
 | *| <a name='testone.login_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.login_password'>password</a>| varchar&#40;10&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;login || ON id|
 
 
@@ -1670,7 +1673,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.manufacturer_id'>id</a>| bigint  DEFAULT 0 |
 |  | <a name='testone.manufacturer_nome'>nome</a>| varchar&#40;30&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;manufacturer || ON id|
 
 
@@ -1682,7 +1685,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.model_version'>version</a>| varchar&#40;60&#41;  |
 |  | <a name='testone.model_accessories'>accessories</a>| varchar&#40;100&#41;  |
 | 🔎 | <a name='testone.model_manufacturer_fk'>manufacturer&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;model || ON id|
 | 🔎  | model&#95;manufacturer&#95;fk || ON manufacturer&#95;fk|
 
@@ -1695,7 +1698,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.mp3_posts_from_'>from&#95;</a>| varchar&#40;255&#41;  DEFAULT '' |
 | *| <a name='testone.mp3_posts_date_'>date&#95;</a>| varchar&#40;30&#41;  DEFAULT '' |
 | *| <a name='testone.mp3_posts_link'>link</a>| varchar&#40;1000&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔍  | id || ON id|
 
 
@@ -1704,7 +1707,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.niveis_COD_NIVEL'>COD&#95;NIVEL</a>| int AUTO_INCREMENT |
 | *| <a name='testone.niveis_DESCRICAO'>DESCRICAO</a>| varchar&#40;60&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;niveis || ON COD&#95;NIVEL|
 
 
@@ -1715,7 +1718,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.nulltest_nome'>nome</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.nulltest_fk_matricula'>fk&#95;matricula</a>| int  |
 |  | <a name='testone.nulltest_desconto'>desconto</a>| float&#40;4&#44;2&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;nulltest || ON id|
 
 
@@ -1724,7 +1727,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.openjpa_sequence_table_ID'>ID</a>| tinyint  |
 |  | <a name='testone.openjpa_sequence_table_SEQUENCE_VALUE'>SEQUENCE&#95;VALUE</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;openjpa&#95;sequence&#95;table || ON ID|
 
 
@@ -1733,7 +1736,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.ownership_types_ownership_types_id'>ownership&#95;types&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.ownership_types_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;ownership&#95;types || ON ownership&#95;types&#95;id|
 
 
@@ -1748,12 +1751,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.pedidos_usuario_fk'>usuario&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.pedidos_vendedor_fk'>vendedor&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.pedidos_pedidos_detalhes_fk'>pedidos&#95;detalhes&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pedidos || ON id|
 | 🔎  | pedidos&#95;detalhes&#95;fk || ON pedidos&#95;detalhes&#95;fk|
 | 🔎  | pedidos&#95;usuario&#95;fk || ON usuario&#95;fk|
 | 🔎  | pedidos&#95;vendedor&#95;fk || ON vendedor&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | pedidos_detalhes_fk | ( pedidos&#95;detalhes&#95;fk ) ref [testone&#46;pedidos&#95;detalhes](#pedidos&#95;detalhes) (id) |
 |  | pedidos_usuario_fk | ( usuario&#95;fk ) ref [testone&#46;usuarios](#usuarios) (id) |
 |  | pedidos_vendedor_fk | ( vendedor&#95;fk ) ref [testone&#46;vendedores](#vendedores) (id) |
@@ -1765,7 +1768,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.pedidos_detalhes_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.pedidos_detalhes_resp_expedicao'>resp&#95;expedicao</a>| bigint  |
 |  | <a name='testone.pedidos_detalhes_resp_entrega'>resp&#95;entrega</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pedidos&#95;detalhes || ON id|
 
 
@@ -1775,10 +1778,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.pricelist_id'>id</a>| bigint  DEFAULT 0 |
 |  | <a name='testone.pricelist_price'>price</a>| double  |
 | 🔎 ⬈ | <a name='testone.pricelist_model_fk'>model&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pricelist || ON id|
 | 🔎  | pricelist&#95;model&#95;fk || ON model&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | pricelist_model_fk | ( model&#95;fk ) ref [testone&#46;model](#model) (id) |
 
 
@@ -1787,7 +1790,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.prjrole_ID'>ID</a>| int  |
 | *🔍 | <a name='testone.prjrole_TITLE'>TITLE</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;prjrole || ON ID|
 | 🔍  | TITLE || ON TITLE|
 
@@ -1798,7 +1801,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.products_id'>id</a>| int AUTO_INCREMENT |
 |  | <a name='testone.products_description'>description</a>| varchar&#40;255&#41;  |
 |  | <a name='testone.products_price'>price</a>| decimal&#40;15&#44;2&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;products || ON id|
 
 
@@ -1811,10 +1814,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.produtos_desconto'>desconto</a>| decimal&#40;2&#44;2&#41;  |
 |  | <a name='testone.produtos_imagem'>imagem</a>| blob  |
 | *🔎 ⬈ | <a name='testone.produtos_categoria_fk'>categoria&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;produtos || ON id|
 | 🔎  | produtos&#95;categoria&#95;fk || ON categoria&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | produtos_categoria_fk | ( categoria&#95;fk ) ref [testone&#46;categorias](#categorias) (id) |
 
 
@@ -1825,7 +1828,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 | <a name='testone.project_TITLE'>TITLE</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.project_STARTTIME'>STARTTIME</a>| date  |
 | *| <a name='testone.project_ENDTIME'>ENDTIME</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;project || ON ID|
 | 🔍  | TITLE || ON TITLE|
 
@@ -1839,7 +1842,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 | <a name='testone.project_developer_IDSTATUS'>IDSTATUS</a>| int  |
 | *| <a name='testone.project_developer_starttime'>starttime</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
 |  | <a name='testone.project_developer_endtime'>endtime</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;project&#95;developer || ON idprj&#44; idprole&#44; iddev|
 | 🔎  | fk&#95;project&#95;developer&#95;0 || ON idprole|
 | 🔎  | fk&#95;project&#95;developer&#95;1 || ON iddev|
@@ -1853,10 +1856,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.pupils_pupils_id'>pupils&#95;id</a>| bigint AUTO_INCREMENT |
 | *🔎 ⬈ | <a name='testone.pupils_gen_persons_id'>gen&#95;persons&#95;id</a>| bigint  |
 | *| <a name='testone.pupils_registration'>registration</a>| varchar&#40;20&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pupils || ON pupils&#95;id|
 | 🔎  | courses&#95;person&#95;fk || ON gen&#95;persons&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | courses_person_fk | ( gen&#95;persons&#95;id ) ref [testone&#46;gen&#95;persons](#gen&#95;persons) (gen&#95;persons&#95;id) |
 
 
@@ -1867,11 +1870,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.request_quantity'>quantity</a>| int  |
 | *🔎 ⬈ | <a name='testone.request_login_fk'>login&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.request_pricelist_fk'>pricelist&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;request || ON id|
 | 🔎  | request&#95;login&#95;fk || ON login&#95;fk|
 | 🔎  | request&#95;pricelist&#95;fk || ON pricelist&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | request_login_fk | ( login&#95;fk ) ref [testone&#46;login](#login) (id) |
 |  | request_pricelist_fk | ( pricelist&#95;fk ) ref [testone&#46;pricelist](#pricelist) (id) |
 
@@ -1881,7 +1884,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|---|
 | *🔑 | <a name='testone.rin199_simple_property_id'>id</a>| varchar&#40;100&#41;  DEFAULT '' |  |
 |  | <a name='testone.rin199_simple_property_val'>val</a>| varchar&#40;100&#41;  | key&#96;s value |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;rin199&#95;simple&#95;property || ON id |  |
 
 
@@ -1890,7 +1893,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.rin220_role_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.rin220_role_name'>name</a>| varchar&#40;32&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;rin220&#95;role || ON id|
 
 
@@ -1899,7 +1902,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.rin220_usr_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.rin220_usr_name'>name</a>| varchar&#40;32&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;rin220&#95;usr || ON id|
 
 
@@ -1911,7 +1914,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 | <a name='testone.signup_login'>login</a>| varchar&#40;10&#41;  DEFAULT '' |
 | *| <a name='testone.signup_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.signup_password'>password</a>| varchar&#40;15&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;signup || ON id|
 | 🔍  | email || ON email|
 | 🔍  | login || ON login|
@@ -1922,7 +1925,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.status_ID'>ID</a>| int  |
 | *🔍 | <a name='testone.status_TITLE'>TITLE</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;status || ON ID|
 | 🔍  | TITLE || ON TITLE|
 
@@ -1932,7 +1935,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.sys_dao_short_test_sys_dao_test_id'>sys&#95;dao&#95;test&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.sys_dao_short_test_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;dao&#95;short&#95;test || ON sys&#95;dao&#95;test&#95;id|
 
 
@@ -1946,7 +1949,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.sys_dao_test_event_date'>event&#95;date</a>| date  |
 | *| <a name='testone.sys_dao_test_event_time'>event&#95;time</a>| time  |
 | *| <a name='testone.sys_dao_test_enabled'>enabled</a>| varchar&#40;1&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;dao&#95;test || ON sys&#95;dao&#95;test&#95;id|
 
 
@@ -1967,7 +1970,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.sys_dao_test3_version'>version</a>| bigint  |
 |  | <a name='testone.sys_dao_test3_author'>author</a>| varchar&#40;40&#41;  |
 |  | <a name='testone.sys_dao_test3_event_timestamp'>event&#95;timestamp</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;dao&#95;test3 || ON sys&#95;dao&#95;test3&#95;id|
 
 
@@ -1988,7 +1991,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.sys_users_version'>version</a>| bigint  |
 |  | <a name='testone.sys_users_author'>author</a>| varchar&#40;40&#41;  |
 |  | <a name='testone.sys_users_event_timestamp'>event&#95;timestamp</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;users || ON sys&#95;users&#95;id|
 
 
@@ -1999,7 +2002,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.sys_versioning_version'>version</a>| bigint  |
 | *| <a name='testone.sys_versioning_event_timestamp'>event&#95;timestamp</a>| date  |
 |  | <a name='testone.sys_versioning_author'>author</a>| varchar&#40;40&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;versioning || ON sys&#95;versioning&#95;id|
 
 
@@ -2012,10 +2015,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.tb_multa_DE_STATUS'>DE&#95;STATUS</a>| varchar&#40;18&#41;  |
 |  | <a name='testone.tb_multa_DH_MULTA'>DH&#95;MULTA</a>| date  |
 | 🔎 ⬈ | <a name='testone.tb_multa_ID_VEICULO'>ID&#95;VEICULO</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;tb&#95;multa || ON ID&#95;MULTA|
 | 🔎  | TB&#95;MULTA&#95;VEICULO&#95;FK || ON ID&#95;VEICULO|
-| Foreign Keys 
+| Foreign Keys |
 |  | TB_MULTA_VEICULO_FK | ( ID&#95;VEICULO ) ref [testone&#46;tb&#95;veiculo](#tb&#95;veiculo) (ID&#95;VEICULO) |
 
 
@@ -2024,7 +2027,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.tb_uf_SG_UF'>SG&#95;UF</a>| int AUTO_INCREMENT |
 |  | <a name='testone.tb_uf_NM_UF'>NM&#95;UF</a>| varchar&#40;2&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;tb&#95;uf || ON SG&#95;UF|
 
 
@@ -2038,10 +2041,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.tb_veiculo_NR_ANO_MODELO'>NR&#95;ANO&#95;MODELO</a>| int  |
 |  | <a name='testone.tb_veiculo_NR_ANO_FABRICACAO'>NR&#95;ANO&#95;FABRICACAO</a>| int  |
 | 🔎 ⬈ | <a name='testone.tb_veiculo_SG_UF'>SG&#95;UF</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;tb&#95;veiculo || ON ID&#95;VEICULO|
 | 🔎  | TB&#95;VEICULO&#95;UF&#95;FK || ON SG&#95;UF|
-| Foreign Keys 
+| Foreign Keys |
 |  | TB_VEICULO_UF_FK | ( SG&#95;UF ) ref [testone&#46;tb&#95;uf](#tb&#95;uf) (SG&#95;UF) |
 
 
@@ -2051,7 +2054,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.teams_id'>id</a>| int AUTO_INCREMENT |
 | *| <a name='testone.teams_name'>name</a>| varchar&#40;40&#41;  DEFAULT '' |
 | *| <a name='testone.teams_rating'>rating</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;teams || ON id|
 
 
@@ -2060,7 +2063,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_name'>name</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test || ON id|
 
 
@@ -2069,7 +2072,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_alphanum_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_alphanum_alphanum'>alphanum</a>| varchar&#40;8&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;alphanum || ON id|
 
 
@@ -2078,7 +2081,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_author_author_id'>author&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_author_name'>name</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;author || ON author&#95;id|
 
 
@@ -2087,7 +2090,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_authors_author_id'>author&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_authors_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;authors || ON author&#95;id|
 
 
@@ -2096,7 +2099,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_authors2_author_id'>author&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_authors2_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;authors2 || ON author&#95;id|
 
 
@@ -2106,7 +2109,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_binary_binary_id'>binary&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_binary_image'>image</a>| tinyblob  |
 | *| <a name='testone.test_binary_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;binary || ON binary&#95;id|
 
 
@@ -2116,10 +2119,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_books_book_id'>book&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_books_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.test_books_fk_author_id'>fk&#95;author&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;books || ON book&#95;id|
 | 🔎  | idx&#95;test&#95;books || ON fk&#95;author&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_books | ( fk&#95;author&#95;id ) ref [testone&#46;test&#95;authors](#test&#95;authors) (author&#95;id) |
 
 
@@ -2128,7 +2131,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_books2_book_id'>book&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_books2_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;books2 || ON book&#95;id|
 
 
@@ -2137,7 +2140,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_car_test_car_id'>test&#95;car&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_car_name'>name</a>| varchar&#40;50&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;car || ON test&#95;car&#95;id|
 
 
@@ -2146,7 +2149,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_customer_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_customer_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;customer || ON id|
 
 
@@ -2156,10 +2159,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_customer_details_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_customer_details_address'>address</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.test_customer_details_fk_customer_id'>fk&#95;customer&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;customer&#95;details || ON id|
 | 🔎  | idx&#95;test&#95;customer&#95;details || ON fk&#95;customer&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_customer_details | ( fk&#95;customer&#95;id ) ref [testone&#46;test&#95;customer](#test&#95;customer) (id) |
 
 
@@ -2167,7 +2170,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_idgenseq_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;idgenseq || ON id|
 
 
@@ -2175,7 +2178,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_idgenseq2_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;idgenseq2 || ON id|
 
 
@@ -2183,7 +2186,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_idtablegen_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;idtablegen || ON id|
 
 
@@ -2193,7 +2196,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1_bankaccount_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1_bankaccount_owner'>owner</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_inhe1_bankaccount_accountnumber'>accountnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1&#95;bankaccount || ON billingdetails&#95;id|
 
 
@@ -2203,7 +2206,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1_creditcard_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1_creditcard_owner'>owner</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_inhe1_creditcard_cardnumber'>cardnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1&#95;creditcard || ON billingdetails&#95;id|
 
 
@@ -2213,7 +2216,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1b_bankaccount_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1b_bankaccount_accountnumber'>accountnumber</a>| int  |
 |  | <a name='testone.test_inhe1b_bankaccount_owner'>owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1b&#95;bankaccount || ON billingdetails&#95;id|
 
 
@@ -2223,7 +2226,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1b_creditcard_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1b_creditcard_cardnumber'>cardnumber</a>| int  |
 |  | <a name='testone.test_inhe1b_creditcard_owner'>owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1b&#95;creditcard || ON billingdetails&#95;id|
 
 
@@ -2233,7 +2236,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1c_bankaccount_bankaccount_id'>bankaccount&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1c_bankaccount_accountnumber'>accountnumber</a>| int  |
 |  | <a name='testone.test_inhe1c_bankaccount_bankaccount_owner'>bankaccount&#95;owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1c&#95;bankaccount || ON bankaccount&#95;id|
 
 
@@ -2243,7 +2246,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1c_creditcard_credicard_id'>credicard&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1c_creditcard_cardnumber'>cardnumber</a>| int  |
 |  | <a name='testone.test_inhe1c_creditcard_credicard_owner'>credicard&#95;owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1c&#95;creditcard || ON credicard&#95;id|
 
 
@@ -2255,7 +2258,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.test_inhe2_billingdetails_owner'>owner</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_inhe2_billingdetails_accountnumber'>accountnumber</a>| int  |
 |  | <a name='testone.test_inhe2_billingdetails_cardnumber'>cardnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe2&#95;billingdetails || ON billingdetails&#95;id|
 
 
@@ -2264,9 +2267,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬈ | <a name='testone.test_inhe3_bankaccount_bankaccount_id'>bankaccount&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe3_bankaccount_accountnumber'>accountnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe3&#95;bankaccount || ON bankaccount&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_bankaccount_id | ( bankaccount&#95;id ) ref [testone&#46;test&#95;inhe3&#95;billingdetails](#test&#95;inhe3&#95;billingdetails) (billingdetails&#95;id) |
 
 
@@ -2275,7 +2278,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_inhe3_billingdetails_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe3_billingdetails_owner'>owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe3&#95;billingdetails || ON billingdetails&#95;id|
 
 
@@ -2284,9 +2287,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬈ | <a name='testone.test_inhe3_creditcard_creditcard_id'>creditcard&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe3_creditcard_cardnumber'>cardnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe3&#95;creditcard || ON creditcard&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_creditcard_id | ( creditcard&#95;id ) ref [testone&#46;test&#95;inhe3&#95;billingdetails](#test&#95;inhe3&#95;billingdetails) (billingdetails&#95;id) |
 
 
@@ -2294,7 +2297,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_mouth_mouth_id'>mouth&#95;id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;mouth || ON mouth&#95;id|
 
 
@@ -2304,10 +2307,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_order_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_order_number'>number</a>| int  |
 | *🔎 ⬈ | <a name='testone.test_order_fk_customer_id'>fk&#95;customer&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;order || ON id|
 | 🔎  | idx&#95;test&#95;order || ON fk&#95;customer&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_order | ( fk&#95;customer&#95;id ) ref [testone&#46;test&#95;customer](#test&#95;customer) (id) |
 
 
@@ -2317,7 +2320,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_person_id'>id</a>| int  |
 |  | <a name='testone.test_person_name'>name</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_person_country'>country</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;person || ON id|
 
 
@@ -2325,7 +2328,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_sample_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;sample || ON id|
 
 
@@ -2335,10 +2338,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_tooth_tooth_id'>tooth&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_tooth_tooth_name'>tooth&#95;name</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.test_tooth_fk_mouth_id'>fk&#95;mouth&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;tooth || ON tooth&#95;id|
 | 🔎  | idx&#95;test&#95;tooth || ON fk&#95;mouth&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_tooth | ( fk&#95;mouth&#95;id ) ref [testone&#46;test&#95;mouth](#test&#95;mouth) (mouth&#95;id) |
 
 
@@ -2350,7 +2353,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.test_types_types_time'>types&#95;time</a>| time  |
 | *| <a name='testone.test_types_types_timestamp'>types&#95;timestamp</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
 |  | <a name='testone.test_types_description'>description</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;types || ON types&#95;id|
 
 
@@ -2359,7 +2362,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.titulos_COD_TITULO'>COD&#95;TITULO</a>| int AUTO_INCREMENT |
 | *| <a name='testone.titulos_TITULO'>TITULO</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;titulos || ON COD&#95;TITULO|
 
 
@@ -2370,10 +2373,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.universities_geo_cities_br_id'>geo&#95;cities&#95;br&#95;id</a>| bigint  |
 | *| <a name='testone.universities_acronym'>acronym</a>| varchar&#40;6&#41;  DEFAULT '' |
 | *| <a name='testone.universities_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;universities || ON universities&#95;id|
 | 🔎  | universities&#95;city&#95;br&#95;fk || ON geo&#95;cities&#95;br&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | universities_city_br_fk | ( geo&#95;cities&#95;br&#95;id ) ref [testone&#46;geo&#95;cities&#95;br](#geo&#95;cities&#95;br) (geo&#95;cities&#95;br&#95;id) |
 
 
@@ -2383,7 +2386,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.users_id'>id</a>| bigint UNSIGNED AUTO_INCREMENT |
 | *🔍 | <a name='testone.users_login'>login</a>| varchar&#40;64&#41;  DEFAULT '' |
 | *| <a name='testone.users_password'>password</a>| varchar&#40;32&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;users || ON id|
 | 🔍  | users&#95;login&#95;key || ON login|
 
@@ -2396,7 +2399,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.usuario_login'>login</a>| varchar&#40;255&#41;  |
 | *| <a name='testone.usuario_nome'>nome</a>| varchar&#40;255&#41;  |
 | *| <a name='testone.usuario_senha'>senha</a>| varchar&#40;255&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;usuario || ON id|
 
 
@@ -2413,10 +2416,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.usuarios_estado'>estado</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.usuarios_cep'>cep</a>| varchar&#40;9&#41;  |
 | 🔎 ⬈ | <a name='testone.usuarios_end_entrega_fk'>end&#95;entrega&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;usuarios || ON id|
 | 🔎  | usuarios&#95;end&#95;entrega&#95;fk || ON end&#95;entrega&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | usuarios_end_entrega_fk | ( end&#95;entrega&#95;fk ) ref [testone&#46;end&#95;entrega](#end&#95;entrega) (id) |
 
 
@@ -2432,7 +2435,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.vendedores_cidade'>cidade</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.vendedores_estado'>estado</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.vendedores_cep'>cep</a>| varchar&#40;9&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;vendedores || ON id|
 
 
@@ -2443,7 +2446,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.widget_partNumber'>partNumber</a>| varchar&#40;100&#41;  |
 | *| <a name='testone.widget_name'>name</a>| varchar&#40;100&#41;  |
 | *| <a name='testone.widget_description'>description</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;widget || ON id|
 
 
@@ -2456,10 +2459,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_atmosphere_pressure'>pressure</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_atmosphere_rising'>rising</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.wth_atmosphere_weather_fk'>weather&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;atmosphere || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;atmosphere&#95;weather || ON weather&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_atmosphere_weather | ( weather&#95;fk ) ref [testone&#46;wth&#95;weather](#wth&#95;weather) (id) |
 
 
@@ -2472,10 +2475,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_condition_temp'>temp</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_condition_date'>date</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.wth_condition_weather_fk'>weather&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;condition || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;condition&#95;weather || ON weather&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_condition_weather | ( weather&#95;fk ) ref [testone&#46;wth&#95;weather](#wth&#95;weather) (id) |
 
 
@@ -2487,7 +2490,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_location_city'>city</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_location_region'>region</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_location_country'>country</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;location || ON id|
 
 
@@ -2500,13 +2503,13 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.wth_weather_atmosphere_fk'>atmosphere&#95;fk</a>| int  |
 | *🔎 ⬈ | <a name='testone.wth_weather_location_fk'>location&#95;fk</a>| int  |
 | *🔎 | <a name='testone.wth_weather_condition_fk'>condition&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;weather || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;atmosphere || ON atmosphere&#95;fk|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;condition || ON condition&#95;fk|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;location || ON location&#95;fk|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;wind || ON wind&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_weather_atmosphere | ( atmosphere&#95;fk ) ref [testone&#46;wth&#95;atmosphere](#wth&#95;atmosphere) (id) |
 |  | fk_testone_wth_weather_location | ( location&#95;fk ) ref [testone&#46;wth&#95;location](#wth&#95;location) (id) |
 |  | fk_testone_wth_weather_wind | ( wind&#95;fk ) ref [testone&#46;wth&#95;wind](#wth&#95;wind) (id) |
@@ -2520,10 +2523,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_wind_direction'>direction</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_wind_speed'>speed</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.wth_wind_weather_fk'>weather&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;wind || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;wind&#95;weather || ON weather&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_wind_weather | ( weather&#95;fk ) ref [testone&#46;wth&#95;weather](#wth&#95;weather) (id) |
 
 
@@ -2545,7 +2548,7 @@ some comment<br>&lt;a href&#61;&quot;sample&#46;html&quot;&gt;link&lt;&#47;a&gt;
 | *🔑 | <a name='sakila.MixedCases_Id'>Id</a>| int  |  |
 |  | <a name='sakila.MixedCases_FirstName'>FirstName</a>| varchar&#40;100&#41;  |  |
 |  | <a name='sakila.MixedCases_details'>details</a>| varchar&#40;12&#41;  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;mixedcases || ON Id |  |
 
 
@@ -2559,7 +2562,7 @@ Some comment about actors&#46;
 | *🔎 | <a name='sakila.actor_last_name'>last&#95;name</a>| varchar&#40;45&#41;  |  |
 | *| <a name='sakila.actor_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |  |
 |  | <a name='sakila.actor_details'>details</a>| varchar&#40;12&#41;  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;actor || ON actor&#95;id |  |
 | 🔎  | idx&#95;actor&#95;last&#95;name || ON last&#95;name |  |
 
@@ -2575,10 +2578,10 @@ Some comment about actors&#46;
 |  | <a name='sakila.address_postal_code'>postal&#95;code</a>| varchar&#40;10&#41;  |
 | *| <a name='sakila.address_phone'>phone</a>| varchar&#40;20&#41;  |
 | *| <a name='sakila.address_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;address || ON address&#95;id|
 | 🔎  | idx&#95;fk&#95;city&#95;id || ON city&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_address_city | ( city&#95;id ) ref [sakila&#46;city](#city) (city&#95;id) |
 
 
@@ -2633,7 +2636,7 @@ Some comment about actors&#46;
 | *🔑 ⬋ | <a name='sakila.category_category_id'>category&#95;id</a>| tinyint UNSIGNED AUTO_INCREMENT |
 | *| <a name='sakila.category_name'>name</a>| varchar&#40;25&#41;  |
 | *| <a name='sakila.category_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;category || ON category&#95;id|
 
 
@@ -2644,10 +2647,10 @@ Some comment about actors&#46;
 | *| <a name='sakila.city_city'>city</a>| varchar&#40;50&#41;  |
 | *🔎 ⬈ | <a name='sakila.city_country_id'>country&#95;id</a>| char&#40;2&#41;  |
 | *| <a name='sakila.city_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;city || ON city&#95;id|
 | 🔎  | idx&#95;fk&#95;country&#95;id || ON country&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_city_country | ( country&#95;id ) ref [sakila&#46;country](#country) (country&#95;id) |
 
 
@@ -2656,7 +2659,7 @@ Some comment about actors&#46;
 |---|---|---|
 | *🔑 | <a name='sakila.clients_clientid'>clientid</a>| int  |
 | *| <a name='sakila.clients_name'>name</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;clients || ON clientid|
 
 
@@ -2666,7 +2669,7 @@ Some comment about actors&#46;
 | *🔑 ⬋ | <a name='sakila.country_country_id'>country&#95;id</a>| char&#40;2&#41;  |
 | *| <a name='sakila.country_country'>country</a>| varchar&#40;50&#41;  |
 | *| <a name='sakila.country_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;country || ON country&#95;id|
 
 
@@ -2684,12 +2687,12 @@ Customer details
 | *| <a name='sakila.customer_active'>active</a>| boolean  DEFAULT true |  |
 | *| <a name='sakila.customer_create_date'>create&#95;date</a>| datetime  |  |
 |  | <a name='sakila.customer_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;customer || ON customer&#95;id |  |
 | 🔎  | idx&#95;fk&#95;address&#95;id || ON address&#95;id |  |
 | 🔎  | idx&#95;fk&#95;store&#95;id || ON store&#95;id |  |
 | 🔎  | idx&#95;last&#95;name || ON last&#95;name |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_customer_address | ( address&#95;id ) ref [sakila&#46;address](#address) (address&#95;id) |  |
 |  | fk_customer_store | ( store&#95;id ) ref [sakila&#46;store](#store) (store&#95;id) |  |
 
@@ -2720,7 +2723,7 @@ Customer details
 | *🔑 | <a name='sakila.events_all_time_id'>id</a>| int UNSIGNED AUTO_INCREMENT |
 | *🔍 | <a name='sakila.events_all_time_action'>action</a>| varchar&#40;255&#41;  |
 | *| <a name='sakila.events_all_time_count'>count</a>| int  DEFAULT 0 |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;events&#95;all&#95;time || ON id|
 | 🔍  | uniq&#95;action || ON action|
 
@@ -2743,16 +2746,16 @@ Some comment added today
 |  | <a name='sakila.film_rating'>rating</a>| enum&#40;&#39;G&#39;&#44;&#39;PG&#39;&#44;&#39;PG&#45;13&#39;&#44;&#39;R&#39;&#44;&#39;NC&#45;17&#39;&#41;  DEFAULT 'G' |  |
 |  | <a name='sakila.film_special_features'>special&#95;features</a>| set&#40;&#39;Trailers&#39;&#44;&#39;Commentaries&#39;&#44;&#39;Deleted Scenes&#39;&#44;&#39;Behind the Scenes&#39;&#41;  |  |
 | *| <a name='sakila.film_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;film || ON film&#95;id |  |
 | 🔎  | idx&#95;fk&#95;language&#95;id || ON language&#95;id |  |
 | 🔎  | idx&#95;fk&#95;original&#95;language&#95;id || ON original&#95;language&#95;id |  |
 | 🔎  | idx&#95;title || ON title |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_film_language | ( language&#95;id ) ref [sakila&#46;language](#language) (language&#95;id) |  |
 |  | fk_film_language_original | ( original&#95;language&#95;id ) ref [sakila&#46;language](#language) (language&#95;id) |  |
 
-| Triggers
+| Triggers |
 |  | del_film | <pre>CREATE TRIGGER sakila&#46;del&#95;film AFTER DELETE ON film FOR EACH ROW BEGIN
     DELETE FROM film&#95;text WHERE film&#95;id &#61; old&#46;film&#95;id&#59;
   END&#59;</pre> |
@@ -2778,10 +2781,10 @@ Some comment added today
 | *🔑 ⬈ | <a name='sakila.film_actor_actor_id'>actor&#95;id</a>| smallint UNSIGNED  |
 | *🔑 ⬈ | <a name='sakila.film_actor_film_id'>film&#95;id</a>| smallint UNSIGNED  |
 | *| <a name='sakila.film_actor_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;film&#95;actor || ON actor&#95;id&#44; film&#95;id|
 | 🔎  | idx&#95;fk&#95;film&#95;id || ON film&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_film_actor_actor | ( actor&#95;id ) ref [sakila&#46;actor](#actor) (actor&#95;id) |
 |  | fk_film_actor_film | ( film&#95;id ) ref [sakila&#46;film](#film) (film&#95;id) |
 
@@ -2792,10 +2795,10 @@ Some comment added today
 | *🔑 ⬈ | <a name='sakila.film_category_film_id'>film&#95;id</a>| smallint UNSIGNED  |
 | *🔑 ⬈ | <a name='sakila.film_category_category_id'>category&#95;id</a>| tinyint UNSIGNED  |
 | *| <a name='sakila.film_category_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;film&#95;category || ON film&#95;id&#44; category&#95;id|
 | 🔎  | fk&#95;film&#95;category&#95;category || ON category&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_film_category_category | ( category&#95;id ) ref [sakila&#46;category](#category) (category&#95;id) |
 |  | fk_film_category_film | ( film&#95;id ) ref [sakila&#46;film](#film) (film&#95;id) |
 
@@ -2806,7 +2809,7 @@ Some comment added today
 | *🔑 | <a name='sakila.film_text_film_id'>film&#95;id</a>| smallint  |
 | *🔎 | <a name='sakila.film_text_title'>title</a>| varchar&#40;255&#41;  |
 | 🔎 | <a name='sakila.film_text_description'>description</a>| text  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;film&#95;text || ON film&#95;id|
 | 🔎  | idx&#95;title&#95;description || ON title&#44; description|
 | 🔎  | idx&#95;title&#95;description || ON title&#44; description|
@@ -2818,7 +2821,7 @@ Some comment added today
 | *🔑 | <a name='sakila.film_text_0_film_id'>film&#95;id</a>| smallint  |
 | *| <a name='sakila.film_text_0_title'>title</a>| varchar&#40;255&#41;  |
 |  | <a name='sakila.film_text_0_description'>description</a>| text  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;film&#95;text&#95;0 || ON film&#95;id|
 
 
@@ -2829,11 +2832,11 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.inventory_film_id'>film&#95;id</a>| smallint UNSIGNED  |
 | *🔎 ⬈ | <a name='sakila.inventory_store_id'>store&#95;id</a>| tinyint UNSIGNED  |
 | *| <a name='sakila.inventory_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;inventory || ON inventory&#95;id|
 | 🔎  | idx&#95;fk&#95;film&#95;id || ON film&#95;id|
 | 🔎  | idx&#95;store&#95;id&#95;film&#95;id || ON store&#95;id&#44; film&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_inventory_film | ( film&#95;id ) ref [sakila&#46;film](#film) (film&#95;id) |
 |  | fk_inventory_store | ( store&#95;id ) ref [sakila&#46;store](#store) (store&#95;id) |
 
@@ -2845,7 +2848,7 @@ Some comment added today
 | *| <a name='sakila.language_name'>name</a>| char&#40;20&#41;  |
 | *| <a name='sakila.language_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
 |  | <a name='sakila.language_details'>details</a>| varchar&#40;122&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;language || ON language&#95;id|
 
 
@@ -2855,7 +2858,7 @@ Some comment added today
 | *🔑 | <a name='sakila.large_table_id'>id</a>| int  |
 |  | <a name='sakila.large_table_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.large_table_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;large&#95;table || ON id|
 
 
@@ -2867,7 +2870,7 @@ Some comment added today
 | *🔍 ⬋ | <a name='sakila.master_id3'>id3</a>| int  |
 |  | <a name='sakila.master_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.master_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔍  | unq&#95;master&#95;id1 || ON id1&#44; id2&#44; id3|
 
 
@@ -2893,12 +2896,12 @@ Some comment added today
 | *| <a name='sakila.payment_amount'>amount</a>| decimal&#40;5&#44;2&#41;  |
 | *| <a name='sakila.payment_payment_date'>payment&#95;date</a>| datetime  |
 |  | <a name='sakila.payment_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;payment || ON payment&#95;id|
 | 🔎  | fk&#95;payment&#95;rental || ON rental&#95;id|
 | 🔎  | idx&#95;fk&#95;customer&#95;id || ON customer&#95;id|
 | 🔎  | idx&#95;fk&#95;staff&#95;id || ON staff&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_payment_customer | ( customer&#95;id ) ref [sakila&#46;customer](#customer) (customer&#95;id) |
 |  | fk_payment_rental | ( rental&#95;id ) ref [sakila&#46;rental](#rental) (rental&#95;id) |
 |  | fk_payment_staff | ( staff&#95;id ) ref [sakila&#46;staff](#staff) (staff&#95;id) |
@@ -2913,7 +2916,7 @@ Some comment added today
 | *| <a name='sakila.pie_chart_population'>population</a>| int  |  |
 |  | <a name='sakila.pie_chart_more'>more</a>| int  |  |
 |  | <a name='sakila.pie_chart_babies'>babies</a>| int  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pie&#95;chart || ON city |  |
 
 
@@ -2927,13 +2930,13 @@ Some comment added today
 |  | <a name='sakila.rental_return_date'>return&#95;date</a>| datetime  |
 | *🔎 ⬈ | <a name='sakila.rental_staff_id'>staff&#95;id</a>| tinyint UNSIGNED  |
 | *| <a name='sakila.rental_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;rental || ON rental&#95;id|
 | 🔍  | rental&#95;date || ON rental&#95;date&#44; inventory&#95;id&#44; customer&#95;id|
 | 🔎  | idx&#95;fk&#95;customer&#95;id || ON customer&#95;id|
 | 🔎  | idx&#95;fk&#95;inventory&#95;id || ON inventory&#95;id|
 | 🔎  | idx&#95;fk&#95;staff&#95;id || ON staff&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_rental_customer | ( customer&#95;id ) ref [sakila&#46;customer](#customer) (customer&#95;id) |
 |  | fk_rental_inventory | ( inventory&#95;id ) ref [sakila&#46;inventory](#inventory) (inventory&#95;id) |
 |  | fk_rental_staff | ( staff&#95;id ) ref [sakila&#46;staff](#staff) (staff&#95;id) |
@@ -2959,7 +2962,7 @@ Some comment added today
 |  | <a name='sakila.sample_stimestamp5'>stimestamp5</a>| timestamp&#40;5&#41;  |
 |  | <a name='sakila.sample_stimestamp6'>stimestamp6</a>| timestamp&#40;6&#41;  |
 |  | <a name='sakila.sample_stimestamp_defo'>stimestamp&#95;defo</a>| timestamp  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sample || ON id|
 
 
@@ -2968,7 +2971,7 @@ Some comment added today
 |---|---|---|
 | *🔑 | <a name='sakila.simple_chart_country_name'>country&#95;name</a>| varchar&#40;100&#41;  |
 | *| <a name='sakila.simple_chart_population'>population</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;simple&#95;chart || ON country&#95;name|
 
 
@@ -2982,9 +2985,9 @@ Some comment added today
 |  | <a name='sakila.slave_lastname'>lastname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_details'>details</a>| text  |
 |  | <a name='sakila.slave_details2'>details2</a>| varchar&#40;10&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -2996,9 +2999,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_0_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_0_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_0_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;0 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_1 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3010,9 +3013,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_1_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_1_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_1_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;2 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_3 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3024,9 +3027,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_10_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_10_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_10_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;20 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_21 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3038,9 +3041,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_11_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_11_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_11_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;22 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_23 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3052,9 +3055,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_12_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_12_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_12_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;24 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_25 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3066,9 +3069,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_13_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_13_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_13_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;26 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_27 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3080,9 +3083,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_14_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_14_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_14_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;28 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_29 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3094,9 +3097,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_15_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_15_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_15_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;30 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_31 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3108,9 +3111,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_16_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_16_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_16_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;32 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_33 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3122,9 +3125,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_17_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_17_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_17_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;34 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_35 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3136,9 +3139,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_18_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_18_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_18_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;36 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_37 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3150,9 +3153,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_19_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_19_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_19_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;38 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_39 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3164,9 +3167,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_2_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_2_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_2_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;4 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_5 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3178,9 +3181,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_20_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_20_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_20_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;40 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_41 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3192,9 +3195,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_21_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_21_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_21_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;42 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_43 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3206,9 +3209,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_22_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_22_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_22_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;44 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_45 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3220,9 +3223,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_23_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_23_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_23_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;46 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_47 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3234,9 +3237,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_24_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_24_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_24_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;48 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_49 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3248,9 +3251,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_25_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_25_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_25_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;50 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_51 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3262,9 +3265,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_26_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_26_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_26_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;52 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_53 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3276,9 +3279,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_27_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_27_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_27_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;54 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_55 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3290,9 +3293,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_28_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_28_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_28_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;56 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_57 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3304,9 +3307,9 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_29_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_29_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_29_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;58 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_59 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3318,10 +3321,10 @@ Some comment added today
 | *🔎 ⬈ | <a name='sakila.slave_3_id3'>id3</a>| int  |
 | 🔎 | <a name='sakila.slave_3_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_3_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;6 || ON id1&#44; id2&#44; id3|
 | 🔎  | fk&#95;slave&#95;3&#95;slave&#95;30 || ON firstname|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_7 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3337,10 +3340,10 @@ some comment
 |  | <a name='sakila.slave_30_lastname'>lastname</a>| varchar&#40;100&#41;  |  |
 |  | <a name='sakila.slave_30_age'>age</a>| int  |  |
 |  | <a name='sakila.slave_30_description'>description</a>| varchar&#40;12&#41;  |  |
-| Indexes 
+| Indexes |
 | 🔍  | unq&#95;slave&#95;30&#95;firstname || ON firstname |  |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;60 || ON id1&#44; id2&#44; id3 |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_61 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |  |
 
 
@@ -3352,9 +3355,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_31_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_31_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_31_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;62 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_63 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3366,9 +3369,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_32_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_32_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_32_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;64 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_65 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3380,9 +3383,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_33_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_33_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_33_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;66 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_67 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3394,9 +3397,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_34_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_34_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_34_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;68 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_69 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3408,9 +3411,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_35_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_35_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_35_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;70 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_71 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3422,9 +3425,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_36_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_36_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_36_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;72 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_73 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3436,9 +3439,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_37_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_37_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_37_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;74 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_75 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3450,9 +3453,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_38_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_38_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_38_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;76 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_77 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3465,9 +3468,9 @@ some comment
 |  | <a name='sakila.slave_39_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_39_lastname'>lastname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_39_Age'>Age</a>| int  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;78 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_79 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3479,9 +3482,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_4_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_4_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_4_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;8 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_9 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3493,9 +3496,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_40_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_40_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_40_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;80 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_81 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3507,9 +3510,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_5_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_5_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_5_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;10 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_11 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3521,9 +3524,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_6_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_6_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_6_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;12 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_13 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3535,9 +3538,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_7_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_7_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_7_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;14 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_15 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3549,9 +3552,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_8_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_8_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_8_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;16 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_17 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3563,9 +3566,9 @@ some comment
 | *🔎 ⬈ | <a name='sakila.slave_9_id3'>id3</a>| int  |
 |  | <a name='sakila.slave_9_firstname'>firstname</a>| varchar&#40;100&#41;  |
 |  | <a name='sakila.slave_9_lastname'>lastname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | fk&#95;master&#95;0&#95;master&#95;18 || ON id1&#44; id2&#44; id3|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_master_0_master_19 | ( id1&#44; id2&#44; id3 ) ref [sakila&#46;master](#master) (id1&#44; id2&#44; id3) |
 
 
@@ -3598,11 +3601,11 @@ Some comments<br>&lt;a href&#61;&quot;other&#46;html&quot;&gt;some link&lt;&#47;
 | *| <a name='sakila.staff_username'>username</a>| varchar&#40;16&#41;  |  |
 |  | <a name='sakila.staff_password'>password</a>| varchar&#40;40&#41;  |  |
 | *| <a name='sakila.staff_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;staff || ON staff&#95;id |  |
 | 🔎  | idx&#95;fk&#95;address&#95;id || ON address&#95;id |  |
 | 🔎  | idx&#95;fk&#95;store&#95;id || ON store&#95;id |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_staff_address | ( address&#95;id ) ref [sakila&#46;address](#address) (address&#95;id) |  |
 |  | fk_staff_store | ( store&#95;id ) ref [sakila&#46;store](#store) (store&#95;id) |  |
 
@@ -3617,11 +3620,11 @@ Details about the stores&#46;
 | *🔎 ⬈ | <a name='sakila.store_address_id'>address&#95;id</a>| smallint UNSIGNED  |  |
 | *| <a name='sakila.store_last_update'>last&#95;update</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |  |
 |  | <a name='sakila.store_details'>details</a>| varchar&#40;120&#41;  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;store || ON store&#95;id |  |
 | 🔍  | idx&#95;unique&#95;manager || ON manager&#95;staff&#95;id |  |
 | 🔎  | idx&#95;fk&#95;address&#95;id || ON address&#95;id |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_store_address | ( address&#95;id ) ref [sakila&#46;address](#address) (address&#95;id) |  |
 |  | fk_store_staff | ( manager&#95;staff&#95;id ) ref [sakila&#46;staff](#staff) (staff&#95;id) |  |
 
@@ -3632,7 +3635,7 @@ Details about the stores&#46;
 | *🔑 | <a name='sakila.test_id'>id</a>| int  |
 |  | <a name='sakila.test_age'>age</a>| int  |
 |  | <a name='sakila.test_name'>name</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test || ON id|
 
 
@@ -3644,7 +3647,7 @@ some comment
 | *🔑 | <a name='sakila.test1_id'>id</a>| int  |  |
 |  | <a name='sakila.test1_firstname'>firstname</a>| varchar&#40;100&#41;  | the first name |
 |  | <a name='sakila.test1_lastname'>lastname</a>| varchar&#40;100&#41;  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test1 || ON id |  |
 
 
@@ -3675,7 +3678,7 @@ some comment
 | *🔑 | <a name='sakila.test1_0_id'>id</a>| int  |  |
 |  | <a name='sakila.test1_0_firstname'>firstname</a>| varchar&#40;100&#41;  | the first name |
 |  | <a name='sakila.test1_0_lastname'>lastname</a>| varchar&#40;100&#41;  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test1&#95;0 || ON id |  |
 
 
@@ -3684,7 +3687,7 @@ some comment
 |---|---|---|
 | *🔑 | <a name='sakila.test_identity_id'>id</a>| int AUTO_INCREMENT |
 |  | <a name='sakila.test_identity_firstname'>firstname</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;identity || ON id|
 
 
@@ -3696,7 +3699,7 @@ some comment
 |  | <a name='sakila.test_images_torename1'>torename1</a>| text  |
 |  | <a name='sakila.test_images_mimi'>mimi</a>| smallint  |
 |  | <a name='sakila.test_images_asdf'>asdf</a>| smallint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;images || ON id|
 
 
@@ -3706,7 +3709,7 @@ some comment
 | *🔑 | <a name='sakila.test_rdg_id'>id</a>| int  |
 |  | <a name='sakila.test_rdg_sometext'>sometext</a>| varchar&#40;250&#41;  |
 | *| <a name='sakila.test_rdg_id2'>id2</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;rdg || ON id|
 
 
@@ -3715,7 +3718,7 @@ some comment
 |---|---|---|
 | *🔑 | <a name='sakila.test_time_id'>id</a>| int  |
 | *| <a name='sakila.test_time_some_time'>some&#95;time</a>| time  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;time || ON id|
 
 
@@ -3724,7 +3727,7 @@ some comment
 |---|---|---|
 | *🔑 | <a name='sakila.test_timestamp_id'>id</a>| int  |
 | *| <a name='sakila.test_timestamp_some_timestamp'>some&#95;timestamp</a>| timestamp&#40;6&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;timestamp || ON id|
 
 
@@ -3736,7 +3739,7 @@ some comment
 |  | <a name='sakila.user__au'>&#95;au</a>| int UNSIGNED  |
 | *| <a name='sakila.user__ac'>&#95;ac</a>| timestamp  |
 |  | <a name='sakila.user__ad'>&#95;ad</a>| timestamp  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;user || ON id|
 
 
@@ -3903,7 +3906,7 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 | *🔑 | <a name='testone.admin_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.admin_usuario'>usuario</a>| varchar&#40;20&#41;  |
 |  | <a name='testone.admin_senha'>senha</a>| varchar&#40;20&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;admin || ON id|
 
 
@@ -3916,7 +3919,7 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 |  | <a name='testone.alunos_ENDERECO_ALUNO'>ENDERECO&#95;ALUNO</a>| varchar&#40;30&#41;  |
 |  | <a name='testone.alunos_CIDADE_ALUNO'>CIDADE&#95;ALUNO</a>| varchar&#40;20&#41;  DEFAULT 'Rio de Janeiro' |
 |  | <a name='testone.alunos_UF'>UF</a>| char&#40;2&#41;  DEFAULT 'RJ' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;alunos || ON MATRICULA|
 
 
@@ -3927,7 +3930,7 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 | *| <a name='testone.autor_version'>version</a>| bigint  |
 | *| <a name='testone.autor_nascimento'>nascimento</a>| datetime  |
 | *| <a name='testone.autor_nome'>nome</a>| varchar&#40;255&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;autor || ON id|
 
 
@@ -3940,7 +3943,7 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 | *| <a name='testone.bin185_statistics_age'>age</a>| smallint  |
 | *| <a name='testone.bin185_statistics_last_scared'>last&#95;scared</a>| date  |
 | *| <a name='testone.bin185_statistics_braveness'>braveness</a>| float&#40;12&#44;0&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;bin185&#95;statistics || ON bin185&#95;statistics&#95;id|
 
 
@@ -3950,7 +3953,7 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 | *🔑 | <a name='testone.books_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.books_title'>title</a>| varchar&#40;255&#41;  DEFAULT '' |
 | *| <a name='testone.books_author'>author</a>| varchar&#40;255&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;books || ON id|
 
 
@@ -3961,11 +3964,11 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 | *🔎 ⬈ | <a name='testone.campi_universities_id'>universities&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.campi_geo_cities_br_id'>geo&#95;cities&#95;br&#95;id</a>| bigint  |
 | *| <a name='testone.campi_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;campi || ON campi&#95;id|
 | 🔎  | campi&#95;city&#95;br&#95;fk || ON geo&#95;cities&#95;br&#95;id|
 | 🔎  | campi&#95;university&#95;fk || ON universities&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | campi_city_br_fk | ( geo&#95;cities&#95;br&#95;id ) ref [testone&#46;geo&#95;cities&#95;br](#geo&#95;cities&#95;br) (geo&#95;cities&#95;br&#95;id) |
 |  | campi_university_fk | ( universities&#95;id ) ref [testone&#46;universities](#universities) (universities&#95;id) |
 
@@ -3975,7 +3978,7 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.categorias_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.categorias_nome'>nome</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;categorias || ON id|
 
 
@@ -3985,10 +3988,10 @@ CREATE VIEW &#36;&#123;schema&#125;&#46;&#36;&#123;name&#125; AS select &#96;sak
 | *🔑 ⬋ | <a name='testone.classrooms_classrooms_id'>classrooms&#95;id</a>| bigint AUTO_INCREMENT |
 | *🔎 ⬈ | <a name='testone.classrooms_campi_id'>campi&#95;id</a>| bigint  |
 | *| <a name='testone.classrooms_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;classrooms || ON classrooms&#95;id|
 | 🔎  | classrooms&#95;campus&#95;fk || ON campi&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | classrooms_campus_fk | ( campi&#95;id ) ref [testone&#46;campi](#campi) (campi&#95;id) |
 
 
@@ -4004,11 +4007,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.cliente_gender'>gender</a>| varchar&#40;1&#41;  DEFAULT '' |  |
 | 🔎 ⬈ | <a name='testone.cliente_endereco_fk'>endereco&#95;fk</a>| bigint  |  |
 | 🔎 ⬈ | <a name='testone.cliente_login_fk'>login&#95;fk</a>| bigint  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;cliente || ON id |  |
 | 🔎  | cliente&#95;endereco&#95;fk || ON endereco&#95;fk |  |
 | 🔎  | cliente&#95;login&#95;fk || ON login&#95;fk |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | cliente_endereco_fk | ( endereco&#95;fk ) ref [testone&#46;endereco](#endereco) (id) |  |
 |  | fk_cliente | ( login&#95;fk ) ref [testone&#46;login](#login) (id) |  |
 
@@ -4019,7 +4022,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.contas_grupos_id'>id</a>| int AUTO_INCREMENT |
 | *| <a name='testone.contas_grupos_nome'>nome</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.contas_grupos_obs'>obs</a>| varchar&#40;200&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;grupos || ON id|
 
 
@@ -4030,7 +4033,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.contas_receita_descricao'>descricao</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.contas_receita_obs'>obs</a>| varchar&#40;200&#41;  |
 | 🔎 | <a name='testone.contas_receita_fk_grupos'>fk&#95;grupos</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;receita || ON id|
 | 🔎  | idx&#95;contas&#95;receita || ON fk&#95;grupos|
 
@@ -4041,7 +4044,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.contas_tipodoc_id'>id</a>| int AUTO_INCREMENT |
 | *| <a name='testone.contas_tipodoc_sigla'>sigla</a>| varchar&#40;2&#41;  |
 |  | <a name='testone.contas_tipodoc_descricao'>descricao</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;tipodoc || ON id|
 
 
@@ -4058,7 +4061,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | 🔎 | <a name='testone.contas_usuario_fk_responsavel'>fk&#95;responsavel</a>| int  |  |
 |  | <a name='testone.contas_usuario_obs'>obs</a>| varchar&#40;2000&#41;  |  |
 | *| <a name='testone.contas_usuario_data'>data</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;usuario || ON id |  |
 | 🔎  | idx&#95;contas&#95;usuario || ON fk&#95;responsavel |  |
 
@@ -4078,7 +4081,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | 🔎 | <a name='testone.contas_vendas_fk_pagante'>fk&#95;pagante</a>| int  |  |
 | 🔎 | <a name='testone.contas_vendas_fk_pagador'>fk&#95;pagador</a>| int  |  |
 | 🔎 | <a name='testone.contas_vendas_fk_contas_receitas'>fk&#95;contas&#95;receitas</a>| int  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contas&#95;vendas || ON id |  |
 | 🔎  | idx&#95;contas&#95;vendas || ON fk&#95;pagante |  |
 | 🔎  | idx&#95;contas&#95;vendas&#95;0 || ON fk&#95;pagador |  |
@@ -4094,7 +4097,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.contatcts_telephone'>telephone</a>| varchar&#40;15&#41;  |
 |  | <a name='testone.contatcts_email'>email</a>| varchar&#40;30&#41;  |
 | *| <a name='testone.contatcts_created'>created</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;contatcts || ON id|
 
 
@@ -4103,7 +4106,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.counter_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.counter_count'>count</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;counter || ON id|
 
 
@@ -4117,13 +4120,13 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.courses_gen_schedules_id'>gen&#95;schedules&#95;id</a>| bigint  |
 | *| <a name='testone.courses_acronym'>acronym</a>| varchar&#40;6&#41;  DEFAULT '' |
 | *| <a name='testone.courses_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;courses || ON courses&#95;id|
 | 🔎  | idx&#95;courses || ON gen&#95;schedules&#95;id|
 | 🔎  | idx&#95;courses&#95;0 || ON classrooms&#95;id|
 | 🔎  | idx&#95;courses&#95;1 || ON departments&#95;id|
 | 🔎  | idx&#95;courses&#95;2 || ON gen&#95;events&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_courses_classrooms | ( classrooms&#95;id ) ref [testone&#46;classrooms](#classrooms) (classrooms&#95;id) |
 |  | fk_courses_departments | ( departments&#95;id ) ref [testone&#46;departments](#departments) (departments&#95;id) |
 |  | fk_courses_events | ( gen&#95;events&#95;id ) ref [testone&#46;gen&#95;events](#gen&#95;events) (gen&#95;events&#95;id) |
@@ -4136,11 +4139,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬈ | <a name='testone.courses_pupils_pupils_id'>pupils&#95;id</a>| bigint AUTO_INCREMENT |  |
 | *🔑 ⬈ | <a name='testone.courses_pupils_courses_id'>courses&#95;id</a>| bigint  |  |
 | *| <a name='testone.courses_pupils_registration_date'>registration&#95;date</a>| timestamp  DEFAULT CURRENT_TIMESTAMP | pupil&#39;s registration date on a course |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;courses&#95;pupils || ON pupils&#95;id&#44; courses&#95;id |  |
 | 🔎  | courses&#95;pupils&#95;pupil&#95;fk || ON pupils&#95;id |  |
 | 🔎  | idx&#95;courses&#95;pupils || ON courses&#95;id |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_courses_pupils_courses | ( courses&#95;id ) ref [testone&#46;courses](#courses) (courses&#95;id) |  |
 |  | courses_pupils_pupil_fk | ( pupils&#95;id ) ref [testone&#46;pupils](#pupils) (pupils&#95;id) |  |
 
@@ -4154,12 +4157,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.cursos_PRECO'>PRECO</a>| int  DEFAULT 0 |
 | 🔎 ⬈ | <a name='testone.cursos_PRE_REQUISITO'>PRE&#95;REQUISITO</a>| int  |
 | 🔎 ⬈ | <a name='testone.cursos_NIVEL_FK'>NIVEL&#95;FK</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;cursos || ON COD&#95;CURSO|
 | 🔍  | SYS&#95;C005803 || ON NOME&#95;CURSO|
 | 🔎  | CURSOS&#95;NIVEL&#95;FK || ON NIVEL&#95;FK|
 | 🔎  | CURSOS&#95;PRE&#95;REQUISITO || ON PRE&#95;REQUISITO|
-| Foreign Keys 
+| Foreign Keys |
 |  | CURSOS_PRE_REQUISITO | ( PRE&#95;REQUISITO ) ref [testone&#46;cursos](#cursos) (COD&#95;CURSO) |
 |  | CURSOS_NIVEL_FK | ( NIVEL&#95;FK ) ref [testone&#46;niveis](#niveis) (COD&#95;NIVEL) |
 
@@ -4170,10 +4173,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.departments_departments_id'>departments&#95;id</a>| bigint AUTO_INCREMENT |
 | 🔎 ⬈ | <a name='testone.departments_campi_id'>campi&#95;id</a>| bigint  |
 | *| <a name='testone.departments_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;departments || ON departments&#95;id|
 | 🔎  | departments&#95;campus&#95;fk || ON campi&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | departments_campus_fk | ( campi&#95;id ) ref [testone&#46;campi](#campi) (campi&#95;id) |
 
 
@@ -4186,12 +4189,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.developer_DOC'>DOC</a>| varchar&#40;50&#41;  |
 | *🔎 | <a name='testone.developer_PRJROLE'>PRJROLE</a>| int  |
 |  | <a name='testone.developer_starttime'>starttime</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;developer || ON ID|
 | 🔍  | fk&#95;developer&#95;developer || ON manager|
 | 🔍  | NAME || ON NAME|
 | 🔎  | FK&#95;DEVELOPER&#95;PRJROLE || ON PRJROLE|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_developer_developer | ( manager ) ref [testone&#46;developer](#developer) (ID) |
 
 
@@ -4204,7 +4207,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.end_entrega_cidade'>cidade</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.end_entrega_estado'>estado</a>| varchar&#40;2&#41;  |
 |  | <a name='testone.end_entrega_cep'>cep</a>| varchar&#40;9&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;end&#95;entrega || ON id|
 
 
@@ -4218,7 +4221,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.endereco_cidade'>cidade</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.endereco_estado'>estado</a>| varchar&#40;2&#41;  DEFAULT '' |
 | *| <a name='testone.endereco_cep'>cep</a>| varchar&#40;9&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;endereco || ON id|
 
 
@@ -4230,10 +4233,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.eshop_books_author'>author</a>| varchar&#40;70&#41;  |
 |  | <a name='testone.eshop_books_price'>price</a>| decimal&#40;7&#44;2&#41;  |
 | 🔎 ⬈ | <a name='testone.eshop_books_category_id'>category&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;books || ON book&#95;id|
 | 🔎  | eshop&#95;category&#95;fk || ON category&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | eshop_category_fk | ( category&#95;id ) ref [testone&#46;eshop&#95;categories](#eshop&#95;categories) (category&#95;id) |
 
 
@@ -4242,7 +4245,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.eshop_categories_category_id'>category&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.eshop_categories_category_name'>category&#95;name</a>| varchar&#40;70&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;categories || ON category&#95;id|
 
 
@@ -4254,7 +4257,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.eshop_client_cc_name'>cc&#95;name</a>| varchar&#40;30&#41;  DEFAULT '' |
 | *| <a name='testone.eshop_client_cc_number'>cc&#95;number</a>| varchar&#40;19&#41;  DEFAULT '' |
 | *| <a name='testone.eshop_client_cc_expiration'>cc&#95;expiration</a>| varchar&#40;22&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;client || ON client&#95;id|
 
 
@@ -4268,10 +4271,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.eshop_order_details_quantity'>quantity</a>| int  |
 |  | <a name='testone.eshop_order_details_price'>price</a>| decimal&#40;7&#44;2&#41;  |
 | *🔍 ⬈ | <a name='testone.eshop_order_details_order_id'>order&#95;id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;order&#95;details || ON order&#95;detail&#95;id|
 | 🔍  | order&#95;id || ON order&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | eshop_order_details_fk | ( order&#95;id ) ref [testone&#46;eshop&#95;orders](#eshop&#95;orders) (order&#95;id) |
 
 
@@ -4282,10 +4285,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.eshop_orders_delivery_name'>delivery&#95;name</a>| varchar&#40;70&#41;  |
 |  | <a name='testone.eshop_orders_delivery_address'>delivery&#95;address</a>| varchar&#40;70&#41;  |
 | *🔎 ⬈ | <a name='testone.eshop_orders_client_id'>client&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;eshop&#95;orders || ON order&#95;id|
 | 🔎  | idx&#95;eshop&#95;orders || ON client&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_eshop_orders | ( client&#95;id ) ref [testone&#46;eshop&#95;client](#eshop&#95;client) (client&#95;id) |
 
 
@@ -4296,7 +4299,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.faixas_DESCRICAO'>DESCRICAO</a>| varchar&#40;60&#41;  DEFAULT '' |
 | *| <a name='testone.faixas_MINIMO'>MINIMO</a>| int  |
 | *| <a name='testone.faixas_MAXIMO'>MAXIMO</a>| int  |
-| Indexes 
+| Indexes |
 | 🔍  | COD&#95;FAIXA || ON COD&#95;FAIXA|
 
 
@@ -4305,7 +4308,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.gen_actions_gen_actions_id'>gen&#95;actions&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_actions_description'>description</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;actions || ON gen&#95;actions&#95;id|
 
 
@@ -4317,11 +4320,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.gen_addresses_name'>name</a>| varchar&#40;200&#41;  | Name or description&#46;nFor instance&#44; street&#44; avenue&#44; square&#44; etc&#46; |
 | 🔎 ⬈ | <a name='testone.gen_addresses_geo_cities_id'>geo&#95;cities&#95;id</a>| bigint  |  |
 | 🔎 ⬈ | <a name='testone.gen_addresses_geo_cities_br_id'>geo&#95;cities&#95;br&#95;id</a>| bigint  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;addresses || ON gen&#95;addresses&#95;id |  |
 | 🔎  | fk&#95;gen&#95;addresses&#95;0 || ON geo&#95;cities&#95;id |  |
 | 🔎  | idx&#95;gen&#95;addresses || ON geo&#95;cities&#95;br&#95;id |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_gen_addresses_0 | ( geo&#95;cities&#95;id ) ref [testone&#46;geo&#95;cities](#geo&#95;cities) (geo&#95;cities&#95;id) |  |
 |  | fk_gen_addresses | ( geo&#95;cities&#95;br&#95;id ) ref [testone&#46;geo&#95;cities&#95;br](#geo&#95;cities&#95;br) (geo&#95;cities&#95;br&#95;id) |  |
 
@@ -4331,7 +4334,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.gen_addresses_types_gen_addresses_types_id'>gen&#95;addresses&#95;types&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_addresses_types_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;addresses&#95;types || ON gen&#95;addresses&#95;types&#95;id|
 
 
@@ -4342,11 +4345,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.gen_companies_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.gen_companies_gen_addresses_id'>gen&#95;addresses&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.gen_companies_gen_companies_types_id'>gen&#95;companies&#95;types&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;companies || ON gen&#95;companies&#95;id|
 | 🔎  | idx&#95;companies&#95;addresses || ON gen&#95;addresses&#95;id|
 | 🔎  | idx&#95;gen&#95;companies || ON gen&#95;companies&#95;types&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_companies_addresses | ( gen&#95;addresses&#95;id ) ref [testone&#46;gen&#95;addresses](#gen&#95;addresses) (gen&#95;addresses&#95;id) |
 |  | fk_gen_companies | ( gen&#95;companies&#95;types&#95;id ) ref [testone&#46;gen&#95;companies&#95;types](#gen&#95;companies&#95;types) (gen&#95;companies&#95;types&#95;id) |
 
@@ -4356,7 +4359,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.gen_companies_types_gen_companies_types_id'>gen&#95;companies&#95;types&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_companies_types_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;companies&#95;types || ON gen&#95;companies&#95;types&#95;id|
 
 
@@ -4366,11 +4369,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬈ | <a name='testone.gen_company_owners_gen_company_owners_id'>gen&#95;company&#95;owners&#95;id</a>| bigint AUTO_INCREMENT |
 | 🔎 ⬈ | <a name='testone.gen_company_owners_gen_companies_id'>gen&#95;companies&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.gen_company_owners_ownership_types_id'>ownership&#95;types&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;company&#95;owners || ON gen&#95;company&#95;owners&#95;id|
 | 🔎  | fk&#95;gen&#95;company&#95;owners&#95;0 || ON gen&#95;companies&#95;id|
 | 🔎  | idx&#95;gen&#95;company&#95;owners&#95;1 || ON ownership&#95;types&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_gen_company_owners_0 | ( gen&#95;companies&#95;id ) ref [testone&#46;gen&#95;companies](#gen&#95;companies) (gen&#95;companies&#95;id) |
 |  | fk_gen_company_owners | ( gen&#95;company&#95;owners&#95;id ) ref [testone&#46;gen&#95;entities](#gen&#95;entities) (gen&#95;entities&#95;id) |
 |  | fk_gen_company_owners_1 | ( ownership&#95;types&#95;id ) ref [testone&#46;ownership&#95;types](#ownership&#95;types) (ownership&#95;types&#95;id) |
@@ -4383,9 +4386,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.gen_docs_type'>type</a>| varchar&#40;30&#41;  |
 |  | <a name='testone.gen_docs_number'>number</a>| varchar&#40;30&#41;  |
 | *| <a name='testone.gen_docs_date_'>date&#95;</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;docs || ON gen&#95;docs&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_gen_docs | ( gen&#95;docs&#95;id ) ref [testone&#46;gen&#95;persons](#gen&#95;persons) (gen&#95;docs&#95;id) |
 
 
@@ -4395,11 +4398,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 ⬋ | <a name='testone.gen_entities_gen_entities_id'>gen&#95;entities&#95;id</a>| bigint AUTO_INCREMENT |
 | 🔎 ⬈ | <a name='testone.gen_entities_gen_persons_id'>gen&#95;persons&#95;id</a>| bigint  DEFAULT 0 |
 | 🔎 ⬈ | <a name='testone.gen_entities_gen_companies_id'>gen&#95;companies&#95;id</a>| bigint  DEFAULT 0 |
-| Indexes 
+| Indexes |
 | 🔍  | pk&#95;entities || ON gen&#95;entities&#95;id|
 | 🔎  | idx&#95;entities || ON gen&#95;companies&#95;id|
 | 🔎  | idx&#95;entities&#95;0 || ON gen&#95;persons&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_entities_companies | ( gen&#95;companies&#95;id ) ref [testone&#46;gen&#95;companies](#gen&#95;companies) (gen&#95;companies&#95;id) |
 |  | fk_entities_persons | ( gen&#95;persons&#95;id ) ref [testone&#46;gen&#95;persons](#gen&#95;persons) (gen&#95;persons&#95;id) |
 
@@ -4413,12 +4416,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.gen_events_gen_schedules_id'>gen&#95;schedules&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.gen_events_gen_addresses_id'>gen&#95;addresses&#95;id</a>| bigint  |
 | 🔎 ⬈ | <a name='testone.gen_events_gen_entities_id'>gen&#95;entities&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;events || ON gen&#95;events&#95;id|
 | 🔎  | idx&#95;events || ON gen&#95;schedules&#95;id|
 | 🔎  | idx&#95;events&#95;0 || ON gen&#95;addresses&#95;id|
 | 🔎  | idx&#95;events&#95;1 || ON gen&#95;entities&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_events_addresses | ( gen&#95;addresses&#95;id ) ref [testone&#46;gen&#95;addresses](#gen&#95;addresses) (gen&#95;addresses&#95;id) |
 |  | fk_events_entities | ( gen&#95;entities&#95;id ) ref [testone&#46;gen&#95;entities](#gen&#95;entities) (gen&#95;entities&#95;id) |
 |  | fk_events_schedules | ( gen&#95;schedules&#95;id ) ref [testone&#46;gen&#95;schedules](#gen&#95;schedules) (gen&#95;schedules&#95;id) |
@@ -4433,7 +4436,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 ⬋ | <a name='testone.gen_persons_gen_docs_id'>gen&#95;docs&#95;id</a>| bigint  |
 | *| <a name='testone.gen_persons_gen_addresses_id'>gen&#95;addresses&#95;id</a>| bigint  |
 |  | <a name='testone.gen_persons_notes'>notes</a>| varchar&#40;60&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;persons || ON gen&#95;persons&#95;id|
 | 🔍  | idx&#95;gen&#95;persons || ON gen&#95;docs&#95;id|
 
@@ -4444,10 +4447,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.gen_resources_gen_resources_id'>gen&#95;resources&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.gen_resources_name'>name</a>| varchar&#40;30&#41;  |
 | *🔎 ⬈ | <a name='testone.gen_resources_gen_systems_id'>gen&#95;systems&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;resources || ON gen&#95;resources&#95;id|
 | 🔎  | idx&#95;resources || ON gen&#95;systems&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_resources_systems | ( gen&#95;systems&#95;id ) ref [testone&#46;gen&#95;systems](#gen&#95;systems) (gen&#95;systems&#95;id) |
 
 
@@ -4456,7 +4459,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.gen_roles_gen_roles_id'>gen&#95;roles&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_roles_name'>name</a>| varchar&#40;50&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;roles || ON gen&#95;roles&#95;id|
 
 
@@ -4466,7 +4469,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.gen_schedules_gen_schedules_id'>gen&#95;schedules&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_schedules_time_hm_end'>time&#95;hm&#95;end</a>| varchar&#40;5&#41;  DEFAULT '' |
 | *| <a name='testone.gen_schedules_time_hm_begin'>time&#95;hm&#95;begin</a>| varchar&#40;5&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;schedules || ON gen&#95;schedules&#95;id|
 
 
@@ -4476,10 +4479,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.gen_systems_gen_systems_id'>gen&#95;systems&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.gen_systems_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.gen_systems_gen_entities_id'>gen&#95;entities&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;gen&#95;systems || ON gen&#95;systems&#95;id|
 | 🔎  | idx&#95;systems || ON gen&#95;entities&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_systems_entities | ( gen&#95;entities&#95;id ) ref [testone&#46;gen&#95;entities](#gen&#95;entities) (gen&#95;entities&#95;id) |
 
 
@@ -4489,7 +4492,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.geo_capitals_br_geo_capitals_br_id'>geo&#95;capitals&#95;br&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.geo_capitals_br_state'>state</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_capitals_br_city'>city</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;capitals&#95;br || ON geo&#95;capitals&#95;br&#95;id|
 
 
@@ -4502,7 +4505,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ac_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ac_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ac_place_type'>place&#95;type</a>| varchar&#40;20&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ac || ON geo&#95;cep&#95;id|
 
 
@@ -4515,7 +4518,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_al_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_al_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_al_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;al || ON geo&#95;cep&#95;id|
 
 
@@ -4528,7 +4531,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_am_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_am_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_am_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;am || ON geo&#95;cep&#95;id|
 
 
@@ -4541,7 +4544,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ap_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ap_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ap_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ap || ON geo&#95;cep&#95;id|
 
 
@@ -4554,7 +4557,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ba_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ba_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ba_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ba || ON geo&#95;cep&#95;id|
 
 
@@ -4567,7 +4570,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ce_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ce_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ce_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ce || ON geo&#95;cep&#95;id|
 
 
@@ -4580,7 +4583,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_df_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_df_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_df_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;df || ON geo&#95;cep&#95;id|
 
 
@@ -4593,7 +4596,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_es_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_es_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_es_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;es || ON geo&#95;cep&#95;id|
 
 
@@ -4606,7 +4609,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_go_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_go_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_go_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;go || ON geo&#95;cep&#95;id|
 
 
@@ -4616,7 +4619,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.geo_cep_index_geo_cep_index'>geo&#95;cep&#95;index</a>| int  |
 | *| <a name='testone.geo_cep_index_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_index_state'>state</a>| varchar&#40;2&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;index || ON geo&#95;cep&#95;index|
 
 
@@ -4629,7 +4632,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ma_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ma_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ma_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ma || ON geo&#95;cep&#95;id|
 
 
@@ -4642,7 +4645,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_mg_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mg_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mg_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;mg || ON geo&#95;cep&#95;id|
 
 
@@ -4655,7 +4658,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ms_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ms_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ms_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ms || ON geo&#95;cep&#95;id|
 
 
@@ -4668,7 +4671,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_mt_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mt_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_mt_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;mt || ON geo&#95;cep&#95;id|
 
 
@@ -4681,7 +4684,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pa_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pa_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pa_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pa || ON geo&#95;cep&#95;id|
 
 
@@ -4694,7 +4697,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pb_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pb_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pb_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pb || ON geo&#95;cep&#95;id|
 
 
@@ -4707,7 +4710,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pe_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pe_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pe_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pe || ON geo&#95;cep&#95;id|
 
 
@@ -4720,7 +4723,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pi_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pi_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pi_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pi || ON geo&#95;cep&#95;id|
 
 
@@ -4733,7 +4736,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_pr_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pr_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_pr_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;pr || ON geo&#95;cep&#95;id|
 
 
@@ -4746,7 +4749,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rj_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rj_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rj_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rj || ON geo&#95;cep&#95;id|
 
 
@@ -4759,7 +4762,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rn_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rn_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rn_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rn || ON geo&#95;cep&#95;id|
 
 
@@ -4772,7 +4775,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_ro_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ro_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_ro_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;ro || ON geo&#95;cep&#95;id|
 
 
@@ -4785,7 +4788,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rr_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rr_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rr_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rr || ON geo&#95;cep&#95;id|
 
 
@@ -4798,7 +4801,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_rs_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rs_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_rs_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;rs || ON geo&#95;cep&#95;id|
 
 
@@ -4811,7 +4814,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_sc_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sc_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sc_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;sc || ON geo&#95;cep&#95;id|
 
 
@@ -4824,7 +4827,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_se_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_se_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_se_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;se || ON geo&#95;cep&#95;id|
 
 
@@ -4837,7 +4840,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_sp_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sp_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_sp_place_type'>place&#95;type</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;sp || ON geo&#95;cep&#95;id|
 
 
@@ -4850,7 +4853,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_to_neighborhood'>neighborhood</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_to_code'>code</a>| varchar&#40;9&#41;  DEFAULT '' |
 | *| <a name='testone.geo_cep_to_place_type'>place&#95;type</a>| varchar&#40;20&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;to || ON geo&#95;cep&#95;id|
 
 
@@ -4862,7 +4865,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.geo_cep_unique_name_without_accent'>name&#95;without&#95;accent</a>| varchar&#40;70&#41;  DEFAULT '' |
 |  | <a name='testone.geo_cep_unique_code'>code</a>| varchar&#40;9&#41;  |
 | *| <a name='testone.geo_cep_unique_state'>state</a>| varchar&#40;2&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cep&#95;unique || ON geo&#95;cep&#95;unique&#95;id|
 
 
@@ -4874,10 +4877,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.geo_cities_geo_states_id'>geo&#95;states&#95;id</a>| bigint  |
 |  | <a name='testone.geo_cities_iscapital'>iscapital</a>| varchar&#40;1&#41;  |
 |  | <a name='testone.geo_cities_phone_code'>phone&#95;code</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cities || ON geo&#95;cities&#95;id|
 | 🔎  | idx&#95;geo&#95;cities || ON geo&#95;states&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_geo_cities | ( geo&#95;states&#95;id ) ref [testone&#46;geo&#95;states](#geo&#95;states) (geo&#95;states&#95;id) |
 
 
@@ -4889,10 +4892,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.geo_cities_br_iscapital'>iscapital</a>| varchar&#40;1&#41;  |
 |  | <a name='testone.geo_cities_br_ddd'>ddd</a>| int  |
 | *🔎 ⬈ | <a name='testone.geo_cities_br_geo_states_br_id'>geo&#95;states&#95;br&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;cities&#95;br || ON geo&#95;cities&#95;br&#95;id|
 | 🔎  | cities&#95;br&#95;state&#95;br&#95;fk || ON geo&#95;states&#95;br&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | cities_br_state_br_fk | ( geo&#95;states&#95;br&#95;id ) ref [testone&#46;geo&#95;states&#95;br](#geo&#95;states&#95;br) (geo&#95;states&#95;br&#95;id) |
 
 
@@ -4901,7 +4904,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.geo_countries_geo_countries_id'>geo&#95;countries&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.geo_countries_name'>name</a>| varchar&#40;50&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;countries || ON geo&#95;countries&#95;id|
 
 
@@ -4914,10 +4917,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.geo_states_alpha_code'>alpha&#95;code</a>| varchar&#40;6&#41;  |
 |  | <a name='testone.geo_states_numerical_code'>numerical&#95;code</a>| int  |
 |  | <a name='testone.geo_states_abbreviation'>abbreviation</a>| varchar&#40;10&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;states || ON geo&#95;states&#95;id|
 | 🔎  | idx&#95;geo&#95;states || ON geo&#95;countries&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_geo_states_geo_countries | ( geo&#95;countries&#95;id ) ref [testone&#46;geo&#95;countries](#geo&#95;countries) (geo&#95;countries&#95;id) |
 
 
@@ -4930,10 +4933,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.geo_states_br_numerical_code'>numerical&#95;code</a>| int  |
 | *🔎 ⬈ | <a name='testone.geo_states_br_geo_countries_id'>geo&#95;countries&#95;id</a>| bigint  |
 |  | <a name='testone.geo_states_br_capital'>capital</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;geo&#95;states&#95;br || ON geo&#95;states&#95;br&#95;id|
 | 🔎  | idx&#95;geo&#95;states&#95;br || ON geo&#95;countries&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_geo_states_br | ( geo&#95;countries&#95;id ) ref [testone&#46;geo&#95;countries](#geo&#95;countries) (geo&#95;countries&#95;id) |
 
 
@@ -4948,10 +4951,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_address_state'>state</a>| varchar&#40;2&#41;  DEFAULT '' |  |
 | *| <a name='testone.getit_address_zip'>zip</a>| varchar&#40;9&#41;  DEFAULT '' |  |
 | *🔎 ⬈ | <a name='testone.getit_address_country_fk'>country&#95;fk</a>| bigint  |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;address || ON id |  |
 | 🔎  | idx&#95;getit&#95;address || ON country&#95;fk |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_address | ( country&#95;fk ) ref [testone&#46;geo&#95;countries](#geo&#95;countries) (geo&#95;countries&#95;id) |  |
 
 
@@ -4965,11 +4968,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_client_gender'>gender</a>| varchar&#40;1&#41;  DEFAULT '' |
 | 🔎 | <a name='testone.getit_client_address_fk'>address&#95;fk</a>| bigint  |
 | 🔎 ⬈ | <a name='testone.getit_client_logon_fk'>logon&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;client || ON id|
 | 🔎  | getit&#95;cliente&#95;endereco&#95;fk&#95;0 || ON address&#95;fk|
 | 🔎  | getit&#95;cliente&#95;login&#95;fk&#95;0 || ON logon&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_client_0 | ( logon&#95;fk ) ref [testone&#46;getit&#95;address](#getit&#95;address) (id) |
 |  | fk_client | ( logon&#95;fk ) ref [testone&#46;getit&#95;logon](#getit&#95;logon) (id) |
 
@@ -4982,7 +4985,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_logon_login'>login</a>| varchar&#40;10&#41;  DEFAULT '' |
 | *| <a name='testone.getit_logon_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.getit_logon_password'>password</a>| varchar&#40;10&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;logon || ON id|
 
 
@@ -4997,7 +5000,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.getit_post_content'>content</a>| text  |
 |  | <a name='testone.getit_post_img'>img</a>| blob  |
 |  | <a name='testone.getit_post_tokens'>tokens</a>| varchar&#40;255&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;post || ON id|
 
 
@@ -5009,11 +5012,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | 🔎 ⬈ | <a name='testone.getit_recipient_logon_fk'>logon&#95;fk</a>| bigint  |  |
 | *🔎 ⬈ | <a name='testone.getit_recipient_post_fk'>post&#95;fk</a>| bigint  |  |
 | *| <a name='testone.getit_recipient_times'>times</a>| int  | number of times that the same post was sent &#40;default &#61;1&#41; |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;getit&#95;recipient || ON id |  |
 | 🔎  | idx&#95;getit&#95;recipient || ON logon&#95;fk |  |
 | 🔎  | idx&#95;getit&#95;recipient&#95;0 || ON post&#95;fk |  |
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_recipient | ( logon&#95;fk ) ref [testone&#46;getit&#95;logon](#getit&#95;logon) (id) |  |
 |  | fk_recipient_0 | ( post&#95;fk ) ref [testone&#46;getit&#95;post](#getit&#95;post) (id) |  |
 
@@ -5025,7 +5028,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.grupo_nome'>nome</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.grupo_obs'>obs</a>| varchar&#40;100&#41;  |
 | *| <a name='testone.grupo_lastupdate'>lastupdate</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;grupo || ON id|
 
 
@@ -5034,7 +5037,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.hilosequences_sequencename'>sequencename</a>| varchar&#40;50&#41;  DEFAULT '' |
 | *| <a name='testone.hilosequences_highvalues'>highvalues</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;hilosequences || ON sequencename|
 
 
@@ -5046,10 +5049,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.instrutores_TEL_INSTRUTOR'>TEL&#95;INSTRUTOR</a>| varchar&#40;10&#41;  |
 |  | <a name='testone.instrutores_ADMISSAO'>ADMISSAO</a>| date  |
 | 🔎 ⬈ | <a name='testone.instrutores_COD_TITULO'>COD&#95;TITULO</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;instrutores || ON COD&#95;INSTRUTOR|
 | 🔎  | INSTRUTORES&#95;TITULO&#95;FK || ON COD&#95;TITULO|
-| Foreign Keys 
+| Foreign Keys |
 |  | INSTRUTORES_TITULO_FK | ( COD&#95;TITULO ) ref [testone&#46;titulos](#titulos) (COD&#95;TITULO) |
 
 
@@ -5060,10 +5063,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.itens_pedido_produto_fk'>produto&#95;fk</a>| bigint  |
 |  | <a name='testone.itens_pedido_qtd'>qtd</a>| bigint  |
 |  | <a name='testone.itens_pedido_preco'>preco</a>| float&#40;12&#44;0&#41;  |
-| Indexes 
+| Indexes |
 | 🔎  | idx&#95;itens&#95;pedido&#95;pedido&#95;fk || ON pedido&#95;fk|
 | 🔎  | idx&#95;itens&#95;pedido&#95;produto&#95;fk || ON produto&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | itens_pedido_pedido_fk | ( pedido&#95;fk ) ref [testone&#46;pedidos](#pedidos) (id) |
 |  | itens_pedido_produto_fk | ( produto&#95;fk ) ref [testone&#46;produtos](#produtos) (id) |
 
@@ -5075,7 +5078,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 | <a name='testone.lgn_authorization_login_fk'>login&#95;fk</a>| bigint  |
 | *🔎 | <a name='testone.lgn_authorization_resource_fk'>resource&#95;fk</a>| bigint  |
 | *| <a name='testone.lgn_authorization_status'>status</a>| varchar&#40;1&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔎  | idx&#95;lgn&#95;permission || ON resource&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;login || ON login&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;role || ON role&#95;fk|
@@ -5088,10 +5091,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.lgn_login_profile_fk'>profile&#95;fk</a>| bigint  |
 | *| <a name='testone.lgn_login_password'>password</a>| varchar&#40;20&#41;  DEFAULT '' |
 | *| <a name='testone.lgn_login_email'>email</a>| varchar&#40;40&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;login || ON id|
 | 🔎  | idx&#95;lgn&#95;login || ON profile&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_lgn_login_profile | ( profile&#95;fk ) ref [testone&#46;lgn&#95;profile](#lgn&#95;profile) (id) |
 
 
@@ -5101,11 +5104,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.lgn_permission_role_fk'>role&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.lgn_permission_login_fk'>login&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.lgn_permission_resource_fk'>resource&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔎  | idx&#95;lgn&#95;permission || ON resource&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;login || ON login&#95;fk|
 | 🔎  | idx&#95;lgn&#95;permission&#95;role || ON role&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_lgn_permission_login | ( login&#95;fk ) ref [testone&#46;lgn&#95;login](#lgn&#95;login) (id) |
 |  | fk_lgn_permission_resource | ( resource&#95;fk ) ref [testone&#46;lgn&#95;resource](#lgn&#95;resource) (id) |
 |  | fk_lgn_permission_role | ( role&#95;fk ) ref [testone&#46;lgn&#95;role](#lgn&#95;role) (id) |
@@ -5117,7 +5120,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.lgn_profile_id'>id</a>| bigint AUTO_INCREMENT |  |
 | *| <a name='testone.lgn_profile_code'>code</a>| int UNSIGNED  | access degree&#46; |
 | *| <a name='testone.lgn_profile_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;profile || ON id |  |
 
 
@@ -5127,7 +5130,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.lgn_resource_id'>id</a>| bigint AUTO_INCREMENT |
 | 🔎 | <a name='testone.lgn_resource_parent_fk'>parent&#95;fk</a>| bigint  |
 | *| <a name='testone.lgn_resource_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;resource || ON id|
 | 🔎  | idx&#95;lgn&#95;resource || ON parent&#95;fk|
 
@@ -5139,10 +5142,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.lgn_role_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.lgn_role_code'>code</a>| int UNSIGNED  |
 | 🔎 ⬈ | <a name='testone.lgn_role_profile_fk'>profile&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;lgn&#95;role || ON id|
 | 🔎  | idx&#95;lgn&#95;role || ON profile&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_lgn_role_profile | ( profile&#95;fk ) ref [testone&#46;lgn&#95;profile](#lgn&#95;profile) (id) |
 
 
@@ -5154,10 +5157,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.livro_autor_id'>autor&#95;id</a>| bigint  |
 | *| <a name='testone.livro_titulo'>titulo</a>| varchar&#40;255&#41;  |
 | *| <a name='testone.livro_valor'>valor</a>| float&#40;12&#44;0&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;livro || ON id|
 | 🔎  | FK&#95;jiba630fqnramd9goavw4xor0 || ON autor&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | FK_jiba630fqnramd9goavw4xor0 | ( autor&#95;id ) ref [testone&#46;autor](#autor) (id) |
 
 
@@ -5166,7 +5169,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.loc_categorias_loc_categorias_id'>loc&#95;categorias&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.loc_categorias_descricao'>descricao</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;categorias || ON loc&#95;categorias&#95;id|
 
 
@@ -5179,7 +5182,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_clientes_celular'>celular</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_clientes_email'>email</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_clientes_loc_enderecos_id'>loc&#95;enderecos&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;clientes || ON loc&#95;clientes&#95;id|
 
 
@@ -5194,9 +5197,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_enderecos_estado'>estado</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_enderecos_cep'>cep</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_enderecos_complemento'>complemento</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;enderecos || ON loc&#95;clientes&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_loc_enderecos | ( loc&#95;clientes&#95;id ) ref [testone&#46;loc&#95;clientes](#loc&#95;clientes) (loc&#95;clientes&#95;id) |
 
 
@@ -5207,10 +5210,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_filmes_descricao'>descricao</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.loc_filmes_ano'>ano</a>| int  |
 | *🔎 ⬈ | <a name='testone.loc_filmes_loc_categorias_id'>loc&#95;categorias&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;filmes || ON loc&#95;filmes&#95;id|
 | 🔎  | loc&#95;categorias&#95;fk || ON loc&#95;categorias&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | loc_categorias_fk | ( loc&#95;categorias&#95;id ) ref [testone&#46;loc&#95;categorias](#loc&#95;categorias) (loc&#95;categorias&#95;id) |
 
 
@@ -5224,11 +5227,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.loc_locacoes_observacao'>observacao</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.loc_locacoes_loc_midia_id'>loc&#95;midia&#95;id</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.loc_locacoes_loc_clientes_id'>loc&#95;clientes&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;locacoes || ON loc&#95;locacoes&#95;id|
 | 🔎  | loc&#95;clientes&#95;fk || ON loc&#95;clientes&#95;id|
 | 🔎  | loc&#95;midia&#95;fk || ON loc&#95;midia&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | loc_clientes_fk | ( loc&#95;clientes&#95;id ) ref [testone&#46;loc&#95;clientes](#loc&#95;clientes) (loc&#95;clientes&#95;id) |
 |  | loc_midia_fk | ( loc&#95;midia&#95;id ) ref [testone&#46;loc&#95;midia](#loc&#95;midia) (loc&#95;midia&#95;id) |
 
@@ -5239,10 +5242,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.loc_midia_loc_midia_id'>loc&#95;midia&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.loc_midia_inutilizada'>inutilizada</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.loc_midia_loc_filmes_id'>loc&#95;filmes&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;midia || ON loc&#95;midia&#95;id|
 | 🔎  | loc&#95;filmes&#95;fk || ON loc&#95;filmes&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | loc_filmes_fk | ( loc&#95;filmes&#95;id ) ref [testone&#46;loc&#95;filmes](#loc&#95;filmes) (loc&#95;filmes&#95;id) |
 
 
@@ -5258,7 +5261,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.loc_users_celular'>celular</a>| varchar&#40;25&#41;  DEFAULT '' |
 | *| <a name='testone.loc_users_idioma'>idioma</a>| varchar&#40;15&#41;  DEFAULT '' |
 | *| <a name='testone.loc_users_ativo'>ativo</a>| smallint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;loc&#95;users || ON loc&#95;users&#95;id|
 | 🔍  | login&#95;unique || ON login|
 
@@ -5271,7 +5274,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.login_login'>login</a>| varchar&#40;10&#41;  DEFAULT '' |
 | *| <a name='testone.login_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.login_password'>password</a>| varchar&#40;10&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;login || ON id|
 
 
@@ -5280,7 +5283,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.manufacturer_id'>id</a>| bigint  DEFAULT 0 |
 |  | <a name='testone.manufacturer_nome'>nome</a>| varchar&#40;30&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;manufacturer || ON id|
 
 
@@ -5292,7 +5295,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.model_version'>version</a>| varchar&#40;60&#41;  |
 |  | <a name='testone.model_accessories'>accessories</a>| varchar&#40;100&#41;  |
 | 🔎 | <a name='testone.model_manufacturer_fk'>manufacturer&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;model || ON id|
 | 🔎  | model&#95;manufacturer&#95;fk || ON manufacturer&#95;fk|
 
@@ -5305,7 +5308,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.mp3_posts_from_'>from&#95;</a>| varchar&#40;255&#41;  DEFAULT '' |
 | *| <a name='testone.mp3_posts_date_'>date&#95;</a>| varchar&#40;30&#41;  DEFAULT '' |
 | *| <a name='testone.mp3_posts_link'>link</a>| varchar&#40;1000&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔍  | id || ON id|
 
 
@@ -5314,7 +5317,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.niveis_COD_NIVEL'>COD&#95;NIVEL</a>| int AUTO_INCREMENT |
 | *| <a name='testone.niveis_DESCRICAO'>DESCRICAO</a>| varchar&#40;60&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;niveis || ON COD&#95;NIVEL|
 
 
@@ -5325,7 +5328,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.nulltest_nome'>nome</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.nulltest_fk_matricula'>fk&#95;matricula</a>| int  |
 |  | <a name='testone.nulltest_desconto'>desconto</a>| float&#40;4&#44;2&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;nulltest || ON id|
 
 
@@ -5334,7 +5337,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.openjpa_sequence_table_ID'>ID</a>| tinyint  |
 |  | <a name='testone.openjpa_sequence_table_SEQUENCE_VALUE'>SEQUENCE&#95;VALUE</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;openjpa&#95;sequence&#95;table || ON ID|
 
 
@@ -5343,7 +5346,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.ownership_types_ownership_types_id'>ownership&#95;types&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.ownership_types_name'>name</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;ownership&#95;types || ON ownership&#95;types&#95;id|
 
 
@@ -5358,12 +5361,12 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.pedidos_usuario_fk'>usuario&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.pedidos_vendedor_fk'>vendedor&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.pedidos_pedidos_detalhes_fk'>pedidos&#95;detalhes&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pedidos || ON id|
 | 🔎  | pedidos&#95;detalhes&#95;fk || ON pedidos&#95;detalhes&#95;fk|
 | 🔎  | pedidos&#95;usuario&#95;fk || ON usuario&#95;fk|
 | 🔎  | pedidos&#95;vendedor&#95;fk || ON vendedor&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | pedidos_detalhes_fk | ( pedidos&#95;detalhes&#95;fk ) ref [testone&#46;pedidos&#95;detalhes](#pedidos&#95;detalhes) (id) |
 |  | pedidos_usuario_fk | ( usuario&#95;fk ) ref [testone&#46;usuarios](#usuarios) (id) |
 |  | pedidos_vendedor_fk | ( vendedor&#95;fk ) ref [testone&#46;vendedores](#vendedores) (id) |
@@ -5375,7 +5378,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.pedidos_detalhes_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.pedidos_detalhes_resp_expedicao'>resp&#95;expedicao</a>| bigint  |
 |  | <a name='testone.pedidos_detalhes_resp_entrega'>resp&#95;entrega</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pedidos&#95;detalhes || ON id|
 
 
@@ -5385,10 +5388,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.pricelist_id'>id</a>| bigint  DEFAULT 0 |
 |  | <a name='testone.pricelist_price'>price</a>| double  |
 | 🔎 ⬈ | <a name='testone.pricelist_model_fk'>model&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pricelist || ON id|
 | 🔎  | pricelist&#95;model&#95;fk || ON model&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | pricelist_model_fk | ( model&#95;fk ) ref [testone&#46;model](#model) (id) |
 
 
@@ -5397,7 +5400,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.prjrole_ID'>ID</a>| int  |
 | *🔍 | <a name='testone.prjrole_TITLE'>TITLE</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;prjrole || ON ID|
 | 🔍  | TITLE || ON TITLE|
 
@@ -5408,7 +5411,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.products_id'>id</a>| int AUTO_INCREMENT |
 |  | <a name='testone.products_description'>description</a>| varchar&#40;255&#41;  |
 |  | <a name='testone.products_price'>price</a>| decimal&#40;15&#44;2&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;products || ON id|
 
 
@@ -5421,10 +5424,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.produtos_desconto'>desconto</a>| decimal&#40;2&#44;2&#41;  |
 |  | <a name='testone.produtos_imagem'>imagem</a>| blob  |
 | *🔎 ⬈ | <a name='testone.produtos_categoria_fk'>categoria&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;produtos || ON id|
 | 🔎  | produtos&#95;categoria&#95;fk || ON categoria&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | produtos_categoria_fk | ( categoria&#95;fk ) ref [testone&#46;categorias](#categorias) (id) |
 
 
@@ -5435,7 +5438,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 | <a name='testone.project_TITLE'>TITLE</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.project_STARTTIME'>STARTTIME</a>| date  |
 | *| <a name='testone.project_ENDTIME'>ENDTIME</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;project || ON ID|
 | 🔍  | TITLE || ON TITLE|
 
@@ -5449,7 +5452,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 | <a name='testone.project_developer_IDSTATUS'>IDSTATUS</a>| int  |
 | *| <a name='testone.project_developer_starttime'>starttime</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
 |  | <a name='testone.project_developer_endtime'>endtime</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;project&#95;developer || ON idprj&#44; idprole&#44; iddev|
 | 🔎  | fk&#95;project&#95;developer&#95;0 || ON idprole|
 | 🔎  | fk&#95;project&#95;developer&#95;1 || ON iddev|
@@ -5463,10 +5466,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 ⬋ | <a name='testone.pupils_pupils_id'>pupils&#95;id</a>| bigint AUTO_INCREMENT |
 | *🔎 ⬈ | <a name='testone.pupils_gen_persons_id'>gen&#95;persons&#95;id</a>| bigint  |
 | *| <a name='testone.pupils_registration'>registration</a>| varchar&#40;20&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;pupils || ON pupils&#95;id|
 | 🔎  | courses&#95;person&#95;fk || ON gen&#95;persons&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | courses_person_fk | ( gen&#95;persons&#95;id ) ref [testone&#46;gen&#95;persons](#gen&#95;persons) (gen&#95;persons&#95;id) |
 
 
@@ -5477,11 +5480,11 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.request_quantity'>quantity</a>| int  |
 | *🔎 ⬈ | <a name='testone.request_login_fk'>login&#95;fk</a>| bigint  |
 | *🔎 ⬈ | <a name='testone.request_pricelist_fk'>pricelist&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;request || ON id|
 | 🔎  | request&#95;login&#95;fk || ON login&#95;fk|
 | 🔎  | request&#95;pricelist&#95;fk || ON pricelist&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | request_login_fk | ( login&#95;fk ) ref [testone&#46;login](#login) (id) |
 |  | request_pricelist_fk | ( pricelist&#95;fk ) ref [testone&#46;pricelist](#pricelist) (id) |
 
@@ -5491,7 +5494,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|---|
 | *🔑 | <a name='testone.rin199_simple_property_id'>id</a>| varchar&#40;100&#41;  DEFAULT '' |  |
 |  | <a name='testone.rin199_simple_property_val'>val</a>| varchar&#40;100&#41;  | key&#96;s value |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;rin199&#95;simple&#95;property || ON id |  |
 
 
@@ -5500,7 +5503,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.rin220_role_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.rin220_role_name'>name</a>| varchar&#40;32&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;rin220&#95;role || ON id|
 
 
@@ -5509,7 +5512,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.rin220_usr_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.rin220_usr_name'>name</a>| varchar&#40;32&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;rin220&#95;usr || ON id|
 
 
@@ -5521,7 +5524,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔍 | <a name='testone.signup_login'>login</a>| varchar&#40;10&#41;  DEFAULT '' |
 | *| <a name='testone.signup_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.signup_password'>password</a>| varchar&#40;15&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;signup || ON id|
 | 🔍  | email || ON email|
 | 🔍  | login || ON login|
@@ -5532,7 +5535,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.status_ID'>ID</a>| int  |
 | *🔍 | <a name='testone.status_TITLE'>TITLE</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;status || ON ID|
 | 🔍  | TITLE || ON TITLE|
 
@@ -5542,7 +5545,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.sys_dao_short_test_sys_dao_test_id'>sys&#95;dao&#95;test&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.sys_dao_short_test_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;dao&#95;short&#95;test || ON sys&#95;dao&#95;test&#95;id|
 
 
@@ -5556,7 +5559,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.sys_dao_test_event_date'>event&#95;date</a>| date  |
 | *| <a name='testone.sys_dao_test_event_time'>event&#95;time</a>| time  |
 | *| <a name='testone.sys_dao_test_enabled'>enabled</a>| varchar&#40;1&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;dao&#95;test || ON sys&#95;dao&#95;test&#95;id|
 
 
@@ -5577,7 +5580,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.sys_dao_test3_version'>version</a>| bigint  |
 |  | <a name='testone.sys_dao_test3_author'>author</a>| varchar&#40;40&#41;  |
 |  | <a name='testone.sys_dao_test3_event_timestamp'>event&#95;timestamp</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;dao&#95;test3 || ON sys&#95;dao&#95;test3&#95;id|
 
 
@@ -5598,7 +5601,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.sys_users_version'>version</a>| bigint  |
 |  | <a name='testone.sys_users_author'>author</a>| varchar&#40;40&#41;  |
 |  | <a name='testone.sys_users_event_timestamp'>event&#95;timestamp</a>| date  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;users || ON sys&#95;users&#95;id|
 
 
@@ -5609,7 +5612,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.sys_versioning_version'>version</a>| bigint  |
 | *| <a name='testone.sys_versioning_event_timestamp'>event&#95;timestamp</a>| date  |
 |  | <a name='testone.sys_versioning_author'>author</a>| varchar&#40;40&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;sys&#95;versioning || ON sys&#95;versioning&#95;id|
 
 
@@ -5622,10 +5625,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.tb_multa_DE_STATUS'>DE&#95;STATUS</a>| varchar&#40;18&#41;  |
 |  | <a name='testone.tb_multa_DH_MULTA'>DH&#95;MULTA</a>| date  |
 | 🔎 ⬈ | <a name='testone.tb_multa_ID_VEICULO'>ID&#95;VEICULO</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;tb&#95;multa || ON ID&#95;MULTA|
 | 🔎  | TB&#95;MULTA&#95;VEICULO&#95;FK || ON ID&#95;VEICULO|
-| Foreign Keys 
+| Foreign Keys |
 |  | TB_MULTA_VEICULO_FK | ( ID&#95;VEICULO ) ref [testone&#46;tb&#95;veiculo](#tb&#95;veiculo) (ID&#95;VEICULO) |
 
 
@@ -5634,7 +5637,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.tb_uf_SG_UF'>SG&#95;UF</a>| int AUTO_INCREMENT |
 |  | <a name='testone.tb_uf_NM_UF'>NM&#95;UF</a>| varchar&#40;2&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;tb&#95;uf || ON SG&#95;UF|
 
 
@@ -5648,10 +5651,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.tb_veiculo_NR_ANO_MODELO'>NR&#95;ANO&#95;MODELO</a>| int  |
 |  | <a name='testone.tb_veiculo_NR_ANO_FABRICACAO'>NR&#95;ANO&#95;FABRICACAO</a>| int  |
 | 🔎 ⬈ | <a name='testone.tb_veiculo_SG_UF'>SG&#95;UF</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;tb&#95;veiculo || ON ID&#95;VEICULO|
 | 🔎  | TB&#95;VEICULO&#95;UF&#95;FK || ON SG&#95;UF|
-| Foreign Keys 
+| Foreign Keys |
 |  | TB_VEICULO_UF_FK | ( SG&#95;UF ) ref [testone&#46;tb&#95;uf](#tb&#95;uf) (SG&#95;UF) |
 
 
@@ -5661,7 +5664,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.teams_id'>id</a>| int AUTO_INCREMENT |
 | *| <a name='testone.teams_name'>name</a>| varchar&#40;40&#41;  DEFAULT '' |
 | *| <a name='testone.teams_rating'>rating</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;teams || ON id|
 
 
@@ -5670,7 +5673,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_name'>name</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test || ON id|
 
 
@@ -5679,7 +5682,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_alphanum_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_alphanum_alphanum'>alphanum</a>| varchar&#40;8&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;alphanum || ON id|
 
 
@@ -5688,7 +5691,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_author_author_id'>author&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_author_name'>name</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;author || ON author&#95;id|
 
 
@@ -5697,7 +5700,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_authors_author_id'>author&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_authors_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;authors || ON author&#95;id|
 
 
@@ -5706,7 +5709,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_authors2_author_id'>author&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_authors2_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;authors2 || ON author&#95;id|
 
 
@@ -5716,7 +5719,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_binary_binary_id'>binary&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_binary_image'>image</a>| tinyblob  |
 | *| <a name='testone.test_binary_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;binary || ON binary&#95;id|
 
 
@@ -5726,10 +5729,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_books_book_id'>book&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_books_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.test_books_fk_author_id'>fk&#95;author&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;books || ON book&#95;id|
 | 🔎  | idx&#95;test&#95;books || ON fk&#95;author&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_books | ( fk&#95;author&#95;id ) ref [testone&#46;test&#95;authors](#test&#95;authors) (author&#95;id) |
 
 
@@ -5738,7 +5741,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_books2_book_id'>book&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_books2_title'>title</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;books2 || ON book&#95;id|
 
 
@@ -5747,7 +5750,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 | <a name='testone.test_car_test_car_id'>test&#95;car&#95;id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_car_name'>name</a>| varchar&#40;50&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;car || ON test&#95;car&#95;id|
 
 
@@ -5756,7 +5759,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_customer_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_customer_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;customer || ON id|
 
 
@@ -5766,10 +5769,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_customer_details_id'>id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_customer_details_address'>address</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.test_customer_details_fk_customer_id'>fk&#95;customer&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;customer&#95;details || ON id|
 | 🔎  | idx&#95;test&#95;customer&#95;details || ON fk&#95;customer&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_customer_details | ( fk&#95;customer&#95;id ) ref [testone&#46;test&#95;customer](#test&#95;customer) (id) |
 
 
@@ -5777,7 +5780,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_idgenseq_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;idgenseq || ON id|
 
 
@@ -5785,7 +5788,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_idgenseq2_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;idgenseq2 || ON id|
 
 
@@ -5793,7 +5796,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_idtablegen_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;idtablegen || ON id|
 
 
@@ -5803,7 +5806,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1_bankaccount_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1_bankaccount_owner'>owner</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_inhe1_bankaccount_accountnumber'>accountnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1&#95;bankaccount || ON billingdetails&#95;id|
 
 
@@ -5813,7 +5816,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1_creditcard_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1_creditcard_owner'>owner</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_inhe1_creditcard_cardnumber'>cardnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1&#95;creditcard || ON billingdetails&#95;id|
 
 
@@ -5823,7 +5826,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1b_bankaccount_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1b_bankaccount_accountnumber'>accountnumber</a>| int  |
 |  | <a name='testone.test_inhe1b_bankaccount_owner'>owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1b&#95;bankaccount || ON billingdetails&#95;id|
 
 
@@ -5833,7 +5836,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1b_creditcard_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1b_creditcard_cardnumber'>cardnumber</a>| int  |
 |  | <a name='testone.test_inhe1b_creditcard_owner'>owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1b&#95;creditcard || ON billingdetails&#95;id|
 
 
@@ -5843,7 +5846,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1c_bankaccount_bankaccount_id'>bankaccount&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1c_bankaccount_accountnumber'>accountnumber</a>| int  |
 |  | <a name='testone.test_inhe1c_bankaccount_bankaccount_owner'>bankaccount&#95;owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1c&#95;bankaccount || ON bankaccount&#95;id|
 
 
@@ -5853,7 +5856,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_inhe1c_creditcard_credicard_id'>credicard&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe1c_creditcard_cardnumber'>cardnumber</a>| int  |
 |  | <a name='testone.test_inhe1c_creditcard_credicard_owner'>credicard&#95;owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe1c&#95;creditcard || ON credicard&#95;id|
 
 
@@ -5865,7 +5868,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.test_inhe2_billingdetails_owner'>owner</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_inhe2_billingdetails_accountnumber'>accountnumber</a>| int  |
 |  | <a name='testone.test_inhe2_billingdetails_cardnumber'>cardnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe2&#95;billingdetails || ON billingdetails&#95;id|
 
 
@@ -5874,9 +5877,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬈ | <a name='testone.test_inhe3_bankaccount_bankaccount_id'>bankaccount&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe3_bankaccount_accountnumber'>accountnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe3&#95;bankaccount || ON bankaccount&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_bankaccount_id | ( bankaccount&#95;id ) ref [testone&#46;test&#95;inhe3&#95;billingdetails](#test&#95;inhe3&#95;billingdetails) (billingdetails&#95;id) |
 
 
@@ -5885,7 +5888,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_inhe3_billingdetails_billingdetails_id'>billingdetails&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe3_billingdetails_owner'>owner</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe3&#95;billingdetails || ON billingdetails&#95;id|
 
 
@@ -5894,9 +5897,9 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬈ | <a name='testone.test_inhe3_creditcard_creditcard_id'>creditcard&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_inhe3_creditcard_cardnumber'>cardnumber</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;inhe3&#95;creditcard || ON creditcard&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_creditcard_id | ( creditcard&#95;id ) ref [testone&#46;test&#95;inhe3&#95;billingdetails](#test&#95;inhe3&#95;billingdetails) (billingdetails&#95;id) |
 
 
@@ -5904,7 +5907,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.test_mouth_mouth_id'>mouth&#95;id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;mouth || ON mouth&#95;id|
 
 
@@ -5914,10 +5917,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_order_id'>id</a>| bigint AUTO_INCREMENT |
 | *| <a name='testone.test_order_number'>number</a>| int  |
 | *🔎 ⬈ | <a name='testone.test_order_fk_customer_id'>fk&#95;customer&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;order || ON id|
 | 🔎  | idx&#95;test&#95;order || ON fk&#95;customer&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_order | ( fk&#95;customer&#95;id ) ref [testone&#46;test&#95;customer](#test&#95;customer) (id) |
 
 
@@ -5927,7 +5930,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_person_id'>id</a>| int  |
 |  | <a name='testone.test_person_name'>name</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.test_person_country'>country</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;person || ON id|
 
 
@@ -5935,7 +5938,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | Idx | Field Name | Data Type |
 |---|---|---|
 | *🔑 | <a name='testone.test_sample_id'>id</a>| bigint AUTO_INCREMENT |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;sample || ON id|
 
 
@@ -5945,10 +5948,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.test_tooth_tooth_id'>tooth&#95;id</a>| bigint AUTO_INCREMENT |
 |  | <a name='testone.test_tooth_tooth_name'>tooth&#95;name</a>| varchar&#40;100&#41;  |
 | *🔎 ⬈ | <a name='testone.test_tooth_fk_mouth_id'>fk&#95;mouth&#95;id</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;tooth || ON tooth&#95;id|
 | 🔎  | idx&#95;test&#95;tooth || ON fk&#95;mouth&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_test_tooth | ( fk&#95;mouth&#95;id ) ref [testone&#46;test&#95;mouth](#test&#95;mouth) (mouth&#95;id) |
 
 
@@ -5960,7 +5963,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.test_types_types_time'>types&#95;time</a>| time  |
 | *| <a name='testone.test_types_types_timestamp'>types&#95;timestamp</a>| timestamp  DEFAULT CURRENT_TIMESTAMP |
 |  | <a name='testone.test_types_description'>description</a>| varchar&#40;50&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;test&#95;types || ON types&#95;id|
 
 
@@ -5969,7 +5972,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |---|---|---|
 | *🔑 ⬋ | <a name='testone.titulos_COD_TITULO'>COD&#95;TITULO</a>| int AUTO_INCREMENT |
 | *| <a name='testone.titulos_TITULO'>TITULO</a>| varchar&#40;30&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;titulos || ON COD&#95;TITULO|
 
 
@@ -5980,10 +5983,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.universities_geo_cities_br_id'>geo&#95;cities&#95;br&#95;id</a>| bigint  |
 | *| <a name='testone.universities_acronym'>acronym</a>| varchar&#40;6&#41;  DEFAULT '' |
 | *| <a name='testone.universities_name'>name</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;universities || ON universities&#95;id|
 | 🔎  | universities&#95;city&#95;br&#95;fk || ON geo&#95;cities&#95;br&#95;id|
-| Foreign Keys 
+| Foreign Keys |
 |  | universities_city_br_fk | ( geo&#95;cities&#95;br&#95;id ) ref [testone&#46;geo&#95;cities&#95;br](#geo&#95;cities&#95;br) (geo&#95;cities&#95;br&#95;id) |
 
 
@@ -5993,7 +5996,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔑 | <a name='testone.users_id'>id</a>| bigint UNSIGNED AUTO_INCREMENT |
 | *🔍 | <a name='testone.users_login'>login</a>| varchar&#40;64&#41;  DEFAULT '' |
 | *| <a name='testone.users_password'>password</a>| varchar&#40;32&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;users || ON id|
 | 🔍  | users&#95;login&#95;key || ON login|
 
@@ -6006,7 +6009,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.usuario_login'>login</a>| varchar&#40;255&#41;  |
 | *| <a name='testone.usuario_nome'>nome</a>| varchar&#40;255&#41;  |
 | *| <a name='testone.usuario_senha'>senha</a>| varchar&#40;255&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;usuario || ON id|
 
 
@@ -6023,10 +6026,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.usuarios_estado'>estado</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.usuarios_cep'>cep</a>| varchar&#40;9&#41;  |
 | 🔎 ⬈ | <a name='testone.usuarios_end_entrega_fk'>end&#95;entrega&#95;fk</a>| bigint  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;usuarios || ON id|
 | 🔎  | usuarios&#95;end&#95;entrega&#95;fk || ON end&#95;entrega&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | usuarios_end_entrega_fk | ( end&#95;entrega&#95;fk ) ref [testone&#46;end&#95;entrega](#end&#95;entrega) (id) |
 
 
@@ -6042,7 +6045,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 |  | <a name='testone.vendedores_cidade'>cidade</a>| varchar&#40;100&#41;  |
 |  | <a name='testone.vendedores_estado'>estado</a>| varchar&#40;50&#41;  |
 |  | <a name='testone.vendedores_cep'>cep</a>| varchar&#40;9&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;vendedores || ON id|
 
 
@@ -6053,7 +6056,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.widget_partNumber'>partNumber</a>| varchar&#40;100&#41;  |
 | *| <a name='testone.widget_name'>name</a>| varchar&#40;100&#41;  |
 | *| <a name='testone.widget_description'>description</a>| varchar&#40;100&#41;  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;widget || ON id|
 
 
@@ -6066,10 +6069,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_atmosphere_pressure'>pressure</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_atmosphere_rising'>rising</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.wth_atmosphere_weather_fk'>weather&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;atmosphere || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;atmosphere&#95;weather || ON weather&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_atmosphere_weather | ( weather&#95;fk ) ref [testone&#46;wth&#95;weather](#wth&#95;weather) (id) |
 
 
@@ -6082,10 +6085,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_condition_temp'>temp</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_condition_date'>date</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.wth_condition_weather_fk'>weather&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;condition || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;condition&#95;weather || ON weather&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_condition_weather | ( weather&#95;fk ) ref [testone&#46;wth&#95;weather](#wth&#95;weather) (id) |
 
 
@@ -6097,7 +6100,7 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_location_city'>city</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_location_region'>region</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_location_country'>country</a>| varchar&#40;100&#41;  DEFAULT '' |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;location || ON id|
 
 
@@ -6110,13 +6113,13 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *🔎 ⬈ | <a name='testone.wth_weather_atmosphere_fk'>atmosphere&#95;fk</a>| int  |
 | *🔎 ⬈ | <a name='testone.wth_weather_location_fk'>location&#95;fk</a>| int  |
 | *🔎 | <a name='testone.wth_weather_condition_fk'>condition&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;weather || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;atmosphere || ON atmosphere&#95;fk|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;condition || ON condition&#95;fk|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;location || ON location&#95;fk|
 | 🔎  | idx&#95;testone&#95;wth&#95;weather&#95;wind || ON wind&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_weather_atmosphere | ( atmosphere&#95;fk ) ref [testone&#46;wth&#95;atmosphere](#wth&#95;atmosphere) (id) |
 |  | fk_testone_wth_weather_location | ( location&#95;fk ) ref [testone&#46;wth&#95;location](#wth&#95;location) (id) |
 |  | fk_testone_wth_weather_wind | ( wind&#95;fk ) ref [testone&#46;wth&#95;wind](#wth&#95;wind) (id) |
@@ -6130,10 +6133,10 @@ This is <br>a comment for cliente table&#46;<br>THis is a good job
 | *| <a name='testone.wth_wind_direction'>direction</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *| <a name='testone.wth_wind_speed'>speed</a>| varchar&#40;100&#41;  DEFAULT '' |
 | *🔎 ⬈ | <a name='testone.wth_wind_weather_fk'>weather&#95;fk</a>| int  |
-| Indexes 
+| Indexes |
 | 🔑 | pk&#95;wth&#95;wind || ON id|
 | 🔎  | idx&#95;testone&#95;wth&#95;wind&#95;weather || ON weather&#95;fk|
-| Foreign Keys 
+| Foreign Keys |
 |  | fk_testone_wth_wind_weather | ( weather&#95;fk ) ref [testone&#46;wth&#95;weather](#wth&#95;weather) (id) |
 
 

@@ -15,8 +15,7 @@ import java.util.Properties;
 import java.util.logging.*;
 
 /**
- * Copyright DbSchema@Wise Coders GmbH. All rights reserved.
- * Licensed under BSD License-3: free to use, distribution forbidden. Improvements accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
+ * Copyright Wise Coders GmbH. All rights reserved. Free to use, contributions accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
  *
  * When you open a connection, we store transfer all DBF data to a H2 database stored in user.home/.DbSchema/ .
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.

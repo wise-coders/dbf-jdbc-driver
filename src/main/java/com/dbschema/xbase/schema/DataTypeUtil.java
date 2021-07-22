@@ -6,8 +6,7 @@ import com.linuxense.javadbf.DBFField;
 import java.sql.Types;
 
 /**
- * Copyright DbSchema@Wise Coders GmbH. All rights reserved.
- *  Licensed under BSD License-3: free to use, distribution forbidden. Improvements accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
+ * Copyright Wise Coders GmbH. All rights reserved. Free to use, contributions accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
  */
 public class DataTypeUtil {
 

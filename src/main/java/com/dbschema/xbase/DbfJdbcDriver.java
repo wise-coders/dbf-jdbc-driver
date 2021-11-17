@@ -17,7 +17,7 @@ import java.util.logging.*;
 /**
  * Copyright Wise Coders GmbH. All rights reserved. Free to use, contributions accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
  *
- * When you open a connection, we store transfer all DBF data to a H2 database stored in user.home/.DbSchema/ .
+ * When you open a connection, we store transfer all DBF data to a local H2 database in user.home/.DbSchema/ .
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
  */

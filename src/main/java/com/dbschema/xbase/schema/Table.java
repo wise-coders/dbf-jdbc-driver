@@ -66,13 +66,14 @@ public class Table {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder(name ).append("(\n");
+        String ret =  name + "(\n";
         for ( DBFField field : fields ){
-            sb.append( field).append(",\n");
+            ret += field.getName() + " " + field.getType() + " (" +field.getLength() + ", " + field.getDecimalCount() + " ) " + ( field.isNullable() ? "" : "NOT NULL ") + "\n";
         }
-        sb.append(")");
-        return sb.toString();
+        ret +=")";
+        return ret;
     }
+
 }
 
 

@@ -31,14 +31,13 @@ public class H2toDBF {
             String tableName = rsColumns.getString( 3 );
             if ( !DataTypeUtil.isH2SystemTable(tableName )) {
                 String columnName = rsColumns.getString(4);
-                LOGGER.info("Define column " + tableName + "." + columnName);
                 db.getOrCreateTable( tableName).createField(columnName, rsColumns.getString(6), rsColumns.getInt(7), rsColumns.getInt(9));
             }
         }
 
         for ( Table table : db.getTables() ){
             final File outputFile = new File( outputFolder.toURI().resolve( table.name + ".dbf"));
-            LOGGER.info("Storing " + table + "...");
+            LOGGER.info("Saving " + table);
 
             final FileOutputStream os = new FileOutputStream(outputFile);
             final DBFWriter writer = charset != null ? new DBFWriter(os, Charset.forName(charset)) : new DBFWriter(os);
@@ -73,7 +72,8 @@ public class H2toDBF {
                 }
                 rs.close();
                 writer.close();
-                LOGGER.info("Stored " + table.name + " " + recCount + " records." );
+                LOGGER.info("Saved " + table.name + " " + recCount + " records." );
+                DBFtoH2.saveFileTransferredInfo( outputFile, h2Connection );
             }
         }
     }

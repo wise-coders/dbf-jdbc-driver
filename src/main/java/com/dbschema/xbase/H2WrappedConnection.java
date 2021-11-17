@@ -25,7 +25,7 @@ import static com.dbschema.xbase.DbfJdbcDriver.LOGGER;
 /**
  * Copyright Wise Coders GmbH. All rights reserved. Free to use, changes accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
  *
- * When you open a connection, we store transfer all DBF data to a H2 database stored in user.home/.DbSchema/ .
+ * When you open a connection, we store transfer all DBF data to a local H2 database in user.home/.DbSchema/ .
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
  */
@@ -43,16 +43,18 @@ public class H2WrappedConnection implements Connection {
 
     void transferFolder(File folder, File rootFolder, Connection h2Connection) throws SQLException {
         final File[] files = folder.listFiles();
-        DBFtoH2 loader = new DBFtoH2();
         if ( files != null ) {
             for (File file : files) {
                 if ( file.isFile() ){
                     if ( file.getName().toLowerCase().endsWith(".dbf") ) {
                         try ( DBFReader reader = new DBFReader( new FileInputStream(file))) {
                             final Table table = new Table(rootFolder, file);
-                            loader.transfer( table, reader, h2Connection );
-                            if (defaultCharset == null) {
-                                defaultCharset = loader.getCharset();
+                            if ( !DBFtoH2.isFileTransferred( file, h2Connection )){
+                                DBFtoH2.transfer( table, reader, h2Connection );
+                                DBFtoH2.saveFileTransferredInfo( file, h2Connection );
+                            }
+                            if (defaultCharset == null && reader.getCharset() != null ) {
+                                defaultCharset = reader.getCharset().name();
                             }
                         } catch (Exception ex) {
                             LOGGER.log(Level.SEVERE, "Error transferring " + file, ex);

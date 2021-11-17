@@ -105,7 +105,7 @@ public class DataTypeUtil {
         for ( String systemName : H2_SYSTEM_TABLES ){
             if( systemName.equalsIgnoreCase( tableName )) return true;
         }
-        return DBFtoH2.META_TABLE_NAME.equalsIgnoreCase( tableName );
+        return DBFtoH2.COLUMNS_META_TABLE.equalsIgnoreCase( tableName ) || DBFtoH2.FILES_META_TABLE.equalsIgnoreCase( tableName );
     }
 
 }

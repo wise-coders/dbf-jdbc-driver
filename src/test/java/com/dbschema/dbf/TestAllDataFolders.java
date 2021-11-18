@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License along with DANS DBF Library. If
  * not, see <http://www.gnu.org/licenses/>.
  */
-package com.dbschema.xbase;
+package com.dbschema.dbf;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,7 +34,7 @@ public class TestAllDataFolders extends AbstractTestCase {
 
     @Test
     public void testDriver() throws SQLException {
-        new DbfJdbcDriver();
+        new JdbcDriver();
         final String URL = "jdbc:dbschema:dbf:src/test/resources/" + dataDirectory + "/cars";
         DriverManager.getConnection( URL );
     }

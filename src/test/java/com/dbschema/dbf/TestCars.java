@@ -1,4 +1,4 @@
-package com.dbschema.xbase;
+package com.dbschema.dbf;
 
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ public class TestCars {
 
     @Test
     public void test() throws SQLException {
-        new DbfJdbcDriver();
+        new JdbcDriver();
         Connection con = DriverManager.getConnection( URL );
         Statement st = con.createStatement();
         if( st.execute("select * from cars")){

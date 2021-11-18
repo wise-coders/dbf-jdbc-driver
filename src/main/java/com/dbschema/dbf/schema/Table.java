@@ -1,4 +1,4 @@
-package com.dbschema.xbase.schema;
+package com.dbschema.dbf.schema;
 
 import com.linuxense.javadbf.DBFDataType;
 import com.linuxense.javadbf.DBFField;

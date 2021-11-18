@@ -1,8 +1,8 @@
-package com.dbschema.xbase;
+package com.dbschema.dbf;
 
-import com.dbschema.xbase.io.DBFtoH2;
-import com.dbschema.xbase.io.H2toDBF;
-import com.dbschema.xbase.schema.Table;
+import com.dbschema.dbf.io.DBFtoH2;
+import com.dbschema.dbf.io.H2toDBF;
+import com.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFReader;
 import org.h2.jdbc.JdbcConnection;
 
@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.dbschema.xbase.DbfJdbcDriver.LOGGER;
+import static com.dbschema.dbf.JdbcDriver.LOGGER;
 
 
 /**

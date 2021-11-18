@@ -1,4 +1,4 @@
-package com.dbschema.xbase;
+package com.dbschema.dbf;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class TestSupport1 {
 
     @Test
     public void test() throws Exception{
-        new DbfJdbcDriver();
+        new JdbcDriver();
         final String URL = "jdbc:dbschema:dbf:src/test/resources/support1";
         Connection con = DriverManager.getConnection( URL );
     }

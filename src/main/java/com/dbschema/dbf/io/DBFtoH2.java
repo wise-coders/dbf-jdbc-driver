@@ -1,7 +1,7 @@
-package com.dbschema.xbase.io;
+package com.dbschema.dbf.io;
 
-import com.dbschema.xbase.schema.DataTypeUtil;
-import com.dbschema.xbase.schema.Table;
+import com.dbschema.dbf.schema.DataTypeUtil;
+import com.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFField;
 import com.linuxense.javadbf.DBFReader;
 
@@ -9,7 +9,7 @@ import java.io.File;
 import java.sql.*;
 import java.util.logging.Level;
 
-import static com.dbschema.xbase.DbfJdbcDriver.LOGGER;
+import static com.dbschema.dbf.JdbcDriver.LOGGER;
 
 /**
  * Copyright Wise Coders GmbH. All rights reserved. Free to use, contributions accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
@@ -22,7 +22,7 @@ public class DBFtoH2 {
     private static final String INSERT_INTO_COLUMNS_META_TABLE = "insert into " + COLUMNS_META_TABLE + "( table_name, column_name, column_type, length, decimal ) values ( ?,?,?,?,? )";
 
     public static final String FILES_META_TABLE = "dbs_meta_files";
-    private static final String CREATE_META_FILES = "CREATE TABLE IF NOT EXISTS " + FILES_META_TABLE + " ( file_path varchar(250) NOT NULL, size bigint NOT NULL, last_modified bigint NOT NULL, CONSTRAINT Pk_dbs_files_file_path PRIMARY KEY ( file_path ) ) ";
+    private static final String CREATE_META_FILES = "CREATE TABLE IF NOT EXISTS " + FILES_META_TABLE + " ( file_path varchar(250) NOT NULL PRIMARY KEY, size bigint NOT NULL, last_modified bigint NOT NULL ) ";
 
 
 

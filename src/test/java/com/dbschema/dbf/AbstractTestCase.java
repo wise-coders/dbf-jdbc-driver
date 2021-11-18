@@ -1,4 +1,4 @@
-package com.dbschema.xbase;
+package com.dbschema.dbf;
 
 import org.junit.runners.Parameterized.Parameters;
 

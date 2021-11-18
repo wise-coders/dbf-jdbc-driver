@@ -1,4 +1,4 @@
-package com.dbschema.xbase;
+package com.dbschema.dbf;
 
 
 import org.h2.jdbc.JdbcConnection;
@@ -21,16 +21,16 @@ import java.util.logging.*;
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
  */
-public class DbfJdbcDriver implements Driver {
+public class JdbcDriver implements Driver {
 
     private static final String PREFIX = "jdbc:dbschema:dbf:";
     private static final String INTERNAL_H2_LOCATION = ".DbSchema/jdbc-dbf-cache/";
 
-    public static final Logger LOGGER = Logger.getLogger( DbfJdbcDriver.class.getName() );
+    public static final Logger LOGGER = Logger.getLogger( JdbcDriver.class.getName() );
 
     static {
         try {
-            DriverManager.registerDriver( new DbfJdbcDriver());
+            DriverManager.registerDriver( new JdbcDriver());
             LOGGER.setLevel(Level.ALL);
             LOGGER.addHandler(
                     new ConsoleHandler() {
@@ -169,7 +169,7 @@ public class DbfJdbcDriver implements Driver {
             digest = sb.toString();
 
         } catch (UnsupportedEncodingException | NoSuchAlgorithmException ex) {
-            Logger.getLogger(DbfJdbcDriver.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(JdbcDriver.class.getName()).log(Level.SEVERE, null, ex);
         }
         return digest;
     }

@@ -1,6 +1,6 @@
-package com.dbschema.xbase.schema;
+package com.dbschema.dbf.schema;
 
-import com.dbschema.xbase.io.DBFtoH2;
+import com.dbschema.dbf.io.DBFtoH2;
 import com.linuxense.javadbf.DBFField;
 
 import java.sql.Types;

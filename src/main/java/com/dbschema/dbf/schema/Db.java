@@ -1,4 +1,4 @@
-package com.dbschema.xbase.schema;
+package com.dbschema.dbf.schema;
 
 import java.util.Collection;
 import java.util.HashMap;

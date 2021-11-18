@@ -28,7 +28,7 @@ dependencies {
 jar {
     archiveName ="dbschema-dbf-jdbc${version}.jar"
     manifest {
-        attributes 'Main-Class': 'com.dbschema.xbase.DbfJdbcDriver'
+        attributes 'Main-Class': 'com.dbschema.dbf.JdbcDriver'
         attributes 'Specification-Version': "$version"
         attributes 'Specification-Vendor': "Wise Coders"
         attributes 'Implementation-Vendor-Id': "dbschema.com"
@@ -39,7 +39,7 @@ jar {
 
 
 task zip(type: Zip, dependsOn:['clean','jar']) {
-    archiveName 'FoxProJdbcDriver.zip'
+    archiveName 'DBFJdbcDriver.zip'
     from configurations.runtime.allArtifacts.files
     from configurations.runtime
 }
@@ -47,7 +47,7 @@ task zip(type: Zip, dependsOn:['clean','jar']) {
 task copyInUserHome(type: Copy,dependsOn:['clean','jar']) {
     from configurations.runtime.allArtifacts.files
     from configurations.runtime
-    into "${System.getProperty('user.home')}/.DbSchema/drivers/FoxPro/"
+    into "${System.getProperty('user.home')}/.DbSchema/drivers/DBF/"
 }
 
 /*

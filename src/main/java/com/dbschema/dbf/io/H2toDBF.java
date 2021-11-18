@@ -1,9 +1,9 @@
-package com.dbschema.xbase.io;
+package com.dbschema.dbf.io;
 
 
-import com.dbschema.xbase.schema.DataTypeUtil;
-import com.dbschema.xbase.schema.Db;
-import com.dbschema.xbase.schema.Table;
+import com.dbschema.dbf.schema.DataTypeUtil;
+import com.dbschema.dbf.schema.Db;
+import com.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFWriter;
 
 import java.io.File;
@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import static com.dbschema.xbase.DbfJdbcDriver.LOGGER;
+import static com.dbschema.dbf.JdbcDriver.LOGGER;
 
 /**
  * Copyright Wise Coders GmbH. All rights reserved. Free to use, contributions accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver

@@ -24,7 +24,7 @@ import java.util.logging.*;
 public class JdbcDriver implements Driver {
 
     private static final String PREFIX = "jdbc:dbschema:dbf:";
-    private static final String INTERNAL_H2_LOCATION = ".DbSchema/jdbc-dbf-cache/";
+    private static final String INTERNAL_H2_LOCATION = "~/.DbSchema/jdbc-dbf-cache/";
 
     public static final Logger LOGGER = Logger.getLogger( JdbcDriver.class.getName() );
 
@@ -85,8 +85,8 @@ public class JdbcDriver implements Driver {
             throw new SQLException("Expected path is not folder: '" + folder + "'");
         }
         final String h2DbName = md5Java( databasePath );
-        final URI h2DatabasePath = getInternalH2DatabasePath( h2DbName );
-        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath.toASCIIString() + ";database_to_upper=false";
+        final String h2DatabasePath = getInternalH2DatabasePath( h2DbName );
+        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_upper=false";
         LOGGER.log(Level.INFO, "Create H2 database '" + h2JdbcUrl + "'");
 
         final JdbcConnection h2Connection = (JdbcConnection) (new org.h2.Driver().connect( h2JdbcUrl, new Properties() ));
@@ -99,13 +99,12 @@ public class JdbcDriver implements Driver {
     }
 
 
-    private URI getInternalH2DatabasePath(String path ){
-        final URI h2Home = new File( System.getProperty("user.home")).toURI().resolve(INTERNAL_H2_LOCATION);
-        final File h2File = new File(h2Home);
+    private String getInternalH2DatabasePath(String path ){
+        final File h2File = new File(INTERNAL_H2_LOCATION);
         if ( !h2File.exists()) {
             h2File.mkdirs();
         }
-        return h2Home.resolve( path );
+        return INTERNAL_H2_LOCATION + path;
     }
 
     @Override

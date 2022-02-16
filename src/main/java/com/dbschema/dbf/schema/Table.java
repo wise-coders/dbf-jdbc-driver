@@ -7,9 +7,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
- * Copyright Wise Coders GmbH. All rights reserved. Free to use, contributions accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
+ * Copyright Wise Coders GmbH https://wisecoders.com
+ * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Free to be used by everyone.
+ * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
  */
 public class Table {
 

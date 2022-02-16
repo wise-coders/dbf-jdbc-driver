@@ -15,12 +15,16 @@ import java.util.Properties;
 import java.util.logging.*;
 
 /**
- * Copyright Wise Coders GmbH. All rights reserved. Free to use, contributions accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
- *
  * When you open a connection, we store transfer all DBF data to a local H2 database in user.home/.DbSchema/ .
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
+ *
+ * Copyright Wise Coders GmbH https://wisecoders.com
+ * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Free to be used by everyone.
+ * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
  */
+
 public class JdbcDriver implements Driver {
 
     private static final String PREFIX = "jdbc:dbschema:dbf:";

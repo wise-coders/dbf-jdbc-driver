@@ -23,12 +23,16 @@ import static com.dbschema.dbf.JdbcDriver.LOGGER;
 
 
 /**
- * Copyright Wise Coders GmbH. All rights reserved. Free to use, changes accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver
- *
  * When you open a connection, we store transfer all DBF data to a local H2 database in user.home/.DbSchema/ .
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
+ *
+ * Copyright Wise Coders GmbH https://wisecoders.com
+ * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Free to be used by everyone.
+ * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
  */
+
 public class H2WrappedConnection implements Connection {
 
     private static final Pattern SAVE_COMMAND_PATTERN = Pattern.compile( "(\\s*)save(\\s+)dbf(\\s+)to(\\s+)(.*)", Pattern.CASE_INSENSITIVE );

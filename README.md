@@ -9,8 +9,12 @@ The DBF-xBase-FoxPro JDBC driver is provided by [DbSchema DBF Designer](https://
 * INSERT, UPDATE, DELETE data
 * Create new tables, add or remove columns, etc.
 
+## License
 
-
+[GPL-3 dual license](https://opensource.org/licenses/GPL-3.0).
+The driver is free to use by everyone.
+Code modifications allowed only to the current repository as pull requests under
+https://github.com/wise-coders/dbf-jdbc-driver
 
 # JDBC URL
 
@@ -39,9 +43,6 @@ st.execute("save dbf to <folder_path>");
 We save data to a different path, just to avoid any storage issues and don't loose any information.
 We appreciate any contributions to this repository.
 
-## License
-
-BSD License-3. Free to use, distribution forbidden. Improvements of the driver accepted only in https://bitbucket.org/dbschema/dbf-jdbc-driver.
 
 
 ## How to Test the JDBC Driver

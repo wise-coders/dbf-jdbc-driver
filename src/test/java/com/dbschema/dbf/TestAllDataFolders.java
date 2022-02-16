@@ -23,7 +23,12 @@ import org.junit.runners.Parameterized;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
+/**
+ * Copyright Wise Coders GmbH https://wisecoders.com
+ * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Free to be used by everyone.
+ * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
+ */
 @RunWith(Parameterized.class)
 public class TestAllDataFolders extends AbstractTestCase {
 

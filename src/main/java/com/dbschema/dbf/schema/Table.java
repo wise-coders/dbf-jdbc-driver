@@ -38,6 +38,9 @@ public class Table {
 
     public DBFField createField(String name, String type, int length, int decimal  ) {
         DBFField field = new DBFField();
+        if ( name.length() > 10 ){
+            name = name.substring(0, 10);
+        }
         field.setName( name );
 
         switch (type.toLowerCase() ){
@@ -49,7 +52,7 @@ public class Table {
                 break;
             case "float": field.setType( DBFDataType.FLOATING_POINT ); break;
             case "int": field.setType( DBFDataType.AUTOINCREMENT ); break;
-            case "bigint": field.setType( DBFDataType.LONG ); break;
+            case "bigint": field.setType( DBFDataType.NUMERIC ); break;
             case "boolean": field.setType( DBFDataType.LOGICAL ); break;
             case "date": field.setType( DBFDataType.DATE ); break;
             case "bit": field.setType( DBFDataType.NULL_FLAGS ); break;

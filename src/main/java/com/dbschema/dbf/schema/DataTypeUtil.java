@@ -72,7 +72,7 @@ public class DataTypeUtil {
             case DATE:
                 return "date";
             case MEMO:
-                return "longvarchar(" + Integer.MAX_VALUE + ")";
+                return "longvarchar(1048575)";
             case VARCHAR:
                 return "varchar(" + field.getLength() + ")";
             case PICTURE:
@@ -99,15 +99,9 @@ public class DataTypeUtil {
         }
     }
 
-    private static final String[] H2_SYSTEM_TABLES = new String[]{"CATALOGS", "COLLATIONS", "COLUMNS", "COLUMN_PRIVILEGES", "CONSTANTS", "CONSTRAINTS", "CROSS_REFERENCES", "DOMAINS",
-            "FUNCTION_ALIASES", "FUNCTION_COLUMNS", "HELP", "INDEXES", "IN_DOUBT", "KEY_COLUMN_USAGE", "LOCKS", "QUERY_STATISTICS", "REFERENTIAL_CONSTRAINTS", "RIGHTS", "ROLES",
-            "SCHEMATA", "SEQUENCES", "SYNONYMS", "SESSIONS", "SESSION_STATE", "SETTINGS", "TABLES", "TABLE_CONSTRAINTS", "TABLE_PRIVILEGES", "TABLE_TYPES", "TRIGGERS", "TYPE_INFO", "USERS", "VIEWS"};
 
 
     public static boolean isH2SystemTable( String tableName ){
-        for ( String systemName : H2_SYSTEM_TABLES ){
-            if( systemName.equalsIgnoreCase( tableName )) return true;
-        }
         return DBFtoH2.COLUMNS_META_TABLE.equalsIgnoreCase( tableName ) || DBFtoH2.FILES_META_TABLE.equalsIgnoreCase( tableName );
     }
 

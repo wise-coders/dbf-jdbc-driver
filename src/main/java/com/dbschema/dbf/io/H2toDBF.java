@@ -32,7 +32,7 @@ public class H2toDBF {
         final ResultSet rsColumns = h2Connection.getMetaData().getColumns( null, null, null, null );
         while( rsColumns.next() ){
             String tableName = rsColumns.getString( 3 );
-            if ( !DataTypeUtil.isH2SystemTable(tableName )) {
+            if ( !"INFORMATION_SCHEMA".equalsIgnoreCase(rsColumns.getString(2)) && !DataTypeUtil.isH2SystemTable(tableName ) ) { //
                 String columnName = rsColumns.getString(4);
                 db.getOrCreateTable( tableName).createField(columnName, rsColumns.getString(6), rsColumns.getInt(7), rsColumns.getInt(9));
             }

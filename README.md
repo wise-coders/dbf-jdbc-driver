@@ -40,7 +40,17 @@ To save back data to dbf files use:
 Statement st = connection.createStatement();
 st.execute("save dbf to <folder_path>");
 ```
+
 We save data to a different path, just to avoid any storage issues and don't loose any information.
+
+To clear the caches and reload a file next time you connect, do
+```
+Statement st = connection.createStatement();
+st.execute("reload <file_path>");
+```
+
+
+
 We appreciate any contributions to this repository.
 
 

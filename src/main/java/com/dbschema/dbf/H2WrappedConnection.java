@@ -20,6 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.dbschema.dbf.JdbcDriver.LOGGER;
+import static com.dbschema.dbf.io.DBFtoH2.FILES_META_TABLE;
 
 
 /**
@@ -36,6 +37,7 @@ import static com.dbschema.dbf.JdbcDriver.LOGGER;
 public class H2WrappedConnection implements Connection {
 
     private static final Pattern SAVE_COMMAND_PATTERN = Pattern.compile( "(\\s*)save(\\s+)dbf(\\s+)to(\\s+)(.*)", Pattern.CASE_INSENSITIVE );
+    private static final Pattern RELOAD_PATTERN = Pattern.compile( "(\\s*)reload(\\s+)(.*)", Pattern.CASE_INSENSITIVE );
 
     private final JdbcConnection h2Connection;
     private String defaultCharset;
@@ -106,21 +108,26 @@ public class H2WrappedConnection implements Connection {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             Matcher matcher;
-            if (args != null && args.length > 0 && ( matcher = SAVE_COMMAND_PATTERN.matcher(args[0].toString())).matches()) {
-                LOGGER.info("Saving dbf...");
-                long start = System.currentTimeMillis();
-                try {
-                    saveDbf(matcher.group(5));
-                } catch ( SQLException ex ){
-                    ex.printStackTrace();
-                    throw ex;
-                } catch ( Exception ex ){
-                    ex.printStackTrace();
-                    throw new SQLException( ex.getLocalizedMessage(), ex );
+            if (args != null && args.length > 0 ){
+                if ( ( matcher = SAVE_COMMAND_PATTERN.matcher(args[0].toString())).matches()) {
+                    LOGGER.info("Saving dbf...");
+                    long start = System.currentTimeMillis();
+                    try {
+                        saveDbf(matcher.group(5));
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        throw ex;
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        throw new SQLException(ex.getLocalizedMessage(), ex);
+                    }
+                    args = new String[]{""};
+                    long elapsed = System.currentTimeMillis() - start;
+                    LOGGER.info("Executing " + method.getName() + " finished in " + elapsed + " ms");
+                } else if ( ( matcher = RELOAD_PATTERN.matcher(args[0].toString())).matches()) {
+                    LOGGER.info("Reload " + matcher.group(3) );
+                    reload( matcher.group(3));
                 }
-                args= new String[]{""};
-                long elapsed = System.currentTimeMillis() - start;
-                LOGGER.info("Executing " + method.getName() + " finished in " + elapsed + " ms");
             }
             return method.invoke(target, args);
         }
@@ -137,6 +144,13 @@ public class H2WrappedConnection implements Connection {
         File outputFolder = new File ( path );
         outputFolder.mkdirs();
         new H2toDBF(h2Connection, outputFolder, defaultCharset );
+    }
+
+    private void reload( String filePath ) throws Exception {
+        try (PreparedStatement st = h2Connection.prepareStatement("DELETE FROM " + FILES_META_TABLE + " WHERE file_path=?")) {
+            st.setString(1, filePath);
+            st.executeUpdate();
+        }
     }
 
 

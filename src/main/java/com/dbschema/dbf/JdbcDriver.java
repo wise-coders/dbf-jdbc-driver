@@ -5,7 +5,6 @@ import org.h2.jdbc.JdbcConnection;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.net.URI;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
@@ -15,7 +14,7 @@ import java.util.Properties;
 import java.util.logging.*;
 
 /**
- * When you open a connection, we store transfer all DBF data to a local H2 database in user.home/.DbSchema/ .
+ * When you open a connection for the first time in a JVM, we store transfer all DBF data to a local H2 database in user.home/.DbSchema/ .
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
  *

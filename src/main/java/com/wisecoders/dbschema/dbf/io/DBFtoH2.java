@@ -1,7 +1,7 @@
-package com.dbschema.dbf.io;
+package com.wisecoders.dbschema.dbf.io;
 
-import com.dbschema.dbf.schema.DataTypeUtil;
-import com.dbschema.dbf.schema.Table;
+import com.wisecoders.dbschema.dbf.schema.DataTypeUtil;
+import com.wisecoders.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFField;
 import com.linuxense.javadbf.DBFReader;
 
@@ -9,7 +9,7 @@ import java.io.File;
 import java.sql.*;
 import java.util.logging.Level;
 
-import static com.dbschema.dbf.JdbcDriver.LOGGER;
+import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
 
 /**
  * Copyright Wise Coders GmbH https://wisecoders.com

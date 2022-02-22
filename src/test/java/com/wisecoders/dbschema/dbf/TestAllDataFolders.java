@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License along with DANS DBF Library. If
  * not, see <http://www.gnu.org/licenses/>.
  */
-package com.dbschema.dbf;
+package com.wisecoders.dbschema.dbf;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

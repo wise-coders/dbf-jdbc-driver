@@ -1,8 +1,8 @@
-package com.dbschema.dbf;
+package com.wisecoders.dbschema.dbf;
 
-import com.dbschema.dbf.io.DBFtoH2;
-import com.dbschema.dbf.io.H2toDBF;
-import com.dbschema.dbf.schema.Table;
+import com.wisecoders.dbschema.dbf.io.DBFtoH2;
+import com.wisecoders.dbschema.dbf.io.H2toDBF;
+import com.wisecoders.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFReader;
 import org.h2.jdbc.JdbcConnection;
 
@@ -19,8 +19,8 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.dbschema.dbf.JdbcDriver.LOGGER;
-import static com.dbschema.dbf.io.DBFtoH2.FILES_META_TABLE;
+import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
+import static com.wisecoders.dbschema.dbf.io.DBFtoH2.FILES_META_TABLE;
 
 
 /**

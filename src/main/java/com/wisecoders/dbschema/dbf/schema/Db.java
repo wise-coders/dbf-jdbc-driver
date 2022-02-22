@@ -1,4 +1,4 @@
-package com.dbschema.dbf.schema;
+package com.wisecoders.dbschema.dbf.schema;
 
 import java.util.Collection;
 import java.util.HashMap;

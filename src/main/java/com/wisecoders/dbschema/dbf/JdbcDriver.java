@@ -1,4 +1,4 @@
-package com.dbschema.dbf;
+package com.wisecoders.dbschema.dbf;
 
 
 import org.h2.jdbc.JdbcConnection;

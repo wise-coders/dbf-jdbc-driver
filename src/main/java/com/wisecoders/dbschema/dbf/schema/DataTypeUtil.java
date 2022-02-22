@@ -1,6 +1,6 @@
-package com.dbschema.dbf.schema;
+package com.wisecoders.dbschema.dbf.schema;
 
-import com.dbschema.dbf.io.DBFtoH2;
+import com.wisecoders.dbschema.dbf.io.DBFtoH2;
 import com.linuxense.javadbf.DBFField;
 
 import java.sql.Types;

@@ -1,4 +1,4 @@
-package com.dbschema.dbf;
+package com.wisecoders.dbschema.dbf;
 
 import org.junit.runners.Parameterized.Parameters;
 

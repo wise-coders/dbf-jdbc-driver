@@ -1,9 +1,9 @@
-package com.dbschema.dbf.io;
+package com.wisecoders.dbschema.dbf.io;
 
 
-import com.dbschema.dbf.schema.DataTypeUtil;
-import com.dbschema.dbf.schema.Db;
-import com.dbschema.dbf.schema.Table;
+import com.wisecoders.dbschema.dbf.schema.DataTypeUtil;
+import com.wisecoders.dbschema.dbf.schema.Db;
+import com.wisecoders.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFWriter;
 
 import java.io.File;
@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import static com.dbschema.dbf.JdbcDriver.LOGGER;
+import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
 
 /**
  * Copyright Wise Coders GmbH https://wisecoders.com

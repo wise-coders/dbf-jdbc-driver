@@ -47,7 +47,15 @@ public class Table {
             case "longvarchar":field.setType( DBFDataType.MEMO ); break;
             case "timestamp": field.setType( DBFDataType.TIMESTAMP ); break;
             case "timestampwithtimezone": field.setType( DBFDataType.TIMESTAMP_DBASE7 ); break;
-            default : field.setType( DBFDataType.CHARACTER ); break;
+            case "character":
+                field.setType( DBFDataType.CHARACTER );
+                field.setLength( length );
+                break;
+            default :
+                // I TRIED ALSO DBFDataType.VARCHAR AND THE LIBRARY DOES NOT SUPPORT WRITING IT. MEMO ALSO NOT.
+                field.setType( DBFDataType.CHARACTER );
+                field.setLength( Math.min(length, 254 ));
+                break;
         }
         fields.add( field );
         return field;

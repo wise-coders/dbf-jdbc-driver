@@ -27,7 +27,7 @@ public class H2Writer {
 
     public H2Writer(final Connection h2Connection, final File outputFolder, final String charset ) throws Exception {
 
-        Db db = new Db();
+        final Db db = new Db();
 
         final ResultSet rsColumns = h2Connection.getMetaData().getColumns( null, null, null, null );
         while( rsColumns.next() ){

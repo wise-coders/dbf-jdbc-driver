@@ -19,6 +19,7 @@ public class TestCars {
         new JdbcDriver();
         Connection con = DriverManager.getConnection( URL );
         Statement st = con.createStatement();
+        //st.execute("reload cars");
         if( st.execute("select * from cars")){
             ResultSet rs = st.getResultSet();
             while( rs.next() ){

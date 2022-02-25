@@ -1,6 +1,6 @@
 package com.wisecoders.dbschema.dbf.schema;
 
-import com.wisecoders.dbschema.dbf.io.DBFtoH2;
+import com.wisecoders.dbschema.dbf.io.H2Loader;
 import com.linuxense.javadbf.DBFField;
 
 import java.sql.Types;
@@ -102,7 +102,7 @@ public class DataTypeUtil {
 
 
     public static boolean isH2SystemTable( String tableName ){
-        return DBFtoH2.COLUMNS_META_TABLE.equalsIgnoreCase( tableName ) || DBFtoH2.FILES_META_TABLE.equalsIgnoreCase( tableName );
+        return H2Loader.COLUMNS_META_TABLE.equalsIgnoreCase( tableName ) || H2Loader.FILES_META_TABLE.equalsIgnoreCase( tableName );
     }
 
 }

@@ -28,7 +28,7 @@ dependencies {
 jar {
     archiveName ="dbschema-dbf-jdbc${version}.jar"
     manifest {
-        attributes 'Main-Class': 'com.dbschema.dbf.JdbcDriver'
+        attributes 'Main-Class': 'com.wisecoders.dbschema.dbf.JdbcDriver'
         attributes 'Specification-Version': "$version"
         attributes 'Specification-Vendor': "Wise Coders"
         attributes 'Implementation-Vendor-Id': "dbschema.com"

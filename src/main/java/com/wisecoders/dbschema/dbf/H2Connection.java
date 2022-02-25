@@ -1,7 +1,7 @@
 package com.wisecoders.dbschema.dbf;
 
-import com.wisecoders.dbschema.dbf.io.DBFtoH2;
-import com.wisecoders.dbschema.dbf.io.H2toDBF;
+import com.wisecoders.dbschema.dbf.io.H2Loader;
+import com.wisecoders.dbschema.dbf.io.H2Writer;
 import com.wisecoders.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFReader;
 import org.h2.jdbc.JdbcConnection;
@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
-import static com.wisecoders.dbschema.dbf.io.DBFtoH2.FILES_META_TABLE;
+import static com.wisecoders.dbschema.dbf.io.H2Loader.FILES_META_TABLE;
 
 
 /**
@@ -34,7 +34,7 @@ import static com.wisecoders.dbschema.dbf.io.DBFtoH2.FILES_META_TABLE;
  * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
  */
 
-public class H2WrappedConnection implements Connection {
+public class H2Connection implements Connection {
 
     private static final Pattern SAVE_COMMAND_PATTERN = Pattern.compile( "(\\s*)save(\\s+)dbf(\\s+)to(\\s+)(.*)", Pattern.CASE_INSENSITIVE );
     private static final Pattern RELOAD_PATTERN = Pattern.compile( "(\\s*)reload(\\s+)(.*)", Pattern.CASE_INSENSITIVE );
@@ -42,36 +42,9 @@ public class H2WrappedConnection implements Connection {
     private final JdbcConnection h2Connection;
     private String defaultCharset;
 
-    H2WrappedConnection(JdbcConnection h2Connection, String defaultCharset ){
+    H2Connection(JdbcConnection h2Connection, String defaultCharset ){
         this.h2Connection = h2Connection;
         this.defaultCharset = defaultCharset;
-    }
-
-    void transferFolder(File folder, File rootFolder, Connection h2Connection) throws SQLException {
-        final File[] files = folder.listFiles();
-        if ( files != null ) {
-            for (File file : files) {
-                if ( file.isFile() ){
-                    if ( file.getName().toLowerCase().endsWith(".dbf") ) {
-                        try ( DBFReader reader = new DBFReader( new FileInputStream(file))) {
-                            final Table table = new Table(rootFolder, file);
-                            if ( !DBFtoH2.isFileTransferred( file, h2Connection )){
-                                DBFtoH2.transfer( table, reader, h2Connection );
-                                DBFtoH2.saveFileTransferredInfo( file, h2Connection );
-                            }
-                            if (defaultCharset == null && reader.getCharset() != null ) {
-                                defaultCharset = reader.getCharset().name();
-                            }
-                        } catch (Exception ex) {
-                            LOGGER.log(Level.SEVERE, "Error transferring " + file, ex);
-                            throw new SQLException(ex.getLocalizedMessage(), ex);
-                        }
-                    }
-                } else if ( file.isDirectory() ){
-                    transferFolder( file, rootFolder, h2Connection );
-                }
-            }
-        }
     }
 
     @Override
@@ -127,11 +100,48 @@ public class H2WrappedConnection implements Connection {
                 } else if ( ( matcher = RELOAD_PATTERN.matcher(args[0].toString())).matches()) {
                     LOGGER.info("Reload " + matcher.group(3) );
                     reload( matcher.group(3));
+                    args = new String[]{""};
                 }
             }
             return method.invoke(target, args);
         }
     }
+
+    void transferFolder(File dbfFolder, File dbfSubFolder, Connection h2Connection) throws SQLException {
+        final File[] files = dbfSubFolder.listFiles();
+        if ( files != null ) {
+            for (File dbfFile : files) {
+                if ( dbfFile.isFile() ){
+                    if ( dbfFile.getName().toLowerCase().endsWith(".dbf") ) {
+                        try ( DBFReader reader = new DBFReader( new FileInputStream(dbfFile))) {
+                            final Table table = new Table( extractTableNameFrom( dbfFolder, dbfFile));
+                            if ( !H2Loader.isFileTransferred( dbfFile, h2Connection )){
+                                H2Loader.transfer( table, reader, h2Connection );
+                                H2Loader.saveFileIntoFilesMeta( table, dbfFile, h2Connection );
+                            }
+                            if (defaultCharset == null && reader.getCharset() != null ) {
+                                defaultCharset = reader.getCharset().name();
+                            }
+                        } catch (Exception ex) {
+                            LOGGER.log(Level.SEVERE, "Error transferring " + dbfFile, ex);
+                            throw new SQLException(ex.getLocalizedMessage(), ex);
+                        }
+                    }
+                } else if ( dbfFile.isDirectory() ){
+                    transferFolder( dbfFolder, dbfFile, h2Connection );
+                }
+            }
+        }
+    }
+
+    private static String extractTableNameFrom(File dbfFolder, File dbfFile) {
+        String relativePath = dbfFolder.toURI().relativize(dbfFile.toURI()).getPath();
+        if ( relativePath.toLowerCase().endsWith(".dbf")){
+            relativePath = relativePath.substring(0, relativePath.length() - ".dbf".length());
+        }
+        return relativePath;
+    }
+
 
     private void saveDbf( String path) throws Exception {
         if ( path == null || path.trim().length() == 0 ){
@@ -143,11 +153,11 @@ public class H2WrappedConnection implements Connection {
         }
         File outputFolder = new File ( path );
         outputFolder.mkdirs();
-        new H2toDBF(h2Connection, outputFolder, defaultCharset );
+        new H2Writer(h2Connection, outputFolder, defaultCharset );
     }
 
     private void reload( String filePath ) throws Exception {
-        try (PreparedStatement st = h2Connection.prepareStatement("DELETE FROM " + FILES_META_TABLE + " WHERE file_path=?")) {
+        try (PreparedStatement st = h2Connection.prepareStatement("DELETE FROM " + FILES_META_TABLE + " WHERE file_name=?")) {
             st.setString(1, filePath);
             st.executeUpdate();
         }

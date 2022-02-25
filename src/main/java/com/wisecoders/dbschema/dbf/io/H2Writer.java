@@ -22,19 +22,20 @@ import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
  * Free to be used by everyone.
  * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
  */
-public class H2toDBF {
+public class H2Writer {
 
 
-    public H2toDBF( final Connection h2Connection, final File outputFolder, final String charset ) throws Exception {
+    public H2Writer(final Connection h2Connection, final File outputFolder, final String charset ) throws Exception {
 
         Db db = new Db();
 
         final ResultSet rsColumns = h2Connection.getMetaData().getColumns( null, null, null, null );
         while( rsColumns.next() ){
+            String schemaName = rsColumns.getString( 2 );
             String tableName = rsColumns.getString( 3 );
-            if ( !"INFORMATION_SCHEMA".equalsIgnoreCase(rsColumns.getString(2)) && !DataTypeUtil.isH2SystemTable(tableName ) ) { //
+            if ( !"INFORMATION_SCHEMA".equalsIgnoreCase( schemaName) && !DataTypeUtil.isH2SystemTable(tableName ) ) { //
                 String columnName = rsColumns.getString(4);
-                db.getOrCreateTable( tableName).createField(columnName, rsColumns.getString(6), rsColumns.getInt(7), rsColumns.getInt(9));
+                db.getOrCreateTable(tableName).createDBFField(columnName, rsColumns.getString(6), rsColumns.getInt(7), rsColumns.getInt(9));
             }
         }
 
@@ -76,7 +77,7 @@ public class H2toDBF {
                 rs.close();
                 writer.close();
                 LOGGER.info("Saved " + table.name + " " + recCount + " records." );
-                DBFtoH2.saveFileTransferredInfo( outputFile, h2Connection );
+                H2Loader.saveFileIntoFilesMeta( table, outputFile, h2Connection );
             }
         }
     }

@@ -27,7 +27,7 @@ import java.util.logging.*;
 public class JdbcDriver implements Driver {
 
     private static final String PREFIX = "jdbc:dbschema:dbf:";
-    private static final String INTERNAL_H2_LOCATION = "~/.DbSchema/jdbc-dbf-cache/";
+    private static final String H2_LOCATION = "~/.DbSchema/jdbc-dbf-cache/";
 
     public static final Logger LOGGER = Logger.getLogger( JdbcDriver.class.getName() );
 
@@ -88,26 +88,26 @@ public class JdbcDriver implements Driver {
             throw new SQLException("Expected path is not folder: '" + folder + "'");
         }
         final String h2DbName = md5Java( databasePath );
-        final String h2DatabasePath = getInternalH2DatabasePath( h2DbName );
-        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_upper=false";
+        final String h2DatabasePath = getH2DatabasePath( h2DbName );
+        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_lower=true";
         LOGGER.log(Level.INFO, "Create H2 database '" + h2JdbcUrl + "'");
 
-        final JdbcConnection h2Connection = (JdbcConnection) (new org.h2.Driver().connect( h2JdbcUrl, new Properties() ));
-        final H2WrappedConnection wrappedConnection = new H2WrappedConnection( h2Connection, defaultCharset);
+        final JdbcConnection h2NativeConnection = (JdbcConnection) (new org.h2.Driver().connect( h2JdbcUrl, new Properties() ));
+        final H2Connection h2Connection = new H2Connection( h2NativeConnection, defaultCharset);
         if ( !h2Databases.contains( h2DbName )){
-            wrappedConnection.transferFolder(folder, folder, h2Connection);
+            h2Connection.transferFolder(folder, folder, h2NativeConnection);
             h2Databases.add(h2DbName);
         }
-        return wrappedConnection;
+        return h2Connection;
     }
 
 
-    private String getInternalH2DatabasePath(String path ){
-        final File h2File = new File(INTERNAL_H2_LOCATION);
+    private String getH2DatabasePath(String h2DbName ){
+        final File h2File = new File(H2_LOCATION);
         if ( !h2File.exists()) {
             h2File.mkdirs();
         }
-        return INTERNAL_H2_LOCATION + path;
+        return H2_LOCATION + h2DbName;
     }
 
     @Override
@@ -127,7 +127,7 @@ public class JdbcDriver implements Driver {
     }
 
     @Override
-    public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException {
+    public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) {
         DriverPropertyInfo[] result = new DriverPropertyInfo[1];
         result[0] = new ExtendedDriverPropertyInfo("log", "true", new String[]{"true", "false"}, "Activate driver INFO logging");
         return result;

@@ -20,28 +20,16 @@ public class Table {
     public final List<DBFField> fields = new ArrayList<>();
 
 
-    Table(String name ){
+    public Table(String name ){
         this.name = name;
     }
 
-    public Table(File rootFolder, File tableFile) {
-        String path = rootFolder.toURI().relativize(tableFile.toURI()).getPath();
-        if ( path.toLowerCase().endsWith(".dbf")){
-            path = path.substring(0, path.length() - ".dbf".length());
-        }
-        this.name = path;
-    }
-
-    public void addField( DBFField field ){
-        fields.add( field );
-    }
-
-    public DBFField createField(String name, String type, int length, int decimal  ) {
+    public DBFField createDBFField(String name, String type, int length, int decimal  ) {
         DBFField field = new DBFField();
         if ( name.length() > 10 ){
             name = name.substring(0, 10);
         }
-        field.setName( name );
+        field.setName( name.toUpperCase() );
 
         switch (type.toLowerCase() ){
             case "double":
@@ -71,12 +59,12 @@ public class Table {
 
     @Override
     public String toString() {
-        String ret =  name + "(\n";
+        final StringBuilder sb = new StringBuilder(name).append("(\n");
         for ( DBFField field : fields ){
-            ret += field.getName() + " " + field.getType() + " (" +field.getLength() + ", " + field.getDecimalCount() + " ) " + ( field.isNullable() ? "" : "NOT NULL ") + "\n";
+            sb.append(field.getName().toUpperCase()).append(" ").append(field.getType()).append(" (").append(field.getLength()).append(", ").append(field.getDecimalCount()).append(" ) ").append(field.isNullable() ? "" : "NOT NULL ").append("\n");
         }
-        ret +=")";
-        return ret;
+        sb.append(")");
+        return sb.toString();
     }
 
 }

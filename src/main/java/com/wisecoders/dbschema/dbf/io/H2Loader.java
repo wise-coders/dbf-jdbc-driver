@@ -7,6 +7,8 @@ import com.linuxense.javadbf.DBFReader;
 
 import java.io.File;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 
 import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
@@ -17,7 +19,7 @@ import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
  * Free to be used by everyone.
  * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
  */
-public class DBFtoH2 {
+public class H2Loader {
 
 
     private final static char QUOTE_CHAR = '"';
@@ -25,7 +27,7 @@ public class DBFtoH2 {
     private static final String INSERT_INTO_COLUMNS_META_TABLE = "insert into " + COLUMNS_META_TABLE + "( table_name, column_name, column_type, length, decimal ) values ( ?,?,?,?,? )";
 
     public static final String FILES_META_TABLE = "dbs_meta_files";
-    private static final String CREATE_META_FILES = "CREATE TABLE IF NOT EXISTS " + FILES_META_TABLE + " ( file_path varchar(250) NOT NULL PRIMARY KEY, size bigint NOT NULL, last_modified bigint NOT NULL ) ";
+    private static final String CREATE_META_FILES = "CREATE TABLE IF NOT EXISTS " + FILES_META_TABLE + " ( file_path varchar(250) NOT NULL PRIMARY KEY, table_name varchar(2000) NOT NULL, size bigint NOT NULL, last_modified bigint NOT NULL ) ";
 
 
 
@@ -48,14 +50,14 @@ public class DBFtoH2 {
         return false;
     }
 
-    public static void saveFileTransferredInfo( File file, Connection h2Connection ) throws SQLException {
-        String filePath = file.getAbsolutePath();
-        long fileLastModified = file.lastModified();
-        long fileSize = file.length();
-        try ( PreparedStatement st = h2Connection.prepareStatement("MERGE INTO " + FILES_META_TABLE + " ( file_path, size, last_modified ) KEY(file_path) VALUES ( ?, ?, ? )") ) {
-            st.setString(1, filePath);
-            st.setLong(2, fileSize);
-            st.setLong(3, fileLastModified);
+    public static void saveFileIntoFilesMeta(Table table, File file, Connection h2Connection ) throws SQLException {
+        try ( PreparedStatement st = h2Connection.prepareStatement("MERGE INTO " + FILES_META_TABLE + " ( file_path, table_name, size, last_modified ) KEY(file_path) VALUES ( ?, ?, ?, ? )") ) {
+            String fileName = file.getName();
+
+            st.setString(1, file.getAbsolutePath());
+            st.setString(2, table.name );
+            st.setLong(3, file.length());
+            st.setLong(4, file.lastModified());
             st.executeUpdate();
         }
     }
@@ -71,23 +73,24 @@ public class DBFtoH2 {
         final StringBuilder createSb = new StringBuilder("create table ").append(QUOTE_CHAR).append(table.name).append(QUOTE_CHAR).append("(\n");
         final StringBuilder insertSb = new StringBuilder("insert into ").append(QUOTE_CHAR).append(table.name).append(QUOTE_CHAR).append("(");
         final StringBuilder insertValuesSb = new StringBuilder("values(");
-        final StringBuilder dbfInfo = new StringBuilder();
-        dbfInfo.append("Table ").append( table.name ).append( "\n" );
+        final StringBuilder logSb = new StringBuilder();
+        logSb.append("Table ").append( table.name ).append( "\n" );
         boolean appendComma = false;
         int numberOfFields = reader.getFieldCount();
+        final List<DBFField> dbfFieldList = new ArrayList<>();
         for (int i = 0; i < numberOfFields; i++) {
 
             final DBFField field = reader.getField(i);
-            dbfInfo.append( "\t").append( getFieldDescription( field )).append(" \n");
+            logSb.append( "\t").append( DBFUtil.getFieldDescription( field )).append(" \n");
             saveFieldInMetaTable(h2Connection, table, field);
-            table.addField(field);
+            dbfFieldList.add(field);
             if (appendComma) {
                 createSb.append(",\n");
                 insertSb.append(",");
                 insertValuesSb.append(",");
             }
-            createSb.append("\t").append(QUOTE_CHAR).append(field.getName()).append(QUOTE_CHAR).append(" ");
-            insertSb.append(QUOTE_CHAR).append(field.getName()).append(QUOTE_CHAR);
+            createSb.append("\t").append(QUOTE_CHAR).append(field.getName().toLowerCase()).append(QUOTE_CHAR).append(" ");
+            insertSb.append(QUOTE_CHAR).append(field.getName().toLowerCase()).append(QUOTE_CHAR);
             insertValuesSb.append("?");
             createSb.append( DataTypeUtil.getH2Type( field));
             appendComma = true;
@@ -96,7 +99,7 @@ public class DBFtoH2 {
         insertSb.append(")");
         insertValuesSb.append(")");
 
-        LOGGER.log(Level.INFO, "Transfer "  + dbfInfo );
+        LOGGER.log(Level.INFO, "Transfer "  + logSb );
 
         String dropTableSQL = "drop table if exists " + QUOTE_CHAR + table.name + QUOTE_CHAR;
         LOGGER.log(Level.INFO, dropTableSQL);
@@ -125,9 +128,9 @@ public class DBFtoH2 {
         while( ( record = reader.nextRecord()) != null ){
 
             try {
-                for (int i = 0; i < record.length && i < table.fields.size(); i++) {
+                for (int i = 0; i < record.length && i < dbfFieldList.size(); i++) {
                     Object value = record[i];
-                    DBFField field = table.fields.get(i);
+                    DBFField field = dbfFieldList.get(i);
                     if (value == null) {
                         stInsert.setNull(i + 1, DataTypeUtil.getJavaType(field));
                     } else {
@@ -195,17 +198,12 @@ public class DBFtoH2 {
         h2Connection.commit();
     }
 
-    private static String getFieldDescription(DBFField field) {
-        return  field.getName() + " " +
-                field.getType().name() + "(" +
-                field.getLength() + "," +
-                field.getDecimalCount() + ")";
-    }
+
 
     private static void saveFieldInMetaTable( Connection h2Connection, Table table, DBFField field) throws SQLException {
         final PreparedStatement st = h2Connection.prepareStatement( INSERT_INTO_COLUMNS_META_TABLE );
         st.setString( 1, table.name);
-        st.setString( 2, field.getName() );
+        st.setString( 2, field.getName().toLowerCase() );
         st.setString( 3, field.getType().name() );
         st.setInt( 4, field.getLength() );
         st.setInt( 5, field.getDecimalCount() );

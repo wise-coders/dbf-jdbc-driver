@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.nio.charset.Charset;
 import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
@@ -40,7 +41,7 @@ public class H2Connection implements Connection {
     private static final Pattern RELOAD_PATTERN = Pattern.compile( "(\\s*)reload(\\s+)(.*)", Pattern.CASE_INSENSITIVE );
 
     private final JdbcConnection h2Connection;
-    private String defaultCharset;
+    private final String defaultCharset;
 
     H2Connection(JdbcConnection h2Connection, String defaultCharset ){
         this.h2Connection = h2Connection;
@@ -107,20 +108,17 @@ public class H2Connection implements Connection {
         }
     }
 
-    void transferFolder(File dbfFolder, File dbfSubFolder, Connection h2Connection) throws SQLException {
+    void transferFolder(File dbfFolder, File dbfSubFolder, Connection h2Connection, Charset defaultCharset ) throws SQLException {
         final File[] files = dbfSubFolder.listFiles();
         if ( files != null ) {
-            for (File dbfFile : files) {
+            for ( File dbfFile : files) {
                 if ( dbfFile.isFile() ){
                     if ( dbfFile.getName().toLowerCase().endsWith(".dbf") ) {
-                        try ( DBFReader reader = new DBFReader( new FileInputStream(dbfFile))) {
-                            final Table table = new Table( extractTableNameFrom( dbfFolder, dbfFile));
+                        try ( DBFReader reader = new DBFReader( new FileInputStream(dbfFile), defaultCharset )) {
+                            final Table table = new Table( extractTableNameFrom( dbfFolder, dbfFile ));
                             if ( !H2Loader.isFileTransferred( dbfFile, h2Connection )){
                                 H2Loader.transfer( table, reader, h2Connection );
                                 H2Loader.saveFileIntoFilesMeta( table, dbfFile, h2Connection );
-                            }
-                            if (defaultCharset == null && reader.getCharset() != null ) {
-                                defaultCharset = reader.getCharset().name();
                             }
                         } catch (Exception ex) {
                             LOGGER.log(Level.SEVERE, "Error transferring " + dbfFile, ex);
@@ -128,7 +126,7 @@ public class H2Connection implements Connection {
                         }
                     }
                 } else if ( dbfFile.isDirectory() ){
-                    transferFolder( dbfFolder, dbfFile, h2Connection );
+                    transferFolder( dbfFolder, dbfFile, h2Connection, defaultCharset );
                 }
             }
         }

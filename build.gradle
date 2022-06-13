@@ -25,6 +25,11 @@ dependencies {
     testCompile 'junit:junit:4.13.2'
 }
 
+compileJava{
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
 jar {
     archiveName ="dbschema-dbf-jdbc${version}.jar"
     manifest {

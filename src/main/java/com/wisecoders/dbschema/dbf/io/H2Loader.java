@@ -111,11 +111,9 @@ public class H2Loader {
         h2Connection.prepareStatement(createSb.toString()).execute();
         h2Connection.commit();
 
-        int batchSize, commitSize;
-
         String insertSql = insertSb.toString() + insertValuesSb.toString();
-        batchSize = getChunk( 400, numberOfFields );
-        commitSize = getChunk( 4000, numberOfFields );
+        final int batchSize = Math.max( 50, 400 - numberOfFields );
+        final int commitSize = 100;// Is number or batches
 
         //
         // TRANSFER DATA
@@ -125,8 +123,9 @@ public class H2Loader {
         LOGGER.info("Transfer '" + table.name + "' data...");
         Object[] record;
         int pos = 0, pendingBatch = 0, pendingCommit = 0;
+        long batchTime = 0, commitTime = 0, _start = System.currentTimeMillis();
         while( ( record = reader.nextRecord()) != null ){
-
+            final long _startBatch = System.currentTimeMillis();
             try {
                 for (int i = 0; i < record.length && i < dbfFieldList.size(); i++) {
                     Object value = record[i];
@@ -143,29 +142,28 @@ public class H2Loader {
                 throw ex;
             }
             stInsert.addBatch();
-            h2Connection.commit();
+            batchTime += System.currentTimeMillis() - _startBatch;
             pos++;
             pendingBatch++;
             pendingCommit++;
             if ( pendingBatch > batchSize ){
+                final long _startCommit = System.currentTimeMillis();
                 stInsert.executeBatch();
                 pendingBatch = 0;
                 if ( pendingCommit > commitSize ){
                     h2Connection.commit();
                     pendingCommit = 0;
-                    LOGGER.info("Transfer '" + table.name + "' data " + pos + " records.");
                 }
+                commitTime += System.currentTimeMillis() - _startCommit;
             }
         }
         if ( pendingBatch > 0 ) {
             stInsert.executeBatch();
         }
         h2Connection.commit();
+        LOGGER.info("Transferred '" + table.name + "' " + pos + " records in " + (System.currentTimeMillis() - _start) + " ms, batchTime=" + batchTime + " commitTime=" + commitTime );
     }
 
-    private static int getChunk( int maxChunkSize, int numberOfFields ){
-        return maxChunkSize - 9 * Math.min( numberOfFields, maxChunkSize/10 );
-    }
 
 
 

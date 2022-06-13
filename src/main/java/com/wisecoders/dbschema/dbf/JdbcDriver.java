@@ -5,6 +5,7 @@ import org.h2.jdbc.JdbcConnection;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
@@ -35,10 +36,11 @@ public class JdbcDriver implements Driver {
         try {
             DriverManager.registerDriver( new JdbcDriver());
             LOGGER.setLevel(Level.ALL);
+            /*
             LOGGER.addHandler(
                     new ConsoleHandler() {
                         {setOutputStream(System.out);}
-                    });
+                    });*/
             final FileHandler fileHandler = new FileHandler(System.getProperty("user.home") + "/.DbSchema/logs/DbfJdbcDriver.log");
             fileHandler.setFormatter( new SimpleFormatter());
             LOGGER.addHandler(fileHandler);
@@ -79,7 +81,7 @@ public class JdbcDriver implements Driver {
     private final List<String> h2Databases = new ArrayList<>();
 
 
-    private Connection getConnection( String databasePath, String defaultCharset ) throws SQLException {
+    private Connection getConnection( String databasePath, String defaultCharsetName ) throws SQLException {
         final File folder = new File(databasePath);
         if (!folder.exists()) {
             throw new SQLException("Folder does not exists: '" + folder + "'");
@@ -88,14 +90,15 @@ public class JdbcDriver implements Driver {
             throw new SQLException("Expected path is not folder: '" + folder + "'");
         }
         final String h2DbName = md5Java( databasePath );
-        final String h2DatabasePath = getH2DatabasePath( h2DbName );
-        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_lower=true";
+        //final String h2DatabasePath = getH2DatabasePath( h2DbName );
+        //final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_lower=true";
+        final String h2JdbcUrl = "jdbc:h2:mem:dbfdriver;database_to_lower=true";
         LOGGER.log(Level.INFO, "Create H2 database '" + h2JdbcUrl + "'");
 
         final JdbcConnection h2NativeConnection = (JdbcConnection) (new org.h2.Driver().connect( h2JdbcUrl, new Properties() ));
-        final H2Connection h2Connection = new H2Connection( h2NativeConnection, defaultCharset);
+        final H2Connection h2Connection = new H2Connection( h2NativeConnection, defaultCharsetName);
         if ( !h2Databases.contains( h2DbName )){
-            h2Connection.transferFolder(folder, folder, h2NativeConnection);
+            h2Connection.transferFolder(folder, folder, h2NativeConnection, defaultCharsetName != null ? Charset.forName( defaultCharsetName ) : null );
             h2Databases.add(h2DbName);
         }
         return h2Connection;
@@ -114,9 +117,6 @@ public class JdbcDriver implements Driver {
     public boolean acceptsURL(String url) {
         return url.startsWith(PREFIX);
     }
-
-
-
 
     static class ExtendedDriverPropertyInfo extends DriverPropertyInfo {
         ExtendedDriverPropertyInfo( String name, String value, String[] choices, String description ){

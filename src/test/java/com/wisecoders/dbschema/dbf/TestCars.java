@@ -17,19 +17,36 @@ public class TestCars {
     @Test
     public void test() throws SQLException {
         new JdbcDriver();
-        Connection con = DriverManager.getConnection( URL );
-        Statement st = con.createStatement();
-        //st.execute("reload cars");
-        if( st.execute("select * from cars")){
-            ResultSet rs = st.getResultSet();
-            while( rs.next() ){
-                for( int i = 0; i < rs.getMetaData().getColumnCount(); i++ ){
-                    System.out.print( rs.getString(i + 1 ) + ",");
+        {
+            Connection con = DriverManager.getConnection(URL);
+            Statement st = con.createStatement();
+            //st.execute("reload cars");
+            if (st.execute("select * from cars")) {
+                ResultSet rs = st.getResultSet();
+                while (rs.next()) {
+                    for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+                        System.out.print(rs.getString(i + 1) + ",");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
             }
+            st.execute("save dbf to out/testExport");
         }
-        st.execute("save dbf to out/testExport");
+        {
+            Connection con = DriverManager.getConnection(URL);
+            Statement st = con.createStatement();
+            //st.execute("reload cars");
+            if (st.execute("select * from cars")) {
+                ResultSet rs = st.getResultSet();
+                while (rs.next()) {
+                    for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+                        System.out.print(rs.getString(i + 1) + ",");
+                    }
+                    System.out.println();
+                }
+            }
+            st.execute("save dbf to out/testExport");
+        }
     }
 
 }

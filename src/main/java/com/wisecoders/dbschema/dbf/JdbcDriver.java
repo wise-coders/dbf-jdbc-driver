@@ -90,9 +90,9 @@ public class JdbcDriver implements Driver {
             throw new SQLException("Expected path is not folder: '" + folder + "'");
         }
         final String h2DbName = md5Java( databasePath );
-        //final String h2DatabasePath = getH2DatabasePath( h2DbName );
-        //final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_lower=true";
-        final String h2JdbcUrl = "jdbc:h2:mem:dbfdriver;database_to_lower=true";
+        final String h2DatabasePath = getH2DatabasePath( h2DbName );
+        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_lower=true";
+        //final String h2JdbcUrl = "jdbc:h2:mem:dbfdriver;database_to_lower=true";
         LOGGER.log(Level.INFO, "Create H2 database '" + h2JdbcUrl + "'");
 
         final JdbcConnection h2NativeConnection = (JdbcConnection) (new org.h2.Driver().connect( h2JdbcUrl, new Properties() ));

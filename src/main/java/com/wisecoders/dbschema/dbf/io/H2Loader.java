@@ -112,8 +112,7 @@ public class H2Loader {
         h2Connection.commit();
 
         String insertSql = insertSb.toString() + insertValuesSb.toString();
-        final int batchSize = Math.max( 50, 400 - numberOfFields );
-        final int commitSize = 100;// Is number or batches
+        final int batchSize = Math.max( 50, 500 - (numberOfFields*3) );
 
         //
         // TRANSFER DATA
@@ -122,10 +121,9 @@ public class H2Loader {
         final PreparedStatement stInsert = h2Connection.prepareStatement(insertSql);
         LOGGER.info("Transfer '" + table.name + "' data...");
         Object[] record;
-        int pos = 0, pendingBatch = 0, pendingCommit = 0;
-        long batchTime = 0, commitTime = 0, _start = System.currentTimeMillis();
+        int pos = 0, pendingBatch = 0;
+        long _start = System.currentTimeMillis();
         while( ( record = reader.nextRecord()) != null ){
-            final long _startBatch = System.currentTimeMillis();
             try {
                 for (int i = 0; i < record.length && i < dbfFieldList.size(); i++) {
                     Object value = record[i];
@@ -133,6 +131,8 @@ public class H2Loader {
                     if (value == null) {
                         stInsert.setNull(i + 1, DataTypeUtil.getJavaType(field));
                     } else {
+                        if ( value instanceof String && ((String) value).startsWith("REFERO 550 MG"))
+                            System.out.println("Here");
                         stInsert.setObject(i + 1, value);
                     }
                 }
@@ -142,26 +142,19 @@ public class H2Loader {
                 throw ex;
             }
             stInsert.addBatch();
-            batchTime += System.currentTimeMillis() - _startBatch;
             pos++;
             pendingBatch++;
-            pendingCommit++;
             if ( pendingBatch > batchSize ){
-                final long _startCommit = System.currentTimeMillis();
                 stInsert.executeBatch();
+                h2Connection.commit();
                 pendingBatch = 0;
-                if ( pendingCommit > commitSize ){
-                    h2Connection.commit();
-                    pendingCommit = 0;
-                }
-                commitTime += System.currentTimeMillis() - _startCommit;
             }
         }
         if ( pendingBatch > 0 ) {
             stInsert.executeBatch();
         }
         h2Connection.commit();
-        LOGGER.info("Transferred '" + table.name + "' " + pos + " records in " + (System.currentTimeMillis() - _start) + " ms, batchTime=" + batchTime + " commitTime=" + commitTime );
+        LOGGER.info("------- Transferred '" + table.name + "' " + pos + " records in " + (System.currentTimeMillis() - _start) + " ms" );
     }
 
 

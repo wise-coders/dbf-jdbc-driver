@@ -131,8 +131,6 @@ public class H2Loader {
                     if (value == null) {
                         stInsert.setNull(i + 1, DataTypeUtil.getJavaType(field));
                     } else {
-                        if ( value instanceof String && ((String) value).startsWith("REFERO 550 MG"))
-                            System.out.println("Here");
                         stInsert.setObject(i + 1, value);
                     }
                 }

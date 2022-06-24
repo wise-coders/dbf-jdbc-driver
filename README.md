@@ -30,6 +30,10 @@ while( rs.next() ){
 }
 ```
 
+## Download the JDBC Driver
+
+The driver can be downloaded from the [DbSchema website](https://dbschema.com/jdbc-drivers/DBFJdbcDriver.zip).
+
 ## How the Driver Works
 
 The driver loads all DBF data into an H2 cache database stored in <user.home>/.DbSchema/dbf-jdbc-driver/

@@ -20,9 +20,9 @@ repositories {
 
 
 dependencies {
-    compile "com.github.albfernandez:javadbf:1.13.2"
-    compile "com.h2database:h2:2.1.210"
-    testCompile 'junit:junit:4.13.2'
+    implementation "com.github.albfernandez:javadbf:1.13.2"
+    implementation "com.h2database:h2:2.1.210"
+    testImplementation 'junit:junit:4.13.2'
 }
 
 compileJava{
@@ -45,13 +45,13 @@ jar {
 
 task zip(type: Zip, dependsOn:['clean','jar']) {
     archiveName 'DBFJdbcDriver.zip'
-    from configurations.runtime.allArtifacts.files
-    from configurations.runtime
+    from configurations.runtimeClasspath.allArtifacts.files
+    from configurations.runtimeClasspath
 }
 
 task copyInUserHome(type: Copy,dependsOn:['clean','jar']) {
-    from configurations.runtime.allArtifacts.files
-    from configurations.runtime
+    from configurations.runtimeClasspath.allArtifacts.files
+    from configurations.runtimeClasspath
     into "${System.getProperty('user.home')}/.DbSchema/drivers/DBF/"
 }
 

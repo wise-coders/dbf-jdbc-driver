@@ -36,13 +36,14 @@ public class JdbcDriver implements Driver {
         try {
             DriverManager.registerDriver( new JdbcDriver());
             LOGGER.setLevel(Level.ALL);
-            /*
-            LOGGER.addHandler(
-                    new ConsoleHandler() {
-                        {setOutputStream(System.out);}
-                    });*/
-            final FileHandler fileHandler = new FileHandler(System.getProperty("user.home") + "/.DbSchema/logs/DbfJdbcDriver.log");
+            final ConsoleHandler consoleHandler = new ConsoleHandler();
+            consoleHandler.setLevel(Level.ALL);
+            consoleHandler.setFormatter(new SimpleFormatter());
+            LOGGER.addHandler(consoleHandler);
+
+            final FileHandler fileHandler = new FileHandler("%h/.DbSchema/logs/DbfJdbcDriver.log");
             fileHandler.setFormatter( new SimpleFormatter());
+            fileHandler.setLevel(Level.ALL);
             LOGGER.addHandler(fileHandler);
         } catch ( Exception ex ){
             ex.printStackTrace();

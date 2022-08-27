@@ -84,14 +84,13 @@ public class DataTypeUtil {
             case NUMERIC:
                 return "decimal(" + ( field.getLength() + field.getDecimalCount() ) + "," + field.getDecimalCount() + ")";
             case LONG:
-                return "bigint";
             case CURRENCY:
             case AUTOINCREMENT:
                 return "bigint";
             case TIMESTAMP:
                 return "timestamp";
             case TIMESTAMP_DBASE7:
-                return "timestampwithtimezone";
+                return "timestamp with time zone";
             case NULL_FLAGS:
                 return "bit";
             default:

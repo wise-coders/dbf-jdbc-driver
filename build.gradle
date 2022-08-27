@@ -2,7 +2,6 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url "https://plugins.gradle.org/m2/" }
-        jcenter()
     }
     dependencies {
         classpath "gradle.plugin.install4j.install4j:gradle_plugin:7.0.8"
@@ -18,10 +17,15 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(15)
+    }
+}
 
 dependencies {
     implementation "com.github.albfernandez:javadbf:1.13.2"
-    implementation "com.h2database:h2:2.1.210"
+    implementation 'com.h2database:h2:2.1.214'
     testImplementation 'junit:junit:4.13.2'
 }
 
@@ -31,10 +35,10 @@ compileJava{
 }
 
 jar {
-    archiveName ="dbschema-dbf-jdbc${version}.jar"
+    archiveFileName ="dbschema-dbf-jdbc${driverVersion}.jar"
     manifest {
         attributes 'Main-Class': 'com.wisecoders.dbschema.dbf.JdbcDriver'
-        attributes 'Specification-Version': "$version"
+        attributes 'Specification-Version': "$driverVersion"
         attributes 'Specification-Vendor': "Wise Coders"
         attributes 'Implementation-Vendor-Id': "dbschema.com"
         attributes 'Implementation-Vendor': "Wise Coders"
@@ -44,9 +48,10 @@ jar {
 
 
 task zip(type: Zip, dependsOn:['clean','jar']) {
-    archiveName 'DBFJdbcDriver.zip'
+    archiveFileName.set 'DBFJdbcDriver.zip'
     from configurations.runtimeClasspath.allArtifacts.files
     from configurations.runtimeClasspath
+    from "build/libs" include "*.jar"
 }
 
 task copyInUserHome(type: Copy,dependsOn:['clean','jar']) {

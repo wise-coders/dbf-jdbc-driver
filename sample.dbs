@@ -496,6 +496,7 @@
 			</column>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
+			<column name="newcolumns" type="BIT" jt="-7" />
 			<index name="pk_test_autoincrement" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -825,9 +826,9 @@ END]]></string>
 		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="464" y="1712" />
 		<entity schema="sakila" name="sample1" color="BED3F4" x="272" y="1536" />
 		<entity schema="sakila" name="sample1_0" color="BED3F4" x="272" y="1712" />
-		<entity schema="sakila" name="staff" color="F4DDBE" x="1264" y="208" />
+		<entity schema="sakila" name="staff" color="F4DDBE" x="1200" y="208" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1072" y="256" />
-		<entity schema="sakila" name="store" color="F4DDBE" x="1472" y="208" />
+		<entity schema="sakila" name="store" color="F4DDBE" x="1440" y="208" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="240" y="1344" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="48" y="1536" />
 		<entity schema="sakila" name="медве́дь" color="BED3F4" x="160" y="1040" />
@@ -844,11 +845,11 @@ END]]></string>
 			<entity schema="sakila" name="persons" />
 			<entity schema="sakila" name="sales_by_film_category" />
 			<entity schema="sakila" name="sample1" />
-			<entity schema="sakila" name="test_autoincrement" />
 			<entity schema="sakila" name="медве́дь" />
 			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
 			<entity schema="sakila" name="sample1_0" />
+			<entity schema="sakila" name="test_autoincrement" />
 		</group>
 		<group name="city" color="ECECF7" >
 			<entity schema="sakila" name="city" />
@@ -866,8 +867,6 @@ END]]></string>
 			<entity schema="sakila" name="actor_info" />
 		</group>
 		<group name="staff" color="F7F2EC" >
-			<entity schema="sakila" name="staff" />
-			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="customer" />
 			<entity schema="sakila" name="address" />
 			<entity schema="sakila" name="rental" />
@@ -875,6 +874,8 @@ END]]></string>
 			<entity schema="sakila" name="inventory" />
 			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="customer_list" />
+			<entity schema="sakila" name="staff" />
+			<entity schema="sakila" name="store" />
 		</group>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-1c86" show_column_type="y" show_relation="name" >

@@ -886,7 +886,7 @@ END]]></string>
 		<entity schema="sakila" name="category" color="C7F4BE" x="3264" y="48" />
 		<entity schema="sakila" name="city" color="BEBEF4" x="1200" y="880" />
 		<entity schema="sakila" name="country" color="BEBEF4" x="1472" y="880" />
-		<entity schema="sakila" name="customer" color="F4DDBE" x="2048" y="48" />
+		<entity schema="sakila" name="customer" color="F4DDBE" x="2048" y="112" />
 		<entity schema="sakila" name="customer_list" color="F4DDBE" x="2320" y="48" />
 		<entity schema="sakila" name="film" color="C7F4BE" x="2624" y="48" />
 		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2624" y="400" />

@@ -816,7 +816,7 @@ END]]></string>
 		<entity schema="sakila" name="film_category" color="C7F4BE" x="2400" y="208" />
 		<entity schema="sakila" name="film_list" color="C7F4BE" x="2144" y="752" />
 		<entity schema="sakila" name="film_text" color="C7F4BE" x="2352" y="1024" />
-		<entity schema="sakila" name="inventory" color="F4DDBE" x="1472" y="784" />
+		<entity schema="sakila" name="inventory" color="F4DDBE" x="1456" y="704" />
 		<entity schema="sakila" name="language" color="C7F4BE" x="2400" y="560" />
 		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="736" y="1232" />
 		<entity schema="sakila" name="payment" color="F4DDBE" x="1040" y="528" />
@@ -871,11 +871,11 @@ END]]></string>
 			<entity schema="sakila" name="address" />
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="payment" />
-			<entity schema="sakila" name="inventory" />
 			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="staff" />
 			<entity schema="sakila" name="store" />
+			<entity schema="sakila" name="inventory" />
 		</group>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-1c86" show_column_type="y" show_relation="name" >

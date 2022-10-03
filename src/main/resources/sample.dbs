@@ -6,6 +6,7 @@
 			<column name="firstname" type="VARCHAR" length="100" jt="12" mandatory="y" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" mandatory="y" />
 			<column name="description" type="VARCHAR" length="12" jt="12" mandatory="y" />
+			<column name="address" type="VARCHAR" length="100" jt="12" mandatory="y" />
 			<index name="pk_test" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>

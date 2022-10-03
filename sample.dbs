@@ -496,7 +496,7 @@
 			</column>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
-			<column name="newcolumns" type="BIT" jt="-7" />
+			<column name="newcolumns" type="BOOLEAN" length="1" jt="16" />
 			<index name="pk_test_autoincrement" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -842,7 +842,6 @@ END]]></string>
 		<group name="Baseboard" color="ECF0F7" >
 			<entity schema="sakila" name="Baseboard" />
 			<entity schema="sakila" name="nicer_but_slower_film_list" />
-			<entity schema="sakila" name="persons" />
 			<entity schema="sakila" name="sales_by_film_category" />
 			<entity schema="sakila" name="sample1" />
 			<entity schema="sakila" name="медве́дь" />
@@ -850,6 +849,7 @@ END]]></string>
 			<entity schema="sakila" name="sales_by_store" />
 			<entity schema="sakila" name="sample1_0" />
 			<entity schema="sakila" name="test_autoincrement" />
+			<entity schema="sakila" name="persons" />
 		</group>
 		<group name="city" color="ECECF7" >
 			<entity schema="sakila" name="city" />

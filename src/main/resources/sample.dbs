@@ -7,6 +7,7 @@
 			<column name="lastname" type="VARCHAR" length="100" jt="12" mandatory="y" />
 			<column name="description" type="VARCHAR" length="12" jt="12" mandatory="y" />
 			<column name="address" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="test" type="SMALLINT" jt="5" />
 			<index name="pk_test" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -14,7 +15,7 @@
 		</table>
 	</schema>
 	<layout name="Default Layout" id="Layout-1872" show_relation="name" >
-		<entity schema="sample" name="test" color="C1D8EE" x="336" y="208" />
+		<entity schema="sample" name="test" color="C1D8EE" x="176" y="208" />
 		<callout x="48" y="48" pointer="Round" >
 			<comment><![CDATA[A layout is a diagram with tools.
 - For a better understanding of the schema, create multiple layouts.

@@ -13,8 +13,9 @@ plugins{
     id 'java-library'
     id 'maven-publish'
     id 'signing'
+    id 'groovy'
 }
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 apply plugin: 'signing'
 apply plugin: 'application'
 apply plugin: 'distribution'
@@ -67,24 +68,81 @@ task copyInUserHome(type: Copy,dependsOn:['clean','jar']) {
 }
 
 
-group = 'com.wisecoders'
-version = '1.0'
+group = "com.wisecoders"
+archivesBaseName = "dbf-jdbc-drvier"
+version = "1.1.1"
+
 
 java {
     withJavadocJar()
     withSourcesJar()
 }
+javadoc {
+    options.addBooleanOption('html5', true)
+}
 artifacts {
     archives javadocJar, sourcesJar
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'dbf-jdbc-driver'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'DBF-JDBC-Driver'
+                description = 'DBF and FoxPro JDBC Driver'
+                url = 'https://dbschema.com/jdbc-driver/DBF.html'
+                properties = [
+                        myProp: "value",
+                        "prop.with.dots": "anotherValue"
+                ]
+                licenses {
+                    license {
+                        name = 'GPL-3Plus dual license. Contributions only to https://github.com/wise-coders/dbf-jdbc-driver'
+                        url = 'https://github.com/wise-coders/dbf-jdbc-driver'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'wisecoders'
+                        name = 'Wise Coders GmbH'
+                        email = 'support@wisecoders.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/wise-coders/dbf-jdbc-driver'
+                    developerConnection = 'scm:git:ssh://github.com/wise-coders/dbf-jdbc-driver'
+                    url = 'https://github.com/wise-coders/dbf-jdbc-driver'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/content/repositories/releases/"
+            credentials {
+                username = project.properties["sonatypeUsername"]
+                password = project.properties["sonatypePassword"]
+            }
+        }
+    }
+}
 signing {
-    sign configurations.archives
+    sign publishing.publications.mavenJava
 }
 
-group = "com.wisecoders.dbf-jdbc-driver"
-archivesBaseName = "dbf-jdbc-drvier"
-version = "1.0.0"
 
+/*
 task uploadArchives {
     repositories {
         mavenDeployer {
@@ -129,3 +187,6 @@ task uploadArchives {
         }
     }
 }
+
+
+ */

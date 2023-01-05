@@ -367,7 +367,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3]]></options>
 		</table>
 		<table name="payment" row_count="0" spec="" >
-			<column name="payment_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
+			<column name="payment_id1" prior="payment_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
 			<column name="customer_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" />
@@ -380,7 +380,7 @@ among with the other details]]></comment>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
 			<index name="pk_payment" unique="PRIMARY_KEY" >
-				<column name="payment_id" />
+				<column name="payment_id1" />
 			</index>
 			<index name="idx_fk_staff_id" unique="NORMAL" >
 				<column name="staff_id" />
@@ -994,8 +994,8 @@ END]]></string>
 			<entity schema="sakila" name="inventory" />
 			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="rental" />
-			<entity schema="sakila" name="payment" />
 			<entity schema="sakila" name="customer_list" />
+			<entity schema="sakila" name="payment" />
 		</group>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >

@@ -938,7 +938,7 @@ END]]></string>
 		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="1008" y="2304" />
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="480" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1040" y="208" />
-		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="480" />
+		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="384" />
 		<entity schema="sakila" name="test1" color="BED3F4" x="272" y="1520" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />
@@ -988,7 +988,6 @@ END]]></string>
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="staff" />
-			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="customer" />
 			<entity schema="sakila" name="address" />
 			<entity schema="sakila" name="rental" />
@@ -996,6 +995,7 @@ END]]></string>
 			<entity schema="sakila" name="inventory" />
 			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="customer_list" />
+			<entity schema="sakila" name="store" />
 		</group>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >

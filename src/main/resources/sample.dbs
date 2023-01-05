@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="sample" id="Project-1a2" database="MySql" >
+	<schema name="sample" >
+		<table name="test" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="firstname" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="lastname" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="description" type="VARCHAR" length="12" jt="12" mandatory="y" />
+			<column name="address" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="test" type="SMALLINT" jt="5" />
+			<index name="pk_test" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-1872" show_relation="name" >
+		<entity schema="sample" name="test" color="C1D8EE" x="176" y="208" />
+		<callout x="48" y="48" pointer="Round" >
+			<comment><![CDATA[A layout is a diagram with tools.
+- For a better understanding of the schema, create multiple layouts.
+- Right-click the layout to create new tables. 
+- Double-click table headers to edit. 
+- The schema will be saved to the model file. 
+- Later, you can connect to any database and deploy the schema into the database.]]></comment>
+		</callout>
+	</layout>
+</project>

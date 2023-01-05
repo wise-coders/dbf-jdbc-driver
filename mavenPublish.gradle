@@ -1,0 +1,66 @@
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+signing {
+    required = { !version.endsWith("SNAPSHOT") }
+    sign publishing.publications
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            afterEvaluate {
+                artifact sourceJar
+                artifact javadocJar
+            }
+
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+
+            pom {
+                name = 'DBF-JDBC-Driver'
+                description = 'DBF and FoxPro JDBC Driver provided by DbSchema Designer Team'
+                url = 'https://dbschema.com/jdbc-driver/DBF.html'
+                licenses {
+                    license {
+                        name = 'GPL-3Plus dual license. Contributions only to https://github.com/wise-coders/dbf-jdbc-driver'
+                        url = 'https://github.com/wise-coders/dbf-jdbc-driver'
+                        distribution = 'repo'
+                    }
+                }
+                developers {
+                    developer {
+                        name = 'Wise Coders GmbH'
+                        email = 'support@wisecoders.com'
+                        roles = [
+                                'author',
+                                'developer'
+                        ]
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/wise-coders/dbf-jdbc-driver'
+                    developerConnection = 'scm:git:ssh://github.com/wise-coders/dbf-jdbc-driver'
+                    url = 'https://github.com/wise-coders/dbf-jdbc-driver'
+                }
+
+                // Remove classifier for JavaFX dependencies
+                withXml {
+                    Node pomNode = asNode()
+                    pomNode.dependencies.'*'.findAll() {
+                        it.groupId.text() == 'org.openjfx'
+                    }.each {
+                        it.parent().remove(it)
+                    }
+                }
+            }
+        }
+    }
+}

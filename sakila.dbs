@@ -918,7 +918,7 @@ END]]></string>
 		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1312" />
 		<entity schema="sakila" name="customer" color="F4DDBE" x="1632" y="480" />
 		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1808" y="368" />
-		<entity schema="sakila" name="film" color="C7F4BE" x="2064" y="208" />
+		<entity schema="sakila" name="film" color="C7F4BE" x="2000" y="224" />
 		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2304" y="608" />
 		<entity schema="sakila" name="film_category" color="C7F4BE" x="2304" y="208" />
 		<entity schema="sakila" name="film_list" color="C7F4BE" x="2304" y="800" />
@@ -976,7 +976,6 @@ END]]></string>
 			<entity schema="sakila" name="country" />
 		</group>
 		<group name="film" color="EEF7EC" >
-			<entity schema="sakila" name="film" />
 			<entity schema="sakila" name="film_category" />
 			<entity schema="sakila" name="language" />
 			<entity schema="sakila" name="film_actor" />
@@ -985,6 +984,7 @@ END]]></string>
 			<entity schema="sakila" name="film_list" />
 			<entity schema="sakila" name="film_text" />
 			<entity schema="sakila" name="actor_info" />
+			<entity schema="sakila" name="film" />
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="staff" />

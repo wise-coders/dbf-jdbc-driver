@@ -78,8 +78,7 @@ Use the Query Editor to execute queries with JOINS, GROUP BY and ORDER BY.
 
 Use the Relational Data Browse to explore data from multiple tables simultaneously.
 DbSchema can create virtual foreign keys which will be used in the Data Browse.
-
+this is a test
 ![xBase DBF Query Editor](resources/images/dbschema-dbf-relational-data-browse.png)
 
-
-
+aaa

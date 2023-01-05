@@ -1,0 +1,262 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "gradle.plugin.install4j.install4j:gradle_plugin:7.0.8"
+    }
+}
+
+plugins{
+    id 'org.hidetake.ssh' version '2.7.1'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+}
+apply plugin: 'application'
+apply plugin: 'distribution'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(15)
+    }
+}
+
+dependencies {
+    implementation 'com.github.albfernandez:javadbf:1.14.0'
+    implementation 'com.h2database:h2:2.1.214'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+compileJava{
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+jar {
+    archiveFileName ="dbschema-dbf-jdbc${driverVersion}.jar"
+    manifest {
+        attributes 'Main-Class': 'com.wisecoders.dbschema.dbf.JdbcDriver'
+        attributes 'Specification-Version': "$driverVersion"
+        attributes 'Specification-Vendor': "Wise Coders"
+        attributes 'Implementation-Vendor-Id': "dbschema.com"
+        attributes 'Implementation-Vendor': "Wise Coders"
+        attributes 'Implementation-Version': new Date().format( 'yyMMdd' )
+    }
+}
+
+
+task zip(type: Zip, dependsOn:['clean','jar']) {
+    archiveFileName.set 'DBFJdbcDriver.zip'
+    from configurations.runtimeClasspath.allArtifacts.files
+    from configurations.runtimeClasspath
+    from "build/libs" include "*.jar"
+}
+
+task copyInUserHome(type: Copy,dependsOn:['clean','jar']) {
+    from configurations.runtimeClasspath.allArtifacts.files
+    from configurations.runtimeClasspath
+    into "${System.getProperty('user.home')}/.DbSchema/drivers/DBF/"
+}
+
+
+group = 'com.wisecoders'
+version = '1.0'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+// gradle publish
+// https://www.youtube.com/watch?v=24gsrR9jsF4
+// https://www.jetbrains.com/help/space/publish-artifacts-to-maven-central.html
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'dbf-jdbc-driver'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'DBF JDBC Driver'
+                description = 'DBF and FoxPro Open Source JDBC Driver'
+                url = 'http://www.dbschema.com'
+                licenses {
+                    license {
+                        name = 'GPL-3Plus dual license. Contributions only to https://github.com/wise-coders/dbf-jdbc-driver'
+                        url = 'https://github.com/wise-coders/dbf-jdbc-driver'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'WiseCoders'
+                        name = 'Wise Coders GmbH'
+                        email = 'support@wisecoders.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/wise-coders/dbf-jdbc-driver'
+                    developerConnection = 'scm:git:ssh://github.com/wise-coders/dbf-jdbc-driver'
+                    url = 'https://github.com/wise-coders/dbf-jdbc-driver'
+                }
+            }
+        }
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://s01.oss.sonatype.org/" }
+    }
+    /*
+    repositories {
+        maven {
+            // change URLs to point to your repos, e.g. http://my.org/repo
+            def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
+            def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }*/
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.java
+    from sourceSets.main.resources
+    archiveClassifier.set('sources')
+}
+
+task javadocJar(type: Jar) {
+    dependsOn javadoc
+    from javadoc.destinationDir
+    archiveClassifier.set('javadoc')
+}
+
+artifacts {
+    archives sourceJar
+    archives javadocJar
+}
+
+group = "com.wisecoders.dbf-jdbc-driver"
+archivesBaseName = "dbf-jdbc-driver"
+version = "1.1.0"
+
+task uploadArchives {
+    repositories {
+        mavenDeployer {
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'DBF JDBC Driver'
+                packaging 'jar'
+                description 'An Open-Source JDBC Driver for DBF / FoxPro databases'
+                url 'http://www.dbschema.com'
+
+                scm {
+                    connection 'scm:svn:http://foo.googlecode.com/svn/trunk/'
+                    developerConnection 'scm:svn:https://foo.googlecode.com/svn/trunk/'
+                    url 'http://foo.googlecode.com/svn/trunk/'
+                }
+
+                licenses {
+                    license {
+                        name 'GPL-3 dual license. Free to use, code modificatins only to the https://github.com/wise-coders/dbf-jdbc-driver'
+                        url 'https://github.com/wise-coders/dbf-jdbc-driver'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'WiseCoders'
+                        name 'Wise Coders GmbH'
+                        email 'support@dbschema.com'
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+plugins {
+    id 'maven-publish'
+}
+
+// https://dzone.com/articles/publish-your-artifacts-to-maven-central
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'dBase DBF JDBC Driver'
+                description = 'Open Source JDBC Driver for dBase DBF Database Files'
+                url = 'http://www.dbschema.com'
+                licenses {
+                    license {
+                        name = 'Free to use, Distribution Forbidden'
+                        url = 'http://dbschema.com'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dprutean'
+                        name = 'Dragos Pruteanu'
+                        email = 'support@dbschema.com'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/dprutean/dbf-jdbc-driver.git'
+                    developerConnection = 'https://github.com/dprutean/dbf-jdbc-driver.git'
+                    url = 'https://github.com/dprutean/dbf-jdbc-driver.git'
+                }
+            }
+        }
+    }
+}
+
+*/
+/*
+task nexusPublishing {
+    repositories {
+        sonatype {
+            username = project.hasProperty('sonatypeUsername') ? project.property('sonatypeUsername') : ''
+            password = project.hasProperty('sonatypePassword') ? project.property('sonatypePassword') : ''
+        }
+    }
+}
+ */

@@ -7,7 +7,7 @@
 			</column>
 			<column name="name" type="VARCHAR" length="45" jt="12" mandatory="y" />
 			<column name="axapta_article_number" type="VARCHAR" length="15" jt="12" />
-			<column name="board_model1" type="VARCHAR" length="4" jt="12" />
+			<column name="board_model2" type="VARCHAR" length="4" jt="12" />
 			<column name="board_type" type="VARCHAR" length="15" jt="12" />
 			<column name="board_version" type="VARCHAR" length="20" jt="12" />
 			<column name="ems_serial" type="VARCHAR" length="15" jt="12" />
@@ -367,7 +367,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3]]></options>
 		</table>
 		<table name="payment" row_count="0" spec="" >
-			<column name="payment_id4" prior="payment_id1" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
+			<column name="payment_id1" prior="payment_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
 			<column name="customer_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" />
@@ -380,7 +380,7 @@ among with the other details]]></comment>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
 			<index name="pk_payment" unique="PRIMARY_KEY" >
-				<column name="payment_id4" />
+				<column name="payment_id1" />
 			</index>
 			<index name="idx_fk_staff_id" unique="NORMAL" >
 				<column name="staff_id" />

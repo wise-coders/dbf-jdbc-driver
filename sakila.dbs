@@ -373,7 +373,7 @@ among with the other details]]></comment>
 			<column name="customer_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" />
 			<column name="staff_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" />
 			<column name="rental_id" type="INT" jt="4" />
-			<column name="amount" type="DECIMAL" length="5" decimal="2" jt="3" mandatory="y" />
+			<column name="amount1" prior="amount" type="DECIMAL" length="5" decimal="2" jt="3" mandatory="y" />
 			<column name="payment_date" type="DATETIME" jt="93" mandatory="y" />
 			<column name="last_update" type="TIMESTAMP" jt="93" >
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
@@ -918,7 +918,7 @@ END]]></string>
 		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1312" />
 		<entity schema="sakila" name="customer" color="F4DDBE" x="1632" y="480" />
 		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1808" y="368" />
-		<entity schema="sakila" name="film" color="C7F4BE" x="1968" y="336" />
+		<entity schema="sakila" name="film" color="C7F4BE" x="1952" y="208" />
 		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2304" y="608" />
 		<entity schema="sakila" name="film_category" color="C7F4BE" x="2304" y="208" />
 		<entity schema="sakila" name="film_list" color="C7F4BE" x="2304" y="800" />

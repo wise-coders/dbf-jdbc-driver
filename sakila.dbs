@@ -499,7 +499,12 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="staff" row_count="0" spec="" >
-			<comment><![CDATA[The staff members are listed here2.]]></comment>
+			<comment><![CDATA[The staff members are listed here2.
+The comment 
+aaaa
+bbb
+cccc
+ddd.]]></comment>
 			<column name="staff_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -987,7 +992,6 @@ END]]></string>
 			<entity schema="sakila" name="film" />
 		</group>
 		<group name="staff" color="F7F2EC" >
-			<entity schema="sakila" name="staff" />
 			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="customer" />
 			<entity schema="sakila" name="address" />
@@ -996,6 +1000,7 @@ END]]></string>
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="payment" />
+			<entity schema="sakila" name="staff" />
 		</group>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >

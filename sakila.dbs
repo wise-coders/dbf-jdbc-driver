@@ -502,7 +502,7 @@ among with the other details]]></comment>
 			<comment><![CDATA[The staff members are listed here2.
 The comment 
 aaaa
-mmm
+asd
 cccc
 nnn.]]></comment>
 			<column name="staff_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
@@ -999,8 +999,8 @@ END]]></string>
 			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="customer_list" />
-			<entity schema="sakila" name="staff" />
 			<entity schema="sakila" name="payment" />
+			<entity schema="sakila" name="staff" />
 		</group>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >

@@ -500,10 +500,18 @@ among with the other details]]></comment>
 		</table>
 		<table name="staff" row_count="0" spec="" >
 			<comment><![CDATA[The staff members are listed here2.
+<<<<<<< HEAD
 aaa
 bbb
 ccc
 ddd.]]></comment>
+=======
+The comment 
+mmm
+nnn
+ooo
+ppp.]]></comment>
+>>>>>>> 6a15c5dcd2ef0fc3599dbd0f845dfd544a0b478e
 			<column name="staff_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>

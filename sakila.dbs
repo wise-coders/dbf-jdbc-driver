@@ -502,7 +502,11 @@ among with the other details]]></comment>
 			<comment><![CDATA[The staff members are listed here2.
 The comment 
 <<<<<<< HEAD
+<<<<<<< HEAD
 bbb
+=======
+aaa
+>>>>>>> branch 'master' of https://github.com/wise-coders/dbf-jdbc-driver
 =======
 aaa
 >>>>>>> branch 'master' of https://github.com/wise-coders/dbf-jdbc-driver

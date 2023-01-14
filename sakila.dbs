@@ -503,7 +503,11 @@ among with the other details]]></comment>
 The comment 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 bbb
+=======
+aaa
+>>>>>>> branch 'master' of https://github.com/wise-coders/dbf-jdbc-driver
 =======
 aaa
 >>>>>>> branch 'master' of https://github.com/wise-coders/dbf-jdbc-driver

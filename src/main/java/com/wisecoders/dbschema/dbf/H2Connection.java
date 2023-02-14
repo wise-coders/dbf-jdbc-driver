@@ -155,7 +155,7 @@ public class H2Connection implements Connection {
     }
 
     private void reload( String filePath ) throws Exception {
-        try (PreparedStatement st = h2Connection.prepareStatement("DELETE FROM " + FILES_META_TABLE + " WHERE file_name=?")) {
+        try (PreparedStatement st = h2Connection.prepareStatement("DELETE FROM " + FILES_META_TABLE + " WHERE file_path=?")) {
             st.setString(1, filePath);
             st.executeUpdate();
         }

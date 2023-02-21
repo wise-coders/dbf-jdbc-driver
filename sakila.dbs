@@ -572,7 +572,7 @@ ddd.]]></comment>
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ariba']]></options>
 		</table>
-		<table name="test1" row_count="0" spec="" >
+		<table name="test1b" prior="test1" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_test1" unique="PRIMARY_KEY" >
@@ -944,7 +944,7 @@ END]]></string>
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="480" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1040" y="208" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="480" />
-		<entity schema="sakila" name="test1" color="BED3F4" x="272" y="1520" />
+		<entity schema="sakila" name="test1b" color="BED3F4" x="272" y="1520" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1536" />
@@ -964,13 +964,13 @@ END]]></string>
 			<entity schema="sakila" name="persons" />
 			<entity schema="sakila" name="sales_by_film_category" />
 			<entity schema="sakila" name="sample" />
-			<entity schema="sakila" name="test1" />
 			<entity schema="sakila" name="tval_2" />
 			<entity schema="sakila" name="медве́дь" />
 			<entity schema="sakila" name="test_autoincrement" />
 			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
 			<entity schema="sakila" name="persons_0" />
+			<entity schema="sakila" name="test1b" />
 		</group>
 		<group name="sample1_0" color="ECECF7" >
 			<entity schema="sakila" name="sample1_0" />
@@ -1034,7 +1034,7 @@ END]]></string>
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1520" y="48" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1264" y="96" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1792" y="48" />
-		<entity schema="sakila" name="test1" color="BED3F4" x="320" y="1088" />
+		<entity schema="sakila" name="test1b" color="BED3F4" x="320" y="1088" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1056" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="320" y="880" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="560" y="1104" />

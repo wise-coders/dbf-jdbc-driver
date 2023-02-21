@@ -572,7 +572,7 @@ ddd.]]></comment>
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ariba']]></options>
 		</table>
-		<table name="test1b" prior="test1" row_count="0" spec="" >
+		<table name="test1ba" prior="test1" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_test1" unique="PRIMARY_KEY" >

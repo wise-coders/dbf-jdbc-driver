@@ -45,7 +45,14 @@ public class Table {
             case "date": field.setType( DBFDataType.DATE ); break;
             case "bit": field.setType( DBFDataType.NULL_FLAGS ); break;
             case "longvarchar":field.setType( DBFDataType.MEMO ); break;
-            case "timestamp": field.setType( DBFDataType.TIMESTAMP ); break;
+            case "timestamp":
+                if ( DBFDataType.TIMESTAMP.isWriteSupported() ) {
+                    field.setType( DBFDataType.TIMESTAMP );
+                } else {
+                    field.setType( DBFDataType.CHARACTER);
+                    field.setLength( 256 );
+                }
+                break;
             case "timestampwithtimezone": field.setType( DBFDataType.TIMESTAMP_DBASE7 ); break;
             case "character":
                 field.setType( DBFDataType.CHARACTER );

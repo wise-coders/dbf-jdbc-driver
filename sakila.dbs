@@ -572,6 +572,21 @@ ddd.]]></comment>
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ariba']]></options>
 		</table>
+		<table name="test02" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_test02" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="test02_0" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_test02_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
 		<table name="test1c" prior="test1" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
@@ -912,44 +927,43 @@ BEGIN
 END]]></string>
 		</function>
 	</schema>
-	<connector name="MySql" database="MySql" driver_class="com.mysql.jdbc.Driver" driver_jar="mysql-connector-java-8.0.29.jar" driver_desc="Standard" host="localhost" port="3306" instance="sakila" user="dbschema" passwd="ZGJzY2hlbWExMg==" useSystemProxy="false" />
+	<connector name="MySql" database="MySql" driver_class="com.mysql.jdbc.Driver" driver_jar="mysql-connector-j-8.0.32.jar" driver_desc="Standard" host="localhost" port="3306" instance="sakila" user="dbschema" passwd="ZGJzY2hlbWExMg==" useSystemProxy="false" />
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
-		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="1696" />
-		<entity schema="sakila" name="actor" color="C7F4BE" x="2496" y="608" />
-		<entity schema="sakila" name="actor_info" color="C7F4BE" x="2688" y="608" />
-		<entity schema="sakila" name="address" color="F4DDBE" x="1408" y="688" />
-		<entity schema="sakila" name="category" color="C7F4BE" x="2496" y="208" />
-		<entity schema="sakila" name="city" color="D1BEF4" x="1008" y="1312" />
-		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1312" />
-		<entity schema="sakila" name="customer" color="F4DDBE" x="1632" y="480" />
-		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1808" y="368" />
-		<entity schema="sakila" name="film" color="C7F4BE" x="1968" y="336" />
-		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2304" y="608" />
-		<entity schema="sakila" name="film_category" color="C7F4BE" x="2304" y="208" />
-		<entity schema="sakila" name="film_list" color="C7F4BE" x="2304" y="800" />
-		<entity schema="sakila" name="film_text" color="C7F4BE" x="2496" y="1072" />
-		<entity schema="sakila" name="inventory" color="F4DDBE" x="1408" y="1056" />
-		<entity schema="sakila" name="language" color="C7F4BE" x="2304" y="416" />
-		<entity schema="sakila" name="mc_standard_claims" color="BED3F4" x="688" y="1696" />
-		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="688" y="2000" />
-		<entity schema="sakila" name="payment" color="F4DDBE" x="960" y="544" />
-		<entity schema="sakila" name="persons" color="BED3F4" x="432" y="2000" />
-		<entity schema="sakila" name="persons_0" color="BED3F4" x="432" y="2240" />
-		<entity schema="sakila" name="rental" color="F4DDBE" x="1152" y="800" />
-		<entity schema="sakila" name="sales_by_film_category" color="BED3F4" x="192" y="2000" />
-		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="192" y="2176" />
-		<entity schema="sakila" name="sample" color="BED3F4" x="240" y="1792" />
-		<entity schema="sakila" name="sample1" color="BEBEF4" x="1200" y="2304" />
-		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="1008" y="2304" />
-		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="480" />
-		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1040" y="208" />
-		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="480" />
-		<entity schema="sakila" name="test1b" color="BED3F4" x="272" y="1520" />
-		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
-		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />
-		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1536" />
-		<entity schema="sakila" name="медве́дь" color="BED3F4" x="688" y="1504" />
-		<callout x="2064" y="80" pointer="Round" >
+		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="592" />
+		<entity schema="sakila" name="actor" color="C7F4BE" x="2336" y="512" />
+		<entity schema="sakila" name="actor_info" color="C7F4BE" x="1936" y="704" />
+		<entity schema="sakila" name="address" color="F4DDBE" x="1440" y="704" />
+		<entity schema="sakila" name="category" color="C7F4BE" x="2336" y="208" />
+		<entity schema="sakila" name="city" color="D1BEF4" x="992" y="1296" />
+		<entity schema="sakila" name="country" color="D1BEF4" x="1184" y="1296" />
+		<entity schema="sakila" name="customer" color="F4DDBE" x="1664" y="496" />
+		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1248" y="208" />
+		<entity schema="sakila" name="film" color="C7F4BE" x="1872" y="288" />
+		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2144" y="512" />
+		<entity schema="sakila" name="film_category" color="C7F4BE" x="2144" y="208" />
+		<entity schema="sakila" name="film_list" color="C7F4BE" x="2144" y="704" />
+		<entity schema="sakila" name="film_text" color="C7F4BE" x="2336" y="704" />
+		<entity schema="sakila" name="inventory" color="F4DDBE" x="1440" y="1072" />
+		<entity schema="sakila" name="language" color="C7F4BE" x="2144" y="368" />
+		<entity schema="sakila" name="mc_standard_claims" color="BED3F4" x="688" y="592" />
+		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="688" y="912" />
+		<entity schema="sakila" name="payment" color="F4DDBE" x="992" y="560" />
+		<entity schema="sakila" name="persons" color="BED3F4" x="432" y="912" />
+		<entity schema="sakila" name="persons_0" color="BED3F4" x="432" y="1136" />
+		<entity schema="sakila" name="rental" color="F4DDBE" x="1184" y="816" />
+		<entity schema="sakila" name="sales_by_film_category" color="BED3F4" x="192" y="912" />
+		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="192" y="1072" />
+		<entity schema="sakila" name="sample" color="BED3F4" x="240" y="688" />
+		<entity schema="sakila" name="sample1" color="BEBEF4" x="1184" y="1520" />
+		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="992" y="1520" />
+		<entity schema="sakila" name="staff" color="F4DDBE" x="1248" y="496" />
+		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1088" y="208" />
+		<entity schema="sakila" name="store" color="F4DDBE" x="1440" y="496" />
+		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="400" />
+		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="208" />
+		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="432" />
+		<entity schema="sakila" name="медве́дь" color="BED3F4" x="688" y="400" />
+		<callout x="1968" y="80" pointer="Round" >
 			<comment><![CDATA[This is a layout. 
 - Double-click table headers, columns, or foreign keys to edit 
 - Drag tables to the layout from the structure tree, or 
@@ -970,7 +984,6 @@ END]]></string>
 			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
 			<entity schema="sakila" name="persons_0" />
-			<entity schema="sakila" name="test1b" />
 		</group>
 		<group name="sample1_0" color="ECECF7" >
 			<entity schema="sakila" name="sample1_0" />
@@ -983,25 +996,44 @@ END]]></string>
 		<group name="film" color="EEF7EC" >
 			<entity schema="sakila" name="film_category" />
 			<entity schema="sakila" name="language" />
-			<entity schema="sakila" name="film_actor" />
-			<entity schema="sakila" name="category" />
 			<entity schema="sakila" name="actor" />
 			<entity schema="sakila" name="film_list" />
-			<entity schema="sakila" name="film_text" />
-			<entity schema="sakila" name="actor_info" />
 			<entity schema="sakila" name="film" />
+			<entity schema="sakila" name="film_text" />
+			<entity schema="sakila" name="film_actor" />
+			<entity schema="sakila" name="category" />
+			<entity schema="sakila" name="actor_info" />
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="customer" />
 			<entity schema="sakila" name="address" />
 			<entity schema="sakila" name="inventory" />
-			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="rental" />
-			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="payment" />
+			<entity schema="sakila" name="customer_list" />
+			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="staff" />
 		</group>
+		<query id="Query-cd7" name="staff" >
+			<query_table schema="sakila" name="staff" alias="s" x="48" y="48" >
+				<column name="staff_id" />
+				<column name="first_name" />
+				<column name="last_name" />
+				<column name="address_id" alias="aaa" />
+				<column name="picture" />
+				<column name="email" />
+				<column name="store_id" />
+				<column name="active" />
+				<column name="username" />
+				<column name="password" />
+				<column name="last_update" />
+			</query_table>
+		</query>
+	</layout>
+	<layout name="test" id="Layout-7f1" show_relation="name" >
+		<entity schema="sakila" name="test02" color="C1D8EE" x="48" y="48" />
+		<entity schema="sakila" name="test02_0" color="3986C1" x="224" y="48" />
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />
@@ -1034,7 +1066,6 @@ END]]></string>
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1520" y="48" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1264" y="96" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1792" y="48" />
-		<entity schema="sakila" name="test1b" color="BED3F4" x="320" y="1088" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1056" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="320" y="880" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="560" y="1104" />
@@ -1159,6 +1190,58 @@ FROM
 				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
 				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-16ba" >
 					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+		<form name="Report_001" id="Report-2271" template="Page" css="container-fluid" view="frame" >
+			<var name="FilmPageNumber" type="4" value="0" mandatory="n" />
+			<var name="FilmRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" css="grid my-5 gap-10" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Film" template="H3" pos="0,0,1,0,l,c" />
+				<tableview name="Film" template="Table" css="table table-striped table-sm table-hover" pos="0,1,4,1,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="film_id" type="5" />
+						<var name="title" type="-1" />
+						<var name="description" type="-1" />
+						<var name="release_year" type="4" />
+						<var name="language_id" type="-6" />
+						<var name="original_language_id" type="-6" />
+						<var name="rental_duration" type="-6" />
+						<var name="rental_rate" type="3" />
+						<var name="length" type="5" />
+						<var name="replacement_cost" type="3" />
+						<var name="rating" type="-1" />
+						<var name="special_features" type="-1" />
+						<var name="last_update" type="93" />
+						<var name="test" type="-1" />
+						<var name="test2" type="-1" />
+						<var name="test3" type="-1" />
+						<script ><![CDATA[SELECT * FROM sakila.film]]></script>
+					</form_script>
+					<cell type="label" name="film_id" pos="0,0,0,0,c,c" />
+					<cell type="label" name="title" pos="1,0,1,0,c,c" />
+					<cell type="label" name="description" pos="2,0,2,0,c,c" />
+					<cell type="label" name="release_year" pos="3,0,3,0,c,c" />
+					<cell type="label" name="language_id" pos="4,0,4,0,c,c" />
+					<cell type="label" name="original_language_id" pos="5,0,5,0,c,c" />
+					<cell type="label" name="Button can open other pages." pos="6,0,6,0,c,c" />
+					<cell type="label" name="${film_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${title}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${description}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${release_year}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${language_id}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${original_language_id}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-2271" />
+				</tableview>
+				<cell type="href" name="" disabled="${FilmPageNumber&lt;1}" pos="0,2,0,2,l,c" glyph="bi-chevron_double_left" ref_id="Report-2271" >
+					<var name="FilmPageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${FilmPageNumber&lt;1}" pos="1,2,1,2,l,c" glyph="bi-chevron_left" ref_id="Report-2271" >
+					<var name="FilmPageNumber" value="${Math.max(0,FilmPageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${FilmPageNumber+1}" pos="2,2,2,2,l,c" />
+				<cell type="href" name="" disabled="${!FilmHasNextPage}" pos="3,2,3,2,l,c" glyph="bi-chevron_right" ref_id="Report-2271" >
+					<var name="FilmPageNumber" value="${( FilmPageNumber+1 )}" />
 				</cell>
 			</body>
 		</form>

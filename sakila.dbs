@@ -579,8 +579,6 @@ among with the other details]]></comment>
 			<column name="id" type="INT" jt="4" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
-<<<<<<< HEAD
-=======
 		<table name="test12" prior="tbl" >
 			<column name="id" type="INT" jt="4" />
 			<options><![CDATA[engine=InnoDB]]></options>
@@ -590,7 +588,6 @@ among with the other details]]></comment>
 			<column name="aaa" type="BIGINT" jt="-5" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
->>>>>>> branch 'dragos1' of https://github.com/wise-coders/dbf-jdbc-driver.git
 		<table name="test_autoincrement" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>

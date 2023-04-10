@@ -567,6 +567,13 @@ among with the other details]]></comment>
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ariba']]></options>
 		</table>
+		<table name="temp1" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_temp1" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
 		<table name="test1" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
@@ -616,6 +623,13 @@ among with the other details]]></comment>
 				<column name="id" />
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="work1" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_work1" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
 		<table name="медве́дь" row_count="100" spec="" >
 			<column name="關於數字和表格的呈現方式？" type="INT" jt="4" mandatory="y" />
@@ -952,6 +966,7 @@ END]]></string>
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="512" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1040" y="240" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="512" />
+		<entity schema="sakila" name="temp1" color="C1D8EE" x="1536" y="80" />
 		<entity schema="sakila" name="test1" color="BED3F4" x="272" y="1552" />
 		<entity schema="sakila" name="test11" color="C1D8EE" x="1056" y="80" />
 		<entity schema="sakila" name="test12" color="C1D8EE" x="1184" y="80" />
@@ -959,6 +974,7 @@ END]]></string>
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1520" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1344" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1568" />
+		<entity schema="sakila" name="work1" color="3986C1" x="1696" y="320" />
 		<entity schema="sakila" name="медве́дь" color="BED3F4" x="688" y="1536" />
 		<callout x="2064" y="112" pointer="Round" >
 			<comment><![CDATA[This is a layout. 
@@ -1011,7 +1027,6 @@ END]]></string>
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="payment" />
-			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="staff" />
 		</group>
 		<browser id="Browse-4ca" name="staff" confirm_updates="y" >

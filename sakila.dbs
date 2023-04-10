@@ -987,9 +987,8 @@ END]]></string>
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1520" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1344" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1568" />
-		<entity schema="sakila" name="work1" color="3986C1" x="1472" y="80" />
-		<entity schema="sakila" name="work2" color="3986C1" x="1632" y="80" />
-		<entity schema="sakila" name="work3" color="C1D8EE" x="1808" y="80" />
+		<entity schema="sakila" name="work1" color="3986C1" x="1696" y="320" />
+		<entity schema="sakila" name="work2" color="3986C1" x="1744" y="176" />
 		<entity schema="sakila" name="медве́дь" color="BED3F4" x="688" y="1536" />
 		<callout x="2064" y="112" pointer="Round" >
 			<comment><![CDATA[This is a layout. 

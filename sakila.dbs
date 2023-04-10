@@ -574,6 +574,10 @@ among with the other details]]></comment>
 			</index>
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
+		<table name="temp2" prior="tbl" >
+			<column name="id" type="INT" jt="4" />
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
 		<table name="test1" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
@@ -629,6 +633,10 @@ among with the other details]]></comment>
 			<index name="pk_work1" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="work2" >
+			<column name="id" type="INT" jt="4" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
 		<table name="медве́дь" row_count="100" spec="" >
@@ -967,6 +975,7 @@ END]]></string>
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1040" y="240" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="512" />
 		<entity schema="sakila" name="temp1" color="C1D8EE" x="1536" y="80" />
+		<entity schema="sakila" name="temp2" color="C1D8EE" x="1680" y="80" />
 		<entity schema="sakila" name="test1" color="BED3F4" x="272" y="1552" />
 		<entity schema="sakila" name="test11" color="C1D8EE" x="1056" y="80" />
 		<entity schema="sakila" name="test12" color="C1D8EE" x="1184" y="80" />
@@ -975,6 +984,7 @@ END]]></string>
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1344" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1568" />
 		<entity schema="sakila" name="work1" color="3986C1" x="1696" y="320" />
+		<entity schema="sakila" name="work2" color="3986C1" x="1744" y="176" />
 		<entity schema="sakila" name="медве́дь" color="BED3F4" x="688" y="1536" />
 		<callout x="2064" y="112" pointer="Round" >
 			<comment><![CDATA[This is a layout. 

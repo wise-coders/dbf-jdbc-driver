@@ -585,6 +585,7 @@ among with the other details]]></comment>
 		</table>
 		<table name="test13" prior="tbl" >
 			<column name="id" type="INT" jt="4" />
+			<column name="aaa" type="BIGINT" jt="-5" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
 		<table name="test_autoincrement" row_count="0" spec="" >
@@ -1002,7 +1003,6 @@ END]]></string>
 			<entity schema="sakila" name="actor_info" />
 		</group>
 		<group name="staff" color="F7F2EC" >
-			<entity schema="sakila" name="staff" />
 			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="customer" />
 			<entity schema="sakila" name="address" />
@@ -1011,7 +1011,11 @@ END]]></string>
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="payment" />
+			<entity schema="sakila" name="staff" />
 		</group>
+		<browser id="Browse-4ca" name="staff" confirm_updates="y" >
+			<browse_table schema="sakila" entity="staff" x="20" y="20" width="400" height="300" />
+		</browser>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />

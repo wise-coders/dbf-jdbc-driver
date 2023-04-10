@@ -654,6 +654,13 @@ among with the other details]]></comment>
 			<column name="id" type="INT" jt="4" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
+		<table name="work6" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_work6" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
 		<table name="медве́дь" row_count="100" spec="" >
 			<column name="關於數字和表格的呈現方式？" type="INT" jt="4" mandatory="y" />
 			<column name="details" type="VARCHAR" length="12" jt="12" />
@@ -1002,6 +1009,7 @@ END]]></string>
 		<entity schema="sakila" name="work2" color="3986C1" x="1632" y="80" />
 		<entity schema="sakila" name="work4" color="3986C1" x="1792" y="80" />
 		<entity schema="sakila" name="work5" color="C1D8EE" x="1888" y="80" />
+		<entity schema="sakila" name="work6" color="C1D8EE" x="1984" y="80" />
 		<entity schema="sakila" name="медве́дь" color="BED3F4" x="688" y="1536" />
 		<callout x="2064" y="112" pointer="Round" >
 			<comment><![CDATA[This is a layout. 

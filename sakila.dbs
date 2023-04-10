@@ -646,6 +646,9 @@ among with the other details]]></comment>
 			<column name="id" type="INT" jt="4" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
+		<table name="work12" prior="work11_0" >
+			<column name="id" type="INT" jt="4" />
+		</table>
 		<table name="work2" >
 			<column name="id" type="INT" jt="4" />
 			<options><![CDATA[engine=InnoDB]]></options>
@@ -1037,6 +1040,7 @@ END]]></string>
 		<entity schema="sakila" name="work1" color="3986C1" x="1488" y="160" />
 		<entity schema="sakila" name="work10" color="C1D8EE" x="2592" y="80" />
 		<entity schema="sakila" name="work11" color="C1D8EE" x="2704" y="80" />
+		<entity schema="sakila" name="work12" color="3986C1" x="2560" y="176" />
 		<entity schema="sakila" name="work2" color="3986C1" x="1632" y="160" />
 		<entity schema="sakila" name="work4" color="3986C1" x="1792" y="160" />
 		<entity schema="sakila" name="work5" color="C1D8EE" x="1888" y="160" />

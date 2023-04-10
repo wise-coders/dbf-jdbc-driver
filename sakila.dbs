@@ -579,6 +579,18 @@ among with the other details]]></comment>
 			<column name="id" type="INT" jt="4" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
+<<<<<<< HEAD
+=======
+		<table name="test12" prior="tbl" >
+			<column name="id" type="INT" jt="4" />
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="test13" prior="tbl" >
+			<column name="id" type="INT" jt="4" />
+			<column name="aaa" type="BIGINT" jt="-5" />
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+>>>>>>> branch 'dragos1' of https://github.com/wise-coders/dbf-jdbc-driver.git
 		<table name="test_autoincrement" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
@@ -945,6 +957,11 @@ END]]></string>
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="512" />
 		<entity schema="sakila" name="test1" color="BED3F4" x="272" y="1552" />
 		<entity schema="sakila" name="test11" color="C1D8EE" x="1056" y="80" />
+<<<<<<< HEAD
+=======
+		<entity schema="sakila" name="test12" color="C1D8EE" x="1184" y="80" />
+		<entity schema="sakila" name="test13" color="C1D8EE" x="1296" y="80" />
+>>>>>>> branch 'dragos1' of https://github.com/wise-coders/dbf-jdbc-driver.git
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1520" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1344" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1568" />
@@ -992,6 +1009,10 @@ END]]></string>
 			<entity schema="sakila" name="film" />
 		</group>
 		<group name="staff" color="F7F2EC" >
+<<<<<<< HEAD
+=======
+			<entity schema="sakila" name="store" />
+>>>>>>> branch 'dragos1' of https://github.com/wise-coders/dbf-jdbc-driver.git
 			<entity schema="sakila" name="customer" />
 			<entity schema="sakila" name="address" />
 			<entity schema="sakila" name="inventory" />
@@ -999,9 +1020,15 @@ END]]></string>
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="payment" />
+<<<<<<< HEAD
 			<entity schema="sakila" name="store" />
+=======
+>>>>>>> branch 'dragos1' of https://github.com/wise-coders/dbf-jdbc-driver.git
 			<entity schema="sakila" name="staff" />
 		</group>
+		<browser id="Browse-4ca" name="staff" confirm_updates="y" >
+			<browse_table schema="sakila" entity="staff" x="20" y="20" width="400" height="300" />
+		</browser>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />

@@ -108,6 +108,10 @@
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=751 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="conflict1" prior="tbl" >
+			<column name="id" type="INT" jt="4" />
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
 		<table name="country" row_count="209" spec="" >
 			<comment><![CDATA[The countries]]></comment>
 			<column name="country_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
@@ -990,6 +994,7 @@ END]]></string>
 		<entity schema="sakila" name="address" color="F4DDBE" x="1408" y="784" />
 		<entity schema="sakila" name="category" color="C7F4BE" x="2496" y="304" />
 		<entity schema="sakila" name="city" color="D1BEF4" x="1008" y="1408" />
+		<entity schema="sakila" name="conflict1" color="C1D8EE" x="2592" y="80" />
 		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1408" />
 		<entity schema="sakila" name="customer" color="F4DDBE" x="1632" y="576" />
 		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1840" y="576" />

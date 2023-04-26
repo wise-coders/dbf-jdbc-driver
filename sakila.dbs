@@ -980,6 +980,12 @@ END]]></string>
 		</function>
 	</schema>
 	<connector name="MySql" database="MySql" driver_class="com.mysql.jdbc.Driver" driver_jar="mysql-connector-j-8.0.32.jar" driver_desc="Standard" host="localhost" port="3306" instance="sakila" user="dbschema" passwd="ZGJzY2hlbWExMg==" useSystemProxy="false" />
+	<layout name="Layout" id="Layout-1b46" show_relation="name" >
+		<entity schema="sakila" name="address" color="3986C1" x="224" y="48" />
+		<entity schema="sakila" name="city" color="3986C1" x="48" y="48" />
+		<entity schema="sakila" name="customer" color="3986C1" x="400" y="48" />
+		<entity schema="sakila" name="store" color="3986C1" x="576" y="64" />
+	</layout>
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="1760" />
 		<entity schema="sakila" name="actor" color="C7F4BE" x="2496" y="672" />
@@ -1066,18 +1072,96 @@ END]]></string>
 			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="customer" />
 			<entity schema="sakila" name="address" />
-			<entity schema="sakila" name="inventory" />
 			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="payment" />
 			<entity schema="sakila" name="staff" />
+			<entity schema="sakila" name="inventory" />
 		</group>
 		<browser id="Browse-4ca" name="staff" confirm_updates="y" >
 			<browse_table schema="sakila" entity="staff" x="20" y="20" width="400" height="300" />
 		</browser>
+		<form name="Report" id="Report-19d9" template="Page" css="container-fluid" view="frame" >
+			<var name="FilmPageNumber" type="4" value="0" mandatory="n" />
+			<var name="FilmRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" css="grid my-5 gap-10" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Film" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="film_id" type="5" />
+						<var name="title" />
+						<var name="description" type="-1" />
+						<var name="release_year" type="4" />
+						<var name="language_id" type="-6" />
+						<var name="original_language_id" type="-6" />
+						<var name="rental_duration" type="-6" />
+						<var name="rental_rate" type="3" />
+						<var name="length" type="5" />
+						<var name="replacement_cost" type="3" />
+						<var name="rating" />
+						<var name="special_features" />
+						<var name="last_update" type="93" />
+						<var name="test" />
+						<var name="test2" />
+						<var name="test3" />
+						<script ><![CDATA[SELECT * FROM sakila.film]]></script>
+					</form_script>
+					<param name="i0" value="title" />
+					<param name="width" value="100%" />
+					<param name="v0" value="replacement_cost" />
+					<param name="title" value="Sample Chart" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="Film" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="film_id" type="5" />
+						<var name="title" />
+						<var name="description" type="-1" />
+						<var name="release_year" type="4" />
+						<var name="language_id" type="-6" />
+						<var name="original_language_id" type="-6" />
+						<var name="rental_duration" type="-6" />
+						<var name="rental_rate" type="3" />
+						<var name="length" type="5" />
+						<var name="replacement_cost" type="3" />
+						<var name="rating" />
+						<var name="special_features" />
+						<var name="last_update" type="93" />
+						<var name="test" />
+						<var name="test2" />
+						<var name="test3" />
+						<script ><![CDATA[SELECT * FROM sakila.film]]></script>
+					</form_script>
+					<cell type="label" name="film_id" pos="0,0,0,0,c,c" />
+					<cell type="label" name="title" pos="1,0,1,0,c,c" />
+					<cell type="label" name="description" pos="2,0,2,0,c,c" />
+					<cell type="label" name="release_year" pos="3,0,3,0,c,c" />
+					<cell type="label" name="language_id" pos="4,0,4,0,c,c" />
+					<cell type="label" name="original_language_id" pos="5,0,5,0,c,c" />
+					<cell type="label" name="Button can open other pages." pos="6,0,6,0,c,c" />
+					<cell type="label" name="${film_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${title}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${description}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${release_year}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${language_id}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${original_language_id}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-19d9" />
+				</tableview>
+				<cell type="href" name="" disabled="${FilmPageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-19d9" >
+					<var name="FilmPageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${FilmPageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-19d9" >
+					<var name="FilmPageNumber" value="${Math.max(0,FilmPageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${FilmPageNumber+1}" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" disabled="${!FilmHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-19d9" >
+					<var name="FilmPageNumber" value="${( FilmPageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
 	</layout>
-	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
+	<layout name="~Layout with Sample Tools" id="Layout-19ea" confirmed="y" show_column_type="y" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />
 		<entity schema="sakila" name="actor" color="C7F4BE" x="3216" y="448" />
 		<entity schema="sakila" name="actor_info" color="C7F4BE" x="3488" y="448" />

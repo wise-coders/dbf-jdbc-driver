@@ -588,6 +588,7 @@ among with the other details]]></comment>
 		</table>
 		<table name="test11" prior="tbl" >
 			<column name="id" type="INT" jt="4" />
+			<column name="testtemp1" type="VARCHAR" length="12" jt="12" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
 		<table name="test12" prior="tbl" >

@@ -588,6 +588,7 @@ among with the other details]]></comment>
 		</table>
 		<table name="test11" prior="tbl" >
 			<column name="id" type="INT" jt="4" />
+			<column name="testgithub1" type="VARCHAR" length="12" jt="12" />
 			<options><![CDATA[engine=InnoDB]]></options>
 		</table>
 		<table name="test12" prior="tbl" >
@@ -1010,7 +1011,7 @@ END]]></string>
 		<entity schema="sakila" name="temp1" color="C1D8EE" x="1536" y="112" />
 		<entity schema="sakila" name="temp2" color="C1D8EE" x="1680" y="112" />
 		<entity schema="sakila" name="test1" color="BED3F4" x="272" y="1584" />
-		<entity schema="sakila" name="test11" color="C1D8EE" x="1056" y="112" />
+		<entity schema="sakila" name="test11" color="C1D8EE" x="864" y="112" />
 		<entity schema="sakila" name="test12" color="C1D8EE" x="1184" y="112" />
 		<entity schema="sakila" name="test13" color="C1D8EE" x="1296" y="112" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1552" />

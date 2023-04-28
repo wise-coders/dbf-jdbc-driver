@@ -214,7 +214,6 @@
 			<column name="column8" type="TEXT" jt="-1" />
 			<column name="column3" type="TEXT" jt="-1" />
 			<column name="column20" type="TEXT" jt="-1" />
-			<column name="column21" type="TEXT" jt="-1" />
 			<column name="column31" type="TEXT" jt="-1" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />

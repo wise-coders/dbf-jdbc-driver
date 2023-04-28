@@ -207,6 +207,8 @@
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
+			<column name="test1" type="TEXT" length="12" jt="-1" />
+			<column name="secondcolumn" type="TEXT" jt="-1" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>

@@ -210,6 +210,7 @@
 			<column name="test1" type="TEXT" length="12" jt="-1" />
 			<column name="secondcolumn" type="TEXT" jt="-1" />
 			<column name="forthcolumn" type="TEXT" jt="-1" />
+			<column name="sixtcolumn" type="TEXT" jt="-1" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>

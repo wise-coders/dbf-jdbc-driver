@@ -212,7 +212,7 @@
 			<column name="forthcolumn" type="TEXT" jt="-1" />
 			<column name="sixtcolumn" type="TEXT" jt="-1" />
 			<column name="column8" type="TEXT" jt="-1" />
-			<column name="column4" type="TEXT" jt="-1" />
+			<column name="column3" type="TEXT" jt="-1" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>

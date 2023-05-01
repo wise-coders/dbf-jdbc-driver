@@ -281,6 +281,7 @@
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
+			<column name="best1" type="VARCHAR" length="12" jt="12" />
 			<column name="best2" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_city" unique="PRIMARY_KEY" >
 				<column name="city_id" />

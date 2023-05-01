@@ -216,6 +216,7 @@
 			<column name="column31" type="TEXT" jt="-1" />
 			<column name="column41" type="VARCHAR" length="12" jt="12" />
 			<column name="column43" type="VARCHAR" length="12" jt="12" />
+			<column name="column45" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>

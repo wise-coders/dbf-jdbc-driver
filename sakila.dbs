@@ -196,34 +196,6 @@
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="actor" row_count="300" spec="" >
-			<comment><![CDATA[Details about actors.]]></comment>
-			<column name="actor_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
-				<identity><![CDATA[AUTO_INCREMENT]]></identity>
-			</column>
-			<column name="first_name" type="VARCHAR" length="45" jt="12" mandatory="y" />
-			<column name="last_name" type="VARCHAR" length="45" jt="12" mandatory="y" />
-			<column name="last_update" type="TIMESTAMP" jt="93" mandatory="y" >
-				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
-				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
-			</column>
-			<column name="test1" type="TEXT" length="12" jt="-1" />
-			<column name="secondcolumn" type="TEXT" jt="-1" />
-			<column name="forthcolumn" type="TEXT" jt="-1" />
-			<column name="sixtcolumn" type="TEXT" jt="-1" />
-			<column name="column8" type="TEXT" jt="-1" />
-			<column name="column3" type="TEXT" jt="-1" />
-			<column name="column31" type="TEXT" jt="-1" />
-			<column name="column41" type="VARCHAR" length="12" jt="12" />
-			<column name="column43" type="VARCHAR" length="12" jt="12" />
-			<index name="pk_actor" unique="PRIMARY_KEY" >
-				<column name="actor_id" />
-			</index>
-			<index name="idx_actor_last_name" unique="NORMAL" >
-				<column name="last_name" />
-			</index>
-			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=301 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Details about actors.']]></options>
-		</table>
 		<table name="address" row_count="311" spec="" >
 			<comment><![CDATA[The store addresses.]]></comment>
 			<column name="address_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
@@ -252,6 +224,34 @@
 				<fk_column name="city_id" pk="city_id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Some comment']]></options>
+		</table>
+		<table name="best1" prior="actor" row_count="300" spec="" >
+			<comment><![CDATA[Details about actors.]]></comment>
+			<column name="actor_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="first_name" type="VARCHAR" length="45" jt="12" mandatory="y" />
+			<column name="last_name" type="VARCHAR" length="45" jt="12" mandatory="y" />
+			<column name="last_update" type="TIMESTAMP" jt="93" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<column name="test1" type="TEXT" length="12" jt="-1" />
+			<column name="secondcolumn" type="TEXT" jt="-1" />
+			<column name="forthcolumn" type="TEXT" jt="-1" />
+			<column name="sixtcolumn" type="TEXT" jt="-1" />
+			<column name="column8" type="TEXT" jt="-1" />
+			<column name="column3" type="TEXT" jt="-1" />
+			<column name="column31" type="TEXT" jt="-1" />
+			<column name="column41" type="VARCHAR" length="12" jt="12" />
+			<column name="column43" type="VARCHAR" length="12" jt="12" />
+			<index name="pk_actor" unique="PRIMARY_KEY" >
+				<column name="actor_id" />
+			</index>
+			<index name="idx_actor_last_name" unique="NORMAL" >
+				<column name="last_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=301 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Details about actors.']]></options>
 		</table>
 		<table name="category" row_count="116" spec="" >
 			<comment><![CDATA[The movie categories]]></comment>
@@ -428,7 +428,7 @@ among with the other details]]></comment>
 			<index name="idx_fk_film_id" unique="NORMAL" >
 				<column name="film_id" />
 			</index>
-			<fk name="fk_film_actor_actor" to_schema="sakila" to_table="actor" delete_action="cascade" options="" >
+			<fk name="fk_film_actor_actor" to_schema="sakila" to_table="best1" delete_action="cascade" options="" >
 				<fk_column name="actor_id" pk="actor_id" />
 			</fk>
 			<fk name="fk_film_actor_film" to_schema="sakila" to_table="film" delete_action="restrict" update_action="cascade" options="" >
@@ -1353,9 +1353,9 @@ END]]></string>
 			<column name="productversion" />
 		</entity>
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="1696" />
-		<entity schema="sakila" name="actor" color="C7F4BE" x="2496" y="608" />
 		<entity schema="sakila" name="actor_info" color="C7F4BE" x="2688" y="608" />
 		<entity schema="sakila" name="address" color="F4DDBE" x="1408" y="688" />
+		<entity schema="sakila" name="best1" color="C7F4BE" x="2496" y="608" />
 		<entity schema="sakila" name="category" color="C7F4BE" x="2496" y="208" />
 		<entity schema="sakila" name="city" color="D1BEF4" x="1008" y="1312" />
 		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1312" />
@@ -1438,7 +1438,7 @@ END]]></string>
 			<entity schema="sakila" name="language" />
 			<entity schema="sakila" name="film_actor" />
 			<entity schema="sakila" name="category" />
-			<entity schema="sakila" name="actor" />
+			<entity schema="sakila" name="best1" />
 			<entity schema="sakila" name="film_list" />
 			<entity schema="sakila" name="film_text" />
 			<entity schema="sakila" name="actor_info" />
@@ -1471,9 +1471,9 @@ FROM
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />
-		<entity schema="sakila" name="actor" color="C7F4BE" x="3216" y="448" />
 		<entity schema="sakila" name="actor_info" color="C7F4BE" x="3488" y="448" />
 		<entity schema="sakila" name="address" color="F4DDBE" x="1792" y="256" />
+		<entity schema="sakila" name="best1" color="C7F4BE" x="3216" y="448" />
 		<entity schema="sakila" name="category" color="C7F4BE" x="3216" y="48" />
 		<entity schema="sakila" name="city" color="D1BEF4" x="1248" y="880" />
 		<entity schema="sakila" name="country" color="D1BEF4" x="1504" y="880" />
@@ -1515,7 +1515,7 @@ FROM
 		<browser id="Browse-1485" name="Relational Data Explorer" confirm_updates="y" >
 			<browse_table schema="sakila" entity="film" x="20" y="20" width="400" height="300" >
 				<browse_table schema="sakila" entity="film_actor" fk="fk_film_actor_film" x="440" y="20" width="500" height="350" >
-					<browse_table schema="sakila" entity="actor" fk="fk_film_actor_actor" x="960" y="20" width="500" height="350" record_view="y" />
+					<browse_table schema="sakila" entity="best1" fk="fk_film_actor_actor" x="960" y="20" width="500" height="350" record_view="y" />
 				</browse_table>
 			</browse_table>
 		</browser>
@@ -1541,7 +1541,7 @@ FROM
 					<column name="actor_id" />
 					<column name="film_id" />
 					<column name="last_update" />
-					<query_table schema="sakila" name="actor" alias="a" x="480" y="48" fk="fk_film_actor_actor" type="Inner Join" >
+					<query_table schema="sakila" name="best1" alias="a" x="480" y="48" fk="fk_film_actor_actor" type="Inner Join" >
 						<column name="actor_id" />
 						<column name="first_name" />
 						<column name="last_name" />

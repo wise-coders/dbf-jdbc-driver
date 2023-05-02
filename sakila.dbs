@@ -116,7 +116,7 @@
 			<column name="fx markup" type="INT" jt="4" />
 			<column name="template id" type="INT" jt="4" />
 			<column name="product external reference" type="VARCHAR" length="0" jt="12" />
-			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci BLA]]></options>
 		</table>
 		<table name="2co_subscriptions" spec="" >
 			<column name="licenseuniqueid" type="VARCHAR" length="50" jt="12" />

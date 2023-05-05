@@ -220,7 +220,7 @@
 			<column name="fussing1" type="VARCHAR" length="12" jt="12" />
 			<column name="fussing3" type="VARCHAR" length="12" jt="12" />
 			<column name="fussing4" type="VARCHAR" length="12" jt="12" />
-			<column name="fussing6" type="VARCHAR" length="12" jt="12" />
+			<column name="fussing5" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>

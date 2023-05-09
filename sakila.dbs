@@ -2,7 +2,7 @@
 <project name="MySql" id="Project-17ff" database="MySql" >
 	<schema name="sakila" >
 		<table name="2co_orders" spec="" >
-			<column name="﻿product id" type="INT" jt="4" />
+			<column name="?product id" type="INT" jt="4" />
 			<column name="product code" type="VARCHAR" length="13" jt="12" />
 			<column name="product" type="VARCHAR" length="10" jt="12" />
 			<column name="extra info" type="VARCHAR" length="0" jt="12" />
@@ -1034,13 +1034,13 @@ among with the other details]]></comment>
 			<column name="parent_org_unit_id" type="VARCHAR" length="5" jt="12" />
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="медве́дь" row_count="100" spec="" >
-			<column name="關於數字和表格的呈現方式？" type="INT" jt="4" mandatory="y" />
+		<table name="????????" row_count="100" spec="" >
+			<column name="?????????????" type="INT" jt="4" mandatory="y" />
 			<column name="details" type="VARCHAR" length="12" jt="12" />
 			<column name="other" type="VARCHAR" length="12" jt="12" />
 			<column name="tt" type="TEXT" jt="-1" />
-			<index name="pk_медве́дь" unique="PRIMARY_KEY" >
-				<column name="關於數字和表格的呈現方式？" />
+			<index name="pk_????????" unique="PRIMARY_KEY" >
+				<column name="?????????????" />
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
@@ -1341,7 +1341,7 @@ END]]></string>
 	<connector name="MySql" database="MySql" driver_class="com.mysql.jdbc.Driver" driver_jar="mysql-connector-j-8.0.32.jar" driver_desc="Standard" host="localhost" port="3306" instance="sakila" user="dbschema" passwd="ZGJzY2hlbWExMg==" useSystemProxy="false" />
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
 		<entity schema="sakila" name="2co_orders" color="3986C1" x="1984" y="496" >
-			<column name="﻿product id" />
+			<column name="?product id" />
 			<column name="product code" />
 			<column name="product" />
 			<column name="extra info" />
@@ -1415,7 +1415,7 @@ END]]></string>
 		<entity schema="sakila" name="test_pk" color="3986C1" x="1888" y="544" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1536" />
 		<entity schema="sakila" name="zac" color="3986C1" x="2016" y="544" />
-		<entity schema="sakila" name="медве́дь" color="BED3F4" x="688" y="1504" />
+		<entity schema="sakila" name="????????" color="BED3F4" x="688" y="1504" />
 		<callout x="2064" y="80" pointer="Round" >
 			<comment><![CDATA[This is a layout. 
 - Double-click table headers, columns, or foreign keys to edit 
@@ -1433,7 +1433,7 @@ END]]></string>
 			<entity schema="sakila" name="sample" />
 			<entity schema="sakila" name="test1" />
 			<entity schema="sakila" name="tval_2" />
-			<entity schema="sakila" name="медве́дь" />
+			<entity schema="sakila" name="????????" />
 			<entity schema="sakila" name="test_autoincrement" />
 			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
@@ -1518,7 +1518,7 @@ FROM
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1056" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="320" y="880" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="560" y="1104" />
-		<entity schema="sakila" name="медве́дь" color="BED3F4" x="896" y="1072" />
+		<entity schema="sakila" name="????????" color="BED3F4" x="896" y="1072" />
 		<script name="SQL Editor" id="Editor-137e" language="SQL" >
 			<string><![CDATA[SELECT
 	film_id, title, description, release_year, language_id, original_language_id, rental_duration, rental_rate, length, 

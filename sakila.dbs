@@ -237,6 +237,8 @@
 			<column name="monday3" type="DATE" jt="91" />
 			<column name="monday6" type="DATE" jt="91" />
 			<column name="monday7" type="DATE" jt="91" />
+			<column name="tuesday1" type="DATE" jt="91" />
+			<column name="tuesday3" type="DATE" jt="91" />
 			<column name="tuesday2" type="DATE" jt="91" />
 			<column name="tuesday4" type="DATE" jt="91" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >

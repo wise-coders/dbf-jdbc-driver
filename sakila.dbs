@@ -172,6 +172,16 @@
 			<column name="last renewal type changed by" type="VARCHAR" length="26" jt="12" />
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="????????" row_count="100" spec="" >
+			<column name="?????????????" type="INT" jt="4" mandatory="y" />
+			<column name="details" type="VARCHAR" length="12" jt="12" />
+			<column name="other" type="VARCHAR" length="12" jt="12" />
+			<column name="tt" type="TEXT" jt="-1" />
+			<index name="pk_????????" unique="PRIMARY_KEY" >
+				<column name="?????????????" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="Baseboard" row_count="0" spec="" >
 			<column name="id" type="BIGINT" jt="-5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
@@ -228,6 +238,7 @@
 			<column name="monday6" type="DATE" jt="91" />
 			<column name="monday7" type="DATE" jt="91" />
 			<column name="tuesday2" type="DATE" jt="91" />
+			<column name="tuesday4" type="DATE" jt="91" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>
@@ -1034,16 +1045,6 @@ among with the other details]]></comment>
 			<column name="parent_org_unit_id" type="VARCHAR" length="5" jt="12" />
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="????????" row_count="100" spec="" >
-			<column name="?????????????" type="INT" jt="4" mandatory="y" />
-			<column name="details" type="VARCHAR" length="12" jt="12" />
-			<column name="other" type="VARCHAR" length="12" jt="12" />
-			<column name="tt" type="TEXT" jt="-1" />
-			<index name="pk_????????" unique="PRIMARY_KEY" >
-				<column name="?????????????" />
-			</index>
-			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
-		</table>
 		<view name="actor_info" >
 			<comment><![CDATA[VIEW]]></comment>
 			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `a`.`actor_id` AS `actor_id`,`a`.`first_name` AS `first_name`,`a`.`last_name` AS `last_name`,group_concat(distinct concat(`c`.`name`,': ',(select group_concat(`f`.`title` order by `f`.`title` ASC separator ', ') from ((`sakila`.`film` `f` join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`film_actor` `fa` on((`f`.`film_id` = `fa`.`film_id`))) where ((`fc`.`category_id` = `c`.`category_id`) and (`fa`.`actor_id` = `a`.`actor_id`)))) order by `c`.`name` ASC separator '; ') AS `film_info` from (((`sakila`.`actor` `a` left join `sakila`.`film_actor` `fa` on((`a`.`actor_id` = `fa`.`actor_id`))) left join `sakila`.`film_category` `fc` on((`fa`.`film_id` = `fc`.`film_id`))) left join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `a`.`actor_id`,`a`.`first_name`,`a`.`last_name`]]></view_script>
@@ -1366,6 +1367,7 @@ END]]></string>
 			<column name="communicationlanguage" />
 			<column name="productversion" />
 		</entity>
+		<entity schema="sakila" name="????????" color="BED3F4" x="688" y="1504" />
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="1696" />
 		<entity schema="sakila" name="actor" color="C7F4BE" x="2496" y="608" />
 		<entity schema="sakila" name="actor_info" color="C7F4BE" x="2688" y="608" />
@@ -1415,7 +1417,6 @@ END]]></string>
 		<entity schema="sakila" name="test_pk" color="3986C1" x="1888" y="544" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1536" />
 		<entity schema="sakila" name="zac" color="3986C1" x="2016" y="544" />
-		<entity schema="sakila" name="????????" color="BED3F4" x="688" y="1504" />
 		<callout x="2064" y="80" pointer="Round" >
 			<comment><![CDATA[This is a layout. 
 - Double-click table headers, columns, or foreign keys to edit 
@@ -1484,6 +1485,7 @@ FROM
 		</browser>
 	</layout>
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
+		<entity schema="sakila" name="????????" color="BED3F4" x="896" y="1072" />
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />
 		<entity schema="sakila" name="actor" color="C7F4BE" x="3216" y="448" />
 		<entity schema="sakila" name="actor_info" color="C7F4BE" x="3488" y="448" />
@@ -1518,7 +1520,6 @@ FROM
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1056" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="320" y="880" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="560" y="1104" />
-		<entity schema="sakila" name="????????" color="BED3F4" x="896" y="1072" />
 		<script name="SQL Editor" id="Editor-137e" language="SQL" >
 			<string><![CDATA[SELECT
 	film_id, title, description, release_year, language_id, original_language_id, rental_duration, rental_rate, length, 

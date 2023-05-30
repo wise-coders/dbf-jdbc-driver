@@ -1343,6 +1343,7 @@ END]]></string>
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
 		<entity schema="sakila" name="2co_orders" color="3986C1" x="1984" y="496" >
 			<column name="?product id" />
+			<column name="product codeA" />
 			<column name="product" />
 			<column name="extra info" />
 			<column name="order no" />
@@ -1352,7 +1353,6 @@ END]]></string>
 			<column name="external reference no" />
 			<column name="pay method" />
 			<column name="order date" />
-			<column name="product codeA" />
 		</entity>
 		<entity schema="sakila" name="2co_subscriptions" color="3986C1" x="2304" y="496" >
 			<column name="licenseuniqueid" />

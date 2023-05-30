@@ -4,7 +4,7 @@
 		<table name="2co_orders" spec="" >
 			<column name="?product id" type="INT" jt="4" />
 			<column name="product codeA" type="VARCHAR" length="13" jt="12" />
-			<column name="product codeH" type="VARCHAR" length="13" jt="12" />
+			<column name="product codeB" type="VARCHAR" length="13" jt="12" />
 			<column name="product" type="VARCHAR" length="10" jt="12" />
 			<column name="extra info" type="VARCHAR" length="0" jt="12" />
 			<column name="order no" type="INT" jt="4" />

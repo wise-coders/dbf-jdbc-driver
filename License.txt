@@ -26,5 +26,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 I am in temp.
 temp3
 another change
+<<<<<<< HEAD
+Dora
+21:44
+=======
 Dora Birthday
 21:45
+>>>>>>> branch 'dragos1' of https://github.com/wise-coders/dbf-jdbc-driver

@@ -115,6 +115,15 @@ public class H2Connection implements Connection {
                 if ( dbfFile.isFile() ){
                     if ( dbfFile.getName().toLowerCase().endsWith(".dbf") ) {
                         try ( DBFReader reader = new DBFReader( new FileInputStream(dbfFile), defaultCharset )) {
+                            File memoFile = new File(dbfFolder, dbfFile.getName().substring(0, dbfFile.getName().length() - 4) + ".fpt");
+                            if (memoFile.exists()) {
+                                reader.setMemoFile(memoFile);
+                            } else {
+                                memoFile = new File(dbfFolder, dbfFile.getName().substring(0, dbfFile.getName().length() - 4) + ".dbt");
+                                if (memoFile.exists()) {
+                                    reader.setMemoFile(memoFile);
+                                }
+                            }
                             final Table table = new Table( extractTableNameFrom( dbfFolder, dbfFile ));
                             if ( !H2Loader.isFileTransferred( dbfFile, h2Connection )){
                                 H2Loader.transfer( table, reader, h2Connection );

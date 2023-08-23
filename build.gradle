@@ -69,8 +69,7 @@ task copyInUserHome(type: Copy,dependsOn:['clean','jar']) {
 
 
 group = "com.wisecoders"
-archivesBaseName = "dbf-jdbc-drvier"
-version = "1.1.1"
+version = "1.1.2"
 
 
 java {
@@ -101,10 +100,10 @@ publishing {
                 name = 'DBF-JDBC-Driver'
                 description = 'DBF and FoxPro JDBC Driver'
                 url = 'https://dbschema.com/jdbc-driver/DBF.html'
-                properties = [
+                /*properties = [
                         myProp: "value",
                         "prop.with.dots": "anotherValue"
-                ]
+                ]*/
                 licenses {
                     license {
                         name = 'GPL-3Plus dual license. Contributions only to https://github.com/wise-coders/dbf-jdbc-driver'

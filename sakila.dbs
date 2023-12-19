@@ -1308,6 +1308,7 @@ among with the other details]]></comment>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
 			<column name="test3" type="BIGINT" jt="-5" />
+			<column name="test4" type="TINYINT" jt="-6" />
 			<index name="pk_to_clone_0" unique="PRIMARY_KEY" >
 				<column name="id1" />
 				<column name="id2" />
@@ -1694,7 +1695,7 @@ END]]></string>
 		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1312" />
 		<entity schema="sakila" name="customer" color="F4DDBE" x="1632" y="432" />
 		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1840" y="432" />
-		<entity schema="sakila" name="film" color="C7F4BE" x="2064" y="208" />
+		<entity schema="sakila" name="film" color="C7F4BE" x="2000" y="208" />
 		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2304" y="608" />
 		<entity schema="sakila" name="film_category" color="C7F4BE" x="2304" y="208" />
 		<entity schema="sakila" name="film_list" color="C7F4BE" x="2304" y="800" />
@@ -1732,7 +1733,7 @@ END]]></string>
 		<entity schema="sakila" name="subscriptions_suspended_ppg" color="3986C1" x="2368" y="320" />
 		<entity schema="sakila" name="table with spaces" color="3986C1" x="2688" y="320" />
 		<entity schema="sakila" name="tbl_test" color="3986C1" x="1728" y="320" />
-		<entity schema="sakila" name="test" color="3986C1" x="2048" y="320" />
+		<entity schema="sakila" name="test" color="3986C1" x="2160" y="320" />
 		<entity schema="sakila" name="test02" color="3986C1" x="2656" y="544" />
 		<entity schema="sakila" name="test02_0" color="3986C1" x="1888" y="544" />
 		<entity schema="sakila" name="test1" color="BED3F4" x="272" y="1520" />

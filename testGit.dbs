@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="testGit" id="Project-36" database="MySql" >
+	<schema name="testGit" >
+		<table name="sample" prior="Tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_sample" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-14f4" show_relation="name" >
+		<entity schema="testGit" name="sample" color="C1D8EE" x="240" y="208" />
+		<callout x="48" y="48" pointer="Round" >
+			<comment><![CDATA[This is a layout - a diagram with tools.
+- Right-click the layout to create new tables. 
+- Double-click table headers to edit. 
+- For a better understanding of the schema, create multiple layouts.
+- Save the design to the model file, and deploy from 'Schema / Create into the database'.]]></comment>
+		</callout>
+	</layout>
+</project>

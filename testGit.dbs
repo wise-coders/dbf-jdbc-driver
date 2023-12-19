@@ -3,6 +3,8 @@
 	<schema name="testGit" >
 		<table name="sample" prior="Tbl" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="A" type="INT" jt="4" />
+			<column name="B" type="INT" jt="4" />
 			<index name="pk_sample" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>

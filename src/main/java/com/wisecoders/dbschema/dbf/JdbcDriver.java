@@ -41,7 +41,7 @@ public class JdbcDriver implements Driver {
             consoleHandler.setFormatter(new SimpleFormatter());
             LOGGER.addHandler(consoleHandler);
 
-            final FileHandler fileHandler = new FileHandler("%h/.DbSchema/logs/DbfJdbcDriver.log");
+            final FileHandler fileHandler = new FileHandler( System.getProperty("user.home") +"/.DbSchema/logs/DbfJdbcDriver.log");
             fileHandler.setFormatter( new SimpleFormatter());
             fileHandler.setLevel(Level.ALL);
             LOGGER.addHandler(fileHandler);

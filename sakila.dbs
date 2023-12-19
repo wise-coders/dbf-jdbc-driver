@@ -575,6 +575,7 @@ ddd.]]></comment>
 		<table name="test1c" prior="test1" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="test7" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_test1" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -912,7 +913,6 @@ BEGIN
 END]]></string>
 		</function>
 	</schema>
-	<connector name="MySql" database="MySql" driver_class="com.mysql.jdbc.Driver" driver_jar="mysql-connector-java-8.0.29.jar" driver_desc="Standard" host="localhost" port="3306" instance="sakila" user="dbschema" passwd="ZGJzY2hlbWExMg==" useSystemProxy="false" />
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="1696" />
 		<entity schema="sakila" name="actor" color="C7F4BE" x="2496" y="608" />
@@ -944,7 +944,6 @@ END]]></string>
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="480" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1040" y="208" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="480" />
-		<entity schema="sakila" name="test1b" color="BED3F4" x="272" y="1520" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1536" />
@@ -970,7 +969,6 @@ END]]></string>
 			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
 			<entity schema="sakila" name="persons_0" />
-			<entity schema="sakila" name="test1b" />
 		</group>
 		<group name="sample1_0" color="ECECF7" >
 			<entity schema="sakila" name="sample1_0" />
@@ -1003,6 +1001,7 @@ END]]></string>
 			<entity schema="sakila" name="staff" />
 		</group>
 	</layout>
+	<layout name="MySql" id="Layout-1686" show_relation="name" />
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />
 		<entity schema="sakila" name="actor" color="C7F4BE" x="3216" y="448" />
@@ -1034,7 +1033,6 @@ END]]></string>
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1520" y="48" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1264" y="96" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1792" y="48" />
-		<entity schema="sakila" name="test1b" color="BED3F4" x="320" y="1088" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1056" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="320" y="880" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="560" y="1104" />
@@ -1087,7 +1085,7 @@ FROM
 		<form name="Report" id="Report-16ba" template="Page" css="container-fluid" view="frame" >
 			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
 			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
-			<body name="Body" template="Grid" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+			<body name="Body" template="Grid" max_records="100" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" header_rows="0" footer_rows="0" >
 				<cell type="label" name="Film Data" template="H3" pos="0,0,1,0,l,c" />
 				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
 					<form_script type="DataSource" language="SQL" >
@@ -1115,7 +1113,7 @@ FROM
 					<param name="title" value="Sample Chart" />
 					<param name="height" value="400px" />
 				</cell>
-				<tableview name="sample" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+				<tableview name="sample" template="Table" max_records="100" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" footer_rows="0" >
 					<form_script type="DataSource" language="SQL" >
 						<var name="film_id" type="5" />
 						<var name="title" type="-1" />
@@ -1135,13 +1133,13 @@ FROM
 						<var name="test3" type="-1" />
 						<script ><![CDATA[SELECT * FROM sakila.film]]></script>
 					</form_script>
-					<cell type="label" name="film_id" pos="0,0,0,0,c,c" />
-					<cell type="label" name="title" pos="1,0,1,0,c,c" />
-					<cell type="label" name="description" pos="2,0,2,0,c,c" />
-					<cell type="label" name="release_year" pos="3,0,3,0,c,c" />
-					<cell type="label" name="language_id" pos="4,0,4,0,c,c" />
-					<cell type="label" name="original_language_id" pos="5,0,5,0,c,c" />
-					<cell type="label" name="Button can open other pages." pos="6,0,6,0,c,c" />
+					<cell type="label" name="film_id" template="Plain" pos="0,0,0,0,c,c" />
+					<cell type="label" name="title" template="Plain" pos="1,0,1,0,c,c" />
+					<cell type="label" name="description" template="Plain" pos="2,0,2,0,c,c" />
+					<cell type="label" name="release_year" template="Plain" pos="3,0,3,0,c,c" />
+					<cell type="label" name="language_id" template="Plain" pos="4,0,4,0,c,c" />
+					<cell type="label" name="original_language_id" template="Plain" pos="5,0,5,0,c,c" />
+					<cell type="label" name="Button can open other pages." template="Plain" pos="6,0,6,0,c,c" />
 					<cell type="label" name="${film_id}" template="Plain" pos="0,1,0,1,l,c" />
 					<cell type="label" name="${title}" template="Plain" pos="1,1,1,1,l,c" />
 					<cell type="label" name="${description}" template="Plain" pos="2,1,2,1,l,c" />
@@ -1150,14 +1148,14 @@ FROM
 					<cell type="label" name="${original_language_id}" template="Plain" pos="5,1,5,1,l,c" />
 					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-16ba" />
 				</tableview>
-				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-16ba" >
+				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-16ba" >
 					<var name="samplePageNumber" value="0" />
 				</cell>
-				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-16ba" >
+				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-16ba" >
 					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
 				</cell>
-				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
-				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-16ba" >
+				<cell type="label" name="Page ${samplePageNumber+1}" template="Plain" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" template="Plain" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-16ba" >
 					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
 				</cell>
 			</body>

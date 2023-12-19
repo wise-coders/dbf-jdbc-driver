@@ -3,7 +3,7 @@
 	<schema name="testGit" />
 	<layout name="Default Layout" id="Layout-2086" show_relation="name" >
 		<callout x="48" y="48" pointer="Round" >
-			<comment><![CDATA[Bubu
+			<comment><![CDATA[Bubua
 
 This is a layout - a diagram with tools.
 - Right-click the layout to create new tables. 

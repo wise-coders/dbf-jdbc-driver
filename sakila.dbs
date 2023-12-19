@@ -572,10 +572,9 @@ ddd.]]></comment>
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ariba']]></options>
 		</table>
-		<table name="test1c" prior="test1" row_count="0" spec="" >
+		<table name="test1d" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
-			<column name="test7" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_test1" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -610,7 +609,7 @@ ddd.]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="????????" row_count="100" spec="" >
+		<table name="????????" spec="" >
 			<column name="?????????????" type="INT" jt="4" mandatory="y" />
 			<column name="details" type="VARCHAR" length="12" jt="12" />
 			<column name="other" type="VARCHAR" length="12" jt="12" />
@@ -947,7 +946,6 @@ END]]></string>
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1536" />
-		<entity schema="sakila" name="????????" color="BED3F4" x="688" y="1504" />
 		<callout x="2064" y="80" pointer="Round" >
 			<comment><![CDATA[This is a layout. 
 - Double-click table headers, columns, or foreign keys to edit 
@@ -964,7 +962,6 @@ END]]></string>
 			<entity schema="sakila" name="sales_by_film_category" />
 			<entity schema="sakila" name="sample" />
 			<entity schema="sakila" name="tval_2" />
-			<entity schema="sakila" name="????????" />
 			<entity schema="sakila" name="test_autoincrement" />
 			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
@@ -1036,7 +1033,6 @@ END]]></string>
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1056" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="320" y="880" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="560" y="1104" />
-		<entity schema="sakila" name="????????" color="BED3F4" x="896" y="1072" />
 		<script name="SQL Editor" id="Editor-137e" language="SQL" >
 			<string><![CDATA[SELECT
 	film_id, title, description, release_year, language_id, original_language_id, rental_duration, rental_rate, length, 

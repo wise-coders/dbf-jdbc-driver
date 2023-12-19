@@ -1309,6 +1309,7 @@ among with the other details]]></comment>
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
 			<column name="test3" type="BIGINT" jt="-5" />
 			<column name="test4" type="TINYINT" jt="-6" />
+			<column name="test6" type="BIGINT" jt="-5" />
 			<index name="pk_to_clone_0" unique="PRIMARY_KEY" >
 				<column name="id1" />
 				<column name="id2" />

@@ -1,0 +1,4 @@
+
+# DbSchema Model File - do binary diff
+*.dbs binary
+*.dbs.bak binary

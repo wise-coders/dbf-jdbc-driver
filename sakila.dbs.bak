@@ -308,7 +308,6 @@ among with the other details]]></comment>
 				<defo><![CDATA[now()]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
-			<column name="tt5" type="TIMESTAMP" length="6" jt="93" />
 			<index name="pk_film_text" unique="PRIMARY_KEY" >
 				<column name="film_id" />
 			</index>
@@ -983,9 +982,9 @@ END]]></string>
 			<entity schema="sakila" name="category" />
 			<entity schema="sakila" name="actor" />
 			<entity schema="sakila" name="film_list" />
+			<entity schema="sakila" name="film_text" />
 			<entity schema="sakila" name="actor_info" />
 			<entity schema="sakila" name="film" />
-			<entity schema="sakila" name="film_text" />
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="store" />

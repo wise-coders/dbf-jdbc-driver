@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="MySql" id="Project-17ff" database="MySql" >
 	<schema name="sakila" >
+		<table name="????????" spec="" >
+			<column name="?????????????" type="INT" jt="4" mandatory="y" />
+			<column name="details" type="VARCHAR" length="12" jt="12" />
+			<column name="other" type="VARCHAR" length="12" jt="12" />
+			<index name="pk_????????" unique="PRIMARY_KEY" >
+				<column name="?????????????" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="Baseboard" row_count="0" spec="" >
 			<column name="id" type="BIGINT" jt="-5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
@@ -609,15 +618,6 @@ ddd.]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="????????" spec="" >
-			<column name="?????????????" type="INT" jt="4" mandatory="y" />
-			<column name="details" type="VARCHAR" length="12" jt="12" />
-			<column name="other" type="VARCHAR" length="12" jt="12" />
-			<index name="pk_????????" unique="PRIMARY_KEY" >
-				<column name="?????????????" />
-			</index>
-			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
-		</table>
 		<view name="actor_info" >
 			<comment><![CDATA[VIEW]]></comment>
 			<view_script><![CDATA[CREATE VIEW ${fullName} AS select `a`.`actor_id` AS `actor_id`,`a`.`first_name` AS `first_name`,`a`.`last_name` AS `last_name`,group_concat(distinct concat(`c`.`name`,': ',(select group_concat(`f`.`title` order by `f`.`title` ASC separator ', ') from ((`sakila`.`film` `f` join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`film_actor` `fa` on((`f`.`film_id` = `fa`.`film_id`))) where ((`fc`.`category_id` = `c`.`category_id`) and (`fa`.`actor_id` = `a`.`actor_id`)))) order by `c`.`name` ASC separator '; ') AS `film_info` from (((`sakila`.`actor` `a` left join `sakila`.`film_actor` `fa` on((`a`.`actor_id` = `fa`.`actor_id`))) left join `sakila`.`film_category` `fc` on((`fa`.`film_id` = `fc`.`film_id`))) left join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `a`.`actor_id`,`a`.`first_name`,`a`.`last_name`]]></view_script>
@@ -921,7 +921,7 @@ END]]></string>
 		<entity schema="sakila" name="city" color="D1BEF4" x="1008" y="1312" />
 		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1312" />
 		<entity schema="sakila" name="customer" color="F4DDBE" x="1632" y="480" />
-		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1808" y="368" />
+		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1808" y="416" />
 		<entity schema="sakila" name="film" color="C7F4BE" x="1968" y="336" />
 		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2304" y="608" />
 		<entity schema="sakila" name="film_category" color="C7F4BE" x="2304" y="208" />
@@ -993,9 +993,9 @@ END]]></string>
 			<entity schema="sakila" name="inventory" />
 			<entity schema="sakila" name="staff_list" />
 			<entity schema="sakila" name="rental" />
-			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="payment" />
 			<entity schema="sakila" name="staff" />
+			<entity schema="sakila" name="customer_list" />
 		</group>
 	</layout>
 	<layout name="MySql" id="Layout-1686" show_relation="name" />

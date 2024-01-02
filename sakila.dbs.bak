@@ -941,7 +941,7 @@ END]]></string>
 		<entity schema="sakila" name="sample1" color="BEBEF4" x="1200" y="2304" />
 		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="1008" y="2304" />
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="480" />
-		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1008" y="208" />
+		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1056" y="208" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="480" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />

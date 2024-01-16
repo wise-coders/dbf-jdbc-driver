@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="MySql" id="Project-17ff" database="MySql" >
+<project name="MySqlq" id="Project-17ff" database="MySql" >
 	<schema name="sakila" >
 		<table name="????????" spec="" >
 			<column name="?????????????" type="INT" jt="4" mandatory="y" />
@@ -943,7 +943,7 @@ END]]></string>
 		<entity schema="sakila" name="sample1" color="BEBEF4" x="1200" y="2304" />
 		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="1008" y="2304" />
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="480" />
-		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1056" y="208" />
+		<entity schema="sakila" name="staff_list" color="F4DDBE" x="960" y="208" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="480" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />
@@ -1083,9 +1083,9 @@ FROM
 		<form name="Report" id="Report-16ba" template="Page" css="container-fluid" view="frame" >
 			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
 			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
-			<body name="Body" template="Grid" max_records="100" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" header_rows="0" footer_rows="0" >
+			<body name="Body" template="Grid" max_records="100" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" generate_path="n" scroll="n" html="n" header_rows="0" footer_rows="0" >
 				<cell type="label" name="Film Data" template="H3" pos="0,0,1,0,l,c" />
-				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" generate_path="n" >
 					<form_script type="DataSource" language="SQL" >
 						<var name="film_id" type="5" />
 						<var name="title" type="-1" />
@@ -1111,7 +1111,7 @@ FROM
 					<param name="title" value="Sample Chart" />
 					<param name="height" value="400px" />
 				</cell>
-				<tableview name="sample" template="Table" max_records="100" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" footer_rows="0" >
+				<tableview name="sample" template="Table" max_records="100" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" generate_path="n" scroll="n" html="n" header_rows="1" footer_rows="0" >
 					<form_script type="DataSource" language="SQL" >
 						<var name="film_id" type="5" />
 						<var name="title" type="-1" />

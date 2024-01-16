@@ -309,7 +309,7 @@ among with the other details]]></comment>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
 			<column name="tt5" type="TIMESTAMP" length="6" jt="93" />
-			<column name="anywhere" prior="on_master" type="TIMESTAMP" jt="93" />
+			<column name="on_master" prior="anywhere" type="TIMESTAMP" jt="93" />
 			<index name="pk_film_text" unique="PRIMARY_KEY" >
 				<column name="film_id" />
 			</index>

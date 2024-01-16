@@ -14,7 +14,7 @@
 			<column name="id" type="BIGINT" jt="-5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="name2" prior="name" type="VARCHAR" length="45" jt="12" mandatory="y" />
+			<column name="name" prior="name2" type="VARCHAR" length="45" jt="12" mandatory="y" />
 			<column name="axapta_article_number" type="VARCHAR" length="15" jt="12" />
 			<column name="board_model3" type="VARCHAR" length="4" jt="12" />
 			<column name="board_type" type="VARCHAR" length="15" jt="12" />

@@ -92,7 +92,7 @@ public class JdbcDriver implements Driver {
         }
         final String h2DbName = md5Java( databasePath );
         final String h2DatabasePath = getH2DatabasePath( h2DbName );
-        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";database_to_lower=true;case_insensitive_identifiers=true";
+        final String h2JdbcUrl = "jdbc:h2:file:" + h2DatabasePath + ";DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE";
         //final String h2JdbcUrl = "jdbc:h2:mem:dbfdriver;database_to_lower=true";
         LOGGER.log(Level.INFO, "Create H2 database '" + h2JdbcUrl + "'");
 

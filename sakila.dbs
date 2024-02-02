@@ -1,13 +1,175 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="MySql" id="Project-17ff" database="MySql" >
 	<schema name="sakila" >
-		<table name="????????" spec="" >
-			<column name="?????????????" type="INT" jt="4" mandatory="y" />
-			<column name="details" type="VARCHAR" length="12" jt="12" />
-			<column name="other" type="VARCHAR" length="12" jt="12" />
-			<index name="pk_????????" unique="PRIMARY_KEY" >
-				<column name="?????????????" />
-			</index>
+		<table name="2co_orders" spec="" >
+			<column name="﻿product id" type="INT" jt="4" />
+			<column name="product code" type="VARCHAR" length="13" jt="12" />
+			<column name="product" type="VARCHAR" length="10" jt="12" />
+			<column name="extra info" type="VARCHAR" length="0" jt="12" />
+			<column name="order no" type="INT" jt="4" />
+			<column name="order status" type="VARCHAR" length="18" jt="12" />
+			<column name="reference no" type="INT" jt="4" />
+			<column name="line item type" type="VARCHAR" length="9" jt="12" />
+			<column name="external reference no" type="VARCHAR" length="0" jt="12" />
+			<column name="pay method" type="VARCHAR" length="20" jt="12" />
+			<column name="order date" type="DATE" jt="91" />
+			<column name="order finish date" type="VARCHAR" length="24" jt="12" />
+			<column name="shipping date" type="VARCHAR" length="13" jt="12" />
+			<column name="currency" type="VARCHAR" length="3" jt="12" />
+			<column name="quantity" type="INT" jt="4" />
+			<column name="unit price (without vat)" type="DECIMAL" length="20" decimal="12" jt="3" />
+			<column name="total price" type="DECIMAL" length="13" decimal="2" jt="3" />
+			<column name="total vat" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="unit discount" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="promotion" type="VARCHAR" length="46" jt="12" />
+			<column name="promotion coupon code" type="VARCHAR" length="29" jt="12" />
+			<column name="general discount" type="INT" jt="4" />
+			<column name="affiliate commision" type="DECIMAL" length="11" decimal="4" jt="3" />
+			<column name="delivery type" type="VARCHAR" length="13" jt="12" />
+			<column name="shipping" type="INT" jt="4" />
+			<column name="shipping vat" type="INT" jt="4" />
+			<column name="general total" type="DECIMAL" length="13" decimal="2" jt="3" />
+			<column name="processing fee" type="DECIMAL" length="14" decimal="4" jt="3" />
+			<column name="company" type="VARCHAR" length="65" jt="12" />
+			<column name="client" type="VARCHAR" length="61" jt="12" />
+			<column name="address" type="VARCHAR" length="113" jt="12" />
+			<column name="phone" type="VARCHAR" length="26" jt="12" />
+			<column name="email" type="VARCHAR" length="52" jt="12" />
+			<column name="city" type="VARCHAR" length="35" jt="12" />
+			<column name="zip code" type="VARCHAR" length="13" jt="12" />
+			<column name="country" type="VARCHAR" length="31" jt="12" />
+			<column name="state" type="VARCHAR" length="32" jt="12" />
+			<column name="fiscal code" type="VARCHAR" length="19" jt="12" />
+			<column name="registration number" type="VARCHAR" length="0" jt="12" />
+			<column name="end user name" type="VARCHAR" length="52" jt="12" />
+			<column name="end user address" type="VARCHAR" length="113" jt="12" />
+			<column name="end user phone number" type="VARCHAR" length="26" jt="12" />
+			<column name="end user email address" type="VARCHAR" length="52" jt="12" />
+			<column name="end user city" type="VARCHAR" length="35" jt="12" />
+			<column name="end user zip code" type="VARCHAR" length="13" jt="12" />
+			<column name="end user country" type="VARCHAR" length="31" jt="12" />
+			<column name="end user state" type="VARCHAR" length="32" jt="12" />
+			<column name="affiliate" type="VARCHAR" length="36" jt="12" />
+			<column name="affiliate website" type="VARCHAR" length="41" jt="12" />
+			<column name="gateway response" type="VARCHAR" length="35" jt="12" />
+			<column name="approval status" type="VARCHAR" length="13" jt="12" />
+			<column name="avangate subscription reference" type="VARCHAR" length="13" jt="12" />
+			<column name="renewalstatus" type="VARCHAR" length="7" jt="12" />
+			<column name="subscription" type="VARCHAR" length="19" jt="12" />
+			<column name="net profit" type="DECIMAL" length="15" decimal="4" jt="3" />
+			<column name="backup media cost" type="DECIMAL" length="5" decimal="2" jt="3" />
+			<column name="backup media profit" type="DECIMAL" length="5" decimal="2" jt="3" />
+			<column name="dis cost" type="DECIMAL" length="5" decimal="2" jt="3" />
+			<column name="dis profit" type="DECIMAL" length="5" decimal="2" jt="3" />
+			<column name="payment currency" type="VARCHAR" length="3" jt="12" />
+			<column name="exchange rate" type="DECIMAL" length="26" decimal="18" jt="3" />
+			<column name="final exchange rate" type="BIT" length="1" jt="-7" />
+			<column name="fulfillment information" type="VARCHAR" length="1283" jt="12" />
+			<column name="pricing options name" type="VARCHAR" length="55" jt="12" />
+			<column name="pricing options code" type="VARCHAR" length="9" jt="12" />
+			<column name="sku" type="VARCHAR" length="0" jt="12" />
+			<column name="netincomeperproduct" type="DECIMAL" length="23" decimal="15" jt="3" />
+			<column name="enduserip" type="VARCHAR" length="49" jt="12" />
+			<column name="shopper invoice no" type="VARCHAR" length="14" jt="12" />
+			<column name="affiliate id" type="INT" jt="4" />
+			<column name="url" type="VARCHAR" length="31" jt="12" />
+			<column name="sale source" type="VARCHAR" length="0" jt="12" />
+			<column name="end user company" type="VARCHAR" length="65" jt="12" />
+			<column name="timezone" type="VARCHAR" length="50" jt="12" />
+			<column name="origin" type="VARCHAR" length="70" jt="12" />
+			<column name="chargeback status" type="VARCHAR" length="0" jt="12" />
+			<column name="chargeback reason" type="VARCHAR" length="0" jt="12" />
+			<column name="billing cycle" type="VARCHAR" length="3" jt="12" />
+			<column name="billing cycles left" type="VARCHAR" length="3" jt="12" />
+			<column name="current billing cycle" type="VARCHAR" length="3" jt="12" />
+			<column name="original external reference no" type="VARCHAR" length="0" jt="12" />
+			<column name="original sale source" type="VARCHAR" length="0" jt="12" />
+			<column name="chargeback reason code" type="VARCHAR" length="0" jt="12" />
+			<column name="initial dispute request" type="VARCHAR" length="0" jt="12" />
+			<column name="chargeback close date" type="VARCHAR" length="0" jt="12" />
+			<column name="order additional fields" type="VARCHAR" length="0" jt="12" />
+			<column name="product additional fields" type="VARCHAR" length="0" jt="12" />
+			<column name="invoice number prefix" type="VARCHAR" length="3" jt="12" />
+			<column name="invoice number" type="INT" jt="4" />
+			<column name="shopper/partner reference number" type="VARCHAR" length="33" jt="12" />
+			<column name="refund comment" type="VARCHAR" length="127" jt="12" />
+			<column name="delivered filename" type="VARCHAR" length="0" jt="12" />
+			<column name="pricing options operator" type="VARCHAR" length="11" jt="12" />
+			<column name="pricing options value" type="DECIMAL" length="11" decimal="2" jt="3" />
+			<column name="test order" type="BIT" length="1" jt="-7" />
+			<column name="order flow" type="VARCHAR" length="18" jt="12" />
+			<column name="initial renewal type" type="VARCHAR" length="7" jt="12" />
+			<column name="subscription billing cycle expiration date" type="VARCHAR" length="24" jt="12" />
+			<column name="refund reason" type="VARCHAR" length="41" jt="12" />
+			<column name="client first name" type="VARCHAR" length="42" jt="12" />
+			<column name="client last name" type="VARCHAR" length="37" jt="12" />
+			<column name="end user first name" type="VARCHAR" length="42" jt="12" />
+			<column name="end user last name" type="VARCHAR" length="37" jt="12" />
+			<column name="downloads count" type="VARCHAR" length="0" jt="12" />
+			<column name="communication language" type="VARCHAR" length="6" jt="12" />
+			<column name="tracking order id" type="VARCHAR" length="0" jt="12" />
+			<column name="tracking id" type="VARCHAR" length="0" jt="12" />
+			<column name="media type" type="VARCHAR" length="0" jt="12" />
+			<column name="affiliate source" type="VARCHAR" length="59" jt="12" />
+			<column name="affiliate categories" type="VARCHAR" length="0" jt="12" />
+			<column name="subscription custom fields" type="VARCHAR" length="0" jt="12" />
+			<column name="fx markup" type="INT" jt="4" />
+			<column name="template id" type="INT" jt="4" />
+			<column name="product external reference" type="VARCHAR" length="0" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="2co_subscriptions" spec="" >
+			<column name="licenseuniqueid" type="VARCHAR" length="50" jt="12" />
+			<column name="idproduct" type="INT" jt="4" />
+			<column name="purchasedate" type="DATE" jt="91" />
+			<column name="expirationdate" type="DATE" jt="91" />
+			<column name="productname" type="VARCHAR" length="10" jt="12" />
+			<column name="quantity" type="INT" jt="4" />
+			<column name="firstname" type="VARCHAR" length="40" jt="12" />
+			<column name="lastname" type="VARCHAR" length="52" jt="12" />
+			<column name="email" type="VARCHAR" length="57" jt="12" />
+			<column name="communicationlanguage" type="VARCHAR" length="6" jt="12" />
+			<column name="productversion" type="VARCHAR" length="30" jt="12" />
+			<column name="productextra" type="VARCHAR" length="100" jt="12" />
+			<column name="company" type="VARCHAR" length="65" jt="12" />
+			<column name="phone" type="VARCHAR" length="120" jt="12" />
+			<column name="fax" type="VARCHAR" length="29" jt="12" />
+			<column name="address1" type="VARCHAR" length="400" jt="12" />
+			<column name="address2" type="VARCHAR" length="400" jt="12" />
+			<column name="zip" type="VARCHAR" length="40" jt="12" />
+			<column name="city" type="VARCHAR" length="39" jt="12" />
+			<column name="state" type="VARCHAR" length="39" jt="12" />
+			<column name="countrycode" type="VARCHAR" length="2" jt="12" />
+			<column name="productoptions" type="VARCHAR" length="9" jt="12" />
+			<column name="activationcode" type="VARCHAR" length="115" jt="12" />
+			<column name="deliverycode" type="VARCHAR" length="400" jt="12" />
+			<column name="licensecode" type="VARCHAR" length="13" jt="12" />
+			<column name="refno" type="VARCHAR" length="100" jt="12" />
+			<column name="renewaltype" type="VARCHAR" length="7" jt="12" />
+			<column name="status" type="VARCHAR" length="10" jt="12" />
+			<column name="url" type="VARCHAR" length="31" jt="12" />
+			<column name="nextrenewalprice" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="nextrenewalpricecurrency" type="VARCHAR" length="3" jt="12" />
+			<column name="avangatecustomerreference" type="INT" jt="4" />
+			<column name="externalcustomerreference" type="VARCHAR" length="200" jt="12" />
+			<column name="nextbillingdate" type="DATE" jt="91" />
+			<column name="shopperreferencenumber" type="VARCHAR" length="42" jt="12" />
+			<column name="additionalinfo" type="VARCHAR" length="0" jt="12" />
+			<column name="lastrenewalprice" type="DECIMAL" length="14" decimal="2" jt="3" />
+			<column name="lastrenewalcurrency" type="VARCHAR" length="3" jt="12" />
+			<column name="pastdueday(s)" type="VARCHAR" length="3" jt="12" />
+			<column name="testsubscription" type="BIT" length="1" jt="-7" />
+			<column name="subscriptionstartdate" type="DATE" jt="91" />
+			<column name="idaffiliate" type="INT" jt="4" />
+			<column name="customervalue" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="customervaluecurrency" type="VARCHAR" length="3" jt="12" />
+			<column name="times renewed" type="INT" jt="4" />
+			<column name="times upgraded" type="INT" jt="4" />
+			<column name="importedsubscription" type="BIT" length="1" jt="-7" />
+			<column name="last renewal type change" type="VARCHAR" length="27" jt="12" />
+			<column name="last renewal type change date-time" type="DATE" jt="91" />
+			<column name="last renewal type change source" type="VARCHAR" length="28" jt="12" />
+			<column name="last renewal type changed by" type="VARCHAR" length="26" jt="12" />
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="Baseboard" row_count="0" spec="" >
@@ -16,12 +178,14 @@
 			</column>
 			<column name="name" prior="name2" type="VARCHAR" length="45" jt="12" mandatory="y" />
 			<column name="axapta_article_number" type="VARCHAR" length="15" jt="12" />
-			<column name="board_model3" type="VARCHAR" length="4" jt="12" />
+			<column name="board_model" type="VARCHAR" length="4" jt="12" />
 			<column name="board_type" type="VARCHAR" length="15" jt="12" />
 			<column name="board_version" type="VARCHAR" length="20" jt="12" />
 			<column name="ems_serial" type="VARCHAR" length="15" jt="12" />
 			<column name="info_version" type="VARCHAR" length="15" jt="12" />
 			<column name="pic_sw_version" type="VARCHAR" length="15" jt="12" />
+			<column name="sample" type="VARCHAR" length="12" jt="12" />
+			<column name="sample2" type="VARCHAR" length="12" jt="12" />
 			<column name="date" type="TIMESTAMP" jt="93" >
 				<defo><![CDATA[now()]]></defo>
 			</column>
@@ -35,7 +199,7 @@
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="actor" row_count="300" spec="" >
-			<comment><![CDATA[Details about actors.]]></comment>
+			<comment><![CDATA[Details about actors. More details.]]></comment>
 			<column name="actor_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -45,21 +209,28 @@
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
+			<column name="added_offline" type="INT" jt="4" />
+			<column name="test" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>
 			<index name="idx_actor_last_name" unique="NORMAL" >
 				<column name="last_name" />
 			</index>
+			<index name="my_index" unique="NORMAL" >
+				<column name="first_name" />
+				<column name="last_name" />
+			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=301 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Details about actors.']]></options>
 		</table>
 		<table name="address" row_count="311" spec="" >
-			<comment><![CDATA[Some comment]]></comment>
+			<comment><![CDATA[The store addresses.]]></comment>
 			<column name="address_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
 			<column name="address" type="VARCHAR" length="50" jt="12" mandatory="y" />
 			<column name="address2" type="VARCHAR" length="50" jt="12" />
+			<column name="new_column" type="INT" jt="4" />
 			<column name="district" type="VARCHAR" length="20" jt="12" mandatory="y" />
 			<column name="city_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" />
 			<column name="postal_code" type="VARCHAR" length="10" jt="12" />
@@ -81,9 +252,29 @@
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Some comment']]></options>
 		</table>
+		<table name="afectiuni" spec="" >
+			<column name="personid" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="fk_afectiuni_persoane" unique="NORMAL" >
+				<column name="personid" />
+			</index>
+			<fk name="fk_afectiuni_persoane_0" to_schema="sakila" to_table="persoane" >
+				<fk_column name="personid" pk="id" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="another" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_another" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="category" row_count="116" spec="" >
+			<comment><![CDATA[The movie categories]]></comment>
 			<column name="category_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+				<comment><![CDATA[The category identifier.]]></comment>
 			</column>
 			<column name="name" type="VARCHAR" length="25" jt="12" mandatory="y" />
 			<column name="last_update" type="TIMESTAMP" jt="93" mandatory="y" >
@@ -91,10 +282,28 @@
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
 			<column name="test" type="VARCHAR" length="12" jt="12" />
+			<column name="test2" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_category" unique="PRIMARY_KEY" >
 				<column name="category_id" />
 			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="chart_data" spec="" >
+			<column name="country" type="CHAR" length="2" jt="1" mandatory="y" />
+			<column name="popuplation" type="INT" jt="4" mandatory="y" />
+			<column name="working" type="DOUBLE" jt="8" mandatory="y" />
+			<column name="unemployeed" type="INT" jt="4" mandatory="y" />
+			<column name="test" type="VARCHAR" length="12" jt="12" />
+			<index name="pk_chart_data" unique="PRIMARY_KEY" >
+				<column name="country" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="chart_line_3cols" spec="" >
+			<column name="snapid" type="INT" jt="4" mandatory="y" />
+			<column name="y_axis" type="VARCHAR" length="10" jt="12" mandatory="y" />
+			<column name="value" type="INT" jt="4" mandatory="y" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="city" row_count="750" spec="" >
 			<column name="city_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
@@ -117,6 +326,7 @@
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=751 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="core.user" />
 		<table name="country" row_count="209" spec="" >
 			<comment><![CDATA[The countries]]></comment>
 			<column name="country_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
@@ -127,9 +337,7 @@
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
-			<column name="mark" type="BOOLEAN" length="1" jt="16" />
-			<column name="mark2" type="BOOLEAN" length="1" jt="16" />
-			<column name="mark3" type="TINYINT" length="1" jt="-6" />
+			<column name="description" type="TEXT" jt="-1" />
 			<index name="pk_country" unique="PRIMARY_KEY" >
 				<column name="country_id" />
 			</index>
@@ -140,6 +348,8 @@
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=210 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The countries']]></options>
 		</table>
 		<table name="customer" row_count="599" spec="" >
+			<comment><![CDATA[Table stores all customers and 
+the details.]]></comment>
 			<column name="customer_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 				<comment><![CDATA[column comment]]></comment>
@@ -149,7 +359,7 @@
 			<column name="last_name" type="VARCHAR" length="45" jt="12" mandatory="y" />
 			<column name="email" type="VARCHAR" length="50" jt="12" />
 			<column name="address_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" />
-			<column name="active" type="TINYINT" length="1" jt="-6" mandatory="y" >
+			<column name="active" type="BOOLEAN" jt="16" mandatory="y" >
 				<defo><![CDATA['1']]></defo>
 			</column>
 			<column name="create_date" type="DATETIME" jt="93" mandatory="y" />
@@ -180,7 +390,11 @@
 		<table name="film" row_count="167" spec="" >
 			<comment><![CDATA[This table shows the 
 different movies available 
-in a store.]]></comment>
+in a store. More comments2.
+
+second comment
+modified2
+added now]]></comment>
 			<column name="film_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -215,11 +429,7 @@ among with the other details]]></comment>
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
-			<column name="test" type="VARCHAR" length="12" jt="12" >
-				<comment><![CDATA[Test]]></comment>
-			</column>
-			<column name="test2" type="VARCHAR" length="12" jt="12" />
-			<column name="test3" type="VARCHAR" length="12" jt="12" />
+			<column name="details2" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_film" unique="PRIMARY_KEY" >
 				<column name="film_id" />
 			</index>
@@ -263,7 +473,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="film_category" row_count="225" spec="" >
-			<comment><![CDATA[Some comment]]></comment>
+			<comment><![CDATA[The categories for each film.]]></comment>
 			<column name="film_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" />
 			<column name="category_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" />
 			<column name="last_update" type="TIMESTAMP" jt="93" mandatory="y" >
@@ -308,8 +518,10 @@ among with the other details]]></comment>
 				<defo><![CDATA[now()]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
-			<column name="tt5" type="TIMESTAMP" length="6" jt="93" />
-			<column name="on_master" prior="anywhere" type="TIMESTAMP" jt="93" />
+			<column name="tt5" type="TINYTEXT" jt="-1" />
+			<column name="tt6" type="TINYTEXT" jt="-1" />
+			<column name="tt7" type="TINYTEXT" jt="-1" />
+			<column name="tt8" type="TINYTEXT" jt="-1" />
 			<index name="pk_film_text" unique="PRIMARY_KEY" >
 				<column name="film_id" />
 			</index>
@@ -320,6 +532,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="inventory" row_count="0" spec="" >
+			<comment><![CDATA[The inventory.]]></comment>
 			<column name="inventory_id" type="MEDIUMINT" jt="4" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -348,6 +561,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="language" row_count="100" spec="" >
+			<comment><![CDATA[The different languages abbreviations.]]></comment>
 			<column name="language_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -360,6 +574,13 @@ among with the other details]]></comment>
 				<column name="language_id" />
 			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="mapp1" spec="" >
+			<column name="id" type="INT" jt="4" />
+			<column name="firstname" type="VARCHAR" length="5" jt="12" />
+			<column name="lastname" type="VARCHAR" length="5" jt="12" />
+			<column name="age" type="VARCHAR" length="2" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="mc_standard_claims" row_count="0" spec="" >
 			<column name="mc_standard_claim_id" type="VARCHAR" length="19" jt="12" mandatory="y" />
@@ -378,7 +599,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3]]></options>
 		</table>
 		<table name="payment" row_count="0" spec="" >
-			<column name="payment_id1" prior="payment_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
+			<column name="payment_id" prior="payment_id1" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
 			<column name="customer_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" />
@@ -390,9 +611,6 @@ among with the other details]]></comment>
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
-			<index name="pk_payment" unique="PRIMARY_KEY" >
-				<column name="payment_id1" />
-			</index>
 			<index name="idx_fk_staff_id" unique="NORMAL" >
 				<column name="staff_id" />
 			</index>
@@ -401,6 +619,9 @@ among with the other details]]></comment>
 			</index>
 			<index name="fk_payment_rental" unique="NORMAL" >
 				<column name="rental_id" />
+			</index>
+			<index name="pk_payment" unique="PRIMARY_KEY" >
+				<column name="payment_id" />
 			</index>
 			<fk name="fk_payment_customer" to_schema="sakila" to_table="customer" delete_action="restrict" update_action="cascade" options="" >
 				<fk_column name="customer_id" pk="customer_id" />
@@ -413,7 +634,31 @@ among with the other details]]></comment>
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="persoane" spec="" >
+			<comment><![CDATA[Stochez persoanele]]></comment>
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<comment><![CDATA[Stochez persoanele]]></comment>
+			</column>
+			<column name="nume" type="VARCHAR" length="80" jt="12" />
+			<column name="prenume" type="VARCHAR" length="80" jt="12" />
+			<index name="pk_persoane" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="persons" row_count="7680" spec="" >
+			<column name="personid" type="INT" jt="4" mandatory="y" />
+			<column name="birthdate" type="DATE" jt="91" mandatory="y" />
+			<column name="email" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<column name="nationality" type="CHAR" length="2" jt="1" mandatory="y" />
+			<column name="firstname" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="lastname" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<index name="pk_persons" unique="PRIMARY_KEY" >
+				<column name="personid" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="persons1" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="firstname" type="VARCHAR" length="100" jt="12" mandatory="y" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
@@ -422,7 +667,18 @@ among with the other details]]></comment>
 			</column>
 			<column name="description2" type="TEXT" jt="-1" />
 			<column name="description3" type="TEXT" jt="-1" />
-			<index name="pk_persons" unique="PRIMARY_KEY" >
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="persons3" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="firstname" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="lastname" type="VARCHAR" length="100" jt="12" />
+			<column name="description" type="TEXT" jt="-1" >
+				<comment><![CDATA[This is a sample]]></comment>
+			</column>
+			<column name="description2" type="TEXT" jt="-1" />
+			<column name="description3" type="TEXT" jt="-1" />
+			<index name="pk_persons3" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
 			<index name="idx_persons_firstname" unique="NORMAL" >
@@ -431,15 +687,206 @@ among with the other details]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="persons_0" row_count="90096" spec="" >
-			<column name="id" type="INT" jt="4" mandatory="y" />
-			<column name="firstname" type="VARCHAR" length="100" jt="12" mandatory="y" />
-			<column name="lastname" type="VARCHAR" length="100" jt="12" />
-			<column name="description" type="TEXT" jt="-1" >
-				<comment><![CDATA[This is a sample]]></comment>
+		<table name="pictures" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="description2" type="TEXT" jt="-1" />
-			<column name="description3" type="TEXT" jt="-1" />
+			<column name="picture" type="BLOB" jt="2004" />
+			<index name="pk_pictures" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_2co" spec="" >
+			<column name="email" type="VARCHAR" length="261" jt="12" />
+			<column name="subscription_id" type="INT" jt="4" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_2co_all" spec="" >
+			<column name="subscription_id" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="75" jt="12" />
+			<column name="initial order id" type="INT" jt="4" />
+			<column name="number of processed billing cycles" type="INT" jt="4" />
+			<column name="current subscription status" type="VARCHAR" length="11" jt="12" />
+			<column name="type of renewal" type="VARCHAR" length="7" jt="12" />
+			<column name="next charge amount" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="last charge date" type="DATE" jt="91" />
+			<column name="next charge date" type="DATE" jt="91" />
+			<column name="product id" type="INT" jt="4" />
+			<column name="customer first name" type="VARCHAR" length="52" jt="12" />
+			<column name="customer last name" type="VARCHAR" length="52" jt="12" />
+			<column name="email" type="VARCHAR" length="261" jt="12" />
+			<column name="company" type="VARCHAR" length="50" jt="12" />
+			<column name="country" type="VARCHAR" length="36" jt="12" />
+			<column name="customer country code" type="VARCHAR" length="2" jt="12" />
+			<column name="customer state" type="VARCHAR" length="41" jt="12" />
+			<column name="customer language" type="VARCHAR" length="13" jt="12" />
+			<column name="order id" type="INT" jt="4" />
+			<column name="order item id" type="INT" jt="4" />
+			<column name="quantity" type="INT" jt="4" />
+			<column name="max billing cycles" type="INT" jt="4" />
+			<column name="failed attempts" type="INT" jt="4" />
+			<column name="display initial price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="display total price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="display currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="billing initial price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="billing total price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="billing currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="sku" type="VARCHAR" length="0" jt="12" />
+			<column name="test mode" type="BIT" length="1" jt="-7" />
+			<column name="affiliate" type="VARCHAR" length="0" jt="12" />
+			<column name="created at" type="DATE" jt="91" />
+			<column name="scheduled payment at" type="DATE" jt="91" />
+			<column name="has trial period" type="BIT" length="1" jt="-7" />
+			<column name="billing period" type="VARCHAR" length="9" jt="12" />
+			<column name="grace period" type="VARCHAR" length="0" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_computers" spec="" >
+			<column name="subscriptionid" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="seat" type="INT" jt="4" mandatory="y" />
+			<column name="computer_id" type="VARCHAR" length="200" jt="12" mandatory="y" />
+			<column name="first_use_date" type="DATE" jt="91" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<column name="last_use_date" type="DATE" jt="91" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<index name="pk_ppg_computers" unique="PRIMARY_KEY" >
+				<column name="subscriptionid" />
+				<column name="seat" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_imported" spec="" >
+			<column name="subscription_id" type="INT" jt="4" />
+			<column name="email" type="VARCHAR" length="61" jt="12" />
+			<column name="first_name" type="VARCHAR" length="52" jt="12" />
+			<column name="last_name" type="VARCHAR" length="52" jt="12" />
+			<column name="company_name" type="VARCHAR" length="50" jt="12" />
+			<column name="payment_date" type="DATE" jt="91" />
+			<column name="quantity" type="INT" jt="4" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_orders" spec="" >
+			<column name="purchase_date" type="DATE" jt="91" mandatory="y" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<column name="productid" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="orderid" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="subscriptionid" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="client_type" type="CHAR" length="3" jt="1" mandatory="y" />
+			<column name="license_type" type="CHAR" length="1" jt="1" mandatory="y" />
+			<column name="quantity" type="INT" jt="4" mandatory="y" />
+			<column name="email" type="VARCHAR" length="300" jt="12" />
+			<column name="customer_name" type="VARCHAR" length="400" jt="12" />
+			<column name="customer_language" type="CHAR" length="2" jt="1" />
+			<column name="customer_city" type="VARCHAR" length="400" jt="12" />
+			<column name="customer_address" type="VARCHAR" length="1000" jt="12" />
+			<column name="customer_zipcode" type="VARCHAR" length="100" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_reactivate" spec="" >
+			<column name="id" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="79" jt="12" />
+			<column name="initial order id" type="INT" jt="4" />
+			<column name="number of processed billing cycles" type="INT" jt="4" />
+			<column name="current subscription status" type="VARCHAR" length="13" jt="12" />
+			<column name="type of renewal" type="VARCHAR" length="7" jt="12" />
+			<column name="next charge amount" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="last charge date" type="DATE" jt="91" />
+			<column name="next charge date" type="DATE" jt="91" />
+			<column name="product id" type="INT" jt="4" />
+			<column name="customer first name" type="VARCHAR" length="52" jt="12" />
+			<column name="customer last name" type="VARCHAR" length="52" jt="12" />
+			<column name="customer e-mail" type="VARCHAR" length="61" jt="12" />
+			<column name="company name" type="VARCHAR" length="50" jt="12" />
+			<column name="customer country" type="VARCHAR" length="36" jt="12" />
+			<column name="customer country code" type="VARCHAR" length="2" jt="12" />
+			<column name="customer state" type="VARCHAR" length="53" jt="12" />
+			<column name="customer language" type="VARCHAR" length="18" jt="12" />
+			<column name="order id" type="INT" jt="4" />
+			<column name="order item id" type="INT" jt="4" />
+			<column name="quantity" type="INT" jt="4" />
+			<column name="max billing cycles" type="INT" jt="4" />
+			<column name="failed attempts" type="INT" jt="4" />
+			<column name="display initial price" type="DECIMAL" length="13" decimal="2" jt="3" />
+			<column name="display total price" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="display currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="billing initial price" type="DECIMAL" length="13" decimal="2" jt="3" />
+			<column name="billing total price" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="billing currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="sku" type="VARCHAR" length="5" jt="12" />
+			<column name="test mode" type="BIT" length="1" jt="-7" />
+			<column name="affiliate" type="VARCHAR" length="0" jt="12" />
+			<column name="created at" type="DATE" jt="91" />
+			<column name="scheduled payment at" type="DATE" jt="91" />
+			<column name="has trial period" type="BIT" length="1" jt="-7" />
+			<column name="billing period" type="VARCHAR" length="10" jt="12" />
+			<column name="grace period" type="VARCHAR" length="10" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_subscriptions" spec="" >
+			<column name="subscriptionid" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="seat" type="INT" jt="4" mandatory="y" />
+			<column name="user_name" type="VARCHAR" length="400" jt="12" />
+			<column name="description" type="VARCHAR" length="2000" jt="12" />
+			<column name="license_key" type="VARCHAR" length="2000" jt="12" mandatory="y" />
+			<index name="pk_ppg_subscriptions" unique="PRIMARY_KEY" >
+				<column name="subscriptionid" />
+				<column name="seat" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="ppg_subscriptions2" spec="" >
+			<column name="subscription_id" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="79" jt="12" />
+			<column name="initial order id" type="INT" jt="4" />
+			<column name="number of processed billing cycles" type="INT" jt="4" />
+			<column name="current subscription status" type="VARCHAR" length="13" jt="12" />
+			<column name="type of renewal" type="VARCHAR" length="7" jt="12" />
+			<column name="next charge amount" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="last charge date" type="DATE" jt="91" />
+			<column name="next charge date" type="DATE" jt="91" />
+			<column name="product id" type="INT" jt="4" />
+			<column name="first_name" type="VARCHAR" length="52" jt="12" />
+			<column name="last_name" type="VARCHAR" length="52" jt="12" />
+			<column name="email" type="VARCHAR" length="61" jt="12" />
+			<column name="company_name" type="VARCHAR" length="50" jt="12" />
+			<column name="customer country" type="VARCHAR" length="36" jt="12" />
+			<column name="customer country code" type="VARCHAR" length="2" jt="12" />
+			<column name="customer state" type="VARCHAR" length="41" jt="12" />
+			<column name="customer_language" type="VARCHAR" length="13" jt="12" />
+			<column name="orderid" type="INT" jt="4" />
+			<column name="order item id" type="INT" jt="4" />
+			<column name="quantity" type="INT" jt="4" />
+			<column name="max billing cycles" type="INT" jt="4" />
+			<column name="failed attempts" type="INT" jt="4" />
+			<column name="display initial price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="display total price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="display currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="billing initial price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="billing total price" type="DECIMAL" length="9" decimal="2" jt="3" />
+			<column name="billing currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="sku" type="VARCHAR" length="0" jt="12" />
+			<column name="test mode" type="BIT" length="1" jt="-7" />
+			<column name="affiliate" type="VARCHAR" length="0" jt="12" />
+			<column name="created at" type="DATE" jt="91" />
+			<column name="payment_date" type="DATE" jt="91" />
+			<column name="has trial period" type="BIT" length="1" jt="-7" />
+			<column name="billing period" type="VARCHAR" length="10" jt="12" />
+			<column name="grace period" type="VARCHAR" length="10" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="presentation" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="some_enum" type="ENUM" jt="12" >
+				<enumeration><![CDATA['a','c']]></enumeration>
+			</column>
+			<index name="pk_presentation" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="rental" row_count="0" spec="" >
@@ -488,6 +935,7 @@ among with the other details]]></comment>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
 			<column name="description" type="TEXT" jt="-1" mandatory="y" />
+			<column name="male" type="BOOLEAN" jt="16" />
 			<index name="pk_sample" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -509,17 +957,57 @@ among with the other details]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
-		<table name="staff" row_count="0" spec="" >
-			<comment><![CDATA[The staff members are listed here2.
-The comment 
-Friday
-aasd12
-eee
-ddd.]]></comment>
-			<column name="staff_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
+		<table name="sampletime" spec="" >
+			<column name="id" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="5" jt="12" />
+			<column name="sometime" type="TIME" jt="92" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="seam_intake_journal" spec="" >
+			<column name="ID" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="first_name" type="VARCHAR" length="45" jt="12" mandatory="y" />
+			<column name="MasterIntakeID" type="INT" jt="4" mandatory="y" />
+			<column name="Identifier" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="IdentifierType" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemType" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemNetWeight" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemGross" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemState" type="VARCHAR" length="255" jt="12" />
+			<column name="ActionID" type="INT" jt="4" />
+			<column name="Make" type="VARCHAR" length="255" jt="12" />
+			<column name="Model" type="VARCHAR" length="255" jt="12" />
+			<column name="ProcessingType" type="VARCHAR" length="255" jt="12" />
+			<column name="ProcessingNumber" type="VARCHAR" length="255" jt="12" />
+			<column name="TestResultID" type="INT" jt="4" />
+			<column name="DispositionID" type="INT" jt="4" />
+			<column name="ReasonCode" type="INT" jt="4" />
+			<column name="Reference" type="VARCHAR" length="255" jt="12" />
+			<column name="EntryDate" type="DATETIME" jt="93" />
+			<column name="SiteLocation" type="VARCHAR" length="255" jt="12" />
+			<column name="WitnessedBy" type="VARCHAR" length="255" jt="12" />
+			<index name="pk_seam_intake_journal" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=201719 DEFAULT CHARSET=utf8mb3]]></options>
+		</table>
+		<table name="sports" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_sports" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="staff" row_count="0" spec="" >
+			<comment><![CDATA[The staff members are listed here3.]]></comment>
+			<column name="staff_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+				<comment><![CDATA[The pk in staff.]]></comment>
+			</column>
+			<column name="first_name" type="VARCHAR" length="45" jt="12" mandatory="y" >
+				<comment><![CDATA[last_name aa --> bb]]></comment>
+			</column>
 			<column name="last_name" type="VARCHAR" length="45" jt="12" mandatory="y" >
 				<comment><![CDATA[The last name]]></comment>
 			</column>
@@ -527,7 +1015,7 @@ ddd.]]></comment>
 			<column name="picture" type="BLOB" jt="2004" />
 			<column name="email" type="VARCHAR" length="50" jt="12" />
 			<column name="store_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" />
-			<column name="active" type="TINYINT" length="1" jt="-6" mandatory="y" >
+			<column name="active" type="BOOLEAN" jt="16" mandatory="y" >
 				<defo><![CDATA['1']]></defo>
 			</column>
 			<column name="username" type="VARCHAR" length="16" jt="12" mandatory="y" />
@@ -556,7 +1044,7 @@ ddd.]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The staff members are listed here2.']]></options>
 		</table>
 		<table name="store" row_count="0" spec="" >
-			<comment><![CDATA[ariba]]></comment>
+			<comment><![CDATA[The store.]]></comment>
 			<column name="store_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -583,10 +1071,188 @@ ddd.]]></comment>
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ariba']]></options>
 		</table>
-		<table name="test1d" spec="" >
+		<table name="subscription_reactivate2" spec="" >
+			<column name="id" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="79" jt="12" />
+			<column name="initial order id" type="INT" jt="4" />
+			<column name="number of processed billing cycles" type="INT" jt="4" />
+			<column name="current subscription status" type="VARCHAR" length="11" jt="12" />
+			<column name="type of renewal" type="VARCHAR" length="7" jt="12" />
+			<column name="next charge amount" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="last charge date" type="VARCHAR" length="24" jt="12" />
+			<column name="next charge date" type="VARCHAR" length="24" jt="12" />
+			<column name="product id" type="INT" jt="4" />
+			<column name="customer first name" type="VARCHAR" length="26" jt="12" />
+			<column name="customer last name" type="VARCHAR" length="52" jt="12" />
+			<column name="customer e-mail" type="VARCHAR" length="54" jt="12" />
+			<column name="company name" type="VARCHAR" length="35" jt="12" />
+			<column name="customer country" type="VARCHAR" length="28" jt="12" />
+			<column name="customer country code" type="VARCHAR" length="2" jt="12" />
+			<column name="customer state" type="VARCHAR" length="27" jt="12" />
+			<column name="customer language" type="VARCHAR" length="13" jt="12" />
+			<column name="order id" type="INT" jt="4" />
+			<column name="order item id" type="INT" jt="4" />
+			<column name="quantity" type="INT" jt="4" />
+			<column name="max billing cycles" type="INT" jt="4" />
+			<column name="failed attempts" type="INT" jt="4" />
+			<column name="display initial price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="display total price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="display currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="billing initial price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="billing total price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="billing currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="sku" type="VARCHAR" length="3" jt="12" />
+			<column name="test mode" type="BIT" length="1" jt="-7" />
+			<column name="affiliate" type="VARCHAR" length="0" jt="12" />
+			<column name="created at" type="VARCHAR" length="24" jt="12" />
+			<column name="scheduled payment at" type="VARCHAR" length="24" jt="12" />
+			<column name="has trial period" type="BIT" length="1" jt="-7" />
+			<column name="billing period" type="VARCHAR" length="10" jt="12" />
+			<column name="grace period" type="VARCHAR" length="10" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="subscriptions_suspended_ppg" spec="" >
+			<column name="id" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="79" jt="12" />
+			<column name="initial order id" type="INT" jt="4" />
+			<column name="number of processed billing cycles" type="INT" jt="4" />
+			<column name="current subscription status" type="VARCHAR" length="11" jt="12" />
+			<column name="type of renewal" type="VARCHAR" length="7" jt="12" />
+			<column name="next charge amount" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="last charge date" type="DATE" jt="91" />
+			<column name="next charge date" type="DATE" jt="91" />
+			<column name="product id" type="INT" jt="4" />
+			<column name="customer first name" type="VARCHAR" length="48" jt="12" />
+			<column name="customer last name" type="VARCHAR" length="52" jt="12" />
+			<column name="customer e-mail" type="VARCHAR" length="61" jt="12" />
+			<column name="company name" type="VARCHAR" length="35" jt="12" />
+			<column name="customer country" type="VARCHAR" length="31" jt="12" />
+			<column name="customer country code" type="VARCHAR" length="2" jt="12" />
+			<column name="customer state" type="VARCHAR" length="41" jt="12" />
+			<column name="customer language" type="VARCHAR" length="13" jt="12" />
+			<column name="order id" type="INT" jt="4" />
+			<column name="order item id" type="INT" jt="4" />
+			<column name="quantity" type="INT" jt="4" />
+			<column name="max billing cycles" type="INT" jt="4" />
+			<column name="failed attempts" type="INT" jt="4" />
+			<column name="display initial price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="display total price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="display currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="billing initial price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="billing total price" type="DECIMAL" length="7" decimal="2" jt="3" />
+			<column name="billing currency code" type="VARCHAR" length="3" jt="12" />
+			<column name="sku" type="VARCHAR" length="0" jt="12" />
+			<column name="test mode" type="BIT" length="1" jt="-7" />
+			<column name="affiliate" type="VARCHAR" length="0" jt="12" />
+			<column name="created at" type="DATE" jt="91" />
+			<column name="scheduled payment at" type="DATE" jt="91" />
+			<column name="has trial period" type="BIT" length="1" jt="-7" />
+			<column name="billing period" type="VARCHAR" length="10" jt="12" />
+			<column name="grace period" type="VARCHAR" length="10" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="table with spaces" spec="" >
+			<column name="my id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_table with spaces" unique="PRIMARY_KEY" >
+				<column name="my id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_test" spec="" >
+			<column name="id" type="BIGINT" jt="-5" mandatory="y" unsigned="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="name" type="VARCHAR" length="50" jt="12" />
+			<column name="blah" type="BIGINT" jt="-5" />
+			<column name="blah2" type="BIGINT" jt="-5" unsigned="y" />
+			<column name="blah3" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="blah4" type="BIGINT" jt="-5" mandatory="y" unsigned="y" />
+			<index name="pk_tbl_test" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_test" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test02" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_test02" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_test02_test02_0" to_schema="sakila" to_table="test02_0" >
+				<fk_column name="id" pk="id" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test02_0" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name_new" type="VARCHAR" length="111" jt="12" />
+			<index name="pk_test02_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test1" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="age" type="VARCHAR" length="1" jt="12" >
+				<defo><![CDATA['_utf8mb4'a'']]></defo>
+			</column>
+			<column name="age3" type="DOUBLE" jt="8" />
 			<index name="pk_test1" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test1a" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name1" type="VARCHAR" length="102" jt="12" />
+			<index name="pk_test1a" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test1b" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="newcol" type="INT" jt="4" />
+			<column name="test2" type="VARCHAR" length="12" jt="12" />
+			<column name="bool" type="BOOLEAN" jt="16" />
+			<column name="bitcol" type="BIT" length="1" jt="-7" />
+			<index name="pk_test1b" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test2" spec="" >
+			<column name="id" type="BIGINT" jt="-5" mandatory="y" unsigned="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="test" type="BIGINT" jt="-5" unsigned="y" />
+			<column name="updated_at" type="DATETIME" length="6" jt="93" >
+				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<index name="pk_test2" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_test2_test" unique="UNIQUE_KEY" >
+				<column name="test" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test2a" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="age" type="INT" jt="4" >
+				<defo><![CDATA[12]]></defo>
+			</column>
+			<index name="pk_test2a" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
@@ -597,10 +1263,44 @@ ddd.]]></comment>
 			</column>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
-			<column name="newcolumns" type="BOOLEAN" length="1" jt="16" />
+			<column name="newcolumns" type="BIT" length="1" jt="-7" />
 			<index name="pk_test_autoincrement" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_bit_boolean" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="f_bit" type="BIT" length="1" jt="-7" />
+			<column name="f_boolean" type="BOOLEAN" jt="16" />
+			<column name="f_boolean2" type="BOOLEAN" jt="16" />
+			<index name="pk_test_bit_boolean" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_bool" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="bool_field" type="BOOLEAN" jt="16" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_test_bool" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_combo" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="firstname" type="VARCHAR" length="100" jt="12" />
+			<column name="sportid" type="INT" jt="4" />
+			<index name="pk_test_combo" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="fk_test_combo_sports" unique="NORMAL" >
+				<column name="sportid" />
+			</index>
+			<fk name="fk_test_combo_sports_0" to_schema="sakila" to_table="sports" >
+				<fk_column name="sportid" pk="id" />
+			</fk>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="test_data_gen" row_count="0" spec="" >
@@ -613,6 +1313,129 @@ ddd.]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="test_defo" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="purchase_date" type="DATE" jt="91" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<index name="pk_test_defo" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_form_int" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_test_form_int" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_import" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="firstname" type="VARCHAR" length="12" jt="12" />
+			<index name="pk_test_import" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_pk" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="test2" type="VARCHAR" length="12" jt="12" >
+				<defo><![CDATA['_utf8mb4'aaa'']]></defo>
+			</column>
+			<column name="test4" type="BOOLEAN" jt="16" >
+				<defo><![CDATA[_utf8mb4'fgg']]></defo>
+			</column>
+			<column name="test5" type="VARCHAR" length="12" jt="12" />
+			<index name="pk_test_pk" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_rdb_insert" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_test_rdb_insert" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_rdg" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="test_date" type="DATE" jt="91" mandatory="y" />
+			<column name="test_timestamp" type="TIMESTAMP" length="6" jt="93" />
+			<column name="other1" type="VARCHAR" length="12" jt="12" />
+			<column name="other2" type="VARCHAR" length="12" jt="12" />
+			<index name="pk_test_rdg" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_test_rdg_other2" unique="NORMAL" >
+				<column name="other2" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="test_table" spec="" >
+			<column name="ID" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="MasterIntakeID" type="INT" jt="4" mandatory="y" />
+			<column name="Identifier" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="IdentifierType" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemType" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemNetWeight" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemGross" type="VARCHAR" length="255" jt="12" />
+			<column name="ItemState" type="VARCHAR" length="255" jt="12" />
+			<column name="ActionID" type="INT" jt="4" />
+			<column name="Make" type="VARCHAR" length="255" jt="12" />
+			<column name="Model" type="VARCHAR" length="255" jt="12" />
+			<column name="ProcessingType" type="VARCHAR" length="255" jt="12" />
+			<column name="ProcessingNumber" type="VARCHAR" length="255" jt="12" />
+			<column name="TestResultID" type="INT" jt="4" />
+			<column name="DispositionID" type="INT" jt="4" />
+			<column name="ReasonCode" type="INT" jt="4" />
+			<column name="Reference" type="VARCHAR" length="255" jt="12" />
+			<column name="EntryDate" type="DATETIME" jt="93" />
+			<column name="SiteLocation" type="VARCHAR" length="255" jt="12" />
+			<column name="WitnessedBy" type="VARCHAR" length="255" jt="12" />
+			<index name="pk_test_table" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=102620 DEFAULT CHARSET=utf8mb3]]></options>
+		</table>
+		<table name="to_clone" spec="" >
+			<column name="id1" type="INT" jt="4" mandatory="y" />
+			<column name="id2" type="INT" jt="4" mandatory="y" />
+			<column name="firstname" type="VARCHAR" length="100" jt="12" />
+			<column name="lastname" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_to_clone" unique="PRIMARY_KEY" >
+				<column name="id1" />
+				<column name="id2" />
+			</index>
+			<index name="idx_to_clone" unique="NORMAL" >
+				<column name="firstname" />
+				<column name="lastname" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="to_clone_0" spec="" >
+			<column name="id1" type="INT" jt="4" mandatory="y" />
+			<column name="id2" type="INT" jt="4" mandatory="y" />
+			<column name="firstname" type="VARCHAR" length="100" jt="12" />
+			<column name="lastname" type="VARCHAR" length="100" jt="12" />
+			<column name="test3" type="BIGINT" jt="-5" />
+			<column name="test4" type="TINYINT" jt="-6" />
+			<column name="test6" type="BIGINT" jt="-5" />
+			<index name="pk_to_clone_0" unique="PRIMARY_KEY" >
+				<column name="id1" />
+				<column name="id2" />
+			</index>
+			<index name="idx_to_clone_0" unique="NORMAL" >
+				<column name="firstname" />
+				<column name="lastname" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="tval_2" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<index name="pk_tval_2" unique="PRIMARY_KEY" >
@@ -620,9 +1443,67 @@ ddd.]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="user3" spec="" >
+			<column name="Id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="Firstname" type="CHAR" length="2" jt="1" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET latin1 COLLATE latin1_general_ci]]></column_options>
+			</column>
+			<column name="Lastname" type="VARCHAR" length="255" jt="12" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb4_general_ci]]></column_options>
+			</column>
+			<column name="Username" type="VARCHAR" length="255" jt="12" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb4_general_ci]]></column_options>
+			</column>
+			<column name="Password" type="TEXT" jt="-1" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb4_general_ci]]></column_options>
+			</column>
+			<column name="Token" type="VARCHAR" length="255" jt="12" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb4_general_ci]]></column_options>
+			</column>
+			<column name="Picture" type="VARCHAR" length="255" jt="12" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb4_general_ci]]></column_options>
+			</column>
+			<column name="CreatedDate" type="DATETIME" jt="93" mandatory="y" />
+			<column name="UpdatedDate" type="DATETIME" jt="93" mandatory="y" />
+			<index name="pk_user3" unique="PRIMARY_KEY" >
+				<column name="Id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="users_json" spec="" >
+			<column name="id" type="INT" jt="4" />
+			<column name="preferences" type="JSON" jt="2000" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="zac" spec="" >
+			<column name="org_unit_id" type="VARCHAR" length="5" jt="12" />
+			<column name="org_unit_type" type="VARCHAR" length="5" jt="12" />
+			<column name="comp_code" type="INT" jt="4" />
+			<column name="bus_area" type="VARCHAR" length="5" jt="12" />
+			<column name="org_unit_desc" type="VARCHAR" length="35" jt="12" />
+			<column name="ce_org_unit_id" type="VARCHAR" length="5" jt="12" />
+			<column name="aclm_updt_prog" type="VARCHAR" length="23" jt="12" />
+			<column name="aclm_cnt_1" type="INT" jt="4" />
+			<column name="aclm_create_user" type="VARCHAR" length="5" jt="12" />
+			<column name="aclm_create_dt" type="DATE" jt="91" />
+			<column name="parent_org_unit_id" type="VARCHAR" length="5" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="медве́дь" spec="" >
+			<column name="關於數字和表格的呈現方式？" type="INT" jt="4" mandatory="y" />
+			<column name="details" type="VARCHAR" length="12" jt="12" />
+			<column name="other" type="VARCHAR" length="12" jt="12" />
+			<column name="tt" type="TEXT" jt="-1" />
+			<index name="pk_медве́дь" unique="PRIMARY_KEY" >
+				<column name="關於數字和表格的呈現方式？" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<view name="actor_info" >
 			<comment><![CDATA[VIEW]]></comment>
-			<view_script><![CDATA[CREATE VIEW ${fullName} AS select `a`.`actor_id` AS `actor_id`,`a`.`first_name` AS `first_name`,`a`.`last_name` AS `last_name`,group_concat(distinct concat(`c`.`name`,': ',(select group_concat(`f`.`title` order by `f`.`title` ASC separator ', ') from ((`sakila`.`film` `f` join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`film_actor` `fa` on((`f`.`film_id` = `fa`.`film_id`))) where ((`fc`.`category_id` = `c`.`category_id`) and (`fa`.`actor_id` = `a`.`actor_id`)))) order by `c`.`name` ASC separator '; ') AS `film_info` from (((`sakila`.`actor` `a` left join `sakila`.`film_actor` `fa` on((`a`.`actor_id` = `fa`.`actor_id`))) left join `sakila`.`film_category` `fc` on((`fa`.`film_id` = `fc`.`film_id`))) left join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `a`.`actor_id`,`a`.`first_name`,`a`.`last_name`]]></view_script>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `a`.`actor_id` AS `actor_id`,`a`.`first_name` AS `first_name`,`a`.`last_name` AS `last_name`,group_concat(distinct concat(`c`.`name`,': ',(select group_concat(`f`.`title` order by `f`.`title` ASC separator ', ') from ((`sakila`.`film` `f` join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`film_actor` `fa` on((`f`.`film_id` = `fa`.`film_id`))) where ((`fc`.`category_id` = `c`.`category_id`) and (`fa`.`actor_id` = `a`.`actor_id`)))) order by `c`.`name` ASC separator '; ') AS `film_info` from (((`sakila`.`actor` `a` left join `sakila`.`film_actor` `fa` on((`a`.`actor_id` = `fa`.`actor_id`))) left join `sakila`.`film_category` `fc` on((`fa`.`film_id` = `fc`.`film_id`))) left join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `a`.`actor_id`,`a`.`first_name`,`a`.`last_name`]]></view_script>
 			<column name="actor_id" type="SMALLINT" />
 			<column name="first_name" type="VARCHAR" />
 			<column name="last_name" type="VARCHAR" />
@@ -630,7 +1511,7 @@ ddd.]]></comment>
 		</view>
 		<view name="customer_list" >
 			<comment><![CDATA[VIEW]]></comment>
-			<view_script><![CDATA[CREATE VIEW ${fullName} AS select `cu`.`customer_id` AS `ID`,concat(`cu`.`first_name`,' ',`cu`.`last_name`) AS `name`,`a`.`address` AS `address`,`a`.`postal_code` AS `zip code`,`a`.`phone` AS `phone`,`sakila`.`city`.`city` AS `city`,`sakila`.`country`.`country` AS `country`,if(`cu`.`active`,'active','') AS `notes`,`cu`.`store_id` AS `SID` from (((`sakila`.`customer` `cu` join `sakila`.`address` `a` on((`cu`.`address_id` = `a`.`address_id`))) join `sakila`.`city` on((`a`.`city_id` = `sakila`.`city`.`city_id`))) join `sakila`.`country` on((`sakila`.`city`.`country_id` = `sakila`.`country`.`country_id`)))]]></view_script>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `cu`.`customer_id` AS `ID`,concat(`cu`.`first_name`,' ',`cu`.`last_name`) AS `name`,`a`.`address` AS `address`,`a`.`postal_code` AS `zip code`,`a`.`phone` AS `phone`,`sakila`.`city`.`city` AS `city`,`sakila`.`country`.`country` AS `country`,if(`cu`.`active`,'active','') AS `notes`,`cu`.`store_id` AS `SID` from (((`sakila`.`customer` `cu` join `sakila`.`address` `a` on((`cu`.`address_id` = `a`.`address_id`))) join `sakila`.`city` on((`a`.`city_id` = `sakila`.`city`.`city_id`))) join `sakila`.`country` on((`sakila`.`city`.`country_id` = `sakila`.`country`.`country_id`)))]]></view_script>
 			<column name="ID" type="SMALLINT" >
 				<comment><![CDATA[column comment]]></comment>
 			</column>
@@ -647,7 +1528,7 @@ ddd.]]></comment>
 		</view>
 		<view name="film_list" >
 			<comment><![CDATA[VIEW]]></comment>
-			<view_script><![CDATA[CREATE VIEW ${fullName} AS select `sakila`.`film`.`film_id` AS `FID`,`sakila`.`film`.`title` AS `title`,`sakila`.`film`.`description` AS `description`,`sakila`.`category`.`name` AS `category`,`sakila`.`film`.`rental_rate` AS `price`,`sakila`.`film`.`length` AS `length`,`sakila`.`film`.`rating` AS `rating`,group_concat(concat(`sakila`.`actor`.`first_name`,' ',`sakila`.`actor`.`last_name`) separator ', ') AS `actors` from ((((`sakila`.`category` left join `sakila`.`film_category` on((`sakila`.`category`.`category_id` = `sakila`.`film_category`.`category_id`))) left join `sakila`.`film` on((`sakila`.`film_category`.`film_id` = `sakila`.`film`.`film_id`))) join `sakila`.`film_actor` on((`sakila`.`film`.`film_id` = `sakila`.`film_actor`.`film_id`))) join `sakila`.`actor` on((`sakila`.`film_actor`.`actor_id` = `sakila`.`actor`.`actor_id`))) group by `sakila`.`film`.`film_id`,`sakila`.`category`.`name`]]></view_script>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `sakila`.`film`.`film_id` AS `FID`,`sakila`.`film`.`title` AS `title`,`sakila`.`film`.`description` AS `description`,`sakila`.`category`.`name` AS `category`,`sakila`.`film`.`rental_rate` AS `price`,`sakila`.`film`.`length` AS `length`,`sakila`.`film`.`rating` AS `rating`,group_concat(concat(`sakila`.`actor`.`first_name`,' ',`sakila`.`actor`.`last_name`) separator ', ') AS `actors` from ((((`sakila`.`category` left join `sakila`.`film_category` on((`sakila`.`category`.`category_id` = `sakila`.`film_category`.`category_id`))) left join `sakila`.`film` on((`sakila`.`film_category`.`film_id` = `sakila`.`film`.`film_id`))) join `sakila`.`film_actor` on((`sakila`.`film`.`film_id` = `sakila`.`film_actor`.`film_id`))) join `sakila`.`actor` on((`sakila`.`film_actor`.`actor_id` = `sakila`.`actor`.`actor_id`))) group by `sakila`.`film`.`film_id`,`sakila`.`category`.`name`]]></view_script>
 			<column name="FID" type="SMALLINT" />
 			<column name="title" type="VARCHAR" >
 				<comment><![CDATA[The movie title 
@@ -662,9 +1543,15 @@ among with the other details]]></comment>
 			<column name="rating" type="ENUM" />
 			<column name="actors" type="TEXT" />
 		</view>
+		<view name="multiline" >
+			<comment><![CDATA[VIEW]]></comment>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `sakila`.`customer`.`store_id` AS `store_id`,`sakila`.`customer`.`first_name` AS `first_name` from `sakila`.`customer` where (`sakila`.`customer`.`store_id` > 10)]]></view_script>
+			<column name="store_id" type="TINYINT" />
+			<column name="first_name" type="VARCHAR" />
+		</view>
 		<view name="nicer_but_slower_film_list" >
 			<comment><![CDATA[VIEW]]></comment>
-			<view_script><![CDATA[CREATE VIEW ${fullName} AS select `sakila`.`film`.`film_id` AS `FID`,`sakila`.`film`.`title` AS `title`,`sakila`.`film`.`description` AS `description`,`sakila`.`category`.`name` AS `category`,`sakila`.`film`.`rental_rate` AS `price`,`sakila`.`film`.`length` AS `length`,`sakila`.`film`.`rating` AS `rating`,group_concat(concat(concat(upper(substr(`sakila`.`actor`.`first_name`,1,1)),lower(substr(`sakila`.`actor`.`first_name`,2,length(`sakila`.`actor`.`first_name`))),' ',concat(upper(substr(`sakila`.`actor`.`last_name`,1,1)),lower(substr(`sakila`.`actor`.`last_name`,2,length(`sakila`.`actor`.`last_name`)))))) separator ', ') AS `actors` from ((((`sakila`.`category` left join `sakila`.`film_category` on((`sakila`.`category`.`category_id` = `sakila`.`film_category`.`category_id`))) left join `sakila`.`film` on((`sakila`.`film_category`.`film_id` = `sakila`.`film`.`film_id`))) join `sakila`.`film_actor` on((`sakila`.`film`.`film_id` = `sakila`.`film_actor`.`film_id`))) join `sakila`.`actor` on((`sakila`.`film_actor`.`actor_id` = `sakila`.`actor`.`actor_id`))) group by `sakila`.`film`.`film_id`,`sakila`.`category`.`name`]]></view_script>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `sakila`.`film`.`film_id` AS `FID`,`sakila`.`film`.`title` AS `title`,`sakila`.`film`.`description` AS `description`,`sakila`.`category`.`name` AS `category`,`sakila`.`film`.`rental_rate` AS `price`,`sakila`.`film`.`length` AS `length`,`sakila`.`film`.`rating` AS `rating`,group_concat(concat(concat(upper(substr(`sakila`.`actor`.`first_name`,1,1)),lower(substr(`sakila`.`actor`.`first_name`,2,length(`sakila`.`actor`.`first_name`))),' ',concat(upper(substr(`sakila`.`actor`.`last_name`,1,1)),lower(substr(`sakila`.`actor`.`last_name`,2,length(`sakila`.`actor`.`last_name`)))))) separator ', ') AS `actors` from ((((`sakila`.`category` left join `sakila`.`film_category` on((`sakila`.`category`.`category_id` = `sakila`.`film_category`.`category_id`))) left join `sakila`.`film` on((`sakila`.`film_category`.`film_id` = `sakila`.`film`.`film_id`))) join `sakila`.`film_actor` on((`sakila`.`film`.`film_id` = `sakila`.`film_actor`.`film_id`))) join `sakila`.`actor` on((`sakila`.`film_actor`.`actor_id` = `sakila`.`actor`.`actor_id`))) group by `sakila`.`film`.`film_id`,`sakila`.`category`.`name`]]></view_script>
 			<column name="FID" type="SMALLINT" />
 			<column name="title" type="VARCHAR" >
 				<comment><![CDATA[The movie title 
@@ -681,20 +1568,20 @@ among with the other details]]></comment>
 		</view>
 		<view name="sales_by_film_category" >
 			<comment><![CDATA[VIEW]]></comment>
-			<view_script><![CDATA[CREATE VIEW ${fullName} AS select `c`.`name` AS `category`,sum(`p`.`amount`) AS `total_sales` from (((((`sakila`.`payment` `p` join `sakila`.`rental` `r` on((`p`.`rental_id` = `r`.`rental_id`))) join `sakila`.`inventory` `i` on((`r`.`inventory_id` = `i`.`inventory_id`))) join `sakila`.`film` `f` on((`i`.`film_id` = `f`.`film_id`))) join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `c`.`name` order by `total_sales` desc]]></view_script>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `c`.`name` AS `category`,sum(`p`.`amount`) AS `total_sales` from (((((`sakila`.`payment` `p` join `sakila`.`rental` `r` on((`p`.`rental_id` = `r`.`rental_id`))) join `sakila`.`inventory` `i` on((`r`.`inventory_id` = `i`.`inventory_id`))) join `sakila`.`film` `f` on((`i`.`film_id` = `f`.`film_id`))) join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `c`.`name` order by `total_sales` desc]]></view_script>
 			<column name="category" type="VARCHAR" />
 			<column name="total_sales" type="DECIMAL" />
 		</view>
 		<view name="sales_by_store" >
 			<comment><![CDATA[VIEW]]></comment>
-			<view_script><![CDATA[CREATE VIEW ${fullName} AS select concat(`c`.`city`,',',`cy`.`country`) AS `store`,concat(`m`.`first_name`,' ',`m`.`last_name`) AS `manager`,sum(`p`.`amount`) AS `total_sales` from (((((((`sakila`.`payment` `p` join `sakila`.`rental` `r` on((`p`.`rental_id` = `r`.`rental_id`))) join `sakila`.`inventory` `i` on((`r`.`inventory_id` = `i`.`inventory_id`))) join `sakila`.`store` `s` on((`i`.`store_id` = `s`.`store_id`))) join `sakila`.`address` `a` on((`s`.`address_id` = `a`.`address_id`))) join `sakila`.`city` `c` on((`a`.`city_id` = `c`.`city_id`))) join `sakila`.`country` `cy` on((`c`.`country_id` = `cy`.`country_id`))) join `sakila`.`staff` `m` on((`s`.`manager_staff_id` = `m`.`staff_id`))) group by `s`.`store_id` order by `cy`.`country`,`c`.`city`]]></view_script>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select concat(`c`.`city`,',',`cy`.`country`) AS `store`,concat(`m`.`first_name`,' ',`m`.`last_name`) AS `manager`,sum(`p`.`amount`) AS `total_sales` from (((((((`sakila`.`payment` `p` join `sakila`.`rental` `r` on((`p`.`rental_id` = `r`.`rental_id`))) join `sakila`.`inventory` `i` on((`r`.`inventory_id` = `i`.`inventory_id`))) join `sakila`.`store` `s` on((`i`.`store_id` = `s`.`store_id`))) join `sakila`.`address` `a` on((`s`.`address_id` = `a`.`address_id`))) join `sakila`.`city` `c` on((`a`.`city_id` = `c`.`city_id`))) join `sakila`.`country` `cy` on((`c`.`country_id` = `cy`.`country_id`))) join `sakila`.`staff` `m` on((`s`.`manager_staff_id` = `m`.`staff_id`))) group by `s`.`store_id` order by `cy`.`country`,`c`.`city`]]></view_script>
 			<column name="store" type="VARCHAR" />
 			<column name="manager" type="VARCHAR" />
 			<column name="total_sales" type="DECIMAL" />
 		</view>
 		<view name="staff_list" >
 			<comment><![CDATA[VIEW]]></comment>
-			<view_script><![CDATA[CREATE VIEW ${fullName} AS select `s`.`staff_id` AS `ID`,concat(`s`.`first_name`,' ',`s`.`last_name`) AS `name`,`a`.`address` AS `address`,`a`.`postal_code` AS `zip code`,`a`.`phone` AS `phone`,`sakila`.`city`.`city` AS `city`,`sakila`.`country`.`country` AS `country`,`s`.`store_id` AS `SID` from (((`sakila`.`staff` `s` join `sakila`.`address` `a` on((`s`.`address_id` = `a`.`address_id`))) join `sakila`.`city` on((`a`.`city_id` = `sakila`.`city`.`city_id`))) join `sakila`.`country` on((`sakila`.`city`.`country_id` = `sakila`.`country`.`country_id`)))]]></view_script>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `s`.`staff_id` AS `ID`,concat(`s`.`first_name`,' ',`s`.`last_name`) AS `name`,`a`.`address` AS `address`,`a`.`address` AS `address2`,`a`.`postal_code` AS `zip code`,`a`.`phone` AS `phone`,`sakila`.`city`.`city` AS `city`,`sakila`.`country`.`country` AS `country`,`s`.`store_id` AS `SID` from (((`sakila`.`staff` `s` join `sakila`.`address` `a` on((`s`.`address_id` = `a`.`address_id`))) join `sakila`.`city` on((`a`.`city_id` = `sakila`.`city`.`city_id`))) join `sakila`.`country` on((`sakila`.`city`.`country_id` = `sakila`.`country`.`country_id`)))]]></view_script>
 			<column name="ID" type="TINYINT" />
 			<column name="name" type="VARCHAR" />
 			<column name="address" type="VARCHAR" />
@@ -705,7 +1592,32 @@ among with the other details]]></comment>
 			<column name="city" type="VARCHAR" />
 			<column name="country" type="VARCHAR" />
 			<column name="SID" type="TINYINT" />
+			<column name="address2" type="VARCHAR" />
 		</view>
+		<view name="v2" >
+			<comment><![CDATA[VIEW]]></comment>
+			<view_script><![CDATA[CREATE VIEW ${nameWithSchemaName} AS select `sakila`.`store`.`store_id` AS `sakila`,`sakila`.`store`.`store_id` AS `sakila2`,`sakila`.`store`.`store_id` AS `sakila3` from `sakila`.`store`]]></view_script>
+			<column name="sakila" type="TINYINT" />
+			<column name="sakila2" type="TINYINT" />
+			<column name="sakila3" type="TINYINT" />
+		</view>
+		<procedure name="fill_space_usage" id="Procedure-1f2b" isSystem="false" params_known="n" >
+			<string><![CDATA[CREATE  PROCEDURE `fill_space_usage`()
+BEGIN
+DECLARE snapid integer;
+SELECT @snapid := (MAX(snapshotid) + 1) FROM snapshots;
+INSERT INTO dbschema.snapshots( snapshotid ) VALUES( @snapid );
+INSERT INTO dbschema.space_usage( snapshotid, table_schema, table_name, table_size, index_size )
+SELECT
+@snapid,
+table_schema,
+table_name,
+ifnull(data_length,0) as dataSize,   
+ifnull(index_length,0) as indexSize
+FROM information_schema.TABLES  
+WHERE schema_name NOT IN ('INFORMATION_SCHEMA' );
+END]]></string>
+		</procedure>
 		<procedure name="film_in_stock" id="Procedure-d23" isSystem="false" params_known="n" >
 			<string><![CDATA[CREATE  PROCEDURE `film_in_stock`(IN p_film_id INT, IN p_store_id INT, OUT p_film_count INT)
     READS SQL DATA
@@ -804,18 +1716,18 @@ proc: BEGIN
 END]]></string>
 		</procedure>
 		<trigger name="del_film" table="film" id="Trigger-13da" isSystem="false" >
-			<string><![CDATA[CREATE TRIGGER sakila.del_film AFTER DELETE ON film FOR EACH ROW BEGIN
+			<string><![CDATA[CREATE TRIGGER ${nameWithSchemaName} AFTER DELETE ON film FOR EACH ROW BEGIN
     DELETE FROM film_text WHERE film_id = old.film_id;
-  END;]]></string>
+  END]]></string>
 		</trigger>
 		<trigger name="ins_film" table="film" id="Trigger-1d32" isSystem="false" >
-			<string><![CDATA[CREATE TRIGGER sakila.ins_film AFTER INSERT ON film FOR EACH ROW BEGIN
+			<string><![CDATA[CREATE TRIGGER ${nameWithSchemaName} AFTER INSERT ON film FOR EACH ROW BEGIN
     INSERT INTO film_text (film_id, title, description)
         VALUES (new.film_id, new.title, new.description);
-  END;]]></string>
+  END]]></string>
 		</trigger>
 		<trigger name="upd_film" table="film" id="Trigger-11ca" isSystem="false" >
-			<string><![CDATA[CREATE TRIGGER sakila.upd_film AFTER UPDATE ON film FOR EACH ROW BEGIN
+			<string><![CDATA[CREATE TRIGGER ${nameWithSchemaName} AFTER UPDATE ON film FOR EACH ROW BEGIN
     IF (old.title != new.title) OR (old.description != new.description) OR (old.film_id != new.film_id)
     THEN
         UPDATE film_text
@@ -824,7 +1736,7 @@ END]]></string>
                 film_id=new.film_id
         WHERE film_id=old.film_id;
     END IF;
-  END;]]></string>
+  END]]></string>
 		</trigger>
 		<function name="get_customer_balance" id="Function-12cb" isSystem="false" params_known="n" >
 			<string><![CDATA[CREATE  FUNCTION `get_customer_balance`(p_customer_id INT, p_effective_date DATETIME) RETURNS decimal(5,2)
@@ -915,39 +1827,116 @@ END]]></string>
 		</function>
 	</schema>
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
+		<entity schema="sakila" name="2co_orders" color="3986C1" x="1696" y="768" >
+			<column name="﻿product id" />
+			<column name="product code" />
+			<column name="product" />
+			<column name="extra info" />
+			<column name="order no" />
+			<column name="order status" />
+			<column name="reference no" />
+			<column name="line item type" />
+			<column name="external reference no" />
+			<column name="pay method" />
+			<column name="order date" />
+		</entity>
+		<entity schema="sakila" name="2co_subscriptions" color="3986C1" x="2016" y="768" >
+			<column name="licenseuniqueid" />
+			<column name="idproduct" />
+			<column name="purchasedate" />
+			<column name="expirationdate" />
+			<column name="productname" />
+			<column name="quantity" />
+			<column name="firstname" />
+			<column name="lastname" />
+			<column name="email" />
+			<column name="communicationlanguage" />
+			<column name="productversion" />
+		</entity>
 		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="1696" />
 		<entity schema="sakila" name="actor" color="C7F4BE" x="2496" y="608" />
 		<entity schema="sakila" name="actor_info" color="C7F4BE" x="2688" y="608" />
 		<entity schema="sakila" name="address" color="F4DDBE" x="1408" y="688" />
+		<entity schema="sakila" name="afectiuni" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="another" color="3986C1" x="2656" y="768" />
 		<entity schema="sakila" name="category" color="C7F4BE" x="2496" y="208" />
+		<entity schema="sakila" name="chart_data" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="chart_line_3cols" color="3986C1" x="2016" y="768" />
 		<entity schema="sakila" name="city" color="D1BEF4" x="1008" y="1312" />
+		<entity schema="sakila" name="core.user" color="3986C1" x="2336" y="768" />
 		<entity schema="sakila" name="country" color="D1BEF4" x="1200" y="1312" />
 		<entity schema="sakila" name="customer" color="F4DDBE" x="1632" y="480" />
 		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1808" y="416" />
 		<entity schema="sakila" name="film" color="C7F4BE" x="1968" y="336" />
 		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2304" y="608" />
-		<entity schema="sakila" name="film_category" color="C7F4BE" x="2304" y="208" />
+		<entity schema="sakila" name="film_category" color="C7F4BE" x="2208" y="208" />
 		<entity schema="sakila" name="film_list" color="C7F4BE" x="2304" y="800" />
 		<entity schema="sakila" name="film_text" color="C7F4BE" x="2496" y="1072" />
 		<entity schema="sakila" name="inventory" color="F4DDBE" x="1408" y="1056" />
 		<entity schema="sakila" name="language" color="C7F4BE" x="2304" y="416" />
+		<entity schema="sakila" name="mapp1" color="3986C1" x="2656" y="768" />
 		<entity schema="sakila" name="mc_standard_claims" color="BED3F4" x="688" y="1696" />
+		<entity schema="sakila" name="multiline" color="3986C1" x="1776" y="736" />
 		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="688" y="2000" />
 		<entity schema="sakila" name="payment" color="F4DDBE" x="960" y="544" />
+		<entity schema="sakila" name="persoane" color="3986C1" x="1696" y="768" />
 		<entity schema="sakila" name="persons" color="BED3F4" x="432" y="2000" />
-		<entity schema="sakila" name="persons_0" color="BED3F4" x="432" y="2240" />
+		<entity schema="sakila" name="persons1" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="persons3" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="pictures" color="3986C1" x="2656" y="768" />
+		<entity schema="sakila" name="ppg_2co" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="ppg_2co_all" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="ppg_computers" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="ppg_imported" color="3986C1" x="2656" y="768" />
+		<entity schema="sakila" name="ppg_orders" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="ppg_reactivate" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="ppg_subscriptions" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="ppg_subscriptions2" color="3986C1" x="2656" y="768" />
+		<entity schema="sakila" name="presentation" color="3986C1" x="1696" y="768" />
 		<entity schema="sakila" name="rental" color="F4DDBE" x="1152" y="800" />
 		<entity schema="sakila" name="sales_by_film_category" color="BED3F4" x="192" y="2000" />
 		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="192" y="2176" />
 		<entity schema="sakila" name="sample" color="BED3F4" x="240" y="1792" />
 		<entity schema="sakila" name="sample1" color="BEBEF4" x="1200" y="2304" />
 		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="1008" y="2304" />
+		<entity schema="sakila" name="sampletime" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="seam_intake_journal" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="sports" color="3986C1" x="2656" y="768" />
 		<entity schema="sakila" name="staff" color="F4DDBE" x="1216" y="480" />
 		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1056" y="208" />
 		<entity schema="sakila" name="store" color="F4DDBE" x="1408" y="480" />
+		<entity schema="sakila" name="subscription_reactivate2" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="subscriptions_suspended_ppg" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="table with spaces" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="tbl_test" color="3986C1" x="2656" y="768" />
+		<entity schema="sakila" name="test" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="test02" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="test02_0" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="test1" color="3986C1" x="2656" y="768" />
+		<entity schema="sakila" name="test1a" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="test1b" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="test2" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="test2a" color="3986C1" x="2656" y="768" />
 		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1488" />
+		<entity schema="sakila" name="test_bit_boolean" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="test_bool" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="test_combo" color="3986C1" x="2336" y="768" />
 		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="1312" />
+		<entity schema="sakila" name="test_defo" color="3986C1" x="2656" y="768" />
+		<entity schema="sakila" name="test_form_int" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="test_import" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="test_pk" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="test_rdb_insert" color="3986C1" x="2656" y="768" />
+		<entity schema="sakila" name="test_rdg" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="test_table" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="to_clone" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="to_clone_0" color="3986C1" x="2656" y="768" />
 		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="1536" />
+		<entity schema="sakila" name="user3" color="3986C1" x="1696" y="768" />
+		<entity schema="sakila" name="users_json" color="3986C1" x="2016" y="768" />
+		<entity schema="sakila" name="v2" color="3986C1" x="1936" y="736" />
+		<entity schema="sakila" name="zac" color="3986C1" x="2336" y="768" />
+		<entity schema="sakila" name="медве́дь" color="3986C1" x="2656" y="768" />
 		<callout x="2064" y="80" pointer="Round" >
 			<comment><![CDATA[This is a layout. 
 - Double-click table headers, columns, or foreign keys to edit 
@@ -966,7 +1955,6 @@ END]]></string>
 			<entity schema="sakila" name="test_autoincrement" />
 			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
-			<entity schema="sakila" name="persons_0" />
 			<entity schema="sakila" name="Baseboard" />
 		</group>
 		<group name="sample1_0" color="ECECF7" >
@@ -974,11 +1962,10 @@ END]]></string>
 			<entity schema="sakila" name="sample1" />
 		</group>
 		<group name="city" color="F0ECF7" >
-			<entity schema="sakila" name="city" />
 			<entity schema="sakila" name="country" />
+			<entity schema="sakila" name="city" />
 		</group>
 		<group name="film" color="EEF7EC" >
-			<entity schema="sakila" name="film_category" />
 			<entity schema="sakila" name="language" />
 			<entity schema="sakila" name="film_actor" />
 			<entity schema="sakila" name="category" />
@@ -987,6 +1974,7 @@ END]]></string>
 			<entity schema="sakila" name="actor_info" />
 			<entity schema="sakila" name="film" />
 			<entity schema="sakila" name="film_text" />
+			<entity schema="sakila" name="film_category" />
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="store" />
@@ -999,6 +1987,24 @@ END]]></string>
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="staff_list" />
 		</group>
+		<script name="SQL_Editor" id="Editor-2491" language="SQL" >
+			<string><![CDATA[import com.wisecoders.dbs.schema.*
+
+class MyClass{
+public int someint;
+}
+
+MyClass cl1 = new MyClass();
+cl1.
+
+
+Project proj;
+
+proj.]]></string>
+		</script>
+		<browser id="Browse-20f3" name="city" confirm_updates="y" >
+			<browse_table schema="sakila" entity="city" x="20" y="20" width="544" height="534" />
+		</browser>
 	</layout>
 	<layout name="MySql" id="Layout-1686" show_relation="name" />
 	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
@@ -1022,7 +2028,6 @@ END]]></string>
 		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="896" y="1568" />
 		<entity schema="sakila" name="payment" color="F4DDBE" x="1248" y="368" />
 		<entity schema="sakila" name="persons" color="BED3F4" x="560" y="1568" />
-		<entity schema="sakila" name="persons_0" color="BED3F4" x="560" y="1808" />
 		<entity schema="sakila" name="rental" color="F4DDBE" x="1520" y="368" />
 		<entity schema="sakila" name="sales_by_film_category" color="BED3F4" x="288" y="1568" />
 		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="288" y="1744" />
@@ -1064,9 +2069,6 @@ FROM
 				<column name="rating" />
 				<column name="special_features" />
 				<column name="last_update" />
-				<column name="test" />
-				<column name="test2" />
-				<column name="test3" />
 				<query_table schema="sakila" name="film_actor" alias="fa" x="288" y="48" fk="fk_film_actor_film" type="Inner Join" >
 					<column name="actor_id" />
 					<column name="film_id" />

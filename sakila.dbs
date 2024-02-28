@@ -1309,6 +1309,7 @@ among with the other details]]></comment>
 			<column name="startdate" type="DATE" jt="91" />
 			<column name="enddate" type="DATE" jt="91" />
 			<column name="test1" type="TEXT" jt="-1" />
+			<column name="rob" type="BIGINT" jt="-5" />
 			<index name="pk_test_data_gen" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -1961,9 +1962,9 @@ END]]></string>
 			<entity schema="sakila" name="sample" />
 			<entity schema="sakila" name="tval_2" />
 			<entity schema="sakila" name="test_autoincrement" />
-			<entity schema="sakila" name="test_data_gen" />
 			<entity schema="sakila" name="sales_by_store" />
 			<entity schema="sakila" name="Baseboard" />
+			<entity schema="sakila" name="test_data_gen" />
 		</group>
 		<group name="sample1_0" color="ECECF7" >
 			<entity schema="sakila" name="sample1_0" />

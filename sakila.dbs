@@ -1265,6 +1265,7 @@ among with the other details]]></comment>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
 			<column name="newcolumns" type="BIT" length="1" jt="-7" />
+			<column name="ben" type="BIGINT" jt="-5" />
 			<index name="pk_test_autoincrement" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>

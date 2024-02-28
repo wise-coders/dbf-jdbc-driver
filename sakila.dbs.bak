@@ -271,7 +271,8 @@
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="category" row_count="116" spec="" >
-			<comment><![CDATA[The movie categories]]></comment>
+			<comment><![CDATA[The movie categories.
+libellé du compte]]></comment>
 			<column name="category_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 				<comment><![CDATA[The category identifier.]]></comment>
@@ -282,7 +283,7 @@
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
 			<column name="test" type="VARCHAR" length="12" jt="12" />
-			<column name="test2" type="VARCHAR" length="12" jt="12" />
+			<column name="test2a" prior="test2" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_category" unique="PRIMARY_KEY" >
 				<column name="category_id" />
 			</index>
@@ -1264,6 +1265,7 @@ among with the other details]]></comment>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
 			<column name="newcolumns" type="BIT" length="1" jt="-7" />
+			<column name="ben" type="BIGINT" jt="-5" />
 			<index name="pk_test_autoincrement" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -1826,6 +1828,13 @@ BEGIN
 END]]></string>
 		</function>
 	</schema>
+	<layout name="Layout" id="Layout-1c0a" show_relation="name" >
+		<entity schema="sakila" name="address" color="3986C1" x="240" y="48" />
+		<entity schema="sakila" name="city" color="3986C1" x="48" y="48" />
+		<browser id="Browse-1237" name="address" confirm_updates="y" >
+			<browse_table schema="sakila" entity="address" x="20" y="20" width="366" height="356" />
+		</browser>
+	</layout>
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
 		<entity schema="sakila" name="2co_orders" color="3986C1" x="1696" y="768" >
 			<column name="﻿product id" />
@@ -1869,7 +1878,7 @@ END]]></string>
 		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1808" y="416" />
 		<entity schema="sakila" name="film" color="C7F4BE" x="1968" y="336" />
 		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2304" y="608" />
-		<entity schema="sakila" name="film_category" color="C7F4BE" x="2272" y="208" />
+		<entity schema="sakila" name="film_category" color="C7F4BE" x="2208" y="208" />
 		<entity schema="sakila" name="film_list" color="C7F4BE" x="2304" y="800" />
 		<entity schema="sakila" name="film_text" color="C7F4BE" x="2496" y="1072" />
 		<entity schema="sakila" name="inventory" color="F4DDBE" x="1408" y="1056" />
@@ -1968,13 +1977,13 @@ END]]></string>
 		<group name="film" color="EEF7EC" >
 			<entity schema="sakila" name="language" />
 			<entity schema="sakila" name="film_actor" />
-			<entity schema="sakila" name="category" />
 			<entity schema="sakila" name="actor" />
 			<entity schema="sakila" name="film_list" />
 			<entity schema="sakila" name="actor_info" />
 			<entity schema="sakila" name="film" />
 			<entity schema="sakila" name="film_text" />
 			<entity schema="sakila" name="film_category" />
+			<entity schema="sakila" name="category" />
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="store" />
@@ -1987,20 +1996,29 @@ END]]></string>
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="staff_list" />
 		</group>
-		<script name="SQL_Editor" id="Editor-2491" language="SQL" >
+		<script name="SQL_Editor" id="Editor-2491" language="Groovy" >
 			<string><![CDATA[import com.wisecoders.dbs.schema.*
 
 class MyClass{
 public int someint;
 }
+Project proj = new Proj]]></string>
+		</script>
+		<script name="SQL_Editor_001" id="Editor-22af" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA sakila;
 
-MyClass cl1 = new MyClass();
-cl1.
+CREATE  TABLE sakila.category ( 
+	category_id          TINYINT UNSIGNED   NOT NULL AUTO_INCREMENT  PRIMARY KEY,
+	name                 VARCHAR(25)    NOT NULL   ,
+	last_update          TIMESTAMP  DEFAULT (CURRENT_TIMESTAMP) ON UPDATE CURRENT_TIMESTAMP NOT NULL   ,
+	test                 VARCHAR(12)       ,
+	test2a               VARCHAR(12)       
+ ) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+ALTER TABLE sakila.category COMMENT 'The movie categories.
+libellé du compte';
 
-Project proj;
-
-proj.]]></string>
+ALTER TABLE sakila.category MODIFY category_id TINYINT UNSIGNED NOT NULL  AUTO_INCREMENT COMMENT 'The category identifier.';]]></string>
 		</script>
 		<browser id="Browse-20f3" name="city" confirm_updates="y" >
 			<browse_table schema="sakila" entity="city" x="20" y="20" width="544" height="534" />

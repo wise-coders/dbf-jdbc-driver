@@ -271,7 +271,8 @@
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="category" row_count="116" spec="" >
-			<comment><![CDATA[The movie categories]]></comment>
+			<comment><![CDATA[The movie categories.
+libellé du compte]]></comment>
 			<column name="category_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 				<comment><![CDATA[The category identifier.]]></comment>
@@ -2001,6 +2002,22 @@ class MyClass{
 public int someint;
 }
 Project proj = new Proj]]></string>
+		</script>
+		<script name="SQL_Editor_001" id="Editor-22af" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA sakila;
+
+CREATE  TABLE sakila.category ( 
+	category_id          TINYINT UNSIGNED   NOT NULL AUTO_INCREMENT  PRIMARY KEY,
+	name                 VARCHAR(25)    NOT NULL   ,
+	last_update          TIMESTAMP  DEFAULT (CURRENT_TIMESTAMP) ON UPDATE CURRENT_TIMESTAMP NOT NULL   ,
+	test                 VARCHAR(12)       ,
+	test2a               VARCHAR(12)       
+ ) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+ALTER TABLE sakila.category COMMENT 'The movie categories.
+libellé du compte';
+
+ALTER TABLE sakila.category MODIFY category_id TINYINT UNSIGNED NOT NULL  AUTO_INCREMENT COMMENT 'The category identifier.';]]></string>
 		</script>
 		<browser id="Browse-20f3" name="city" confirm_updates="y" >
 			<browse_table schema="sakila" entity="city" x="20" y="20" width="544" height="534" />

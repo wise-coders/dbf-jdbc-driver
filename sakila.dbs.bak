@@ -1311,6 +1311,7 @@ among with the other details]]></comment>
 			<column name="enddate" type="DATE" jt="91" />
 			<column name="test1" type="TEXT" jt="-1" />
 			<column name="ben" type="BIGINT" jt="-5" />
+			<column name="rob3" type="BIGINT" jt="-5" />
 			<index name="pk_test_data_gen" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>

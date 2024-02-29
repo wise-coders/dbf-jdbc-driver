@@ -1309,6 +1309,9 @@ among with the other details]]></comment>
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="startdate" type="DATE" jt="91" />
 			<column name="enddate" type="DATE" jt="91" />
+			<column name="ben1" type="BIGINT" jt="-5" />
+			<column name="ben2" type="BIGINT" jt="-5" />
+			<column name="ben3" type="BIGINT" jt="-5" />
 			<column name="rob1" type="BIGINT" jt="-5" />
 			<column name="rob2" type="BIGINT" jt="-5" />
 			<column name="rob3" type="BIGINT" jt="-5" />

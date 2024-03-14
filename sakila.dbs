@@ -1317,6 +1317,7 @@ among with the other details]]></comment>
 			<column name="rob3" type="BIGINT" jt="-5" />
 			<column name="rob4" type="BIGINT" jt="-5" />
 			<column name="ben4" type="BIGINT" jt="-5" />
+			<column name="rob5" type="BIGINT" jt="-5" />
 			<column name="ben5" type="BIGINT" jt="-5" />
 			<index name="pk_test_data_gen" unique="PRIMARY_KEY" >
 				<column name="id" />

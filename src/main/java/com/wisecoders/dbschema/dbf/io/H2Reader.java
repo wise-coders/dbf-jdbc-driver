@@ -14,12 +14,12 @@ import java.util.logging.Level;
 import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
 
 /**
- * Copyright Wise Coders GmbH https://wisecoders.com
- * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Copyright Wise Coders GmbH <a href="https://wisecoders.com">...</a>
+ * Driver is used in the DbSchema Database Designer <a href="https://dbschema.com">DbSchema</a>
  * Free to be used by everyone.
- * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
+ * Code modifications allowed only to GitHub repository <a href="https://github.com/wise-coders/dbf-jdbc-driver">DBF JDBC Driver GitHub</a>
  */
-public class H2Loader {
+public class H2Reader {
 
 
     private final static char QUOTE_CHAR = '"';

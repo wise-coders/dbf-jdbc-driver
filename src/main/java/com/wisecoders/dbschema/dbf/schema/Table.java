@@ -3,15 +3,14 @@ package com.wisecoders.dbschema.dbf.schema;
 import com.linuxense.javadbf.DBFDataType;
 import com.linuxense.javadbf.DBFField;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Copyright Wise Coders GmbH https://wisecoders.com
- * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Copyright Wise Coders GmbH <a href="https://wisecoders.com">...</a>
+ * Driver is used in the DbSchema Database Designer <a href="https://dbschema.com">DbSchema</a>
  * Free to be used by everyone.
- * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
+ * Code modifications allowed only to GitHub repository <a href="https://github.com/wise-coders/dbf-jdbc-driver">DBF JDBC Driver GitHub</a>
  */
 public class Table {
 
@@ -24,7 +23,7 @@ public class Table {
         this.name = name;
     }
 
-    public DBFField createDBFField(String name, String type, int length, int decimal  ) {
+    public void createDBFField(String name, String type, int length, int decimal  ) {
         DBFField field = new DBFField();
         if ( name.length() > 10 ){
             name = name.substring(0, 10);
@@ -65,7 +64,6 @@ public class Table {
                 break;
         }
         fields.add( field );
-        return field;
     }
 
     public DBFField[] getDBFFields(){

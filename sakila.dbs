@@ -284,6 +284,7 @@ libellé du compte]]></comment>
 			</column>
 			<column name="test" type="VARCHAR" length="12" jt="12" />
 			<column name="test2a" prior="test2" type="VARCHAR" length="12" jt="12" />
+			<column name="test2b" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_category" unique="PRIMARY_KEY" >
 				<column name="category_id" />
 			</index>

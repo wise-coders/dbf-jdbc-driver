@@ -19,10 +19,10 @@ import java.util.logging.*;
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
  *
- * Copyright Wise Coders GmbH https://wisecoders.com
- * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Copyright Wise Coders GmbH <a href="https://wisecoders.com">...</a>
+ * Driver is used in the DbSchema Database Designer <a href="https://dbschema.com">DbSchema</a>
  * Free to be used by everyone.
- * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
+ * Code modifications allowed only to GitHub repository <a href="https://github.com/wise-coders/dbf-jdbc-driver">DBF JDBC Driver GitHub</a>
  */
 
 public class JdbcDriver implements Driver {

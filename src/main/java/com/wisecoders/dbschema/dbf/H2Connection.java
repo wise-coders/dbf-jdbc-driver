@@ -1,6 +1,6 @@
 package com.wisecoders.dbschema.dbf;
 
-import com.wisecoders.dbschema.dbf.io.H2Loader;
+import com.wisecoders.dbschema.dbf.io.H2Reader;
 import com.wisecoders.dbschema.dbf.io.H2Writer;
 import com.wisecoders.dbschema.dbf.schema.Table;
 import com.linuxense.javadbf.DBFReader;
@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.wisecoders.dbschema.dbf.JdbcDriver.LOGGER;
-import static com.wisecoders.dbschema.dbf.io.H2Loader.FILES_META_TABLE;
+import static com.wisecoders.dbschema.dbf.io.H2Reader.FILES_META_TABLE;
 
 
 /**
@@ -29,10 +29,10 @@ import static com.wisecoders.dbschema.dbf.io.H2Loader.FILES_META_TABLE;
  * We also create a proxy on Statement and intercept 'save dbf to folder_path' statements.
  * The dbf save code can be improved, we are happy for contributions.
  *
- * Copyright Wise Coders GmbH https://wisecoders.com
- * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Copyright Wise Coders GmbH <a href="https://wisecoders.com">...</a>
+ * Driver is used in the DbSchema Database Designer <a href="https://dbschema.com">DbSchema</a>
  * Free to be used by everyone.
- * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
+ * Code modifications allowed only to GitHub repository <a href="https://github.com/wise-coders/dbf-jdbc-driver">DBF JDBC Driver GitHub</a>
  */
 
 public class H2Connection implements Connection {
@@ -125,9 +125,9 @@ public class H2Connection implements Connection {
                                 }
                             }
                             final Table table = new Table( extractTableNameFrom( dbfFolder, dbfFile ));
-                            if ( !H2Loader.isFileTransferred( dbfFile, h2Connection )){
-                                H2Loader.transfer( table, reader, h2Connection );
-                                H2Loader.saveFileIntoFilesMeta( table, dbfFile, h2Connection );
+                            if ( !H2Reader.isFileTransferred( dbfFile, h2Connection )){
+                                H2Reader.transfer( table, reader, h2Connection );
+                                H2Reader.saveFileIntoFilesMeta( table, dbfFile, h2Connection );
                             }
                         } catch (Exception ex) {
                             LOGGER.log(Level.SEVERE, "Error transferring " + dbfFile, ex);
@@ -361,7 +361,7 @@ public class H2Connection implements Connection {
     }
 
     @Override
-    public boolean isValid(int timeout) throws SQLException {
+    public boolean isValid(int timeout) {
         return h2Connection.isValid(timeout);
     }
 

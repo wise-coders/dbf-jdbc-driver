@@ -31,8 +31,8 @@ java {
 }
 
 dependencies {
-    implementation 'com.github.albfernandez:javadbf:1.14.0'
-    implementation 'com.h2database:h2:2.1.214'
+    implementation 'com.github.albfernandez:javadbf:1.14.1'
+    implementation 'com.h2database:h2:2.2.224'
     testImplementation 'junit:junit:4.13.2'
 }
 

@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Copyright Wise Coders GmbH https://wisecoders.com
- * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Copyright Wise Coders GmbH <a href="https://wisecoders.com">...</a>
+ * Driver is used in the DbSchema Database Designer <a href="https://dbschema.com">DbSchema</a>
  * Free to be used by everyone.
- * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
+ * Code modifications allowed only to GitHub repository <a href="https://github.com/wise-coders/dbf-jdbc-driver">DBF JDBC Driver GitHub</a>
  */
 
 public class Db {

@@ -1,15 +1,15 @@
 package com.wisecoders.dbschema.dbf.schema;
 
-import com.wisecoders.dbschema.dbf.io.H2Loader;
+import com.wisecoders.dbschema.dbf.io.H2Reader;
 import com.linuxense.javadbf.DBFField;
 
 import java.sql.Types;
 
 /**
- * Copyright Wise Coders GmbH https://wisecoders.com
- * Driver is used in the DbSchema Database Designer https://dbschema.com
+ * Copyright Wise Coders GmbH <a href="https://wisecoders.com">...</a>
+ * Driver is used in the DbSchema Database Designer <a href="https://dbschema.com">DbSchema</a>
  * Free to be used by everyone.
- * Code modifications allowed only to GitHub repository https://github.com/wise-coders/dbf-jdbc-driver
+ * Code modifications allowed only to GitHub repository <a href="https://github.com/wise-coders/dbf-jdbc-driver">DBF JDBC Driver GitHub</a>
  */
 public class DataTypeUtil {
 
@@ -17,27 +17,24 @@ public class DataTypeUtil {
     public static int getJavaType( DBFField field ) {
         switch (field.getType()) {
             case UNKNOWN:
+            case CURRENCY:
                 return Types.OTHER;
             case VARBINARY:
             case BLOB:
             case GENERAL_OLE:
                 return Types.BLOB;
             case NUMERIC:
-                return Types.DECIMAL;
             case LONG:
+            case DOUBLE:
                 return Types.DECIMAL;
             case AUTOINCREMENT:
                 return Types.INTEGER;
-            case CURRENCY:
-                return Types.OTHER;
             case TIMESTAMP:
                 return Types.TIMESTAMP;
             case TIMESTAMP_DBASE7:
                 return Types.TIMESTAMP_WITH_TIMEZONE;
             case NULL_FLAGS:
                 return Types.NULL;
-            case DOUBLE:
-                return Types.DECIMAL;
             case FLOATING_POINT:
                 return Types.FLOAT;
             case CHARACTER:
@@ -52,7 +49,6 @@ public class DataTypeUtil {
             case BINARY:
                 return Types.BINARY;
             case VARCHAR:
-                return Types.VARCHAR;
             default:
                 return Types.VARCHAR;
         }
@@ -101,7 +97,7 @@ public class DataTypeUtil {
 
 
     public static boolean isH2SystemTable( String tableName ){
-        return H2Loader.COLUMNS_META_TABLE.equalsIgnoreCase( tableName ) || H2Loader.FILES_META_TABLE.equalsIgnoreCase( tableName );
+        return H2Reader.COLUMNS_META_TABLE.equalsIgnoreCase( tableName ) || H2Reader.FILES_META_TABLE.equalsIgnoreCase( tableName );
     }
 
 }

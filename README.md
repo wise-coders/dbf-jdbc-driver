@@ -12,7 +12,7 @@ The DBF-xBase-FoxPro JDBC driver is provided by [DbSchema DBF Designer](https://
 ## License
 
 [CC-BY-ND - Attribution-NoDerivs](https://creativecommons.org/licenses/by-nd/4.0/).
-The driver is free to use by everyone.
+The driver is free to use for everyone.
 Code modifications allowed only to the current repository as pull requests under
 https://github.com/wise-coders/dbf-jdbc-driver
 

@@ -199,7 +199,7 @@
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="actor" row_count="300" spec="" >
-			<comment><![CDATA[Details about actors. More details.]]></comment>
+			<comment><![CDATA[Details about actors. More details. Sample3a]]></comment>
 			<column name="actor_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -210,7 +210,8 @@
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
 			<column name="added_offline" type="INT" jt="4" />
-			<column name="test" type="VARCHAR" length="12" jt="12" />
+			<column name="test" type="BIGINT" jt="-5" />
+			<column name="test2" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_actor" unique="PRIMARY_KEY" >
 				<column name="actor_id" />
 			</index>
@@ -247,7 +248,7 @@
 			<index name="idx_fk_city_id" unique="NORMAL" >
 				<column name="city_id" />
 			</index>
-			<fk name="fk_address_city" to_schema="sakila" to_table="city" delete_action="restrict" update_action="cascade" options="" >
+			<fk name="fk_address_city" to_schema="sakila" to_table="city" >
 				<fk_column name="city_id" pk="city_id" />
 			</fk>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Some comment']]></options>
@@ -271,8 +272,7 @@
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="category" row_count="116" spec="" >
-			<comment><![CDATA[The movie categories.
-libellé du compte]]></comment>
+			<comment><![CDATA[The movie categories]]></comment>
 			<column name="category_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 				<comment><![CDATA[The category identifier.]]></comment>
@@ -317,6 +317,7 @@ libellé du compte]]></comment>
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
+			<column name="tst" type="INT" jt="4" />
 			<index name="pk_city" unique="PRIMARY_KEY" >
 				<column name="city_id" />
 			</index>
@@ -350,8 +351,7 @@ libellé du compte]]></comment>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=210 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The countries']]></options>
 		</table>
 		<table name="customer" row_count="599" spec="" >
-			<comment><![CDATA[Table stores all customers and 
-the details.]]></comment>
+			<comment><![CDATA[Details about the customers. Sample]]></comment>
 			<column name="customer_id" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 				<comment><![CDATA[column comment]]></comment>
@@ -431,7 +431,6 @@ among with the other details]]></comment>
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
-			<column name="details2" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_film" unique="PRIMARY_KEY" >
 				<column name="film_id" />
 			</index>
@@ -498,32 +497,12 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Some comment']]></options>
 		</table>
 		<table name="film_text" row_count="167" spec="" >
+			<comment><![CDATA[Sample comment]]></comment>
 			<column name="film_id" type="SMALLINT" jt="5" mandatory="y" />
 			<column name="title" type="VARCHAR" length="255" jt="12" mandatory="y" />
 			<column name="description" type="TEXT" jt="-1" />
 			<column name="age" type="INT" jt="4" />
 			<column name="tutorial" type="TEXT" jt="-1" />
-			<column name="tt" type="TIMESTAMP" length="6" jt="93" />
-			<column name="tt1" type="TIMESTAMP" jt="93" >
-				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
-				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
-			</column>
-			<column name="tt2" type="TIMESTAMP" jt="93" >
-				<defo><![CDATA[now()]]></defo>
-				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
-			</column>
-			<column name="tt3" type="TIMESTAMP" jt="93" >
-				<defo><![CDATA[now()]]></defo>
-				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
-			</column>
-			<column name="tt4" type="TIMESTAMP" jt="93" >
-				<defo><![CDATA[now()]]></defo>
-				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
-			</column>
-			<column name="tt5" type="TINYTEXT" jt="-1" />
-			<column name="tt6" type="TINYTEXT" jt="-1" />
-			<column name="tt7" type="TINYTEXT" jt="-1" />
-			<column name="tt8" type="TINYTEXT" jt="-1" />
 			<index name="pk_film_text" unique="PRIMARY_KEY" >
 				<column name="film_id" />
 			</index>
@@ -584,6 +563,14 @@ among with the other details]]></comment>
 			<column name="age" type="VARCHAR" length="2" jt="12" />
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="master" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_master" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="mc_standard_claims" row_count="0" spec="" >
 			<column name="mc_standard_claim_id" type="VARCHAR" length="19" jt="12" mandatory="y" />
 			<column name="mc_data_file_detail_id" type="INT" jt="4" mandatory="y" />
@@ -599,6 +586,13 @@ among with the other details]]></comment>
 				<column name="mc_data_file_detail_id" />
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3]]></options>
+		</table>
+		<table name="other" spec="" >
+			<column name="col1" type="INT" jt="4" />
+			<column name="col2" type="INT" jt="4" />
+			<column name="firstname" type="VARCHAR" length="5" jt="12" />
+			<column name="lastname" type="VARCHAR" length="5" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="payment" row_count="0" spec="" >
 			<column name="payment_id" prior="payment_id1" type="SMALLINT" jt="5" mandatory="y" unsigned="y" >
@@ -892,6 +886,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="rental" row_count="0" spec="" >
+			<comment><![CDATA[This is about rentals]]></comment>
 			<column name="rental_id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -959,6 +954,13 @@ among with the other details]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="sample2" spec="" >
+			<column name="col1" type="INT" jt="4" />
+			<column name="col2" type="INT" jt="4" />
+			<column name="firstname" type="VARCHAR" length="5" jt="12" />
+			<column name="lastname" type="VARCHAR" length="5" jt="12" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="sampletime" spec="" >
 			<column name="id" type="INT" jt="4" />
 			<column name="name" type="VARCHAR" length="5" jt="12" />
@@ -993,6 +995,21 @@ among with the other details]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=201719 DEFAULT CHARSET=utf8mb3]]></options>
 		</table>
+		<table name="slave" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="master_id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_slave" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="fk_slave_master" unique="NORMAL" >
+				<column name="master_id" />
+			</index>
+			<fk name="fk_slave_master_0" to_schema="sakila" to_table="master" >
+				<fk_column name="master_id" pk="id" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="sports" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
@@ -1002,7 +1019,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
 		<table name="staff" row_count="0" spec="" >
-			<comment><![CDATA[The staff members are listed here3.]]></comment>
+			<comment><![CDATA[The staff members are listed here.]]></comment>
 			<column name="staff_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 				<comment><![CDATA[The pk in staff.]]></comment>
@@ -1046,7 +1063,7 @@ among with the other details]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The staff members are listed here2.']]></options>
 		</table>
 		<table name="store" row_count="0" spec="" >
-			<comment><![CDATA[The store.]]></comment>
+			<comment><![CDATA[The store is here.]]></comment>
 			<column name="store_id" type="TINYINT" jt="-6" mandatory="y" unsigned="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -1056,6 +1073,7 @@ among with the other details]]></comment>
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
+			<column name="sample" type="VARCHAR" length="12" jt="12" />
 			<index name="pk_store" unique="PRIMARY_KEY" >
 				<column name="store_id" />
 			</index>
@@ -1177,6 +1195,12 @@ among with the other details]]></comment>
 		<table name="test" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="update_time" type="TIMESTAMP" jt="93" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+			</column>
+			<column name="test12" type="DATE" jt="91" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
 			<index name="pk_test" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -1259,6 +1283,10 @@ among with the other details]]></comment>
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
 		</table>
+		<table name="test4" spec="" >
+			<column name="id" type="INT" jt="4" />
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
 		<table name="test_autoincrement" row_count="0" spec="" >
 			<column name="id" type="INT" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
@@ -1266,7 +1294,6 @@ among with the other details]]></comment>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
 			<column name="newcolumns" type="BIT" length="1" jt="-7" />
-			<column name="ben" type="BIGINT" jt="-5" />
 			<index name="pk_test_autoincrement" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -1310,16 +1337,7 @@ among with the other details]]></comment>
 			<column name="id" type="INT" jt="4" mandatory="y" />
 			<column name="startdate" type="DATE" jt="91" />
 			<column name="enddate" type="DATE" jt="91" />
-			<column name="ben1" type="BIGINT" jt="-5" />
-			<column name="ben2" type="BIGINT" jt="-5" />
-			<column name="ben3" type="BIGINT" jt="-5" />
-			<column name="rob1" type="BIGINT" jt="-5" />
-			<column name="rob2" type="BIGINT" jt="-5" />
-			<column name="rob3" type="BIGINT" jt="-5" />
-			<column name="rob4" type="BIGINT" jt="-5" />
-			<column name="ben4" type="BIGINT" jt="-5" />
-			<column name="rob5" type="BIGINT" jt="-5" />
-			<column name="ben5" type="BIGINT" jt="-5" />
+			<column name="test1" type="TEXT" jt="-1" />
 			<index name="pk_test_data_gen" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -1838,15 +1856,57 @@ BEGIN
 END]]></string>
 		</function>
 	</schema>
-	<layout name="Layout" id="Layout-1c0a" show_relation="name" >
-		<entity schema="sakila" name="address" color="3986C1" x="240" y="48" />
-		<entity schema="sakila" name="city" color="3986C1" x="48" y="48" />
-		<browser id="Browse-1237" name="address" confirm_updates="y" >
-			<browse_table schema="sakila" entity="address" x="20" y="20" width="366" height="356" />
+	<layout name="Address" id="Layout-1686" show_relation="name" >
+		<comment><![CDATA[MySql]]></comment>
+		<entity schema="sakila" name="address" color="3986C1" x="48" y="48" />
+		<entity schema="sakila" name="customer" color="3986C1" x="256" y="48" />
+		<entity schema="sakila" name="payment" color="3986C1" x="464" y="48" />
+		<entity schema="sakila" name="staff" color="3986C1" x="256" y="272" />
+		<browser id="Browse-1df5" name="address" confirm_updates="y" >
+			<browse_table schema="sakila" entity="address" x="20" y="20" width="322" height="153" />
 		</browser>
 	</layout>
+	<layout name="Layout" id="Layout-1c0a" show_relation="name" >
+		<entity schema="sakila" name="address" color="BED3F4" x="304" y="432" />
+		<entity schema="sakila" name="city" color="BED3F4" x="544" y="432" />
+		<entity schema="sakila" name="country" color="BED3F4" x="784" y="432" />
+		<entity schema="sakila" name="customer" color="BED3F4" x="576" y="80" />
+		<entity schema="sakila" name="film" color="C7F4BE" x="1024" y="80" />
+		<entity schema="sakila" name="inventory" color="C7F4BE" x="1312" y="480" />
+		<entity schema="sakila" name="master" color="3986C1" x="1792" y="208" />
+		<entity schema="sakila" name="other" color="3986C1" x="1600" y="352" />
+		<entity schema="sakila" name="payment" color="BED3F4" x="48" y="432" />
+		<entity schema="sakila" name="rental" color="C7F4BE" x="1312" y="80" />
+		<entity schema="sakila" name="sample2" color="3986C1" x="1600" y="208" />
+		<entity schema="sakila" name="slave" color="3986C1" x="1920" y="208" />
+		<entity schema="sakila" name="staff" color="BED3F4" x="64" y="80" />
+		<entity schema="sakila" name="store" color="BED3F4" x="304" y="80" />
+		<entity schema="sakila" name="test4" color="3986C1" x="2240" y="208" />
+		<group name="film" color="EEF7EC" >
+			<entity schema="sakila" name="inventory" />
+			<entity schema="sakila" name="film" />
+			<entity schema="sakila" name="rental" />
+		</group>
+		<group name="staff" color="ECF0F7" >
+			<entity schema="sakila" name="staff" />
+			<entity schema="sakila" name="address" />
+			<entity schema="sakila" name="customer" />
+			<entity schema="sakila" name="payment" />
+			<entity schema="sakila" name="city" />
+			<entity schema="sakila" name="country" />
+			<entity schema="sakila" name="store" />
+		</group>
+		<browser id="Browse-1b31" name="film" confirm_updates="y" >
+			<browse_table schema="sakila" entity="film" x="20" y="20" width="546" height="536" />
+		</browser>
+	</layout>
+	<layout name="Layout_001" id="Layout-d88" show_relation="name" >
+		<entity schema="sakila" name="master" color="3986C1" x="48" y="48" />
+		<entity schema="sakila" name="slave" color="3986C1" x="224" y="48" />
+	</layout>
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
-		<entity schema="sakila" name="2co_orders" color="3986C1" x="1648" y="768" >
+		<comment><![CDATA[Main Layout]]></comment>
+		<entity schema="sakila" name="2co_orders" color="3986C1" x="864" y="1136" >
 			<column name="﻿product id" />
 			<column name="product code" />
 			<column name="product" />
@@ -1859,7 +1919,7 @@ END]]></string>
 			<column name="pay method" />
 			<column name="order date" />
 		</entity>
-		<entity schema="sakila" name="2co_subscriptions" color="3986C1" x="1968" y="768" >
+		<entity schema="sakila" name="2co_subscriptions" color="3986C1" x="576" y="1456" >
 			<column name="licenseuniqueid" />
 			<column name="idproduct" />
 			<column name="purchasedate" />
@@ -1872,98 +1932,90 @@ END]]></string>
 			<column name="communicationlanguage" />
 			<column name="productversion" />
 		</entity>
-		<entity schema="sakila" name="Baseboard" color="BED3F4" x="432" y="496" />
-		<entity schema="sakila" name="actor" color="C7F4BE" x="2448" y="608" />
-		<entity schema="sakila" name="actor_info" color="C7F4BE" x="2640" y="608" />
-		<entity schema="sakila" name="address" color="F4DDBE" x="1360" y="688" />
-		<entity schema="sakila" name="afectiuni" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="another" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="category" color="C7F4BE" x="2448" y="208" />
-		<entity schema="sakila" name="chart_data" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="chart_line_3cols" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="city" color="D1BEF4" x="960" y="1312" />
-		<entity schema="sakila" name="core.user" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="country" color="D1BEF4" x="1152" y="1312" />
-		<entity schema="sakila" name="customer" color="F4DDBE" x="1584" y="480" />
-		<entity schema="sakila" name="customer_list" color="F4DDBE" x="1760" y="416" />
-		<entity schema="sakila" name="film" color="C7F4BE" x="1920" y="336" />
-		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2256" y="608" />
-		<entity schema="sakila" name="film_category" color="C7F4BE" x="2160" y="208" />
-		<entity schema="sakila" name="film_list" color="C7F4BE" x="2256" y="800" />
-		<entity schema="sakila" name="film_text" color="C7F4BE" x="2448" y="1072" />
-		<entity schema="sakila" name="inventory" color="F4DDBE" x="1360" y="1056" />
-		<entity schema="sakila" name="language" color="C7F4BE" x="2256" y="416" />
-		<entity schema="sakila" name="mapp1" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="mc_standard_claims" color="BED3F4" x="688" y="496" />
-		<entity schema="sakila" name="multiline" color="3986C1" x="1728" y="736" />
-		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="688" y="800" />
-		<entity schema="sakila" name="payment" color="F4DDBE" x="912" y="544" />
-		<entity schema="sakila" name="persoane" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="persons" color="BED3F4" x="432" y="800" />
-		<entity schema="sakila" name="persons1" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="persons3" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="pictures" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="ppg_2co" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="ppg_2co_all" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="ppg_computers" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="ppg_imported" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="ppg_orders" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="ppg_reactivate" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="ppg_subscriptions" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="ppg_subscriptions2" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="presentation" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="rental" color="F4DDBE" x="1104" y="800" />
-		<entity schema="sakila" name="sales_by_film_category" color="BED3F4" x="192" y="800" />
-		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="192" y="976" />
-		<entity schema="sakila" name="sample" color="BED3F4" x="240" y="592" />
-		<entity schema="sakila" name="sample1" color="BEBEF4" x="1152" y="2304" />
-		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="960" y="2304" />
-		<entity schema="sakila" name="sampletime" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="seam_intake_journal" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="sports" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="staff" color="F4DDBE" x="1168" y="480" />
-		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1008" y="208" />
-		<entity schema="sakila" name="store" color="F4DDBE" x="1360" y="480" />
-		<entity schema="sakila" name="subscription_reactivate2" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="subscriptions_suspended_ppg" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="table with spaces" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="tbl_test" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="test" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="test02" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="test02_0" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="test1" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="test1a" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="test1b" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="test2" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="test2a" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="288" />
-		<entity schema="sakila" name="test_bit_boolean" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="test_bool" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="test_combo" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="272" y="112" />
-		<entity schema="sakila" name="test_defo" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="test_form_int" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="test_import" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="test_pk" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="test_rdb_insert" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="test_rdg" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="test_table" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="to_clone" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="to_clone_0" color="3986C1" x="2608" y="768" />
-		<entity schema="sakila" name="tval_2" color="BED3F4" x="432" y="336" />
-		<entity schema="sakila" name="user3" color="3986C1" x="1648" y="768" />
-		<entity schema="sakila" name="users_json" color="3986C1" x="1968" y="768" />
-		<entity schema="sakila" name="v2" color="3986C1" x="1888" y="736" />
-		<entity schema="sakila" name="zac" color="3986C1" x="2288" y="768" />
-		<entity schema="sakila" name="медве́дь" color="3986C1" x="2608" y="768" />
-		<callout x="2016" y="80" pointer="Round" >
-			<comment><![CDATA[This is a layout. 
-- Double-click table headers, columns, or foreign keys to edit 
-- Drag tables to the layout from the structure tree, or 
-   add them by pressing the arrow icon near columns 
-- Create multiple layouts with the same or different tables 
-- Right-click the layout to create new tables]]></comment>
-		</callout>
+		<entity schema="sakila" name="Baseboard" color="BED3F4" x="2752" y="3056" />
+		<entity schema="sakila" name="actor" color="C7F4BE" x="3216" y="448" />
+		<entity schema="sakila" name="actor_info" color="C7F4BE" x="3440" y="448" />
+		<entity schema="sakila" name="address" color="F4DDBE" x="1632" y="288" />
+		<entity schema="sakila" name="afectiuni" color="3986C1" x="1120" y="1280" />
+		<entity schema="sakila" name="another" color="3986C1" x="704" y="1296" />
+		<entity schema="sakila" name="category" color="C7F4BE" x="2960" y="640" />
+		<entity schema="sakila" name="chart_data" color="3986C1" x="640" y="912" />
+		<entity schema="sakila" name="chart_line_3cols" color="3986C1" x="864" y="912" />
+		<entity schema="sakila" name="city" color="D1BEF4" x="1184" y="656" />
+		<entity schema="sakila" name="core.user" color="3986C1" x="640" y="1136" />
+		<entity schema="sakila" name="country" color="D1BEF4" x="1392" y="656" />
+		<entity schema="sakila" name="customer" color="F4DDBE" x="1840" y="288" />
+		<entity schema="sakila" name="customer_list" color="F4DDBE" x="2048" y="576" />
+		<entity schema="sakila" name="film" color="C7F4BE" x="2752" y="80" />
+		<entity schema="sakila" name="film_actor" color="C7F4BE" x="3008" y="448" />
+		<entity schema="sakila" name="film_category" color="C7F4BE" x="2752" y="448" />
+		<entity schema="sakila" name="film_list" color="C7F4BE" x="3216" y="176" />
+		<entity schema="sakila" name="film_text" color="C7F4BE" x="3424" y="80" />
+		<entity schema="sakila" name="inventory" color="F4DDBE" x="1632" y="80" />
+		<entity schema="sakila" name="language" color="C7F4BE" x="3008" y="80" />
+		<entity schema="sakila" name="mapp1" color="3986C1" x="448" y="1136" />
+		<entity schema="sakila" name="mc_standard_claims" color="BED3F4" x="3264" y="2672" />
+		<entity schema="sakila" name="multiline" color="3986C1" x="448" y="960" />
+		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="3536" y="2672" />
+		<entity schema="sakila" name="payment" color="F4DDBE" x="2496" y="80" />
+		<entity schema="sakila" name="persoane" color="3986C1" x="1312" y="1280" />
+		<entity schema="sakila" name="persons" color="BED3F4" x="3264" y="2880" />
+		<entity schema="sakila" name="persons1" color="3986C1" x="1504" y="1280" />
+		<entity schema="sakila" name="persons3" color="3986C1" x="1712" y="1280" />
+		<entity schema="sakila" name="pictures" color="3986C1" x="1712" y="1520" />
+		<entity schema="sakila" name="ppg_2co" color="3986C1" x="1488" y="1520" />
+		<entity schema="sakila" name="ppg_2co_all" color="3986C1" x="1712" y="1696" />
+		<entity schema="sakila" name="ppg_computers" color="3986C1" x="1488" y="1696" />
+		<entity schema="sakila" name="ppg_imported" color="3986C1" x="2048" y="1696" />
+		<entity schema="sakila" name="ppg_orders" color="3986C1" x="2048" y="2080" />
+		<entity schema="sakila" name="ppg_reactivate" color="3986C1" x="2048" y="2432" />
+		<entity schema="sakila" name="ppg_subscriptions" color="3986C1" x="1712" y="2432" />
+		<entity schema="sakila" name="ppg_subscriptions2" color="3986C1" x="1712" y="2656" />
+		<entity schema="sakila" name="presentation" color="3986C1" x="1504" y="2656" />
+		<entity schema="sakila" name="rental" color="F4DDBE" x="2288" y="80" />
+		<entity schema="sakila" name="sales_by_film_category" color="BED3F4" x="3024" y="2880" />
+		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="3024" y="3056" />
+		<entity schema="sakila" name="sample" color="BED3F4" x="3056" y="2656" />
+		<entity schema="sakila" name="sample1" color="BEBEF4" x="4176" y="2320" />
+		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="3984" y="2320" />
+		<entity schema="sakila" name="sampletime" color="3986C1" x="1520" y="2464" />
+		<entity schema="sakila" name="seam_intake_journal" color="3986C1" x="1456" y="1968" />
+		<entity schema="sakila" name="sports" color="3986C1" x="1120" y="1456" />
+		<entity schema="sakila" name="staff" color="F4DDBE" x="2080" y="80" />
+		<entity schema="sakila" name="staff_list" color="F4DDBE" x="2288" y="400" />
+		<entity schema="sakila" name="store" color="F4DDBE" x="1840" y="80" />
+		<entity schema="sakila" name="subscription_reactivate2" color="3986C1" x="2048" y="960" />
+		<entity schema="sakila" name="subscriptions_suspended_ppg" color="3986C1" x="2384" y="960" />
+		<entity schema="sakila" name="table with spaces" color="3986C1" x="2384" y="1696" />
+		<entity schema="sakila" name="tbl_test" color="3986C1" x="1872" y="960" />
+		<entity schema="sakila" name="test" color="3986C1" x="1120" y="1808" />
+		<entity schema="sakila" name="test02" color="3986C1" x="944" y="1456" />
+		<entity schema="sakila" name="test02_0" color="3986C1" x="1120" y="1632" />
+		<entity schema="sakila" name="test1" color="3986C1" x="1120" y="1984" />
+		<entity schema="sakila" name="test1a" color="3986C1" x="1120" y="2192" />
+		<entity schema="sakila" name="test1b" color="3986C1" x="944" y="2192" />
+		<entity schema="sakila" name="test2" color="3986C1" x="912" y="2000" />
+		<entity schema="sakila" name="test2a" color="3986C1" x="752" y="2192" />
+		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="3536" y="2448" />
+		<entity schema="sakila" name="test_bit_boolean" color="3986C1" x="704" y="1984" />
+		<entity schema="sakila" name="test_bool" color="3986C1" x="1120" y="2368" />
+		<entity schema="sakila" name="test_combo" color="3986C1" x="928" y="1632" />
+		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="3760" y="2320" />
+		<entity schema="sakila" name="test_defo" color="3986C1" x="1120" y="2560" />
+		<entity schema="sakila" name="test_form_int" color="3986C1" x="928" y="2560" />
+		<entity schema="sakila" name="test_import" color="3986C1" x="1120" y="2752" />
+		<entity schema="sakila" name="test_pk" color="3986C1" x="752" y="2368" />
+		<entity schema="sakila" name="test_rdb_insert" color="3986C1" x="928" y="2752" />
+		<entity schema="sakila" name="test_rdg" color="3986C1" x="704" y="2592" />
+		<entity schema="sakila" name="test_table" color="3986C1" x="672" y="2816" />
+		<entity schema="sakila" name="to_clone" color="3986C1" x="512" y="2608" />
+		<entity schema="sakila" name="to_clone_0" color="3986C1" x="320" y="2816" />
+		<entity schema="sakila" name="tval_2" color="BED3F4" x="3264" y="2512" />
+		<entity schema="sakila" name="user3" color="3986C1" x="288" y="2528" />
+		<entity schema="sakila" name="users_json" color="3986C1" x="80" y="2816" />
+		<entity schema="sakila" name="v2" color="3986C1" x="112" y="2624" />
+		<entity schema="sakila" name="zac" color="3986C1" x="48" y="2208" />
+		<entity schema="sakila" name="медве́дь" color="3986C1" x="288" y="2320" />
 		<group name="Baseboard" color="ECF0F7" >
 			<entity schema="sakila" name="mc_standard_claims" />
 			<entity schema="sakila" name="nicer_but_slower_film_list" />
@@ -1981,8 +2033,8 @@ END]]></string>
 			<entity schema="sakila" name="sample1" />
 		</group>
 		<group name="city" color="F0ECF7" >
-			<entity schema="sakila" name="country" />
 			<entity schema="sakila" name="city" />
+			<entity schema="sakila" name="country" />
 		</group>
 		<group name="film" color="EEF7EC" >
 			<entity schema="sakila" name="language" />
@@ -1990,21 +2042,21 @@ END]]></string>
 			<entity schema="sakila" name="actor" />
 			<entity schema="sakila" name="film_list" />
 			<entity schema="sakila" name="actor_info" />
-			<entity schema="sakila" name="film" />
 			<entity schema="sakila" name="film_text" />
 			<entity schema="sakila" name="film_category" />
 			<entity schema="sakila" name="category" />
+			<entity schema="sakila" name="film" />
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="store" />
 			<entity schema="sakila" name="customer" />
-			<entity schema="sakila" name="address" />
 			<entity schema="sakila" name="inventory" />
 			<entity schema="sakila" name="rental" />
 			<entity schema="sakila" name="payment" />
-			<entity schema="sakila" name="staff" />
 			<entity schema="sakila" name="customer_list" />
 			<entity schema="sakila" name="staff_list" />
+			<entity schema="sakila" name="staff" />
+			<entity schema="sakila" name="address" />
 		</group>
 		<script name="SQL_Editor" id="Editor-2491" language="Groovy" >
 			<string><![CDATA[import com.wisecoders.dbs.schema.*
@@ -2030,163 +2082,28 @@ libellé du compte';
 
 ALTER TABLE sakila.category MODIFY category_id TINYINT UNSIGNED NOT NULL  AUTO_INCREMENT COMMENT 'The category identifier.';]]></string>
 		</script>
-		<browser id="Browse-20f3" name="city" confirm_updates="y" >
-			<browse_table schema="sakila" entity="city" x="20" y="20" width="544" height="534" />
-		</browser>
-	</layout>
-	<layout name="MySql" id="Layout-1686" show_relation="name" />
-	<layout name="~Layout with Sample Tools" id="Layout-19ea" show_column_type="y" show_relation="name" >
-		<entity schema="sakila" name="Baseboard" color="BED3F4" x="560" y="1264" />
-		<entity schema="sakila" name="actor" color="C7F4BE" x="3216" y="448" />
-		<entity schema="sakila" name="actor_info" color="C7F4BE" x="3488" y="448" />
-		<entity schema="sakila" name="address" color="F4DDBE" x="1792" y="256" />
-		<entity schema="sakila" name="category" color="C7F4BE" x="3216" y="48" />
-		<entity schema="sakila" name="city" color="D1BEF4" x="1248" y="880" />
-		<entity schema="sakila" name="country" color="D1BEF4" x="1504" y="880" />
-		<entity schema="sakila" name="customer" color="F4DDBE" x="2064" y="48" />
-		<entity schema="sakila" name="customer_list" color="F4DDBE" x="2336" y="48" />
-		<entity schema="sakila" name="film" color="C7F4BE" x="2624" y="48" />
-		<entity schema="sakila" name="film_actor" color="C7F4BE" x="2960" y="448" />
-		<entity schema="sakila" name="film_category" color="C7F4BE" x="2960" y="48" />
-		<entity schema="sakila" name="film_list" color="C7F4BE" x="2960" y="640" />
-		<entity schema="sakila" name="film_text" color="C7F4BE" x="3216" y="912" />
-		<entity schema="sakila" name="inventory" color="F4DDBE" x="1792" y="624" />
-		<entity schema="sakila" name="language" color="C7F4BE" x="2960" y="256" />
-		<entity schema="sakila" name="mc_standard_claims" color="BED3F4" x="896" y="1264" />
-		<entity schema="sakila" name="nicer_but_slower_film_list" color="BED3F4" x="896" y="1568" />
-		<entity schema="sakila" name="payment" color="F4DDBE" x="1248" y="368" />
-		<entity schema="sakila" name="persons" color="BED3F4" x="560" y="1568" />
-		<entity schema="sakila" name="rental" color="F4DDBE" x="1520" y="368" />
-		<entity schema="sakila" name="sales_by_film_category" color="BED3F4" x="288" y="1568" />
-		<entity schema="sakila" name="sales_by_store" color="BED3F4" x="288" y="1744" />
-		<entity schema="sakila" name="sample" color="BED3F4" x="288" y="1360" />
-		<entity schema="sakila" name="sample1" color="BEBEF4" x="1520" y="1872" />
-		<entity schema="sakila" name="sample1_0" color="BEBEF4" x="1248" y="1872" />
-		<entity schema="sakila" name="staff" color="F4DDBE" x="1520" y="48" />
-		<entity schema="sakila" name="staff_list" color="F4DDBE" x="1264" y="96" />
-		<entity schema="sakila" name="store" color="F4DDBE" x="1792" y="48" />
-		<entity schema="sakila" name="test_autoincrement" color="BED3F4" x="48" y="1056" />
-		<entity schema="sakila" name="test_data_gen" color="BED3F4" x="320" y="880" />
-		<entity schema="sakila" name="tval_2" color="BED3F4" x="560" y="1104" />
-		<script name="SQL Editor" id="Editor-137e" language="SQL" >
-			<string><![CDATA[SELECT
-	film_id, title, description, release_year, language_id, original_language_id, rental_duration, rental_rate, length, 
-	replacement_cost, rating, special_features, last_update, test, test2, test3
-FROM
-	sakila.film m;]]></string>
-		</script>
-		<browser id="Browse-1485" name="Relational Data Explorer" confirm_updates="y" >
-			<browse_table schema="sakila" entity="film" x="20" y="20" width="400" height="300" >
-				<browse_table schema="sakila" entity="film_actor" fk="fk_film_actor_film" x="440" y="20" width="500" height="350" >
-					<browse_table schema="sakila" entity="actor" fk="fk_film_actor_actor" x="960" y="20" width="500" height="350" record_view="y" />
+		<browser id="Browse-23bb" name="country" confirm_updates="y" confirmed="y" >
+			<browse_table schema="sakila" entity="country" x="20" y="20" width="268" height="190" >
+				<browse_table schema="sakila" entity="city" fk="fk_city_country" x="317" y="21" width="237" height="187" >
+					<browse_table schema="sakila" entity="address" fk="fk_address_city" x="577" y="19" width="215" height="189" />
 				</browse_table>
 			</browse_table>
 		</browser>
-		<query id="Query-18b0" name="Query Builder" >
-			<query_table schema="sakila" name="film" alias="f" x="48" y="48" >
-				<column name="film_id" />
-				<column name="title" />
-				<column name="description" />
-				<column name="release_year" />
-				<column name="language_id" />
-				<column name="original_language_id" />
-				<column name="rental_duration" />
-				<column name="rental_rate" />
-				<column name="length" />
-				<column name="replacement_cost" />
-				<column name="rating" />
-				<column name="special_features" />
+		<query id="Query-395" name="country_001" >
+			<query_table schema="sakila" name="country" alias="c" x="48" y="48" >
+				<column name="country_id" />
+				<column name="country" />
 				<column name="last_update" />
-				<query_table schema="sakila" name="film_actor" alias="fa" x="288" y="48" fk="fk_film_actor_film" type="Inner Join" >
-					<column name="actor_id" />
-					<column name="film_id" />
-					<column name="last_update" />
-					<query_table schema="sakila" name="actor" alias="a" x="480" y="48" fk="fk_film_actor_actor" type="Inner Join" >
-						<column name="actor_id" />
-						<column name="first_name" />
-						<column name="last_name" />
-						<column name="last_update" />
+				<column name="description" />
+				<query_table schema="sakila" name="city" alias="c1" x="256" y="48" fk="fk_city_country" type="Inner Join" >
+					<column name="city" />
+					<column name="country_id" />
+					<query_table schema="sakila" name="address" alias="a" x="480" y="48" fk="fk_address_city" type="Inner Join" >
+						<column name="address" />
+						<column name="postal_code" />
 					</query_table>
 				</query_table>
 			</query_table>
 		</query>
-		<form name="Report" id="Report-16ba" template="Page" css="container-fluid" view="frame" >
-			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
-			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
-			<body name="Body" template="Grid" max_records="100" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" generate_path="n" scroll="n" html="n" header_rows="0" footer_rows="0" >
-				<cell type="label" name="Film Data" template="H3" pos="0,0,1,0,l,c" />
-				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" generate_path="n" >
-					<form_script type="DataSource" language="SQL" >
-						<var name="film_id" type="5" />
-						<var name="title" type="-1" />
-						<var name="description" type="-1" />
-						<var name="release_year" type="4" />
-						<var name="language_id" type="-6" />
-						<var name="original_language_id" type="-6" />
-						<var name="rental_duration" type="-6" />
-						<var name="rental_rate" type="3" />
-						<var name="length" type="5" />
-						<var name="replacement_cost" type="3" />
-						<var name="rating" type="-1" />
-						<var name="special_features" type="-1" />
-						<var name="last_update" type="93" />
-						<var name="test" type="-1" />
-						<var name="test2" type="-1" />
-						<var name="test3" type="-1" />
-						<script ><![CDATA[SELECT * FROM sakila.film]]></script>
-					</form_script>
-					<param name="i0" value="title" />
-					<param name="width" value="100%" />
-					<param name="v0" value="replacement_cost" />
-					<param name="title" value="Sample Chart" />
-					<param name="height" value="400px" />
-				</cell>
-				<tableview name="sample" template="Table" max_records="100" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" generate_path="n" scroll="n" html="n" header_rows="1" footer_rows="0" >
-					<form_script type="DataSource" language="SQL" >
-						<var name="film_id" type="5" />
-						<var name="title" type="-1" />
-						<var name="description" type="-1" />
-						<var name="release_year" type="4" />
-						<var name="language_id" type="-6" />
-						<var name="original_language_id" type="-6" />
-						<var name="rental_duration" type="-6" />
-						<var name="rental_rate" type="3" />
-						<var name="length" type="5" />
-						<var name="replacement_cost" type="3" />
-						<var name="rating" type="-1" />
-						<var name="special_features" type="-1" />
-						<var name="last_update" type="93" />
-						<var name="test" type="-1" />
-						<var name="test2" type="-1" />
-						<var name="test3" type="-1" />
-						<script ><![CDATA[SELECT * FROM sakila.film]]></script>
-					</form_script>
-					<cell type="label" name="film_id" template="Plain" pos="0,0,0,0,c,c" />
-					<cell type="label" name="title" template="Plain" pos="1,0,1,0,c,c" />
-					<cell type="label" name="description" template="Plain" pos="2,0,2,0,c,c" />
-					<cell type="label" name="release_year" template="Plain" pos="3,0,3,0,c,c" />
-					<cell type="label" name="language_id" template="Plain" pos="4,0,4,0,c,c" />
-					<cell type="label" name="original_language_id" template="Plain" pos="5,0,5,0,c,c" />
-					<cell type="label" name="Button can open other pages." template="Plain" pos="6,0,6,0,c,c" />
-					<cell type="label" name="${film_id}" template="Plain" pos="0,1,0,1,l,c" />
-					<cell type="label" name="${title}" template="Plain" pos="1,1,1,1,l,c" />
-					<cell type="label" name="${description}" template="Plain" pos="2,1,2,1,l,c" />
-					<cell type="label" name="${release_year}" template="Plain" pos="3,1,3,1,l,c" />
-					<cell type="label" name="${language_id}" template="Plain" pos="4,1,4,1,l,c" />
-					<cell type="label" name="${original_language_id}" template="Plain" pos="5,1,5,1,l,c" />
-					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-16ba" />
-				</tableview>
-				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-16ba" >
-					<var name="samplePageNumber" value="0" />
-				</cell>
-				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-16ba" >
-					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
-				</cell>
-				<cell type="label" name="Page ${samplePageNumber+1}" template="Plain" pos="2,3,2,3,l,c" />
-				<cell type="href" name="" template="Plain" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-16ba" >
-					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
-				</cell>
-			</body>
-		</form>
 	</layout>
 </project>

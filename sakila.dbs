@@ -607,6 +607,8 @@ among with the other details]]></comment>
 				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
 				<column_options><![CDATA[ON UPDATE CURRENT_TIMESTAMP]]></column_options>
 			</column>
+			<column name="test" type="BIGINT" jt="-5" />
+			<column name="test3" type="BIGINT" jt="-5" />
 			<index name="idx_fk_staff_id" unique="NORMAL" >
 				<column name="staff_id" />
 			</index>
@@ -1294,6 +1296,10 @@ among with the other details]]></comment>
 			<column name="firstname" type="VARCHAR" length="100" jt="12" />
 			<column name="lastname" type="VARCHAR" length="100" jt="12" />
 			<column name="newcolumns" type="BIT" length="1" jt="-7" />
+			<column name="testchar" type="CHAR" length="1" jt="1" >
+				<defo><![CDATA['_utf8mb4'a'']]></defo>
+				<comment><![CDATA[some comment]]></comment>
+			</column>
 			<index name="pk_test_autoincrement" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -1859,12 +1865,57 @@ END]]></string>
 	<layout name="Address" id="Layout-1686" show_relation="name" >
 		<comment><![CDATA[MySql]]></comment>
 		<entity schema="sakila" name="address" color="3986C1" x="48" y="48" />
+		<entity schema="sakila" name="city" color="3986C1" x="656" y="48" />
+		<entity schema="sakila" name="country" color="3986C1" x="832" y="48" />
 		<entity schema="sakila" name="customer" color="3986C1" x="256" y="48" />
 		<entity schema="sakila" name="payment" color="3986C1" x="464" y="48" />
 		<entity schema="sakila" name="staff" color="3986C1" x="256" y="272" />
-		<browser id="Browse-1df5" name="address" confirm_updates="y" >
-			<browse_table schema="sakila" entity="address" x="20" y="20" width="322" height="153" />
+		<browser id="Browse-22a2" name="address" confirm_updates="y" >
+			<browse_table schema="sakila" entity="address" x="20" y="20" width="367" height="357" >
+				<browse_table schema="sakila" entity="customer" fk="fk_customer_address" x="427" y="20" width="500" height="350" />
+			</browse_table>
 		</browser>
+		<form name="Application/Report" id="Report-2396" template="Page" css="container-fluid" view="frame" >
+			<var name="CountryPageNumber" type="4" value="0" mandatory="n" />
+			<var name="CountryRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" max_records="100" css="grid my-5 gap-10" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2}}" generate_path="y" scroll="n" html="n" header_rows="0" footer_rows="0" >
+				<cell type="label" name="Country" template="H3" pos="0,0,1,0,l,c" />
+				<tableview name="Country" template="Table" max_records="100" css="sortable table table-striped table-sm table-hover" pos="0,1,4,1,f,f" layout="{{-2,-2,-2,-2,-2},{-2,-2}}" generate_path="y" scroll="n" html="n" header_rows="1" footer_rows="0" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="country_id" type="5" />
+						<var name="country" type="-1" />
+						<var name="last_update" type="93" />
+						<var name="description" type="-1" />
+						<script ><![CDATA[SELECT * FROM sakila.country]]></script>
+					</form_script>
+					<cell type="label" name="country_id" template="Plain" pos="0,0,0,0,c,c" />
+					<cell type="label" name="country" template="Plain" pos="1,0,1,0,c,c" />
+					<cell type="label" name="Cities" template="Plain" pos="2,0,2,0,c,c" />
+					<cell type="label" name="description" template="Plain" pos="3,0,3,0,c,c" />
+					<cell type="label" name="${country_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${country}" template="Plain" pos="1,1,1,1,l,c" />
+					<tableview name="Table" template="Table" max_records="100" css="sortable table table-striped table-sm table-hover" pos="2,1,2,1,f,f" layout="{{-2},{-2,-2}}" generate_path="y" scroll="n" html="n" header_rows="1" footer_rows="0" >
+						<form_script type="DataSource" language="SQL" >
+							<script ><![CDATA[select city from sakila.city where country_id='${country_id}']]></script>
+						</form_script>
+						<cell type="label" name="Cities" template="Plain" pos="0,0,0,0,f,f" />
+						<cell type="label" name="${city}" template="Plain" pos="0,1,0,1,f,f" />
+					</tableview>
+					<cell type="label" name="${description}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="4,1,4,1,c,c" ref_id="Report-2396" />
+				</tableview>
+				<cell type="href" name="" template="Plain" disabled="${CountryPageNumber&lt;1}" pos="0,2,0,2,l,c" glyph="bi-chevron_double_left" ref_id="Report-2396" >
+					<var name="CountryPageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" template="Plain" disabled="${CountryPageNumber&lt;1}" pos="1,2,1,2,l,c" glyph="bi-chevron_left" ref_id="Report-2396" >
+					<var name="CountryPageNumber" value="${Math.max(0,CountryPageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${CountryPageNumber+1}" template="Plain" pos="2,2,2,2,l,c" />
+				<cell type="href" name="" template="Plain" disabled="${!CountryHasNextPage}" pos="3,2,3,2,l,c" glyph="bi-chevron_right" ref_id="Report-2396" >
+					<var name="CountryPageNumber" value="${( CountryPageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
 	</layout>
 	<layout name="Layout" id="Layout-1c0a" show_relation="name" >
 		<entity schema="sakila" name="address" color="BED3F4" x="304" y="432" />
@@ -1901,8 +1952,9 @@ END]]></string>
 		</browser>
 	</layout>
 	<layout name="Layout_001" id="Layout-d88" show_relation="name" >
-		<entity schema="sakila" name="master" color="3986C1" x="48" y="48" />
-		<entity schema="sakila" name="slave" color="3986C1" x="224" y="48" />
+		<entity schema="sakila" name="address" color="3986C1" x="464" y="48" />
+		<entity schema="sakila" name="city" color="3986C1" x="256" y="48" />
+		<entity schema="sakila" name="country" color="3986C1" x="48" y="48" />
 	</layout>
 	<layout name="Main Layout" id="Layout-243d" show_relation="name" >
 		<comment><![CDATA[Main Layout]]></comment>
@@ -2033,8 +2085,8 @@ END]]></string>
 			<entity schema="sakila" name="sample1" />
 		</group>
 		<group name="city" color="F0ECF7" >
-			<entity schema="sakila" name="city" />
 			<entity schema="sakila" name="country" />
+			<entity schema="sakila" name="city" />
 		</group>
 		<group name="film" color="EEF7EC" >
 			<entity schema="sakila" name="language" />
@@ -2042,10 +2094,10 @@ END]]></string>
 			<entity schema="sakila" name="actor" />
 			<entity schema="sakila" name="film_list" />
 			<entity schema="sakila" name="actor_info" />
-			<entity schema="sakila" name="film_text" />
 			<entity schema="sakila" name="film_category" />
 			<entity schema="sakila" name="category" />
 			<entity schema="sakila" name="film" />
+			<entity schema="sakila" name="film_text" />
 		</group>
 		<group name="staff" color="F7F2EC" >
 			<entity schema="sakila" name="store" />
@@ -2082,6 +2134,9 @@ libellé du compte';
 
 ALTER TABLE sakila.category MODIFY category_id TINYINT UNSIGNED NOT NULL  AUTO_INCREMENT COMMENT 'The category identifier.';]]></string>
 		</script>
+		<script name="film" id="Editor-aef" language="Groovy" >
+			<string><![CDATA[println "bla"]]></string>
+		</script>
 		<browser id="Browse-23bb" name="country" confirm_updates="y" confirmed="y" >
 			<browse_table schema="sakila" entity="country" x="20" y="20" width="268" height="190" >
 				<browse_table schema="sakila" entity="city" fk="fk_city_country" x="317" y="21" width="237" height="187" >
@@ -2089,21 +2144,5 @@ ALTER TABLE sakila.category MODIFY category_id TINYINT UNSIGNED NOT NULL  AUTO_I
 				</browse_table>
 			</browse_table>
 		</browser>
-		<query id="Query-395" name="country_001" >
-			<query_table schema="sakila" name="country" alias="c" x="48" y="48" >
-				<column name="country_id" />
-				<column name="country" />
-				<column name="last_update" />
-				<column name="description" />
-				<query_table schema="sakila" name="city" alias="c1" x="256" y="48" fk="fk_city_country" type="Inner Join" >
-					<column name="city" />
-					<column name="country_id" />
-					<query_table schema="sakila" name="address" alias="a" x="480" y="48" fk="fk_address_city" type="Inner Join" >
-						<column name="address" />
-						<column name="postal_code" />
-					</query_table>
-				</query_table>
-			</query_table>
-		</query>
 	</layout>
 </project>

@@ -6,6 +6,7 @@ import org.h2.jdbc.JdbcConnection;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
@@ -32,6 +33,16 @@ public class JdbcDriver implements Driver {
 
     static {
         try {
+            final File h2File = new File(H2_LOCATION);
+            if ( !h2File.exists()) {
+                h2File.mkdirs();
+            }
+
+            final File logsFile = new File("~/.DbSchema/logs/");
+            if ( !logsFile.exists()) {
+                logsFile.mkdirs();
+            }
+
             DriverManager.registerDriver( new JdbcDriver());
             LOGGER.setLevel(Level.ALL);
             final ConsoleHandler consoleHandler = new ConsoleHandler();
@@ -105,10 +116,6 @@ public class JdbcDriver implements Driver {
 
 
     private String getH2DatabasePath(String h2DbName ){
-        final File h2File = new File(H2_LOCATION);
-        if ( !h2File.exists()) {
-            h2File.mkdirs();
-        }
         return H2_LOCATION + h2DbName;
     }
 
@@ -159,7 +166,7 @@ public class JdbcDriver implements Driver {
         String digest = null;
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] hash = md.digest(message.getBytes("UTF-8"));
+            byte[] hash = md.digest(message.getBytes( StandardCharsets.UTF_8 ));
 
             //converting byte array to Hexadecimal String
             StringBuilder sb = new StringBuilder(2*hash.length);
@@ -169,7 +176,7 @@ public class JdbcDriver implements Driver {
 
             digest = sb.toString();
 
-        } catch (UnsupportedEncodingException | NoSuchAlgorithmException ex) {
+        } catch ( NoSuchAlgorithmException ex) {
             Logger.getLogger(JdbcDriver.class.getName()).log(Level.SEVERE, null, ex);
         }
         return digest;

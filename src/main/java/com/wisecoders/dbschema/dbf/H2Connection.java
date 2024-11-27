@@ -149,7 +149,7 @@ public class H2Connection implements Connection {
 
 
     private void saveDbf( String path) throws Exception {
-        if ( path == null || path.trim().length() == 0 ){
+        if ( path == null || path.trim().isEmpty()){
             throw new SQLException("Save dbf path is empty. Please specify a directory path");
         }
         path = path.trim();

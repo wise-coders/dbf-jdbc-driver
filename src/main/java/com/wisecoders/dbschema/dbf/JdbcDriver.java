@@ -54,6 +54,7 @@ public class JdbcDriver implements Driver {
             fileHandler.setFormatter( new SimpleFormatter());
             fileHandler.setLevel(Level.ALL);
             LOGGER.addHandler(fileHandler);
+            LOGGER.setUseParentHandlers(false);
         } catch ( Exception ex ){
             ex.printStackTrace();
         }
